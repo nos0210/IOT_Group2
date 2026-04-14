@@ -13,13 +13,10 @@ static LowpassFilter lowpass_filter_obj;
 static uint16_t average_buffer[10];  // Buffer cho average filter
 
 
-/**
- * @brief Task đọc ADC và xử lý dữ liệu từ biến trở
- */
+ //Đọc ADC và xử lý dữ liệu từ biến trở
+
 void adc_dac_task(void *pvParameters)
 {
-    ESP_LOGI(TAG, "ADC/DAC Task started");
-
     // Khởi tạo ADC và DAC
     adc_init();
     dac_init();
@@ -67,10 +64,6 @@ void adc_dac_task(void *pvParameters)
 }
 void app_main(void)
 {
-    ESP_LOGI(TAG, "=== ESP32 ADC/DAC with Noise Filtering ===");
-    ESP_LOGI(TAG, "Potentiometer connected to GPIO36 (ADC1_CHANNEL_0)");
-    ESP_LOGI(TAG, "DAC output on GPIO25 (DAC_CHANNEL_0)");
-
     // Tạo task để đọc ADC và xử lý
     xTaskCreate(adc_dac_task,           // Hàm task
                 "ADC_DAC_Task",         // Tên task
