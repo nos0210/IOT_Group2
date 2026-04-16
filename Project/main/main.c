@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <unistd.h>
+#include "esp_err.h"
 #include "esp_log.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "adc_dac.h"
+#include "wifi_ble_provision.h"
 
 static const char *TAG = "MAIN";
 
@@ -64,6 +66,11 @@ void adc_dac_task(void *pvParameters)
 }
 void app_main(void)
 {
+    esp_err_t prov_err = wifi_ble_provisioning_init();
+    if (prov_err != ESP_OK) {
+        ESP_LOGE(TAG, "Provisioning init failed: %s", esp_err_to_name(prov_err));
+    }
+
     // Tạo task để đọc ADC và xử lý
     xTaskCreate(adc_dac_task,           // Hàm task
                 "ADC_DAC_Task",         // Tên task
