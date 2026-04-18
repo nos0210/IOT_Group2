@@ -2,6 +2,7 @@ import asyncio
 import queue
 import threading
 import tkinter as tk
+import traceback
 from dataclasses import dataclass
 from tkinter import messagebox, ttk
 from typing import Optional
@@ -38,8 +39,50 @@ class AsyncBLEWorker:
     def submit(self, coro):
         return asyncio.run_coroutine_threadsafe(coro, self.loop)
 
+    async def unpair_device(self, address: str) -> str:
+        """Force-close any stale Windows BLE connection using bleak_winrt in-process."""
+        try:
+            import bleak_winrt.windows.devices.bluetooth as bt
+            addr_int = int(address.replace(":", "").replace("-", ""), 16)
+            dev = await bt.BluetoothLEDevice.from_bluetooth_address_async(addr_int)
+            if dev is None:
+                return f"Không tìm thấy {address} trong Windows."
+            pairing = dev.device_information.pairing
+            if pairing.is_paired:
+                import bleak_winrt.windows.devices.enumeration as en
+                result = await pairing.unpair_async()
+                dev.close()
+                return f"Đã unpair {address}: {result.status}"
+            else:
+                dev.close()  # Release WinRT reference → Windows closes the BLE connection
+                return f"Đã ngắt kết nối Windows với {address}."
+        except Exception as exc:
+            return f"Unpair lỗi: {repr(exc)}"
+
+    async def clear_gatt_cache(self, address: str) -> str:
+        """Xóa GATT cache của Windows cho thiết bị — cần thiết sau reflash firmware."""
+        try:
+            import bleak_winrt.windows.devices.bluetooth as bt
+            import bleak_winrt.windows.devices.bluetooth.genericattributeprofile as gatt
+
+            addr_int = int(address.replace(":", "").replace("-", ""), 16)
+            device = await bt.BluetoothLEDevice.from_bluetooth_address_async(addr_int)
+            if device is None:
+                return "Không tìm thấy device để clear cache."
+
+            session = await gatt.GattSession.from_device_id_async(device.bluetooth_device_id)
+            session.maintain_connection = False
+
+            # get_gatt_services_async(UNCACHED) forces Windows to re-query device (clears cache)
+            result = await device.get_gatt_services_async(bt.BluetoothCacheMode.UNCACHED)
+            session.close()
+            device.close()
+            return f"Đã clear GATT cache, status={result.status}"
+        except Exception as exc:
+            return f"Clear cache lỗi (bỏ qua): {repr(exc)}"
+
     async def scan_devices(self) -> list[BLEDevice]:
-        devices = await BleakScanner.discover(timeout=6.0, return_adv=True)
+        devices = await BleakScanner.discover(timeout=10.0, return_adv=True)
         result = []
         for _, (device, adv_data) in devices.items():
             uuids = [u.lower() for u in (adv_data.service_uuids or [])]
@@ -52,9 +95,78 @@ class AsyncBLEWorker:
         if self.client and self.client.is_connected:
             await self.disconnect()
 
-        self.client = BleakClient(device)
-        await self.client.connect(timeout=15.0)
-        self.connected_device = device
+        address = device.address
+        MAX_ATTEMPTS = 3
+        CONNECT_TIMEOUT = 40.0
+        last_exc: Optional[Exception] = None
+        did_unpair = False
+        fresh_device: Optional[BLEDevice] = None
+
+        for attempt in range(MAX_ATTEMPTS):
+            target = fresh_device if fresh_device is not None else (device if attempt == 0 else address)
+            self.client = BleakClient(target, winrt=dict(use_cached_services=False))
+            try:
+                await self.client.connect(timeout=CONNECT_TIMEOUT)
+                self.connected_device = device
+                break
+            except Exception as exc:
+                last_exc = exc
+                try:
+                    await self.client.disconnect()
+                except Exception:
+                    pass
+                self.client = None
+
+                err_str = str(exc).lower()
+                is_unreachable = "unreachable" in err_str or "not paired" in err_str
+
+                if is_unreachable and not did_unpair:
+                    did_unpair = True
+                    self.ui_queue.put(("error", "[Fix] Unreachable → unpair..."))
+
+                    unpair_msg = await self.unpair_device(address)
+                    self.ui_queue.put(("error", f"[Fix] {unpair_msg}"))
+                    await asyncio.sleep(6.0)
+
+                    self.ui_queue.put(("error", "[Fix] Scan lại để lấy WinRT handle mới..."))
+                    fresh_device = await BleakScanner.find_device_by_address(address, timeout=20.0)
+                    if fresh_device is None:
+                        raise RuntimeError(
+                            f"Sau khi unpair+clear cache, không tìm thấy {address}.\n"
+                            "Hãy Scan → Connect lại thủ công."
+                        ) from exc
+                    continue
+
+                elif is_unreachable and attempt < MAX_ATTEMPTS - 1:
+                    wait = 3.0 * (attempt + 1)
+                    self.ui_queue.put(("error", f"[Fix] Retry {attempt+1}/{MAX_ATTEMPTS} sau {wait:.0f}s..."))
+                    await asyncio.sleep(wait)
+                    continue
+
+                elif attempt >= MAX_ATTEMPTS - 1:
+                    raise RuntimeError(
+                        f"Không thể connect BLE tới {device.name} ({address}) sau {MAX_ATTEMPTS} lần.\n"
+                        f"Nguyên nhân: {repr(last_exc)}\n\n"
+                        "Thử thủ công: Settings → Bluetooth → xóa ESP32 → Scan lại"
+                    ) from exc
+
+                if attempt < MAX_ATTEMPTS - 1:
+                    await asyncio.sleep(1.5 * (attempt + 1))
+
+        if not self.client or not self.client.is_connected:
+            raise RuntimeError(f"Kết nối BLE không thành công: {repr(last_exc)}")
+
+        services = self.client.services
+
+        def _has_char(uuid_text: str) -> bool:
+            return any(c.uuid.lower() == uuid_text for svc in services for c in svc.characteristics)
+
+        missing = [u for u in [SSID_CHAR_UUID, PASS_CHAR_UUID, STATUS_CHAR_UUID] if not _has_char(u)]
+        if missing:
+            await self.client.disconnect()
+            self.client = None
+            self.connected_device = None
+            raise RuntimeError("Thiếu characteristics: " + ", ".join(missing))
 
         def on_status(_: int, data: bytearray):
             try:
@@ -76,7 +188,10 @@ class AsyncBLEWorker:
         if self.client:
             try:
                 if self.client.is_connected:
-                    await self.client.stop_notify(STATUS_CHAR_UUID)
+                    try:
+                        await self.client.stop_notify(STATUS_CHAR_UUID)
+                    except (KeyError, Exception):
+                        pass
                     await self.client.disconnect()
             finally:
                 self.client = None
@@ -117,6 +232,12 @@ class ProvisionGUI(tk.Tk):
         self.btn_disconnect = ttk.Button(action_row, text="Disconnect", command=self.on_disconnect)
         self.btn_disconnect.pack(side=tk.LEFT)
 
+        self.btn_unpair = ttk.Button(action_row, text="Xóa Pairing", command=self.on_unpair)
+        self.btn_unpair.pack(side=tk.LEFT, padx=(8, 0))
+
+        self.btn_clear_cache = ttk.Button(action_row, text="Reset Cache", command=self.on_clear_cache)
+        self.btn_clear_cache.pack(side=tk.LEFT, padx=(8, 0))
+
         self.device_list = tk.Listbox(top, height=8)
         self.device_list.pack(fill=tk.BOTH, expand=True)
 
@@ -154,6 +275,8 @@ class ProvisionGUI(tk.Tk):
         state = tk.DISABLED if busy else tk.NORMAL
         self.btn_scan.configure(state=state)
         self.btn_connect.configure(state=state)
+        self.btn_unpair.configure(state=state)
+        self.btn_clear_cache.configure(state=state)
         self.btn_send.configure(state=state)
 
     def on_scan(self):
@@ -167,7 +290,7 @@ class ProvisionGUI(tk.Tk):
                 devices = fut.result()
                 self.ui_queue.put(("scan_done", devices))
             except Exception as exc:
-                self.ui_queue.put(("error", f"Scan lỗi: {exc}"))
+                self.ui_queue.put(("error", f"Scan lỗi: {type(exc).__name__}: {repr(exc)}"))
 
         future.add_done_callback(done_callback)
 
@@ -188,8 +311,47 @@ class ProvisionGUI(tk.Tk):
                 fut.result()
                 self.ui_queue.put(("connected", device))
             except Exception as exc:
-                self.ui_queue.put(("error", f"Connect lỗi: {exc}"))
+                self.ui_queue.put(("error", f"Connect lỗi: {type(exc).__name__}: {repr(exc)}"))
+                self.ui_queue.put(("error", traceback.format_exc().strip()))
 
+        future.add_done_callback(done_callback)
+
+    def on_unpair(self):
+        idxs = self.device_list.curselection()
+        if not idxs:
+            messagebox.showwarning("Thiếu thiết bị", "Hãy chọn thiết bị BLE trước")
+            return
+        device = self.devices[idxs[0]]
+        self.log(f"Đang xóa pairing: {device.name} ({device.address})...")
+        self.set_busy(True)
+        future = self.worker.submit(self.worker.unpair_device(device.address))
+        def done_callback(fut):
+            try:
+                msg = fut.result()
+                self.ui_queue.put(("error", f"[Unpair] {msg}"))
+            except Exception as exc:
+                self.ui_queue.put(("error", f"Unpair lỗi: {repr(exc)}"))
+            finally:
+                self.ui_queue.put(("unpair_done", None))
+        future.add_done_callback(done_callback)
+
+    def on_clear_cache(self):
+        idxs = self.device_list.curselection()
+        if not idxs:
+            messagebox.showwarning("Thiếu thiết bị", "Hãy chọn thiết bị BLE trước")
+            return
+        device = self.devices[idxs[0]]
+        self.log(f"Đang clear GATT cache: {device.address}...")
+        self.set_busy(True)
+        future = self.worker.submit(self.worker.clear_gatt_cache(device.address))
+        def done_callback(fut):
+            try:
+                msg = fut.result()
+                self.ui_queue.put(("error", f"[Cache] {msg}"))
+            except Exception as exc:
+                self.ui_queue.put(("error", f"Cache lỗi: {repr(exc)}"))
+            finally:
+                self.ui_queue.put(("cache_done", None))
         future.add_done_callback(done_callback)
 
     def on_disconnect(self):
@@ -200,7 +362,7 @@ class ProvisionGUI(tk.Tk):
                 fut.result()
                 self.ui_queue.put(("disconnected", None))
             except Exception as exc:
-                self.ui_queue.put(("error", f"Disconnect lỗi: {exc}"))
+                self.ui_queue.put(("error", f"Disconnect lỗi: {type(exc).__name__}: {repr(exc)}"))
 
         future.add_done_callback(done_callback)
 
@@ -231,7 +393,7 @@ class ProvisionGUI(tk.Tk):
                 fut.result()
                 self.ui_queue.put(("sent", None))
             except Exception as exc:
-                self.ui_queue.put(("error", f"Gửi lỗi: {exc}"))
+                self.ui_queue.put(("error", f"Gửi lỗi: {type(exc).__name__}: {repr(exc)}"))
 
         future.add_done_callback(done_callback)
 
@@ -272,6 +434,14 @@ class ProvisionGUI(tk.Tk):
 
             elif event == "error":
                 self.log(payload)
+                self.set_busy(False)
+
+            elif event == "unpair_done":
+                self.log("Unpair xong. Hãy nhấn Scan rồi Connect lại.")
+                self.set_busy(False)
+
+            elif event == "cache_done":
+                self.log("Reset cache xong. Hãy nhấn Connect lại.")
                 self.set_busy(False)
 
         self.after(120, self._poll_ui_queue)

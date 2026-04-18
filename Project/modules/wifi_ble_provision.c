@@ -72,6 +72,7 @@ static const char *TAG = "WIFI_BLE_PROV";
 static EventGroupHandle_t g_wifi_event_group;
 static int g_wifi_retry;
 static bool g_wifi_initialized;
+static uint8_t g_ble_addr_type;
 
 static uint16_t g_conn_handle = BLE_HS_CONN_HANDLE_NONE;
 static uint16_t g_ssid_val_handle;
@@ -87,6 +88,9 @@ static char g_status_payload[WIFI_STATUS_MAX_LEN];
 static esp_err_t provisioning_try_connect(void);
 static int ble_gap_event_handler(struct ble_gap_event *event, void *arg);
 static esp_err_t wifi_ensure_initialized(void);
+
+/* Forward declaration matching NimBLE internal store – no public header exposes this. */
+void ble_store_config_init(void);
 
 static void provisioning_notify_status(const char *status)
 {
@@ -354,6 +358,10 @@ static const struct ble_gatt_svc_def gatt_services[] = {
 
 static void ble_advertise(void)
 {
+    if (ble_gap_adv_active()) {
+        return;
+    }
+
     struct ble_hs_adv_fields fields;
     memset(&fields, 0, sizeof(fields));
 
@@ -362,14 +370,22 @@ static void ble_advertise(void)
     fields.name_len = strlen(PROV_DEVICE_NAME);
     fields.name_is_complete = 1;
 
-    fields.uuids128 = (ble_uuid128_t *)&g_service_uuid;
-    fields.num_uuids128 = 1;
-    fields.uuids128_is_complete = 1;
-
     int rc = ble_gap_adv_set_fields(&fields);
     if (rc != 0) {
         ESP_LOGE(TAG, "ble_gap_adv_set_fields failed rc=%d", rc);
         return;
+    }
+
+    struct ble_hs_adv_fields rsp_fields;
+    memset(&rsp_fields, 0, sizeof(rsp_fields));
+
+    rsp_fields.uuids128 = (ble_uuid128_t *)&g_service_uuid;
+    rsp_fields.num_uuids128 = 1;
+    rsp_fields.uuids128_is_complete = 1;
+
+    rc = ble_gap_adv_rsp_set_fields(&rsp_fields);
+    if (rc != 0) {
+        ESP_LOGW(TAG, "ble_gap_adv_rsp_set_fields failed rc=%d", rc);
     }
 
     struct ble_gap_adv_params adv_params;
@@ -378,7 +394,7 @@ static void ble_advertise(void)
     adv_params.disc_mode = BLE_GAP_DISC_MODE_GEN;
 
     rc = ble_gap_adv_start(
-        BLE_OWN_ADDR_PUBLIC,
+        g_ble_addr_type,
         NULL,
         BLE_HS_FOREVER,
         &adv_params,
@@ -426,11 +442,25 @@ static int ble_gap_event_handler(struct ble_gap_event *event, void *arg)
     return 0;
 }
 
+static void ble_on_reset(int reason)
+{
+    ESP_LOGE(TAG, "BLE host reset, reason=%d; re-advertising on next sync", reason);
+}
+
 static void ble_on_sync(void)
 {
     uint8_t addr_val[6] = {0};
-    ble_hs_id_infer_auto(0, NULL);
-    ble_hs_id_copy_addr(BLE_ADDR_PUBLIC, addr_val, NULL);
+    int rc = ble_hs_id_infer_auto(0, &g_ble_addr_type);
+    if (rc != 0) {
+        ESP_LOGE(TAG, "ble_hs_id_infer_auto failed rc=%d", rc);
+        return;
+    }
+
+    rc = ble_hs_id_copy_addr(g_ble_addr_type, addr_val, NULL);
+    if (rc != 0) {
+        ESP_LOGE(TAG, "ble_hs_id_copy_addr failed rc=%d", rc);
+        return;
+    }
 
     ESP_LOGI(
         TAG,
@@ -475,7 +505,17 @@ static esp_err_t ble_init(void)
         return ESP_FAIL;
     }
 
-    ble_hs_cfg.sync_cb = ble_on_sync;
+    ble_hs_cfg.reset_cb   = ble_on_reset;
+    ble_hs_cfg.sync_cb    = ble_on_sync;
+
+    /* Disable pairing/bonding – provisioning app does not need encryption.
+     * This prevents Windows from using stale bond keys after a re-flash. */
+    ble_hs_cfg.sm_io_cap  = BLE_HS_IO_NO_INPUT_OUTPUT;
+    ble_hs_cfg.sm_bonding = 0;
+    ble_hs_cfg.sm_mitm    = 0;
+    ble_hs_cfg.sm_sc      = 0;
+
+    ble_store_config_init();
 
     nimble_port_freertos_init(ble_host_task);
     return ESP_OK;

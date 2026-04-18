@@ -65,6 +65,15 @@ void sliding_window_init(SlidingWindowFilter *filter, uint16_t window_size)
         return;
     }
 
+    if (window_size == 0) {
+        filter->buffer = NULL;
+        filter->window_size = 0;
+        filter->index = 0;
+        filter->sum = 0;
+        filter->filled = 0;
+        return;
+    }
+
     filter->buffer = (uint16_t *)malloc(window_size * sizeof(uint16_t));
     if (filter->buffer == NULL) {
         return;
@@ -80,19 +89,20 @@ void sliding_window_init(SlidingWindowFilter *filter, uint16_t window_size)
 
 uint16_t sliding_window_filter(SlidingWindowFilter *filter, uint16_t raw_value)
 {
-    if (filter == NULL || filter->buffer == NULL) {
+    if (filter == NULL || filter->buffer == NULL || filter->window_size == 0) {
         return raw_value;
     }
 
     // Nếu cửa sổ chưa đầy, cộng giá trị mới
     if (!filter->filled) {
-        filter->sum += raw_value;
         filter->buffer[filter->index] = raw_value;
         filter->index++;
+        filter->sum += raw_value;
 
         if (filter->index >= filter->window_size) {
             filter->filled = 1;
             filter->index = 0;
+            return filter->sum / filter->window_size;
         }
 
         return filter->sum / filter->index;

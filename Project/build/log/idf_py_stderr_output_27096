@@ -1,0 +1,1 @@
+Command: cmake -G Ninja -B C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project\build -DPYTHON_DEPS_CHECKED=1 -DPYTHON=C:\Espressif\tools\python\v6.0\venv\Scripts\python.exe -DESP_PLATFORM=1 -DESPTOOLPY_BEFORE=no-reset -DESPTOOLPY_AFTER=hard-reset -DCCACHE_ENABLE=False C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project
