@@ -209,9 +209,15 @@ class ProvisionGUI(tk.Tk):
         self.worker = AsyncBLEWorker(self.ui_queue)
 
         self.devices: list[BLEDevice] = []
+        self.ble_connected = False
+        self.provisioning_in_progress = False
 
         self._build_ui()
         self.after(120, self._poll_ui_queue)
+
+    def _update_send_state(self):
+        send_enabled = self.ble_connected and not self.provisioning_in_progress
+        self.btn_send.configure(state=tk.NORMAL if send_enabled else tk.DISABLED)
 
     def _build_ui(self):
         root = ttk.Frame(self, padding=12)
@@ -277,7 +283,7 @@ class ProvisionGUI(tk.Tk):
         self.btn_connect.configure(state=state)
         self.btn_unpair.configure(state=state)
         self.btn_clear_cache.configure(state=state)
-        self.btn_send.configure(state=state)
+        self._update_send_state()
 
     def on_scan(self):
         self.log("Đang scan BLE...")
@@ -376,11 +382,19 @@ class ProvisionGUI(tk.Tk):
         if not password:
             messagebox.showwarning("Thiếu Password", "Password không được để trống")
             return
+        pass_len = len(password.encode("utf-8"))
+        if pass_len < 8:
+            messagebox.showwarning("Password không hợp lệ", "Password WiFi WPA2/WPA3 phải từ 8 đến 64 bytes")
+            return
         if len(ssid.encode("utf-8")) > 32:
             messagebox.showwarning("SSID quá dài", "SSID tối đa 32 bytes")
             return
-        if len(password.encode("utf-8")) > 64:
+        if pass_len > 64:
             messagebox.showwarning("Password quá dài", "Password tối đa 64 bytes")
+            return
+
+        if self.provisioning_in_progress:
+            messagebox.showinfo("Đang provisioning", "ESP32 đang xử lý kết nối WiFi, hãy chờ trạng thái kết thúc trước khi gửi lại")
             return
 
         self.log("Đang gửi SSID/PASSWORD...")
@@ -415,24 +429,41 @@ class ProvisionGUI(tk.Tk):
 
             elif event == "connected":
                 dev = payload
+                self.ble_connected = True
+                self.provisioning_in_progress = False
                 self.lbl_conn.configure(text=f"Đã kết nối: {dev.name} ({dev.address})")
                 self.log("BLE connected. Đã subscribe STATUS notify.")
                 self.set_busy(False)
 
             elif event == "disconnected":
+                self.ble_connected = False
+                self.provisioning_in_progress = False
                 self.lbl_conn.configure(text="Chưa kết nối")
                 self.log("Đã ngắt kết nối BLE")
                 self.set_busy(False)
 
             elif event == "sent":
+                self.provisioning_in_progress = True
                 self.log("Gửi credentials thành công, chờ notify từ ESP32...")
                 self.set_busy(False)
 
             elif event == "status_notify":
+                status_text = str(payload).strip().upper()
                 self.log(f"ESP32 notify: {payload}")
+                if status_text in {
+                    "WIFI_CONNECTED",
+                    "WIFI_FAILED",
+                    "WIFI_START_FAILED",
+                    "PASS_INVALID",
+                    "SSID_INVALID",
+                    "NVS_SAVE_FAILED",
+                    "READY",
+                }:
+                    self.provisioning_in_progress = False
                 self.set_busy(False)
 
             elif event == "error":
+                self.provisioning_in_progress = False
                 self.log(payload)
                 self.set_busy(False)
 

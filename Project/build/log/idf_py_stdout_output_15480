@@ -1,0 +1,469 @@
+Command: C:\Espressif\tools\python\v6.0\venv\Scripts\python.exe D:\esp\v6.0\esp-idf\tools/idf_monitor.py -p COM7 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project\build\ADC_DAC.elf C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.0\venv\Scripts\python.exe' 'D:\esp\v6.0\esp-idf\tools\idf.py' '-p' 'COM7'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.0 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Apr 19 2026 00:04:29[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (31) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=20e38h (134712) map[0m
+[0;32mI (134) esp_image: segment 1: paddr=00030e60 vaddr=3ffbdb60 size=05fd4h ( 24532) load[0m
+[0;32mI (144) esp_image: segment 2: paddr=00036e3c vaddr=40080000 size=091dch ( 37340) load[0m
+[0;32mI (159) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=b1c18h (728088) map[0m
+[0;32mI (419) esp_image: segment 4: paddr=000f1c40 vaddr=400891dc size=13900h ( 80128) load[0m
+[0;32mI (452) esp_image: segment 5: paddr=00105548 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (466) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (466) boot: Disabling RNG early entropy source...[0m
+[0;32mI (477) cpu_start: Multicore app[0m
+[0;32mI (485) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (485) cpu_start: Pro cpu start user code[0m
+[0;32mI (486) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (487) app_init: Application information:[0m
+[0;32mI (491) app_init: Project name:     ADC_DAC[0m
+[0;32mI (495) app_init: App version:      75b2301-dirty[0m
+[0;32mI (499) app_init: Compile time:     Apr 19 2026 00:04:01[0m
+[0;32mI (504) app_init: ELF file SHA256:  13be2c350...[0m
+[0;32mI (509) app_init: ESP-IDF:          v6.0[0m
+[0;32mI (512) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (516) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (520) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (524) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (531) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (535) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (541) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (546) heap_init: At 3FFC8D78 len 00017288 (92 KiB): DRAM[0m
+[0;32mI (551) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (556) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (562) heap_init: At 4009CADC len 00003524 (13 KiB): IRAM[0m
+[0;32mI (569) spi_flash: detected chip: generic[0m
+[0;32mI (571) spi_flash: flash io: dio[0m
+[0;33mW (574) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (587) coexist: coex firmware version: 093e3d2[0m
+[0;32mI (591) main_task: Started on CPU0[0m
+[0;32mI (601) main_task: Calling app_main()[0m
+[0;32mI (621) BTDM_INIT: BT controller compile version [045a658][0m
+[0;32mI (621) BTDM_INIT: Using main XTAL as clock source[0m
+[0;32mI (621) BTDM_INIT: Bluetooth MAC: d4:e9:f4:68:65:5e[0m
+[0;32mI (631) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (951) WIFI_BLE_PROV: Found saved credentials, connecting WiFi[0m
+[0;32mI (981) wifi:wifi driver task: 3ffd6da4, prio:23, stack:6656, core=0[0m
+[0;32mI (1001) wifi:wifi firmware version: 44738b4[0m
+[0;32mI (1001) wifi:wifi certification version: v7.0[0m
+[0;32mI (1001) wifi:config NVS flash: enabled[0m
+[0;32mI (1001) wifi:config nano formatting: disabled[0m
+[0;32mI (1011) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1011) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1011) wifi:Init management short buffer num: 32[0m
+[0;32mI (1021) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1021) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1031) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1031) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1041) wifi_init: rx ba win: 6[0m
+[0;32mI (1041) wifi_init: accept mbox: 6[0m
+[0;32mI (1041) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1051) WIFI_BLE_PROV: BLE addr: d4:e9:f4:68:65:5e[0m
+[0;32mI (1051) wifi_init: udp mbox: 6[0m
+[0;32mI (1051) wifi_init: tcp mbox: 6[0m
+[0;32mI (1061) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (1061) NimBLE: disc_mode=2[0m
+[0;32mI (1061) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (1071) NimBLE: [0m
+
+[0;32mI (1071) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1081) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1081) wifi_init: tcp mss: 1440[0m
+[0;32mI (1081) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1091) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1101) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (1101) wifi:enable tsf[0m
+[0;32mI (1101) WIFI_BLE_PROV: Status: WIFI_CONNECTING[0m
+[0;32mI (1111) main_task: Returned from app_main()[0m
+[0;32mI (3561) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (5931) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (5941) WIFI_BLE_PROV: Status: WIFI_RETRYING[0m
+[0;32mI (6061) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (8561) MAIN: ADC_raw:  187 | Sliding:   65 | Lowpass:   93 | Average:   65 | DAC:   5[0m
+[0;32mI (10761) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (10771) WIFI_BLE_PROV: Status: WIFI_RETRYING[0m
+[0;32mI (11061) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (13561) MAIN: ADC_raw:    0 | Sliding:   64 | Lowpass:   42 | Average:   64 | DAC:   2[0m
+[0;32mI (15601) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (15601) WIFI_BLE_PROV: Status: WIFI_RETRYING[0m
+[0;32mI (16061) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (18561) MAIN: ADC_raw:    0 | Sliding:   23 | Lowpass:   11 | Average:   23 | DAC:   0[0m
+[0;32mI (20431) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (20431) WIFI_BLE_PROV: Status: WIFI_RETRYING[0m
+[0;32mI (21061) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (23561) MAIN: ADC_raw:    0 | Sliding:   41 | Lowpass:   22 | Average:   41 | DAC:   1[0m
+[0;32mI (25261) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (25271) WIFI_BLE_PROV: Status: WIFI_RETRYING[0m
+[0;32mI (26061) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (28561) MAIN: ADC_raw:  128 | Sliding:   71 | Lowpass:   79 | Average:   71 | DAC:   4[0m
+[0;32mI (30091) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (30101) WIFI_BLE_PROV: Status: WIFI_RETRYING[0m
+[0;32mI (31061) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (33561) MAIN: ADC_raw:    0 | Sliding:   85 | Lowpass:   74 | Average:   85 | DAC:   4[0m
+[0;32mI (34931) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (34931) WIFI_BLE_PROV: Status: WIFI_RETRYING[0m
+[0;32mI (36061) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (38561) MAIN: ADC_raw:   17 | Sliding:   10 | Lowpass:   16 | Average:   10 | DAC:   1[0m
+[0;32mI (39761) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (39761) WIFI_BLE_PROV: Status: WIFI_RETRYING[0m
+[0;32mI (41061) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (43561) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (44591) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (44591) WIFI_BLE_PROV: Status: WIFI_FAILED[0m
+[0;32mI (46061) MAIN: ADC_raw:    0 | Sliding:  120 | Lowpass:   90 | Average:  120 | DAC:   5[0m
+[0;32mI (48561) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (51061) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (53561) MAIN: ADC_raw:  208 | Sliding:  116 | Lowpass:  129 | Average:  116 | DAC:   8[0m
+[0;32mI (56061) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    1 | Average:    0 | DAC:   0[0m
+[0;32mI (58561) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (61061) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (63561) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (66061) MAIN: ADC_raw:    0 | Sliding:    4 | Lowpass:    7 | Average:    4 | DAC:   0[0m
+[0;32mI (68561) MAIN: ADC_raw:  265 | Sliding:  124 | Lowpass:  151 | Average:  124 | DAC:   9[0m
+[0;32mI (71061) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (72981) WIFI_BLE_PROV: Status: BLE_CONNECTED[0m
+[0;32mI (72981) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (72981) NimBLE: att_handle=20[0m
+
+[0;32mI (73561) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (75011) WIFI_BLE_PROV: Status: READY[0m
+[0;32mI (75011) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (75021) NimBLE: att_handle=20[0m
+
+[0;32mI (76061) MAIN: ADC_raw:    0 | Sliding:  124 | Lowpass:   95 | Average:  124 | DAC:   5[0m
+[0;32mI (78561) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (81061) MAIN: ADC_raw:  240 | Sliding:  124 | Lowpass:  139 | Average:  124 | DAC:   8[0m
+[0;32mI (83561) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (86061) MAIN: ADC_raw:    0 | Sliding:  126 | Lowpass:   98 | Average:  126 | DAC:   6[0m
+[0;32mI (88561) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (91061) MAIN: ADC_raw:  228 | Sliding:  122 | Lowpass:  135 | Average:  122 | DAC:   8[0m
+[0;32mI (93561) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (96061) MAIN: ADC_raw:    0 | Sliding:   28 | Lowpass:   32 | Average:   28 | DAC:   2[0m
+[0;32mI (98561) MAIN: ADC_raw:    0 | Sliding:   34 | Lowpass:   17 | Average:   34 | DAC:   1[0m
+[0;32mI (101061) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (103561) MAIN: ADC_raw:  363 | Sliding:  157 | Lowpass:  199 | Average:  157 | DAC:  12[0m
+[0;32mI (106061) MAIN: ADC_raw:    0 | Sliding:   21 | Lowpass:    9 | Average:   21 | DAC:   0[0m
+[0;32mI (108561) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (110171) WIFI_BLE_PROV: Status: SSID_RECEIVED[0m
+[0;32mI (110171) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (110171) NimBLE: att_handle=20[0m
+
+[0;32mI (110191) WIFI_BLE_PROV: Status: NVS_SAVED[0m
+[0;32mI (110191) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (110191) NimBLE: att_handle=20[0m
+
+[0;32mI (110221) WIFI_BLE_PROV: Status: WIFI_CONNECTING[0m
+[0;32mI (110231) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (110231) NimBLE: att_handle=20[0m
+
+[0;32mI (110351) WIFI_BLE_PROV: Status: PASS_RECEIVED[0m
+[0;32mI (110351) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (110351) NimBLE: att_handle=20[0m
+
+[0;32mI (110371) WIFI_BLE_PROV: Status: NVS_SAVED[0m
+[0;32mI (110371) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (110371) NimBLE: att_handle=20[0m
+
+[1;31mE (110371) wifi:sta is connecting, cannot set config[0m
+[1;31mE (110371) WIFI_BLE_PROV: provisioning_try_connect(262): esp_wifi_set_config failed[0m
+[0;32mI (110381) WIFI_BLE_PROV: Status: WIFI_START_FAILED[0m
+[0;32mI (110391) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (110391) NimBLE: att_handle=20[0m
+
+[0;32mI (111061) MAIN: ADC_raw:    0 | Sliding:   81 | Lowpass:   70 | Average:   81 | DAC:   4[0m
+[0;32mI (111721) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (111721) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (111751) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (111781) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (113811) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (113901) wifi:state: run -> init (0xf00)[0m
+[0;32mI (113921) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (113921) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (113921) WIFI_BLE_PROV: Status: WIFI_RETRYING[0m
+[0;32mI (113921) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (113931) NimBLE: att_handle=20[0m
+
+[0;32mI (116311) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (118751) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (118761) WIFI_BLE_PROV: Status: WIFI_RETRYING[0m
+[0;32mI (118761) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (118761) NimBLE: att_handle=20[0m
+
+[0;32mI (118771) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (118771) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (118791) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (118811) MAIN: ADC_raw:    0 | Sliding:    1 | Lowpass:    1 | Average:    1 | DAC:   0[0m
+[0;32mI (118851) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (120981) wifi:state: run -> init (0xf00)[0m
+[0;32mI (120991) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (120991) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (121001) WIFI_BLE_PROV: Status: WIFI_RETRYING[0m
+[0;32mI (121001) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (121001) NimBLE: att_handle=20[0m
+
+[0;32mI (121311) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (123811) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (125821) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (125831) WIFI_BLE_PROV: Status: WIFI_RETRYING[0m
+[0;32mI (125831) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (125831) NimBLE: att_handle=20[0m
+
+[0;32mI (125931) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (125931) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (125981) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (126021) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (126311) MAIN: ADC_raw:   48 | Sliding:   32 | Lowpass:   33 | Average:   32 | DAC:   2[0m
+[0;32mI (128811) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (131311) MAIN: ADC_raw:    0 | Sliding:   27 | Lowpass:   15 | Average:   27 | DAC:   0[0m
+[0;32mI (133811) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (136021) wifi:state: run -> init (0xcc00)[0m
+[0;32mI (136041) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (136041) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (136051) WIFI_BLE_PROV: Status: WIFI_RETRYING[0m
+[0;32mI (136051) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (136051) NimBLE: att_handle=20[0m
+
+[0;32mI (136311) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (138811) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (140871) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (140881) WIFI_BLE_PROV: Status: WIFI_RETRYING[0m
+[0;32mI (140881) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (140881) NimBLE: att_handle=20[0m
+
+[0;32mI (140981) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (140981) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (141011) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (141061) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (141311) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (143181) wifi:state: run -> init (0xf00)[0m
+[0;32mI (143201) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (143201) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (143201) WIFI_BLE_PROV: Status: WIFI_RETRYING[0m
+[0;32mI (143211) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (143211) NimBLE: att_handle=20[0m
+
+[0;32mI (143811) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (146311) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (148031) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (148041) WIFI_BLE_PROV: Status: WIFI_RETRYING[0m
+[0;32mI (148041) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (148041) NimBLE: att_handle=20[0m
+
+[0;32mI (148051) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (148051) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (148111) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (148181) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (148811) MAIN: ADC_raw:    0 | Sliding:   10 | Lowpass:   13 | Average:   10 | DAC:   0[0m
+[0;32mI (150301) wifi:state: run -> init (0xf00)[0m
+[0;32mI (150311) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (150311) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (150311) WIFI_BLE_PROV: Status: WIFI_FAILED[0m
+[0;32mI (150321) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (150321) NimBLE: att_handle=20[0m
+
+[0;32mI (151331) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (153831) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (156331) MAIN: ADC_raw:    0 | Sliding:   10 | Lowpass:    4 | Average:   10 | DAC:   0[0m
+[0;32mI (158831) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (161331) MAIN: ADC_raw:    0 | Sliding:   82 | Lowpass:   60 | Average:   82 | DAC:   3[0m
+[0;32mI (163831) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (166331) MAIN: ADC_raw:    0 | Sliding:    4 | Lowpass:    2 | Average:    4 | DAC:   0[0m
+[0;32mI (168831) MAIN: ADC_raw:    0 | Sliding:   73 | Lowpass:   74 | Average:   73 | DAC:   4[0m
+[0;32mI (171331) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (171491) WIFI_BLE_PROV: Status: SSID_RECEIVED[0m
+[0;32mI (171491) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (171491) NimBLE: att_handle=20[0m
+
+[0;32mI (171501) WIFI_BLE_PROV: Status: NVS_SAVED[0m
+[0;32mI (171501) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (171501) NimBLE: att_handle=20[0m
+
+[0;33mW (171511) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (171541) WIFI_BLE_PROV: Status: WIFI_CONNECTING[0m
+[0;32mI (171541) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (171541) NimBLE: att_handle=20[0m
+
+[0;32mI (171821) WIFI_BLE_PROV: Status: PASS_RECEIVED[0m
+[0;32mI (171821) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (171821) NimBLE: att_handle=20[0m
+
+[0;32mI (171831) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (171831) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (171901) WIFI_BLE_PROV: Status: NVS_SAVED[0m
+[0;32mI (171901) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (171901) NimBLE: att_handle=20[0m
+
+[1;31mE (171911) wifi:sta is connecting, cannot set config[0m
+[1;31mE (171911) WIFI_BLE_PROV: provisioning_try_connect(262): esp_wifi_set_config failed[0m
+[0;32mI (171911) WIFI_BLE_PROV: Status: WIFI_START_FAILED[0m
+[0;32mI (171921) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (171921) NimBLE: att_handle=20[0m
+
+[0;32mI (171931) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (171961) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (172051) wifi:connected with TuanNga, aid = 4, channel 6, BW20, bssid = 00:c8:96:aa:40:d9[0m
+[0;32mI (172051) wifi:security: WPA2-PSK, phy: bgn, rssi: -54[0m
+[0;32mI (172071) wifi:pm start, type: 1[0m
+
+[0;32mI (172071) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (172131) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (174091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (175241) wifi:<ba-add>idx:0 (ifx:0, 00:c8:96:aa:40:d9), tid:0, ssn:0, winSize:64[0m
+[0;32mI (175261) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:7, ssn:0, winSize:64[0m
+[0;32mI (176401) esp_netif_handlers: sta ip: 192.168.100.3, mask: 255.255.255.0, gw: 192.168.100.1[0m
+[0;32mI (176401) WIFI_BLE_PROV: Status: WIFI_CONNECTED[0m
+[0;32mI (176401) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (176401) NimBLE: att_handle=20[0m
+
+[0;32mI (176591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (179091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (181591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (184091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (186591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (189091) MAIN: ADC_raw:    0 | Sliding:   44 | Lowpass:   20 | Average:   44 | DAC:   1[0m
+[0;32mI (191591) MAIN: ADC_raw:    0 | Sliding:  104 | Lowpass:  103 | Average:  104 | DAC:   6[0m
+[0;32mI (194091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (196591) MAIN: ADC_raw:  187 | Sliding:  100 | Lowpass:  121 | Average:  100 | DAC:   7[0m
+[0;32mI (199091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (201591) MAIN: ADC_raw:    0 | Sliding:   94 | Lowpass:   86 | Average:   94 | DAC:   5[0m
+[0;32mI (204091) MAIN: ADC_raw:    0 | Sliding:    6 | Lowpass:    1 | Average:    6 | DAC:   0[0m
+[0;32mI (206591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (209091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (211591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (214091) MAIN: ADC_raw:  253 | Sliding:  113 | Lowpass:  140 | Average:  113 | DAC:   8[0m
+[0;32mI (216591) MAIN: ADC_raw:  160 | Sliding:   93 | Lowpass:  102 | Average:   93 | DAC:   6[0m
+[0;32mI (219091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (221591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (224091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (226591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (229091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (231591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (234091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (236591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (239091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (241591) MAIN: ADC_raw:  199 | Sliding:   99 | Lowpass:  115 | Average:   99 | DAC:   7[0m
+[0;32mI (244091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (246591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (249091) MAIN: ADC_raw:    0 | Sliding:  108 | Lowpass:   90 | Average:  108 | DAC:   5[0m
+[0;32mI (251591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (254091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (256591) MAIN: ADC_raw:  176 | Sliding:   56 | Lowpass:   71 | Average:   56 | DAC:   4[0m
+[0;32mI (259091) MAIN: ADC_raw:    0 | Sliding:    5 | Lowpass:    2 | Average:    5 | DAC:   0[0m
+[0;32mI (261591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (264091) MAIN: ADC_raw:    0 | Sliding:   63 | Lowpass:   61 | Average:   63 | DAC:   3[0m
+[0;32mI (266591) MAIN: ADC_raw:    0 | Sliding:   29 | Lowpass:   17 | Average:   29 | DAC:   1[0m
+[0;32mI (269091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (271591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (274091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (276591) MAIN: ADC_raw:    0 | Sliding:   34 | Lowpass:   37 | Average:   34 | DAC:   2[0m
+[0;32mI (279091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (281591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (284091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (286591) MAIN: ADC_raw:    0 | Sliding:  105 | Lowpass:   81 | Average:  105 | DAC:   5[0m
+[0;32mI (289091) MAIN: ADC_raw:  142 | Sliding:   29 | Lowpass:   61 | Average:   29 | DAC:   3[0m
+[0;32mI (291591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (294091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (296591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (299091) MAIN: ADC_raw:    0 | Sliding:   19 | Lowpass:   28 | Average:   19 | DAC:   1[0m
+[0;32mI (301591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (304091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (306591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (309091) MAIN: ADC_raw:    0 | Sliding:  101 | Lowpass:   77 | Average:  101 | DAC:   4[0m
+[0;32mI (311591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (314091) MAIN: ADC_raw:    0 | Sliding:    7 | Lowpass:    3 | Average:    7 | DAC:   0[0m
+[0;32mI (316591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (319091) MAIN: ADC_raw:    0 | Sliding:   92 | Lowpass:   73 | Average:   92 | DAC:   4[0m
+[0;32mI (321591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (324091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (326591) MAIN: ADC_raw:  210 | Sliding:  114 | Lowpass:  128 | Average:  114 | DAC:   8[0m
+[0;32mI (329091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (331591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (334091) MAIN: ADC_raw:    0 | Sliding:   26 | Lowpass:   28 | Average:   26 | DAC:   1[0m
+[0;32mI (336591) MAIN: ADC_raw:    0 | Sliding:  106 | Lowpass:   84 | Average:  106 | DAC:   5[0m
+[0;32mI (339091) MAIN: ADC_raw:    0 | Sliding:    5 | Lowpass:    2 | Average:    5 | DAC:   0[0m
+[0;32mI (341591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (344091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (346591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (349091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (351591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (354091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (356591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (359091) MAIN: ADC_raw:  145 | Sliding:   78 | Lowpass:   87 | Average:   78 | DAC:   5[0m
+[0;32mI (361591) MAIN: ADC_raw:   37 | Sliding:   41 | Lowpass:   36 | Average:   41 | DAC:   2[0m
+[0;32mI (364091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (366591) MAIN: ADC_raw:    0 | Sliding:   58 | Lowpass:   59 | Average:   58 | DAC:   3[0m
+[0;32mI (369091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (371591) MAIN: ADC_raw:  176 | Sliding:   67 | Lowpass:   91 | Average:   67 | DAC:   5[0m
+[0;32mI (374091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (376591) MAIN: ADC_raw:    0 | Sliding:  106 | Lowpass:   80 | Average:  106 | DAC:   5[0m
+[0;32mI (379091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (381591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (384091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (386591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (389091) MAIN: ADC_raw:  122 | Sliding:   12 | Lowpass:   36 | Average:   12 | DAC:   2[0m
+[0;32mI (391591) MAIN: ADC_raw:    0 | Sliding:   22 | Lowpass:   39 | Average:   22 | DAC:   2[0m
+[0;32mI (394091) MAIN: ADC_raw:  251 | Sliding:   81 | Lowpass:  126 | Average:   81 | DAC:   7[0m
+[0;32mI (396591) MAIN: ADC_raw:    0 | Sliding:   89 | Lowpass:   93 | Average:   89 | DAC:   5[0m
+[0;32mI (399091) MAIN: ADC_raw:  222 | Sliding:   58 | Lowpass:  104 | Average:   58 | DAC:   6[0m
+[0;32mI (401591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (404091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (406591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (409091) MAIN: ADC_raw:    0 | Sliding:  120 | Lowpass:   90 | Average:  120 | DAC:   5[0m
+[0;32mI (411591) MAIN: ADC_raw:   30 | Sliding:    3 | Lowpass:    9 | Average:    3 | DAC:   0[0m
+[0;32mI (414091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (416591) MAIN: ADC_raw:    0 | Sliding:  214 | Lowpass:  172 | Average:  214 | DAC:  10[0m
+[0;32mI (419091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (421591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    2 | Average:    0 | DAC:   0[0m
+[0;32mI (424091) MAIN: ADC_raw:    0 | Sliding:  189 | Lowpass:  174 | Average:  189 | DAC:  10[0m
+[0;32mI (426591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (429091) MAIN: ADC_raw:  165 | Sliding:  131 | Lowpass:  123 | Average:  131 | DAC:   7[0m
+[0;32mI (431591) MAIN: ADC_raw:    0 | Sliding:   13 | Lowpass:   25 | Average:   13 | DAC:   1[0m
+[0;32mI (434091) MAIN: ADC_raw:    0 | Sliding:    4 | Lowpass:    1 | Average:    4 | DAC:   0[0m
+[0;32mI (436591) MAIN: ADC_raw:  434 | Sliding:  167 | Lowpass:  226 | Average:  167 | DAC:  14[0m
+[0;32mI (439091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (441591) MAIN: ADC_raw:    0 | Sliding:  224 | Lowpass:  181 | Average:  224 | DAC:  11[0m
+[0;32mI (444091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (446591) MAIN: ADC_raw:  447 | Sliding:  223 | Lowpass:  265 | Average:  223 | DAC:  16[0m
+[0;32mI (449091) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (451591) MAIN: ADC_raw:    0 | Sliding:  108 | Lowpass:  109 | Average:  108 | DAC:   6[0m
+[0;32mI (454091) MAIN: ADC_raw:    0 | Sliding:   13 | Lowpass:    5 | Average:   13 | DAC:   0[0m
+[0;32mI (456591) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (459091) MAIN: ADC_raw:  448 | Sliding:  229 | Lowpass:  265 | Average:  229 | DAC:  16[0m

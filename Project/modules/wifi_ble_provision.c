@@ -83,6 +83,9 @@ static char g_received_ssid[33];
 static char g_received_pass[65];
 static bool g_has_ssid;
 static bool g_has_pass;
+static bool g_pending_ssid;
+static bool g_pending_pass;
+static bool g_wifi_connecting;
 static char g_status_payload[WIFI_STATUS_MAX_LEN];
 
 static esp_err_t provisioning_try_connect(void);
@@ -190,11 +193,14 @@ static void wifi_event_handler(void *arg,
         if (g_wifi_retry < WIFI_MAX_RETRY) {
             g_wifi_retry++;
             esp_wifi_connect();
+            g_wifi_connecting = true;
             provisioning_notify_status("WIFI_RETRYING");
         } else {
+            g_wifi_connecting = false;
             provisioning_notify_status("WIFI_FAILED");
         }
     } else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
+        g_wifi_connecting = false;
         xEventGroupSetBits(g_wifi_event_group, BIT0);
         provisioning_notify_status("WIFI_CONNECTED");
     }
@@ -257,7 +263,15 @@ static esp_err_t provisioning_try_connect(void)
     strncpy((char *)wifi_config.sta.ssid, g_received_ssid, sizeof(wifi_config.sta.ssid) - 1);
     strncpy((char *)wifi_config.sta.password, g_received_pass, sizeof(wifi_config.sta.password) - 1);
 
+    if (g_wifi_initialized) {
+        esp_wifi_disconnect();
+        esp_wifi_stop();
+        ESP_RETURN_ON_ERROR(esp_wifi_set_mode(WIFI_MODE_STA), TAG, "esp_wifi_set_mode failed");
+        ESP_RETURN_ON_ERROR(esp_wifi_start(), TAG, "esp_wifi_start failed");
+    }
+
     g_wifi_retry = 0;
+    g_wifi_connecting = true;
 
     ESP_RETURN_ON_ERROR(esp_wifi_set_config(WIFI_IF_STA, &wifi_config), TAG, "esp_wifi_set_config failed");
     ESP_RETURN_ON_ERROR(esp_wifi_connect(), TAG, "esp_wifi_connect failed");
@@ -282,10 +296,17 @@ static int provisioning_gatt_access(uint16_t conn_handle,
                 return BLE_ATT_ERR_INVALID_ATTR_VALUE_LEN;
             }
 
+            if (g_wifi_connecting) {
+                provisioning_notify_status("WIFI_BUSY");
+                return BLE_ATT_ERR_UNLIKELY;
+            }
+
             memset(g_received_ssid, 0, sizeof(g_received_ssid));
             os_mbuf_copydata(ctxt->om, 0, len, g_received_ssid);
             g_received_ssid[len] = '\0';
             g_has_ssid = true;
+            g_pending_ssid = true;
+            g_pending_pass = false;
             provisioning_notify_status("SSID_RECEIVED");
         } else if (attr_handle == g_pass_val_handle) {
             if (len <= 0 || len > 64) {
@@ -293,17 +314,30 @@ static int provisioning_gatt_access(uint16_t conn_handle,
                 return BLE_ATT_ERR_INVALID_ATTR_VALUE_LEN;
             }
 
+            if (g_wifi_connecting) {
+                provisioning_notify_status("WIFI_BUSY");
+                return BLE_ATT_ERR_UNLIKELY;
+            }
+
+            if (!g_pending_ssid) {
+                provisioning_notify_status("SSID_REQUIRED");
+                return BLE_ATT_ERR_UNLIKELY;
+            }
+
             memset(g_received_pass, 0, sizeof(g_received_pass));
             os_mbuf_copydata(ctxt->om, 0, len, g_received_pass);
             g_received_pass[len] = '\0';
             g_has_pass = true;
+            g_pending_pass = true;
             provisioning_notify_status("PASS_RECEIVED");
         }
 
-        if (g_has_ssid && g_has_pass) {
+        if (g_pending_ssid && g_pending_pass) {
             esp_err_t err = wifi_store_credentials(g_received_ssid, g_received_pass);
             if (err != ESP_OK) {
                 provisioning_notify_status("NVS_SAVE_FAILED");
+                g_pending_ssid = false;
+                g_pending_pass = false;
                 return BLE_ATT_ERR_UNLIKELY;
             }
 
@@ -312,8 +346,14 @@ static int provisioning_gatt_access(uint16_t conn_handle,
             err = provisioning_try_connect();
             if (err != ESP_OK) {
                 provisioning_notify_status("WIFI_START_FAILED");
+                g_wifi_connecting = false;
+                g_pending_ssid = false;
+                g_pending_pass = false;
                 return BLE_ATT_ERR_UNLIKELY;
             }
+
+            g_pending_ssid = false;
+            g_pending_pass = false;
         }
 
         return 0;
@@ -599,10 +639,15 @@ esp_err_t wifi_ble_provisioning_init(void)
         strncpy(g_received_pass, saved_pass, sizeof(g_received_pass) - 1);
         g_has_ssid = true;
         g_has_pass = true;
+        g_pending_ssid = false;
+        g_pending_pass = false;
 
         ESP_LOGI(TAG, "Found saved credentials, connecting WiFi");
         ESP_RETURN_ON_ERROR(provisioning_try_connect(), TAG, "provisioning_try_connect failed");
     } else {
+        g_wifi_connecting = false;
+        g_pending_ssid = false;
+        g_pending_pass = false;
         ESP_LOGI(TAG, "No saved credentials, BLE-only waiting mode");
     }
 

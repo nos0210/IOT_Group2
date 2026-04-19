@@ -65,8 +65,7 @@ Xóa thư mục build trong project.
 
 Mở lại ESP-IDF PowerShell và chạy lại:
 idf.py build
-ư
-
+idf.py -p COM7 monitor
 ```
 python -m esptool --chip esp32 -p COM7 -b 115200 --before no-reset --after hard-reset write-flash 0x1000 build/bootloader/bootloader.bin 0x8000 build/partition_table/partition-table.bin 0x10000 build/ADC_DAC.bin
 
