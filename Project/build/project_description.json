@@ -1,7 +1,7 @@
 {
     "version":            "1.3",
     "project_name":       "ADC_DAC",
-    "project_version":    "f605a90-dirty",
+    "project_version":    "faf4c4c-dirty",
     "project_path":       "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project",
     "idf_path":           "D:/esp/v6.0/esp-idf",
     "build_dir":          "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build",
@@ -1730,12 +1730,12 @@
             "dir": "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/main",
             "type": "LIBRARY",
             "lib": "__idf_main",
-            "reqs": [ "esp_adc", "esp_driver_dac", "esp_driver_gpio", "esp_wifi", "esp_event", "nvs_flash", "bt" ],
+            "reqs": [ "esp_adc", "esp_driver_dac", "esp_driver_gpio", "esp_wifi", "esp_event", "nvs_flash", "bt", "lwip", "esp_netif" ],
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/esp-idf/main/libmain.a",
-            "sources": [ "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/main/main.c", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/modules/ADC_DAC.c", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/modules/wifi_ble_provision.c" ],
+            "sources": [ "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/main/main.c", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/modules/ADC_DAC.c", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/modules/wifi_ble_provision.c", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/modules/network_service.c" ],
             "include_dirs": [ ".", "../include" ]
         },
         "mbedtls": {
@@ -3843,7 +3843,7 @@
             "dir": "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/main",
             "source": "project_components",
             "lib": "__idf_main",
-            "reqs": [ "esp_adc", "esp_driver_dac", "esp_driver_gpio", "esp_wifi", "esp_event", "nvs_flash", "bt" ],
+            "reqs": [ "esp_adc", "esp_driver_dac", "esp_driver_gpio", "esp_wifi", "esp_event", "nvs_flash", "bt", "lwip", "esp_netif" ],
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],

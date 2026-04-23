@@ -5,6 +5,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "adc_dac.h"
+#include "network_service.h"
 #include "wifi_ble_provision.h"
 
 static const char *TAG = "MAIN";
@@ -69,6 +70,11 @@ void app_main(void)
     esp_err_t prov_err = wifi_ble_provisioning_init();
     if (prov_err != ESP_OK) {
         ESP_LOGE(TAG, "Provisioning init failed: %s", esp_err_to_name(prov_err));
+    }
+
+    esp_err_t net_err = network_service_init();
+    if (net_err != ESP_OK) {
+        ESP_LOGE(TAG, "Network service init failed: %s", esp_err_to_name(net_err));
     }
 
     // Tạo task để đọc ADC và xử lý
