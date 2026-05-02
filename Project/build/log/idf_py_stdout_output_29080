@@ -1,0 +1,298 @@
+Command: C:\Espressif\tools\python\v6.0\venv\Scripts\python.exe D:\esp\v6.0\esp-idf\tools/idf_monitor.py -p COM7 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project\build\ADC_DAC.elf C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.0\venv\Scripts\python.exe' 'D:\esp\v6.0\esp-idf\tools\idf.py' '-p' 'COM7'
+PI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entr�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.0 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May  2 2026 23:16:09[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (31) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=246b0h (149168) map[0m
+[0;32mI (139) esp_image: segment 1: paddr=000346d8 vaddr=3ffbdb60 size=05fd4h ( 24532) load[0m
+[0;32mI (149) esp_image: segment 2: paddr=0003a6b4 vaddr=40080000 size=05964h ( 22884) load[0m
+[0;32mI (158) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=bfd44h (785732) map[0m
+[0;32mI (439) esp_image: segment 4: paddr=000ffd6c vaddr=40085964 size=17178h ( 94584) load[0m
+[0;32mI (477) esp_image: segment 5: paddr=00116eec vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (492) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (492) boot: Disabling RNG early entropy source...[0m
+[0;32mI (503) cpu_start: Multicore app[0m
+[0;32mI (511) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (511) cpu_start: Pro cpu start user code[0m
+[0;32mI (511) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (513) app_init: Application information:[0m
+[0;32mI (517) app_init: Project name:     ADC_DAC[0m
+[0;32mI (521) app_init: App version:      ce780a1-dirty[0m
+[0;32mI (525) app_init: Compile time:     May  2 2026 23:15:17[0m
+[0;32mI (530) app_init: ELF file SHA256:  0fc9e7a6c...[0m
+[0;32mI (535) app_init: ESP-IDF:          v6.0[0m
+[0;32mI (538) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (542) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (546) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (550) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (556) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (561) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (566) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (572) heap_init: At 3FFCB480 len 00014B80 (82 KiB): DRAM[0m
+[0;32mI (577) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (582) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (588) heap_init: At 4009CADC len 00003524 (13 KiB): IRAM[0m
+[0;32mI (595) spi_flash: detected chip: generic[0m
+[0;32mI (597) spi_flash: flash io: dio[0m
+[0;33mW (600) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (613) coexist: coex firmware version: 093e3d2[0m
+[0;32mI (617) main_task: Started on CPU0[0m
+[0;32mI (627) main_task: Calling app_main()[0m
+[0;32mI (647) BTDM_INIT: BT controller compile version [045a658][0m
+[0;32mI (647) BTDM_INIT: Using main XTAL as clock source[0m
+[0;32mI (647) BTDM_INIT: Bluetooth MAC: d4:e9:f4:68:65:5e[0m
+[0;32mI (657) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (987) WIFI_BLE_PROV: No saved credentials, BLE-only waiting mode[0m
+[0;32mI (997) NET_SVC: Network service initialized[0m
+[0;32mI (1007) HTTP_CLIENT: HTTP client task started — waiting for Wi-Fi IP...[0m
+[0;32mI (1017) main_task: Returned from app_main()[0m
+[0;32mI (1027) WIFI_BLE_PROV: BLE addr: d4:e9:f4:68:65:5e[0m
+[0;32mI (1037) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (1037) NimBLE: disc_mode=2[0m
+[0;32mI (1037) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (1037) NimBLE: [0m
+
+[0;32mI (2017) HTTP_CLIENT: Waiting for IP... (1000/60000 ms)[0m
+[0;32mI (3017) HTTP_CLIENT: Waiting for IP... (2000/60000 ms)[0m
+[0;32mI (3457) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (4017) HTTP_CLIENT: Waiting for IP... (3000/60000 ms)[0m
+[0;32mI (5017) HTTP_CLIENT: Waiting for IP... (4000/60000 ms)[0m
+[0;32mI (5957) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (6017) HTTP_CLIENT: Waiting for IP... (5000/60000 ms)[0m
+[0;32mI (7017) HTTP_CLIENT: Waiting for IP... (6000/60000 ms)[0m
+[0;32mI (8017) HTTP_CLIENT: Waiting for IP... (7000/60000 ms)[0m
+[0;32mI (8457) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (9017) HTTP_CLIENT: Waiting for IP... (8000/60000 ms)[0m
+[0;32mI (10017) HTTP_CLIENT: Waiting for IP... (9000/60000 ms)[0m
+[0;32mI (10957) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (11017) HTTP_CLIENT: Waiting for IP... (10000/60000 ms)[0m
+[0;32mI (12017) HTTP_CLIENT: Waiting for IP... (11000/60000 ms)[0m
+[0;32mI (13017) HTTP_CLIENT: Waiting for IP... (12000/60000 ms)[0m
+[0;32mI (13457) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (14017) HTTP_CLIENT: Waiting for IP... (13000/60000 ms)[0m
+[0;32mI (15017) HTTP_CLIENT: Waiting for IP... (14000/60000 ms)[0m
+[0;32mI (15557) WIFI_BLE_PROV: Status: BLE_CONNECTED[0m
+[0;32mI (15557) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (15557) NimBLE: att_handle=20[0m
+
+[0;32mI (15957) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (16017) HTTP_CLIENT: Waiting for IP... (15000/60000 ms)[0m
+[0;32mI (17017) HTTP_CLIENT: Waiting for IP... (16000/60000 ms)[0m
+[0;32mI (17337) WIFI_BLE_PROV: Status: READY[0m
+[0;32mI (17337) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (17337) NimBLE: att_handle=20[0m
+
+[0;32mI (18017) HTTP_CLIENT: Waiting for IP... (17000/60000 ms)[0m
+[0;32mI (18457) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (19017) HTTP_CLIENT: Waiting for IP... (18000/60000 ms)[0m
+[0;32mI (20017) HTTP_CLIENT: Waiting for IP... (19000/60000 ms)[0m
+[0;32mI (20957) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (21017) HTTP_CLIENT: Waiting for IP... (20000/60000 ms)[0m
+[0;32mI (22017) HTTP_CLIENT: Waiting for IP... (21000/60000 ms)[0m
+[0;32mI (23017) HTTP_CLIENT: Waiting for IP... (22000/60000 ms)[0m
+[0;32mI (23457) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (24017) HTTP_CLIENT: Waiting for IP... (23000/60000 ms)[0m
+[0;32mI (25017) HTTP_CLIENT: Waiting for IP... (24000/60000 ms)[0m
+[0;32mI (25957) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (26017) HTTP_CLIENT: Waiting for IP... (25000/60000 ms)[0m
+[0;32mI (27017) HTTP_CLIENT: Waiting for IP... (26000/60000 ms)[0m
+[0;32mI (28017) HTTP_CLIENT: Waiting for IP... (27000/60000 ms)[0m
+[0;32mI (28127) WIFI_BLE_PROV: Status: SSID_RECEIVED[0m
+[0;32mI (28127) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (28127) NimBLE: att_handle=20[0m
+
+[0;32mI (28217) WIFI_BLE_PROV: Status: PASS_RECEIVED[0m
+[0;32mI (28217) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (28217) NimBLE: att_handle=20[0m
+
+[0;32mI (28227) WIFI_BLE_PROV: Status: NVS_SAVED[0m
+[0;32mI (28227) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (28227) NimBLE: att_handle=20[0m
+
+[0;32mI (28247) wifi:wifi driver task: 3ffbbcbc, prio:23, stack:6656, core=0[0m
+[0;32mI (28257) wifi:wifi firmware version: 44738b4[0m
+[0;32mI (28257) wifi:wifi certification version: v7.0[0m
+[0;32mI (28257) wifi:config NVS flash: enabled[0m
+[0;32mI (28257) wifi:config nano formatting: disabled[0m
+[0;32mI (28267) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (28267) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (28277) wifi:Init management short buffer num: 32[0m
+[0;32mI (28277) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (28287) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (28287) wifi:Init static rx buffer num: 10[0m
+[0;32mI (28287) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (28297) wifi_init: rx ba win: 6[0m
+[0;32mI (28297) wifi_init: accept mbox: 6[0m
+[0;32mI (28297) wifi_init: tcpip mbox: 32[0m
+[0;32mI (28307) wifi_init: udp mbox: 6[0m
+[0;32mI (28307) wifi_init: tcp mbox: 6[0m
+[0;32mI (28307) wifi_init: tcp tx win: 5760[0m
+[0;32mI (28317) wifi_init: tcp rx win: 5760[0m
+[0;32mI (28317) wifi_init: tcp mss: 1440[0m
+[0;32mI (28317) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (28327) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (28337) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (28337) wifi:enable tsf[0m
+[0;32mI (28337) wifi:flush txq[0m
+[0;32mI (28337) wifi:stop sw txq[0m
+[0;32mI (28337) wifi:lmac stop hw txq[0m
+[0;32mI (28347) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (28347) wifi:enable tsf[0m
+[0;33mW (28357) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (28357) WIFI_BLE_PROV: Status: WIFI_CONNECTING[0m
+[0;32mI (28367) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (28367) NimBLE: att_handle=20[0m
+
+[0;32mI (28377) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (28377) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (28407) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (28447) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (28507) wifi:connected with TuanNga, aid = 2, channel 6, BW20, bssid = 00:c8:96:aa:40:d9[0m
+[0;32mI (28507) wifi:security: WPA2-PSK, phy: bgn, rssi: -61[0m
+[0;32mI (28507) wifi:pm start, type: 1[0m
+
+[0;32mI (28517) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (28537) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (28547) wifi:<ba-add>idx:0 (ifx:0, 00:c8:96:aa:40:d9), tid:7, ssn:0, winSize:64[0m
+[0;32mI (28587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (29017) HTTP_CLIENT: Waiting for IP... (28000/60000 ms)[0m
+[0;32mI (29657) NET_SVC: Wi-Fi up -> network workers allowed[0m
+[0;32mI (29657) esp_netif_handlers: sta ip: 192.168.100.3, mask: 255.255.255.0, gw: 192.168.100.1[0m
+[0;32mI (29657) WIFI_BLE_PROV: Status: WIFI_CONNECTED[0m
+[0;32mI (29657) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (29667) NimBLE: att_handle=20[0m
+
+[0;32mI (29797) NET_SVC: Network workers started[0m
+[0;32mI (29797) NET_SVC: UDP ready on port 5005[0m
+[0;32mI (29797) NET_SVC: TCP server listening on port 5006[0m
+[0;32mI (30017) HTTP_CLIENT: Waiting for IP... (29000/60000 ms)[0m
+[0;32mI (31017) HTTP_CLIENT: Waiting for IP... (30000/60000 ms)[0m
+[0;32mI (31087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (32017) HTTP_CLIENT: Waiting for IP... (31000/60000 ms)[0m
+[0;32mI (33017) HTTP_CLIENT: Waiting for IP... (32000/60000 ms)[0m
+[0;32mI (33587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (33767) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:6, ssn:2, winSize:64[0m
+[0;32mI (34017) HTTP_CLIENT: Waiting for IP... (33000/60000 ms)[0m
+[0;32mI (35017) HTTP_CLIENT: Waiting for IP... (34000/60000 ms)[0m
+[0;32mI (36017) HTTP_CLIENT: Waiting for IP... (35000/60000 ms)[0m
+[0;32mI (36087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (37017) HTTP_CLIENT: Waiting for IP... (36000/60000 ms)[0m
+[0;32mI (38017) HTTP_CLIENT: Waiting for IP... (37000/60000 ms)[0m
+[0;32mI (38587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (39017) HTTP_CLIENT: Waiting for IP... (38000/60000 ms)[0m
+[0;32mI (40017) HTTP_CLIENT: Waiting for IP... (39000/60000 ms)[0m
+[0;32mI (41017) HTTP_CLIENT: Waiting for IP... (40000/60000 ms)[0m
+[0;32mI (41087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (42017) HTTP_CLIENT: Waiting for IP... (41000/60000 ms)[0m
+[0;32mI (43017) HTTP_CLIENT: Waiting for IP... (42000/60000 ms)[0m
+[0;32mI (43587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (44017) HTTP_CLIENT: Waiting for IP... (43000/60000 ms)[0m
+[0;32mI (45017) HTTP_CLIENT: Waiting for IP... (44000/60000 ms)[0m
+[0;32mI (46017) HTTP_CLIENT: Waiting for IP... (45000/60000 ms)[0m
+[0;32mI (46087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (47017) HTTP_CLIENT: Waiting for IP... (46000/60000 ms)[0m
+[0;32mI (48017) HTTP_CLIENT: Waiting for IP... (47000/60000 ms)[0m
+[0;32mI (48587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (49017) HTTP_CLIENT: Waiting for IP... (48000/60000 ms)[0m
+[0;32mI (50017) HTTP_CLIENT: Waiting for IP... (49000/60000 ms)[0m
+[0;32mI (51017) HTTP_CLIENT: Waiting for IP... (50000/60000 ms)[0m
+[0;32mI (51087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (52017) HTTP_CLIENT: Waiting for IP... (51000/60000 ms)[0m
+[0;32mI (53017) HTTP_CLIENT: Waiting for IP... (52000/60000 ms)[0m
+[0;32mI (53587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (54017) HTTP_CLIENT: Waiting for IP... (53000/60000 ms)[0m
+[0;32mI (55017) HTTP_CLIENT: Waiting for IP... (54000/60000 ms)[0m
+[0;32mI (56017) HTTP_CLIENT: Waiting for IP... (55000/60000 ms)[0m
+[0;32mI (56087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (57017) HTTP_CLIENT: Waiting for IP... (56000/60000 ms)[0m
+[0;32mI (58017) HTTP_CLIENT: Waiting for IP... (57000/60000 ms)[0m
+[0;32mI (58587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (59017) HTTP_CLIENT: Waiting for IP... (58000/60000 ms)[0m
+[0;32mI (60017) HTTP_CLIENT: Waiting for IP... (59000/60000 ms)[0m
+[0;32mI (61017) HTTP_CLIENT: Waiting for IP... (60000/60000 ms)[0m
+[1;31mE (61017) HTTP_CLIENT: Timed out waiting for IP — task exiting[0m
+[0;32mI (61087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (63587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (66087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (68587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (69717) wifi:<ba-del>idx:1, tid:6[0m
+[0;32mI (69717) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:0, ssn:0, winSize:64[0m
+[0;32mI (71087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (72607) NET_SVC: TCP client connected[0m
+[0;32mI (73587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (76087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (78587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (81087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (83587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (86087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (88587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (91087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (93587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (96087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (98587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (101087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (103587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (106087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (108587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (111087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (113587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (116087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (118587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (121087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (123587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (126087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (128587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (131087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (133587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (136087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (138587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (141087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (143587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (146087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (148587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (151087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (153587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (156087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (158587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (161087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (163587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (166087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (168587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (171087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (173587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (176087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (178587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (181087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (183587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (186087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (188587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (191087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (193587) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (196087) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m

@@ -1,0 +1,728 @@
+Command: C:\Espressif\tools\python\v6.0\venv\Scripts\python.exe D:\esp\v6.0\esp-idf\tools/idf_monitor.py -p COM7 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project\build\ADC_DAC.elf C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.0\venv\Scripts\python.exe' 'D:\esp\v6.0\esp-idf\tools\idf.py' '-p' 'COM7'
+PI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entr�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.0 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May  2 2026 23:16:09[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (31) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=246b0h (149168) map[0m
+[0;32mI (139) esp_image: segment 1: paddr=000346d8 vaddr=3ffbdb60 size=05fd4h ( 24532) load[0m
+[0;32mI (149) esp_image: segment 2: paddr=0003a6b4 vaddr=40080000 size=05964h ( 22884) load[0m
+[0;32mI (158) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=bfd40h (785728) map[0m
+[0;32mI (439) esp_image: segment 4: paddr=000ffd68 vaddr=40085964 size=17178h ( 94584) load[0m
+[0;32mI (477) esp_image: segment 5: paddr=00116ee8 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (492) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (492) boot: Disabling RNG early entropy source...[0m
+[0;32mI (503) cpu_start: Multicore app[0m
+[0;32mI (511) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (511) cpu_start: Pro cpu start user code[0m
+[0;32mI (511) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (513) app_init: Application information:[0m
+[0;32mI (517) app_init: Project name:     ADC_DAC[0m
+[0;32mI (521) app_init: App version:      ce780a1-dirty[0m
+[0;32mI (525) app_init: Compile time:     May  2 2026 23:15:17[0m
+[0;32mI (530) app_init: ELF file SHA256:  073220e1d...[0m
+[0;32mI (535) app_init: ESP-IDF:          v6.0[0m
+[0;32mI (538) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (542) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (546) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (550) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (556) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (561) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (566) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (572) heap_init: At 3FFCB480 len 00014B80 (82 KiB): DRAM[0m
+[0;32mI (577) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (582) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (588) heap_init: At 4009CADC len 00003524 (13 KiB): IRAM[0m
+[0;32mI (595) spi_flash: detected chip: generic[0m
+[0;32mI (597) spi_flash: flash io: dio[0m
+[0;33mW (600) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (613) coexist: coex firmware version: 093e3d2[0m
+[0;32mI (617) main_task: Started on CPU0[0m
+[0;32mI (627) main_task: Calling app_main()[0m
+[0;32mI (647) BTDM_INIT: BT controller compile version [045a658][0m
+[0;32mI (647) BTDM_INIT: Using main XTAL as clock source[0m
+[0;32mI (647) BTDM_INIT: Bluetooth MAC: d4:e9:f4:68:65:5e[0m
+[0;32mI (657) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (737) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1067) WIFI_BLE_PROV: Found saved credentials, connecting WiFi[0m
+[0;32mI (1097) wifi:wifi driver task: 3ffd9494, prio:23, stack:6656, core=0[0m
+[0;32mI (1117) wifi:wifi firmware version: 44738b4[0m
+[0;32mI (1117) wifi:wifi certification version: v7.0[0m
+[0;32mI (1117) wifi:config NVS flash: enabled[0m
+[0;32mI (1117) wifi:config nano formatting: disabled[0m
+[0;32mI (1127) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1127) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1127) wifi:Init management short buffer num: 32[0m
+[0;32mI (1137) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1137) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1147) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1147) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1157) WIFI_BLE_PROV: BLE addr: d4:e9:f4:68:65:5e[0m
+[0;32mI (1157) wifi_init: rx ba win: 6[0m
+[0;32mI (1157) wifi_init: accept mbox: 6[0m
+[0;32mI (1167) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (1167) NimBLE: disc_mode=2[0m
+[0;32mI (1167) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (1177) NimBLE: [0m
+
+[0;32mI (1177) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1187) wifi_init: udp mbox: 6[0m
+[0;32mI (1187) wifi_init: tcp mbox: 6[0m
+[0;32mI (1187) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1197) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1197) wifi_init: tcp mss: 1440[0m
+[0;32mI (1197) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1207) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1217) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (1217) wifi:enable tsf[0m
+[0;32mI (1217) wifi:flush txq[0m
+[0;32mI (1217) wifi:stop sw txq[0m
+[0;32mI (1217) wifi:lmac stop hw txq[0m
+[0;32mI (1227) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (1227) wifi:enable tsf[0m
+[0;33mW (1227) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1237) WIFI_BLE_PROV: Status: WIFI_CONNECTING[0m
+[0;33mW (1237) wifi:Haven't to connect to a suitable AP now![0m
+[0;32mI (1247) NET_SVC: Network service initialized[0m
+[0;32mI (1257) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1257) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1267) HTTP_CLIENT: HTTP client task started — waiting for Wi-Fi IP...[0m
+[0;32mI (1267) main_task: Returned from app_main()[0m
+[0;32mI (1307) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1337) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1387) wifi:connected with TuanNga, aid = 2, channel 6, BW20, bssid = 00:c8:96:aa:40:d9[0m
+[0;32mI (1387) wifi:security: WPA2-PSK, phy: bgn, rssi: -53[0m
+[0;32mI (1397) wifi:pm start, type: 1[0m
+
+[0;32mI (1397) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1427) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1427) wifi:<ba-add>idx:0 (ifx:0, 00:c8:96:aa:40:d9), tid:7, ssn:0, winSize:64[0m
+[0;32mI (2267) HTTP_CLIENT: Waiting for IP... (1000/60000 ms)[0m
+[0;32mI (2527) esp_netif_handlers: sta ip: 192.168.100.3, mask: 255.255.255.0, gw: 192.168.100.1[0m
+[0;32mI (2527) WIFI_BLE_PROV: Status: WIFI_CONNECTED[0m
+[0;32mI (2527) NET_SVC: Wi-Fi up -> network workers allowed[0m
+[0;32mI (2747) NET_SVC: Network workers started[0m
+[0;32mI (2747) NET_SVC: UDP ready on port 5005[0m
+[0;32mI (2747) NET_SVC: TCP server listening on port 5006[0m
+[0;32mI (3267) HTTP_CLIENT: Waiting for IP... (2000/60000 ms)[0m
+[0;32mI (3267) HTTP_CLIENT: Got IP: 192.168.100.3[0m
+[0;32mI (3267) HTTP_CLIENT: DNS lookup: httpforever.com (attempt 1/5) ...[0m
+[0;32mI (3287) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:6, ssn:2, winSize:64[0m
+[0;32mI (3297) wifi:<ba-del>idx:1, tid:6[0m
+[0;32mI (3307) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:0, ssn:0, winSize:64[0m
+[0;32mI (3307) HTTP_CLIENT: Resolved httpforever.com -> 146.190.62.39[0m
+[0;32mI (3317) HTTP_CLIENT: Connecting to httpforever.com:80 ...[0m
+[0;32mI (3587) HTTP_CLIENT: TCP connected to httpforever.com:80 (fd=56)[0m
+[0;32mI (3587) HTTP_CLIENT: Request headers (73 bytes):[0m
+GET / HTTP/1.1
+User-Agent: ESP32-coreHTTP/1.0
+Host: httpforever.com
+
+
+[0;32mI (3597) HTTP_CLIENT: Sending GET / HTTP/1.1 to httpforever.com ...[0m
+[0;32mI (3717) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (4097) HTTP_CLIENT: ========== HTTP Response ===========[0m
+[0;32mI (4097) HTTP_CLIENT: Status Code : 200[0m
+[0;32mI (4097) HTTP_CLIENT: Headers Len : 803 B[0m
+[0;32mI (4097) HTTP_CLIENT: Body Len    : 5124 B[0m
+[0;32mI (4107) HTTP_CLIENT: --- Response Headers ---[0m
+[0;32mI (4107) HTTP_CLIENT: Server: nginx/1.[0m
+[0;32mI (4117) HTTP_CLIENT: 18.0 (Ubuntu)[0m
+D
+[0;32mI (4117) HTTP_CLIENT: ate: Sat, 02 May[0m
+[0;32mI (4117) HTTP_CLIENT:  2026 16:33:28 G[0m
+[0;32mI (4127) HTTP_CLIENT: MT[0m
+Content-Type
+[0;32mI (4127) HTTP_CLIENT: : text/html[0m
+Con
+[0;32mI (4127) HTTP_CLIENT: tent-Length: 512[0m
+[0;32mI (4137) HTTP_CLIENT: 4[0m
+Last-Modified
+[0;32mI (4137) HTTP_CLIENT: : Wed, 22 Mar 20[0m
+[0;32mI (4137) HTTP_CLIENT: 23 14:54:48 GMT[0m
+[0;32mI (4147) HTTP_CLIENT: [0m
+Connection: kee
+[0;32mI (4147) HTTP_CLIENT: p-alive[0m
+ETag: "
+[0;32mI (4147) HTTP_CLIENT: 641b16b8-1404"[0m
+
+[0;32mI (4157) HTTP_CLIENT: Referrer-Policy:[0m
+[0;32mI (4157) HTTP_CLIENT:  strict-origin-w[0m
+[0;32mI (4167) HTTP_CLIENT: hen-cross-origin[0m
+[0;32mI (4167) HTTP_CLIENT: [0m
+X-Content-Type
+[0;32mI (4167) HTTP_CLIENT: -Options: nosnif[0m
+[0;32mI (4177) HTTP_CLIENT: f[0m
+Feature-Polic
+[0;32mI (4177) HTTP_CLIENT: y: accelerometer[0m
+[0;32mI (4177) HTTP_CLIENT:  'none'; camera [0m
+[0;32mI (4187) HTTP_CLIENT: 'none'; geolocat[0m
+[0;32mI (4187) HTTP_CLIENT: ion 'none'; gyro[0m
+[0;32mI (4187) HTTP_CLIENT: scope 'none'; ma[0m
+[0;32mI (4197) HTTP_CLIENT: gnetometer 'none[0m
+[0;32mI (4197) HTTP_CLIENT: '; microphone 'n[0m
+[0;32mI (4197) HTTP_CLIENT: one'; payment 'n[0m
+[0;32mI (4207) HTTP_CLIENT: one'; usb 'none'[0m
+[0;32mI (4207) HTTP_CLIENT: [0m
+Content-Securi
+[0;32mI (4207) HTTP_CLIENT: ty-Policy: defau[0m
+[0;32mI (4217) HTTP_CLIENT: lt-src 'self'; s[0m
+[0;32mI (4217) HTTP_CLIENT: cript-src cdnjs.[0m
+[0;32mI (4217) HTTP_CLIENT: cloudflare.com '[0m
+[0;32mI (4227) HTTP_CLIENT: self' 'report-sh[0m
+[0;32mI (4227) HTTP_CLIENT: a256'; style-src[0m
+[0;32mI (4227) HTTP_CLIENT:  cdnjs.cloudflar[0m
+[0;32mI (4237) HTTP_CLIENT: e.com 'self' fon[0m
+[0;32mI (4237) HTTP_CLIENT: ts.googleapis.co[0m
+[0;32mI (4247) HTTP_CLIENT: m 'unsafe-inline[0m
+[0;32mI (4247) HTTP_CLIENT: '; font-src font[0m
+[0;32mI (4247) HTTP_CLIENT: s.googleapis.com[0m
+[0;32mI (4257) HTTP_CLIENT:  fonts.gstatic.c[0m
+[0;32mI (4257) HTTP_CLIENT: om cdnjs.cloudfl[0m
+[0;32mI (4257) HTTP_CLIENT: are.com; frame-a[0m
+[0;32mI (4267) HTTP_CLIENT: ncestors 'none';[0m
+[0;32mI (4267) HTTP_CLIENT:  report-uri http[0m
+[0;32mI (4267) HTTP_CLIENT: s://scotthelme.r[0m
+[0;32mI (4277) HTTP_CLIENT: eport-uri.com/r/[0m
+[0;32mI (4277) HTTP_CLIENT: d/csp/enforce[0m
+A
+[0;32mI (4277) HTTP_CLIENT: ccept-Ranges: by[0m
+[0;32mI (4287) HTTP_CLIENT: tes[0m
+[0;32mI (4287) HTTP_CLIENT: --- Response Body ---[0m
+[0;32mI (4287) HTTP_CLIENT: <!DOCTYPE HTML>[0m
+[0;32mI (4297) HTTP_CLIENT: [0m
+<html>
+	<head>
+[0;32mI (4297) HTTP_CLIENT: [0m
+		<title>HTTP 
+[0;32mI (4297) HTTP_CLIENT: Forever</title>[0m
+[0;32mI (4307) HTTP_CLIENT: [0m
+		<meta http-eq
+[0;32mI (4307) HTTP_CLIENT: uiv="content-typ[0m
+[0;32mI (4307) HTTP_CLIENT: e" content="text[0m
+[0;32mI (4317) HTTP_CLIENT: /html; charset=u[0m
+[0;32mI (4317) HTTP_CLIENT: tf-8" />[0m
+		<met
+[0;32mI (4317) HTTP_CLIENT: a name="descript[0m
+[0;32mI (4327) HTTP_CLIENT: ion" content="A [0m
+[0;32mI (4327) HTTP_CLIENT: site that will a[0m
+[0;32mI (4337) HTTP_CLIENT: lways be availab[0m
+[0;32mI (4337) HTTP_CLIENT: le over HTTP!" /[0m
+[0;32mI (4337) HTTP_CLIENT: >[0m
+		<meta name=
+[0;32mI (4347) HTTP_CLIENT: "keywords" conte[0m
+[0;32mI (4347) HTTP_CLIENT: nt="HTTP WiFi Ca[0m
+[0;32mI (4347) HTTP_CLIENT: ptive Portal" />[0m
+[0;32mI (4357) HTTP_CLIENT: [0m
+		<!--[if lte 
+[0;32mI (4357) HTTP_CLIENT: IE 8]><script sr[0m
+[0;32mI (4357) HTTP_CLIENT: c="css/ie/html5s[0m
+[0;32mI (4367) HTTP_CLIENT: hiv.js"></script[0m
+[0;32mI (4367) HTTP_CLIENT: ><![endif]-->[0m
+	
+[0;32mI (4367) HTTP_CLIENT: 	<script src="ht[0m
+[0;32mI (4377) HTTP_CLIENT: tps://cdnjs.clou[0m
+[0;32mI (4377) HTTP_CLIENT: dflare.com/ajax/[0m
+[0;32mI (4377) HTTP_CLIENT: libs/jquery/3.3.[0m
+[0;32mI (4387) HTTP_CLIENT: 1/jquery.min.js"[0m
+[0;32mI (4387) HTTP_CLIENT:  integrity="sha2[0m
+[0;32mI (4387) HTTP_CLIENT: 56-FgpCb/KJQlLNf[0m
+[0;32mI (4397) HTTP_CLIENT: Ou91ta32o/NMZxlt[0m
+[0;32mI (4397) HTTP_CLIENT: wRo8QtmkMRdAu8="[0m
+[0;32mI (4407) HTTP_CLIENT:  crossorigin="an[0m
+[0;32mI (4407) HTTP_CLIENT: onymous"></scrip[0m
+[0;32mI (4407) HTTP_CLIENT: t>[0m
+		<script sr
+[0;32mI (4417) HTTP_CLIENT: c="https://cdnjs[0m
+[0;32mI (4417) HTTP_CLIENT: .cloudflare.com/[0m
+[0;32mI (4417) HTTP_CLIENT: ajax/libs/skel/3[0m
+[0;32mI (4427) HTTP_CLIENT: .0.1/skel.min.js[0m
+[0;32mI (4427) HTTP_CLIENT: " integrity="sha[0m
+[0;32mI (4427) HTTP_CLIENT: 256-3e+NvOq+D/ye[0m
+[0;32mI (4437) HTTP_CLIENT: Jy1qrWpYkEUr6SlO[0m
+[0;32mI (4437) HTTP_CLIENT: CL5mHpc2nZfX74E=[0m
+[0;32mI (4437) HTTP_CLIENT: " crossorigin="a[0m
+[0;32mI (4447) HTTP_CLIENT: nonymous"></scri[0m
+[0;32mI (4447) HTTP_CLIENT: pt>[0m
+		<script s
+[0;32mI (4447) HTTP_CLIENT: rc="https://cdnj[0m
+[0;32mI (4457) HTTP_CLIENT: s.cloudflare.com[0m
+[0;32mI (4457) HTTP_CLIENT: /ajax/libs/skel-[0m
+[0;32mI (4457) HTP_CLIENT: layers/2.2.1/ske[0m
+[0;32mI (4467) HTTP_CLIENT: l.min.js" integr[0m
+[0;32mI (4467) HTTP_CLIENT: ity="sha256-6xgf[0m
+[0;32mI (4467) HTTP_CLIENT: /CipbscdlAaUOAAl[0m
+[0;32mI (4477) HTTP_CLIENT: WVmpfPy9V5cQvZej[0m
+[0;32mI (4477) HTTP_CLIENT: xXSEfcw=" crosso[0m
+[0;32mI (4487) HTTP_CLIENT: rigin="anonymous[0m
+[0;32mI (4487) HTTP_CLIENT: "></script>[0m
+		<
+[0;32mI (4487) HTTP_CLIENT: script src="js/i[0m
+[0;32mI (4497) HTTP_CLIENT: nit.min.js"></sc[0m
+[0;32mI (4497) HTTP_CLIENT: ript>[0m
+		<noscri
+[0;32mI (4497) HTTP_CLIENT: pt>[0m
+			<link re
+[0;32mI (4507) HTTP_CLIENT: l="stylesheet" h[0m
+[0;32mI (4507) HTTP_CLIENT: ref="https://cdn[0m
+[0;32mI (4507) HTTP_CLIENT: js.cloudflare.co[0m
+[0;32mI (4517) HTTP_CLIENT: m/ajax/libs/skel[0m
+[0;32mI (4517) HTTP_CLIENT: -layers/2.2.1/sk[0m
+[0;32mI (4517) HTTP_CLIENT: el.min.css" inte[0m
+[0;32mI (4527) HTTP_CLIENT: grity="sha256-Ho[0m
+[0;32mI (4527) HTTP_CLIENT: TbojxjAGIeiQMgAD[0m
+[0;32mI (4527) HTTP_CLIENT: 2nqi6adFwcOUwoiP[0m
+[0;32mI (4537) HTTP_CLIENT: nr7mC7qBs=" cros[0m
+[0;32mI (4537) HTTP_CLIENT: sorigin="anonymo[0m
+[0;32mI (4537) HTTP_CLIENT: us" />[0m
+			<link
+[0;32mI (4547) HTTP_CLIENT:  rel="stylesheet[0m
+[0;32mI (4547) HTTP_CLIENT: " href="css/styl[0m
+[0;32mI (4547) HTTP_CLIENT: e.min.css" />[0m
+	
+[0;32mI (4557) HTTP_CLIENT: 		<link rel="sty[0m
+[0;32mI (4557) HTTP_CLIENT: lesheet" href="c[0m
+[0;32mI (4567) HTTP_CLIENT: ss/style-wide.mi[0m
+[0;32mI (4567) HTTP_CLIENT: n.css" />[0m
+		</n
+[0;32mI (4567) HTTP_CLIENT: oscript>[0m
+		<!--
+[0;32mI (4577) HTTP_CLIENT: [if lte IE 8]><l[0m
+[0;32mI (4577) HTTP_CLIENT: ink rel="stylesh[0m
+[0;32mI (4577) HTTP_CLIENT: eet" href="css/i[0m
+[0;32mI (4587) HTTP_CLIENT: e/v8.min.css" />[0m
+[0;32mI (4587) HTTP_CLIENT: <![endif]-->[0m
+	<
+[0;32mI (4587) HTTP_CLIENT: /head>[0m
+	<body c
+[0;32mI (4597) HTTP_CLIENT: lass="landing">[0m
+[0;32mI (4597) HTTP_CLIENT: [0m
+			<section id=
+[0;32mI (4597) HTTP_CLIENT: "banner">[0m
+				<
+[0;32mI (4607) HTTP_CLIENT: h2>HTTP FOREVER<[0m
+[0;32mI (4607) HTTP_CLIENT: /h2>[0m
+				<p>A r
+[0;32mI (4607) HTTP_CLIENT: eliably insecure[0m
+[0;32mI (4617) HTTP_CLIENT:  connection</p>[0m
+[0;32mI (4617) HTTP_CLIENT: [0m
+			</section>
+
+[0;32mI (4627) HTTP_CLIENT: 			<div class="w[0m
+[0;32mI (4627) HTTP_CLIENT: rapper style1">[0m
+[0;32mI (4627) HTTP_CLIENT: [0m
+				<section cl
+[0;32mI (4637) HTTP_CLIENT: ass="container">[0m
+[0;32mI (4637) HTTP_CLIENT: [0m
+					<header c
+[0;32mI (4637) HTTP_CLIENT: lass="major">[0m
+	
+[0;32mI (4647) HTTP_CLIENT: 					<h2>Why doe[0m
+[0;32mI (4647) HTTP_CLIENT: s this site exis[0m
+[0;32mI (4647) HTTP_CLIENT: t?</h2>[0m
+						<
+[0;32mI (4657) HTTP_CLIENT: p>This domain st[0m
+[0;32mI (4657) HTTP_CLIENT: arted out as my [0m
+[0;32mI (4657) HTTP_CLIENT: personal 'captiv[0m
+[0;32mI (4667) HTTP_CLIENT: e portal buster'[0m
+[0;32mI (4667) HTTP_CLIENT:  but I wanted to[0m
+[0;32mI (4667) HTTP_CLIENT:  publicise it fo[0m
+[0;32mI (4677) HTTP_CLIENT: r anyone to use.[0m
+[0;32mI (4677) HTTP_CLIENT:  If you're on a [0m
+[0;32mI (4677) HTTP_CLIENT: train, in a hote[0m
+[0;32mI (4687) HTTP_CLIENT: l or bar, on a f[0m
+[0;32mI (4687) HTTP_CLIENT: light or anywher[0m
+[0;32mI (4687) HTTP_CLIENT: e that you have [0m
+[0;32mI (4697) HTTP_CLIENT: to login for WiF[0m
+[0;32mI (4697) HTTP_CLIENT: i, this site cou[0m
+[0;32mI (4707) HTTP_CLIENT: ld help you!</p>[0m
+[0;32mI (4707) HTTP_CLIENT: [0m
+					</header>
+[0;32mI (4707) HTTP_CLIENT: [0m
+				</section>
+[0;32mI (4717) HTTP_CLIENT: [0m
+			</div>
+			
+[0;32mI (4717) HTTP_CLIENT: <div class="wrap[0m
+[0;32mI (4717) HTTP_CLIENT: per style2">[0m
+		
+[0;32mI (4727) HTTP_CLIENT: 		<section class[0m
+[0;32mI (4727) HTTP_CLIENT: ="container">[0m
+	
+[0;32mI (4727) HTTP_CLIENT: 				<header clas[0m
+[0;32mI (4737) HTTP_CLIENT: s="major">[0m
+				
+[0;32mI (4737) HTTP_CLIENT: 		<h2>How does i[0m
+[0;32mI (4737) HTTP_CLIENT: t work?</h2>[0m
+		
+[0;32mI (4747) HTTP_CLIENT: 				<p>If you co[0m
+[0;32mI (4747) HTTP_CLIENT: nnect to a WiFi [0m
+[0;32mI (4747) HTTP_CLIENT: hotspot whilst o[0m
+[0;32mI (4757) HTTP_CLIENT: ut and about, so[0m
+[0;32mI (4757) HTTP_CLIENT: metimes you have[0m
+[0;32mI (4767) HTTP_CLIENT:  to login or acc[0m
+[0;32mI (4767) HTTP_CLIENT: ept Terms and Co[0m
+[0;32mI (4767) HTTP_CLIENT: nditions. To do [0m
+[0;32mI (4777) HTTP_CLIENT: that the 'captiv[0m
+[0;32mI (4777) HTTP_CLIENT: e portal' has to[0m
+[0;32mI (4777) HTTP_CLIENT:  intercept one o[0m
+[0;32mI (4787) HTTP_CLIENT: f your requests [0m
+[0;32mI (4787) HTTP_CLIENT: and inject the l[0m
+[0;32mI (4787) HTTP_CLIENT: ogin page for th[0m
+[0;32mI (4797) HTTP_CLIENT: e WiFi. This usu[0m
+[0;32mI (4797) HTTP_CLIENT: ally results in [0m
+[0;32mI (4797) HTTP_CLIENT: a big, red warni[0m
+[0;32mI (4807) HTTP_CLIENT: ng from your bro[0m
+[0;32mI (4807) HTTP_CLIENT: wser which you s[0m
+[0;32mI (4807) HTTP_CLIENT: hould <b>never</[0m
+[0;32mI (4817) HTTP_CLIENT: b> click through[0m
+[0;32mI (4817) HTTP_CLIENT: ! Instead, open [0m
+[0;32mI (4817) HTTP_CLIENT: a new tab in you[0m
+[0;32mI (4827) HTTP_CLIENT: r browser and co[0m
+[0;32mI (4827) HTTP_CLIENT: me here!</b></p>[0m
+[0;32mI (4827) HTTP_CLIENT: [0m
+					</header>
+[0;32mI (4837) HTTP_CLIENT: [0m
+				</section>
+[0;32mI (4837) HTTP_CLIENT: [0m
+			</div>
+			
+[0;32mI (4847) HTTP_CLIENT: <div class="wrap[0m
+[0;32mI (4847) HTTP_CLIENT: per style3">[0m
+		
+[0;32mI (4847) HTTP_CLIENT: 		<section class[0m
+[0;32mI (4857) HTTP_CLIENT: ="container">[0m
+	
+[0;32mI (4857) HTTP_CLIENT: 				<header clas[0m
+[0;32mI (4857) HTTP_CLIENT: s="major">[0m
+				
+[0;32mI (4867) HTTP_CLIENT: 		<h2>Can I use [0m
+[0;32mI (4867) HTTP_CLIENT: it?</h2>[0m
+						
+[0;32mI (4867) HTTP_CLIENT: <p>Yes! Anyone i[0m
+[0;32mI (4877) HTTP_CLIENT: s free to use or[0m
+[0;32mI (4877) HTTP_CLIENT:  link to this si[0m
+[0;32mI (4877) HTTP_CLIENT: te, just make su[0m
+[0;32mI (4887) HTTP_CLIENT: re you're always[0m
+[0;32mI (4887) HTTP_CLIENT:  on the HTTP ver[0m
+[0;32mI (4887) HTTP_CLIENT: sion: <a href="h[0m
+[0;32mI (4897) HTTP_CLIENT: ttp://httpforeve[0m
+[0;32mI (4897) HTTP_CLIENT: r.com">http://ht[0m
+[0;32mI (4897) HTTP_CLIENT: tpforever.com</a[0m
+[0;32mI (4907) HTTP_CLIENT: ></p>[0m
+					</he
+[0;32mI (4907) HTTP_CLIENT: ader>[0m
+				</sec
+[0;32mI (4917) HTTP_CLIENT: tion>[0m
+			</div>
+[0;32mI (4917) HTTP_CLIENT: [0m
+			<div class=
+[0;32mI (4917) HTTP_CLIENT: "wrapper style1"[0m
+[0;32mI (4927) HTTP_CLIENT: >[0m
+				<section 
+[0;32mI (4927) HTTP_CLIENT: class="container[0m
+[0;32mI (4927) HTTP_CLIENT:  75%">[0m
+					<he
+[0;32mI (4937) HTTP_CLIENT: ader class="majo[0m
+[0;32mI (4937) HTTP_CLIENT: r">[0m
+						<h2>W
+[0;32mI (4937) HTTP_CLIENT: ho built this?</[0m
+[0;32mI (4947) HTTP_CLIENT: h2>[0m
+						<p>Th
+[0;32mI (4947) HTTP_CLIENT: is site was buil[0m
+[0;32mI (4947) HTTP_CLIENT: t by Scott Helme[0m
+[0;32mI (4957) HTTP_CLIENT: , a security res[0m
+[0;32mI (4957) HTTP_CLIENT: earcher trying t[0m
+[0;32mI (4957) HTTP_CLIENT: o help make the [0m
+[0;32mI (4967) HTTP_CLIENT: web more secure.[0m
+[0;32mI (4967) HTTP_CLIENT: </p>[0m
+					</hea
+[0;32mI (4967) HTTP_CLIENT: der>[0m
+					<div 
+[0;32mI (4977) HTTP_CLIENT: id="contact" cla[0m
+[0;32mI (4977) HTTP_CLIENT: ss="box">[0m
+					
+[0;32mI (4987) HTTP_CLIENT: 	<div class="row[0m
+[0;32mI (4987) HTTP_CLIENT:  uniform">[0m
+				
+[0;32mI (4987) HTTP_CLIENT: 			<div class="6[0m
+[0;32mI (4997) HTTP_CLIENT: u">[0m
+								<ul
+[0;32mI (4997) HTTP_CLIENT:  class="labeled-[0m
+[0;32mI (4997) HTTP_CLIENT: icons">[0m
+							
+[0;32mI (5007) HTTP_CLIENT: 		<li>[0m
+								
+[0;32mI (5007) HTTP_CLIENT: 		<h3 class="ico[0m
+[0;32mI (5007) HTTP_CLIENT: n fa-twitter"><s[0m
+[0;32mI (5017) HTTP_CLIENT: pan class="label[0m
+[0;32mI (5017) HTTP_CLIENT: ">Twitter</span>[0m
+[0;32mI (5017) HTTP_CLIENT: </h3>[0m
+									
+[0;32mI (5027) HTTP_CLIENT: 	<a href="https:[0m
+[0;32mI (5027) HTTP_CLIENT: //twitter.com/Sc[0m
+[0;32mI (5027) HTTP_CLIENT: ott_Helme" targe[0m
+[0;32mI (5037) HTTP_CLIENT: t="_blank">twitt[0m
+[0;32mI (5037) HTTP_CLIENT: er.com/Scott_Hel[0m
+[0;32mI (5037) HTTP_CLIENT: me</a>[0m
+								
+[0;32mI (5047) HTTP_CLIENT: 	</li>[0m
+								
+[0;32mI (5047) HTTP_CLIENT: 	<li>[0m
+									
+[0;32mI (5057) HTTP_CLIENT: 	<h3 class="icon[0m
+[0;32mI (5057) HTTP_CLIENT:  fa-facebook"><s[0m
+[0;32mI (5057) HTTP_CLIENT: pan class="label[0m
+[0;32mI (5067) HTTP_CLIENT: ">Facebook</span[0m
+[0;32mI (5067) HTTP_CLIENT: ></h3>[0m
+								
+[0;32mI (5067) HTTP_CLIENT: 		<a href="https[0m
+[0;32mI (5077) HTTP_CLIENT: ://www.facebook.[0m
+[0;32mI (5077) HTTP_CLIENT: com/scott.helme"[0m
+[0;32mI (5077) HTTP_CLIENT:  target="_blank"[0m
+[0;32mI (5087) HTTP_CLIENT: >facebook.com/sc[0m
+[0;32mI (5087) HTTP_CLIENT: ott.helme</a>[0m
+	
+[0;32mI (5087) HTTP_CLIENT: 								</li>[0m
+	
+[0;32mI (5097) HTTP_CLIENT: 								<li>[0m
+		
+[0;32mI (5097) HTTP_CLIENT: 								<h3 clas[0m
+[0;32mI (5097) HTTP_CLIENT: s="icon fa-linke[0m
+[0;32mI (5107) HTTP_CLIENT: din"><span class[0m
+[0;32mI (5107) HTTP_CLIENT: ="label">LinkedI[0m
+[0;32mI (5107) HTTP_CLIENT: n</span></h3>[0m
+	
+[0;32mI (5117) HTTP_CLIENT: 									<a href[0m
+[0;32mI (5117) HTTP_CLIENT: ="https://www.li[0m
+[0;32mI (5127) HTTP_CLIENT: nkedin.com/in/sc[0m
+[0;32mI (5127) HTTP_CLIENT: otthelme/">linke[0m
+[0;32mI (5127) HTTP_CLIENT: din.com/in/scott[0m
+[0;32mI (5137) HTTP_CLIENT: helme</a>[0m
+					
+[0;32mI (5137) HTTP_CLIENT: 				</li>[0m
+					
+[0;32mI (5137) HTTP_CLIENT: 			</ul>[0m
+						
+[0;32mI (5147) HTTP_CLIENT: 	</div>[0m
+							
+[0;32mI (5147) HTTP_CLIENT: <div class="6u">[0m
+[0;32mI (5147) HTTP_CLIENT: [0m
+								<ul cl
+[0;32mI (5157) HTTP_CLIENT: ass="labeled-ico[0m
+[0;32mI (5157) HTTP_CLIENT: ns">[0m
+									<
+[0;32mI (5157) HTTP_CLIENT: li>[0m
+										<
+[0;32mI (5167) HTTP_CLIENT: h3 class="icon f[0m
+[0;32mI (5167) HTTP_CLIENT: a-globe"><span c[0m
+[0;32mI (5167) HTTP_CLIENT: lass="label">Web[0m
+[0;32mI (5177) HTTP_CLIENT: site</span></h3>[0m
+[0;32mI (5177) HTTP_CLIENT: [0m
+										<a r
+[0;32mI (5187) HTTP_CLIENT: el="author" href[0m
+[0;32mI (5187) HTTP_CLIENT: ="https://scotth[0m
+[0;32mI (5187) HTTP_CLIENT: elme.co.uk">scot[0m
+[0;32mI (5197) HTTP_CLIENT: thelme.co.uk</a>[0m
+[0;32mI (5197) HTTP_CLIENT: [0m
+									</li>
+[0;32mI (5197) HTTP_CLIENT: [0m
+									<li>
+[0;32mI (5207) HTTP_CLIENT: [0m
+										<h3 c
+[0;32mI (5207) HTTP_CLIENT: lass="icon fa-gi[0m
+[0;32mI (5207) HTTP_CLIENT: thub"><span clas[0m
+[0;32mI (5217) HTTP_CLIENT: s="label">GitHub[0m
+[0;32mI (5217) HTTP_CLIENT: </span></h3>[0m
+		
+[0;32mI (5217) HTTP_CLIENT: 								<a href=[0m
+[0;32mI (5227) HTTP_CLIENT: "https://github.[0m
+[0;32mI (5227) HTTP_CLIENT: com/ScottHelme">[0m
+[0;32mI (5227) HTTP_CLIENT: github.com/Scott[0m
+[0;32mI (5237) HTTP_CLIENT: Helme</a>[0m
+					
+[0;32mI (5237) HTTP_CLIENT: 				</li>[0m
+					
+[0;32mI (5237) HTTP_CLIENT: 				<li>[0m
+						
+[0;32mI (5247) HTTP_CLIENT: 				<h3 class="i[0m
+[0;32mI (5247) HTTP_CLIENT: con fa-youtube">[0m
+[0;32mI (5257) HTTP_CLIENT: <span class="lab[0m
+[0;32mI (5257) HTTP_CLIENT: el">YouTube</spa[0m
+[0;32mI (5257) HTTP_CLIENT: n></h3>[0m
+							
+[0;32mI (5267) HTTP_CLIENT: 			<a href="http[0m
+[0;32mI (5267) HTTP_CLIENT: s://www.youtube.[0m
+[0;32mI (5267) HTTP_CLIENT: com/user/ScottHe[0m
+[0;32mI (5277) HTTP_CLIENT: lme">youtube.com[0m
+[0;32mI (5277) HTTP_CLIENT: /user/ScottHelme[0m
+[0;32mI (5277) HTTP_CLIENT: </a>[0m
+									<
+[0;32mI (5287) HTTP_CLIENT: /li>[0m
+								</
+[0;32mI (5287) HTTP_CLIENT: ul>[0m
+							</di
+[0;32mI (5287) HTTP_CLIENT: v>[0m
+						</div>
+[0;32mI (5297) HTTP_CLIENT: [0m
+					</div>
+	
+[0;32mI (5297) HTTP_CLIENT: 			</section>[0m
+	
+[0;32mI (5297) HTTP_CLIENT: 		</div>[0m
+			<fo
+[0;32mI (5307) HTTP_CLIENT: oter id="footer"[0m
+[0;32mI (5307) HTTP_CLIENT: >[0m
+				<div clas
+[0;32mI (5317) HTTP_CLIENT: s="copyright">[0m
+
+[0;32mI (5317) HTTP_CLIENT: 					Created By [0m
+[0;32mI (5317) HTTP_CLIENT: Scott Helme - Li[0m
+[0;32mI (5327) HTTP_CLIENT: cense <a href="h[0m
+[0;32mI (5327) HTTP_CLIENT: ttps://creativec[0m
+[0;32mI (5327) HTTP_CLIENT: ommons.org/licen[0m
+[0;32mI (5337) HTTP_CLIENT: ses/by-sa/4.0/">[0m
+[0;32mI (5337) HTTP_CLIENT: CC BY-SA 4.0</a>[0m
+[0;32mI (5337) HTTP_CLIENT:  - <a href="http[0m
+[0;32mI (5347) HTTP_CLIENT: s://scotthelme.c[0m
+[0;32mI (5347) HTTP_CLIENT: o.uk/" rel="auth[0m
+[0;32mI (5347) HTTP_CLIENT: or">scotthelme.c[0m
+[0;32mI (5357) HTTP_CLIENT: o.uk</a><br/>[0m
+	
+[0;32mI (5357) HTTP_CLIENT: 				Check out my[0m
+[0;32mI (5357) HTTP_CLIENT:  other projects [0m
+[0;32mI (5367) HTTP_CLIENT: like <a href="ht[0m
+[0;32mI (5367) HTTP_CLIENT: tps://report-uri[0m
+[0;32mI (5367) HTP_CLIENT: .com">Report URI[0m
+[0;32mI (5377) HTTP_CLIENT: </a>, <a href="h[0m
+[0;32mI (5377) HTTP_CLIENT: ttps://securityh[0m
+[0;32mI (5377) HTTP_CLIENT: eaders.com">Secu[0m
+[0;32mI (5387) HTTP_CLIENT: rity Headers</a>[0m
+[0;32mI (5387) HTTP_CLIENT:  and <a href="ht[0m
+[0;32mI (5397) HTTP_CLIENT: tps://crawler.ni[0m
+[0;32mI (5397) HTTP_CLIENT: nja">Crawler.Nin[0m
+[0;32mI (5397) HTTP_CLIENT: ja</a>.[0m
+				</d
+[0;32mI (5407) HTTP_CLIENT: iv>[0m
+			</footer
+[0;32mI (5407) HTTP_CLIENT: >[0m
+	</body>
+</h
+[0;32mI (5407) HTTP_CLIENT: tml>[0m
+[0;32mI (5417) HTTP_CLIENT: ====================================[0m
+[0;32mI (5417) HTTP_CLIENT: Socket closed. HTTP task done.[0m
+[0;32mI (6227) MAIN: ADC_raw:    0 | Sliding:   76 | Lowpass:   68 | Average:   76 | DAC:   4[0m
+[0;32mI (8727) MAIN: ADC_raw:    0 | Sliding:   45 | Lowpass:   33 | Average:   45 | DAC:   2[0m
+[0;32mI (11227) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (13727) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (16227) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (18727) MAIN: ADC_raw:  128 | Sliding:   53 | Lowpass:   68 | Average:   53 | DAC:   4[0m
+[0;32mI (21227) MAIN: ADC_raw:  229 | Sliding:   99 | Lowpass:  128 | Average:   99 | DAC:   8[0m
+[0;32mI (23727) MAIN: ADC_raw:  144 | Sliding:   75 | Lowpass:   86 | Average:   75 | DAC:   5[0m
+[0;32mI (26227) MAIN: ADC_raw:    0 | Sliding:    2 | Lowpass:    2 | Average:    2 | DAC:   0[0m
+[0;32mI (28727) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (31227) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (33727) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (36227) MAIN: ADC_raw:    0 | Sliding:   76 | Lowpass:   65 | Average:   76 | DAC:   4[0m
+[0;32mI (38727) MAIN: ADC_raw:    0 | Sliding:   34 | Lowpass:   23 | Average:   34 | DAC:   1[0m
+[0;32mI (41227) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (43727) MAIN: ADC_raw:  188 | Sliding:   84 | Lowpass:  104 | Average:   84 | DAC:   6[0m
+[0;32mI (46227) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (48727) MAIN: ADC_raw:    0 | Sliding:   20 | Lowpass:   24 | Average:   20 | DAC:   1[0m
+[0;32mI (51227) MAIN: ADC_raw:    0 | Sliding:    5 | Lowpass:    1 | Average:    5 | DAC:   0[0m
+[0;32mI (53727) MAIN: ADC_raw:   91 | Sliding:   25 | Lowpass:   41 | Average:   25 | DAC:   2[0m
+[0;32mI (56227) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (58727) MAIN: ADC_raw:    0 | Sliding:   73 | Lowpass:   59 | Average:   73 | DAC:   3[0m
+[0;32mI (61227) MAIN: ADC_raw:  151 | Sliding:   15 | Lowpass:   45 | Average:   15 | DAC:   2[0m
+[0;32mI (63727) MAIN: ADC_raw:    0 | Sliding:    3 | Lowpass:    1 | Average:    3 | DAC:   0[0m
+[0;32mI (66227) MAIN: ADC_raw:    0 | Sliding:   57 | Lowpass:   54 | Average:   57 | DAC:   3[0m
+[0;32mI (68727) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (71227) MAIN: ADC_raw:   89 | Sliding:   66 | Lowpass:   64 | Average:   66 | DAC:   4[0m
+[0;32mI (73727) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (76227) MAIN: ADC_raw:    0 | Sliding:   30 | Lowpass:   21 | Average:   30 | DAC:   1[0m
+[0;32mI (78727) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (81227) MAIN: ADC_raw:   37 | Sliding:   33 | Lowpass:   29 | Average:   33 | DAC:   1[0m
+[0;32mI (83727) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (86227) MAIN: ADC_raw:    0 | Sliding:   74 | Lowpass:   60 | Average:   74 | DAC:   3[0m
+[0;32mI (88727) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (91227) MAIN: ADC_raw:  169 | Sliding:   62 | Lowpass:   82 | Average:   62 | DAC:   5[0m
+[0;32mI (93727) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (96227) MAIN: ADC_raw:    0 | Sliding:   55 | Lowpass:   54 | Average:   55 | DAC:   3[0m
+[0;32mI (98727) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (101227) MAIN: ADC_raw:  177 | Sliding:   93 | Lowpass:  109 | Average:   93 | DAC:   6[0m
+[0;32mI (103727) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (106227) MAIN: ADC_raw:    0 | Sliding:   63 | Lowpass:   29 | Average:   63 | DAC:   1[0m
+[0;32mI (108727) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (111227) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (113727) MAIN: ADC_raw:    0 | Sliding:   72 | Lowpass:   56 | Average:   72 | DAC:   3[0m
+[0;32mI (116227) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (118727) MAIN: ADC_raw:    0 | Sliding:    4 | Lowpass:    3 | Average:    4 | DAC:   0[0m
+[0;32mI (121227) MAIN: ADC_raw:    0 | Sliding:   22 | Lowpass:   28 | Average:   22 | DAC:   1[0m
+[0;32mI (123727) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (126227) MAIN: ADC_raw:   10 | Sliding:   30 | Lowpass:   20 | Average:   30 | DAC:   1[0m
+[0;32mI (128727) MAIN: ADC_raw:    0 | Sliding:   29 | Lowpass:   33 | Average:   29 | DAC:   2[0m
+[0;32mI (131227) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (133727) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (136227) MAIN: ADC_raw:    0 | Sliding:   82 | Lowpass:   60 | Average:   82 | DAC:   3[0m
+[0;32mI (138727) MAIN: ADC_raw:   57 | Sliding:    8 | Lowpass:   20 | Average:    8 | DAC:   1[0m
+[0;32mI (141227) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (143727) MAIN: ADC_raw:    0 | Sliding:   70 | Lowpass:   49 | Average:   70 | DAC:   3[0m
+[0;32mI (146227) MAIN: ADC_raw:   10 | Sliding:    1 | Lowpass:    3 | Average:    1 | DAC:   0[0m
+[0;32mI (148727) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (151227) MAIN: ADC_raw:    0 | Sliding:   74 | Lowpass:   60 | Average:   74 | DAC:   3[0m
+[0;32mI (153727) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (156227) MAIN: ADC_raw:    0 | Sliding:    1 | Lowpass:    1 | Average:    1 | DAC:   0[0m
+[0;32mI (158727) MAIN: ADC_raw:    0 | Sliding:   63 | Lowpass:   58 | Average:   63 | DAC:   3[0m
+[0;32mI (161227) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (163727) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (166227) MAIN: ADC_raw:    0 | Sliding:   77 | Lowpass:   65 | Average:   77 | DAC:   4[0m
+[0;32mI (168727) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (171227) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (173727) MAIN: ADC_raw:    0 | Sliding:   55 | Lowpass:   36 | Average:   55 | DAC:   2[0m
+[0;32mI (176227) MAIN: ADC_raw:   49 | Sliding:    7 | Lowpass:   18 | Average:    7 | DAC:   1[0m
+[0;32mI (178727) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (181227) MAIN: ADC_raw:    0 | Sliding:   57 | Lowpass:   35 | Average:   57 | DAC:   2[0m
+[0;32mI (183727) MAIN: ADC_raw:   87 | Sliding:   25 | Lowpass:   43 | Average:   25 | DAC:   2[0m
+[0;32mI (186227) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (188727) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (191227) MAIN: ADC_raw:    0 | Sliding:   17 | Lowpass:   12 | Average:   17 | DAC:   0[0m
+[0;32mI (193727) MAIN: ADC_raw:    0 | Sliding:   47 | Lowpass:   46 | Average:   47 | DAC:   2[0m
+[0;32mI (196227) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (198727) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (201227) MAIN: ADC_raw:    0 | Sliding:   69 | Lowpass:   46 | Average:   69 | DAC:   2[0m
+[0;32mI (203727) MAIN: ADC_raw:   72 | Sliding:   10 | Lowpass:   25 | Average:   10 | DAC:   1[0m
+[0;32mI (206227) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (208727) MAIN: ADC_raw:    0 | Sliding:   69 | Lowpass:   55 | Average:   69 | DAC:   3[0m
+[0;32mI (211227) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (213727) MAIN: ADC_raw:    0 | Sliding:    5 | Lowpass:    2 | Average:    5 | DAC:   0[0m
+[0;32mI (216227) MAIN: ADC_raw:    0 | Sliding:    8 | Lowpass:   13 | Average:    8 | DAC:   0[0m
+[0;32mI (218727) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (221227) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (223727) MAIN: ADC_raw:  129 | Sliding:   65 | Lowpass:   72 | Average:   65 | DAC:   4[0m
+[0;32mI (226227) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m

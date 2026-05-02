@@ -1,0 +1,172 @@
+Command: C:\Espressif\tools\python\v6.0\venv\Scripts\python.exe D:\esp\v6.0\esp-idf\tools/idf_monitor.py -p COM7 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project\build\ADC_DAC.elf C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.0\venv\Scripts\python.exe' 'D:\esp\v6.0\esp-idf\tools\idf.py' '-p' 'COM7'
+PI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entr�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.0 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May  2 2026 23:16:09[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (31) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=245b0h (148912) map[0m
+[0;32mI (139) esp_image: segment 1: paddr=000345d8 vaddr=3ffbdb60 size=05fd4h ( 24532) load[0m
+[0;32mI (149) esp_image: segment 2: paddr=0003a5b4 vaddr=40080000 size=05a64h ( 23140) load[0m
+[0;32mI (158) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=bfc04h (785412) map[0m
+[0;32mI (439) esp_image: segment 4: paddr=000ffc2c vaddr=40085a64 size=17078h ( 94328) load[0m
+[0;32mI (477) esp_image: segment 5: paddr=00116cac vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (492) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (492) boot: Disabling RNG early entropy source...[0m
+[0;32mI (503) cpu_start: Multicore app[0m
+[0;32mI (511) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (511) cpu_start: Pro cpu start user code[0m
+[0;32mI (511) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (513) app_init: Application information:[0m
+[0;32mI (517) app_init: Project name:     ADC_DAC[0m
+[0;32mI (521) app_init: App version:      ce780a1-dirty[0m
+[0;32mI (525) app_init: Compile time:     May  2 2026 23:15:17[0m
+[0;32mI (530) app_init: ELF file SHA256:  a88a2f727...[0m
+[0;32mI (534) app_init: ESP-IDF:          v6.0[0m
+[0;32mI (538) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (542) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (546) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (550) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (556) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (561) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (566) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (571) heap_init: At 3FFCB480 len 00014B80 (82 KiB): DRAM[0m
+[0;32mI (577) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (582) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (587) heap_init: At 4009CADC len 00003524 (13 KiB): IRAM[0m
+[0;32mI (595) spi_flash: detected chip: generic[0m
+[0;32mI (596) spi_flash: flash io: dio[0m
+[0;33mW (599) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (613) coexist: coex firmware version: 093e3d2[0m
+[0;32mI (617) main_task: Started on CPU0[0m
+[0;32mI (627) main_task: Calling app_main()[0m
+[0;32mI (657) BTDM_INIT: BT controller compile version [045a658][0m
+[0;32mI (657) BTDM_INIT: Using main XTAL as clock source[0m
+[0;32mI (657) BTDM_INIT: Bluetooth MAC: d4:e9:f4:68:65:5e[0m
+[0;32mI (657) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (747) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1077) WIFI_BLE_PROV: No saved credentials, BLE-only waiting mode[0m
+[0;32mI (1097) NET_SVC: Network service initialized[0m
+[0;32mI (1107) main_task: Returned from app_main()[0m
+[0;32mI (1117) WIFI_BLE_PROV: BLE addr: d4:e9:f4:68:65:5e[0m
+[0;32mI (1127) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (1127) NimBLE: disc_mode=2[0m
+[0;32mI (1127) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (1137) NimBLE: [0m
+
+[0;32mI (3107) HTTP_CLIENT: HTTP client task started[0m
+[0;32mI (3107) HTTP_CLIENT: DNS lookup: httpforever.com ...[0m
+[1;31mE (3107) HTTP_CLIENT: getaddrinfo failed: 202[0m
+[1;31mE (3107) HTTP_CLIENT: TCP connect failed — task exiting[0m
+[0;32mI (3547) MAIN: ADC_raw:  259 | Sliding:  122 | Lowpass:  147 | Average:  122 | DAC:   9[0m
+[0;32mI (6047) MAIN: ADC_raw:  283 | Sliding:  141 | Lowpass:  168 | Average:  141 | DAC:  10[0m
+[0;32mI (8547) MAIN: ADC_raw:  172 | Sliding:   91 | Lowpass:  103 | Average:   91 | DAC:   6[0m
+[0;32mI (11047) MAIN: ADC_raw:   43 | Sliding:   30 | Lowpass:   30 | Average:   30 | DAC:   1[0m
+[0;32mI (13547) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (16047) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (18547) MAIN: ADC_raw:    0 | Sliding:   66 | Lowpass:   59 | Average:   66 | DAC:   3[0m
+[0;32mI (21047) MAIN: ADC_raw:    0 | Sliding:  144 | Lowpass:  116 | Average:  144 | DAC:   7[0m
+[0;32mI (23547) MAIN: ADC_raw:    0 | Sliding:   75 | Lowpass:   58 | Average:   75 | DAC:   3[0m
+[0;32mI (26047) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (28547) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (31047) MAIN: ADC_raw:  240 | Sliding:  109 | Lowpass:  134 | Average:  109 | DAC:   8[0m
+[0;32mI (33547) MAIN: ADC_raw:  136 | Sliding:   77 | Lowpass:   84 | Average:   77 | DAC:   5[0m
+[0;32mI (36047) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (38547) MAIN: ADC_raw:    0 | Sliding:    9 | Lowpass:   13 | Average:    9 | DAC:   0[0m
+[0;32mI (41047) MAIN: ADC_raw:    0 | Sliding:  112 | Lowpass:   87 | Average:  112 | DAC:   5[0m
+[0;32mI (43547) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (46047) MAIN: ADC_raw:   28 | Sliding:    4 | Lowpass:   10 | Average:    4 | DAC:   0[0m
+[0;32mI (48547) MAIN: ADC_raw:  238 | Sliding:  122 | Lowpass:  140 | Average:  122 | DAC:   8[0m
+[0;32mI (51047) MAIN: ADC_raw:    0 | Sliding:    2 | Lowpass:    1 | Average:    2 | DAC:   0[0m
+[0;32mI (53547) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (56047) MAIN: ADC_raw:    0 | Sliding:  131 | Lowpass:  109 | Average:  131 | DAC:   6[0m
+[0;32mI (58547) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (61047) MAIN: ADC_raw:  177 | Sliding:   64 | Lowpass:   90 | Average:   64 | DAC:   5[0m
+[0;32mI (63547) MAIN: ADC_raw:    0 | Sliding:   14 | Lowpass:    6 | Average:   14 | DAC:   0[0m
+[0;32mI (66047) MAIN: ADC_raw:    0 | Sliding:   61 | Lowpass:   60 | Average:   61 | DAC:   3[0m
+[0;32mI (68547) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (71047) MAIN: ADC_raw:  266 | Sliding:  126 | Lowpass:  152 | Average:  126 | DAC:   9[0m
+[0;32mI (73547) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (76047) MAIN: ADC_raw:    0 | Sliding:   79 | Lowpass:   55 | Average:   79 | DAC:   3[0m
+[0;32mI (78547) MAIN: ADC_raw:  160 | Sliding:   48 | Lowpass:   76 | Average:   48 | DAC:   4[0m
+[0;32mI (81047) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (83547) MAIN: ADC_raw:    0 | Sliding:  110 | Lowpass:   86 | Average:  110 | DAC:   5[0m
+[0;32mI (86047) MAIN: ADC_raw:    8 | Sliding:    0 | Lowpass:    2 | Average:    0 | DAC:   0[0m
+[0;32mI (88547) MAIN: ADC_raw:    0 | Sliding:    9 | Lowpass:    3 | Average:    9 | DAC:   0[0m
+[0;32mI (91047) MAIN: ADC_raw:    0 | Sliding:  101 | Lowpass:   92 | Average:  101 | DAC:   5[0m
+[0;32mI (93547) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (96047) MAIN: ADC_raw:   83 | Sliding:   71 | Lowpass:   65 | Average:   71 | DAC:   4[0m
+[0;32mI (98547) MAIN: ADC_raw:    0 | Sliding:   41 | Lowpass:   48 | Average:   41 | DAC:   3[0m
+[0;32mI (101047) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (103547) MAIN: ADC_raw:    0 | Sliding:   11 | Lowpass:    5 | Average:   11 | DAC:   0[0m
+[0;32mI (106047) MAIN: ADC_raw:    0 | Sliding:   95 | Lowpass:   71 | Average:   95 | DAC:   4[0m
+[0;32mI (108547) MAIN: ADC_raw:  203 | Sliding:   70 | Lowpass:  102 | Average:   70 | DAC:   6[0m
+[0;32mI (109747) WIFI_BLE_PROV: Status: BLE_CONNECTED[0m
+[0;32mI (109747) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (109747) NimBLE: att_handle=20[0m
+
+[0;32mI (111047) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (111587) WIFI_BLE_PROV: Status: READY[0m
+[0;32mI (111587) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (111587) NimBLE: att_handle=20[0m
+
+[0;32mI (113547) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (116047) MAIN: ADC_raw:  229 | Sliding:  125 | Lowpass:  141 | Average:  125 | DAC:   8[0m
+[0;32mI (118547) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (121047) MAIN: ADC_raw:    0 | Sliding:   49 | Lowpass:   32 | Average:   49 | DAC:   2[0m
+[0;32mI (123547) MAIN: ADC_raw:   80 | Sliding:   17 | Lowpass:   35 | Average:   17 | DAC:   2[0m
+[0;32mI (126047) MAIN: ADC_raw:    0 | Sliding:    1 | Lowpass:    1 | Average:    1 | DAC:   0[0m
+[0;32mI (128547) MAIN: ADC_raw:    0 | Sliding:  114 | Lowpass:   97 | Average:  114 | DAC:   6[0m
+[0;32mI (131047) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (133547) MAIN: ADC_raw:    1 | Sliding:   25 | Lowpass:   14 | Average:   25 | DAC:   0[0m
+[0;32mI (136047) MAIN: ADC_raw:    0 | Sliding:   60 | Lowpass:   61 | Average:   60 | DAC:   3[0m
+[0;32mI (138547) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (141047) MAIN: ADC_raw:  121 | Sliding:   39 | Lowpass:   58 | Average:   39 | DAC:   3[0m
+[0;32mI (143547) MAIN: ADC_raw:  114 | Sliding:   68 | Lowpass:   73 | Average:   68 | DAC:   4[0m
+[0;32mI (146047) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (148547) MAIN: ADC_raw:    0 | Sliding:    5 | Lowpass:    8 | Average:    5 | DAC:   0[0m
+[0;32mI (151047) MAIN: ADC_raw:    0 | Sliding:  119 | Lowpass:   98 | Average:  119 | DAC:   6[0m
+[0;32mI (153547) MAIN: ADC_raw:    0 | Sliding:   52 | Lowpass:   38 | Average:   52 | DAC:   2[0m
+[0;32mI (156047) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (158547) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (161047) MAIN: ADC_raw:  243 | Sliding:  118 | Lowpass:  141 | Average:  118 | DAC:   8[0m
+[0;32mI (163547) MAIN: ADC_raw:    0 | Sliding:   14 | Lowpass:    8 | Average:   14 | DAC:   0[0m
+[0;32mI (166047) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (168547) MAIN: ADC_raw:    0 | Sliding:  126 | Lowpass:  104 | Average:  126 | DAC:   6[0m
+[0;32mI (171047) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (173547) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (176047) MAIN: ADC_raw:  251 | Sliding:  127 | Lowpass:  148 | Average:  127 | DAC:   9[0m
+[0;32mI (178547) MAIN: ADC_raw:    0 | Sliding:    1 | Lowpass:    0 | Average:    1 | DAC:   0[0m
+[0;32mI (181047) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (183547) MAIN: ADC_raw:    0 | Sliding:  126 | Lowpass:  105 | Average:  126 | DAC:   6[0m
+[0;32mI (186047) MAIN: ADC_raw:    0 | Sliding:    6 | Lowpass:    2 | Average:    6 | DAC:   0[0m
+[0;32mI (188547) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (191047) MAIN: ADC_raw:  166 | Sliding:   70 | Lowpass:   90 | Average:   70 | DAC:   5[0m
+[0;32mI (193547) MAIN: ADC_raw:  215 | Sliding:  114 | Lowpass:  130 | Average:  114 | DAC:   8[0m
+[0;32mI (196047) MAIN: ADC_raw:   31 | Sliding:   20 | Lowpass:   20 | Average:   20 | DAC:   1[0m
+[0;32mI (198547) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
