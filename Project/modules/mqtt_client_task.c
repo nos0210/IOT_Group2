@@ -1,17 +1,3 @@
-/*
- * Plain MQTT client for ESP32 — connects to test.mosquitto.org:1883
- * using coreMQTT over a raw TCP socket (lwIP).
- *
- * Flow (mirrors MQTT_implement.text):
- *   1. Wait for Wi-Fi / IP  (BIT_WIFI_UP set by network_service)
- *   2. DNS resolve  test.mosquitto.org
- *   3. Open TCP socket  → port 1883
- *   4. MQTT_Init()
- *   5. MQTT_Connect()   → wait CONNACK
- *   6. MQTT_Subscribe() → MQTT_ProcessLoop() for SUBACK
- *   7. MQTT_Publish()   → ProcessLoop forever (keep-alive + incoming msgs)
- *   8. eventCallback    → log every incoming PUBLISH / PUBACK / SUBACK
- */
 
 #include "mqtt_client_task.h"
 
@@ -30,7 +16,6 @@
 #include "lwip/netdb.h"
 #include "lwip/sockets.h"
 
-/* coreMQTT (core_mqtt_config.h is picked up from include/ via CMakeLists) */
 #include "core_mqtt.h"
 
 /* ── Configuration ──────────────────────────────────────────────────────── */
@@ -58,23 +43,18 @@
 
 static const char *TAG = "MQTT_CLIENT";
 
-/* ── Pending echo (deferred from callback → main loop) ──────────────────── */
-/* MQTT_Publish must NOT be called from inside event_callback because the
- * callback runs inside MQTT_ProcessLoop — re-entrant usage corrupts the
- * keep-alive timer and the packet-state machine.  Instead we store the
- * payload here and publish it right after MQTT_ProcessLoop returns.       */
+
 static volatile bool s_echo_pending     = false;
 static char          s_echo_payload[256];
 static size_t        s_echo_payload_len = 0U;
 
-/* ── NetworkContext (required by coreMQTT transport interface) ───────────── */
+// NetworkContext (required by coreMQTT transport interface) 
 struct NetworkContext
 {
     int tcpSocket;
 };
 
-/* ── Transport callbacks ─────────────────────────────────────────────────── */
-
+//Transport callbacks 
 static int32_t transport_recv( NetworkContext_t *pCtx,
                                void             *pBuffer,
                                size_t            bytesToRecv )
@@ -83,14 +63,14 @@ static int32_t transport_recv( NetworkContext_t *pCtx,
                                        bytesToRecv, 0 );
     if( received == 0 )
     {
-        /* Peer closed connection. */
+        // Peer closed connection.
         return -1;
     }
     if( received < 0 )
     {
         if( errno == EAGAIN || errno == EWOULDBLOCK )
         {
-            /* Timeout — return 0 so coreMQTT retries. */
+            // Timeout — return 0 so coreMQTT retries
             return 0;
         }
         ESP_LOGE( TAG, "recv() error: %d", errno );
@@ -112,14 +92,14 @@ static int32_t transport_send( NetworkContext_t *pCtx,
     return sent;
 }
 
-/* ── Clock helper (milliseconds) required by MQTT_Init ──────────────────── */
+//Clock helper (milliseconds) required by MQTT_Init 
 
 static uint32_t get_time_ms( void )
 {
     return (uint32_t)( esp_timer_get_time() / 1000ULL );
 }
 
-/* ── TCP helpers ─────────────────────────────────────────────────────────── */
+// TCP helpers 
 
 static int tcp_connect( NetworkContext_t *pCtx,
                         const char       *host,
@@ -169,14 +149,14 @@ static int tcp_connect( NetworkContext_t *pCtx,
         return -1;
     }
 
-    /* SO_RCVTIMEO — keep short (1 s) so MQTT_Connect() can retry within its
-     * own deadline (MQTT_CONNECT_TIMEOUT_MS).  A value ≥ MQTT_CONNECT_TIMEOUT_MS
-     * would cause MQTT_Connect to time-out on the first blocked recv(). */
+    // SO_RCVTIMEO — keep short (1 s) so MQTT_Connect() can retry within its
+    // own deadline (MQTT_CONNECT_TIMEOUT_MS).  A value ≥ MQTT_CONNECT_TIMEOUT_MS
+    // would cause MQTT_Connect to time-out on the first blocked recv().
     struct timeval tv = { .tv_sec = 1, .tv_usec = 0 };
     setsockopt( sock, SOL_SOCKET, SO_RCVTIMEO, &tv, sizeof( tv ) );
 
-    /* Non-blocking connect + select() so we get a hard TCP_TIMEOUT_SEC timeout
-     * and proper EHOSTUNREACH detection (port blocked by firewall). */
+    // Non-blocking connect + select() so we get a hard TCP_TIMEOUT_SEC timeout
+    // and proper EHOSTUNREACH detection (port blocked by firewall).
     int fl = fcntl( sock, F_GETFL, 0 );
     fcntl( sock, F_SETFL, fl | O_NONBLOCK );
 
@@ -258,9 +238,7 @@ static void tcp_disconnect( NetworkContext_t *pCtx )
     }
 }
 
-/* ── JSON string escaper ────────────────────────────────────────────────── */
-/* Escapes src into dst as a JSON string value (without surrounding quotes).
- * Returns number of bytes written (not including NUL), or -1 if dst too small.*/
+
 static int json_escape( char *dst, size_t dst_size,
                         const char *src, size_t src_len )
 {
@@ -291,7 +269,7 @@ static int json_escape( char *dst, size_t dst_size,
     return (int) di;
 }
 
-/* ── Bước 8: eventCallback ───────────────────────────────────────────────── */
+// eventCallback 
 
 static void event_callback( MQTTContext_t          *pCtx,
                              MQTTPacketInfo_t       *pPacket,
@@ -308,9 +286,7 @@ static void event_callback( MQTTContext_t          *pCtx,
                   (int) pPub->payloadLength, (char *) pPub->pPayload );
         ESP_LOGI( TAG, "QoS    : %d", (int) pPub->qos );
 
-        /* Echo lại response về esp32/to_mqttx */
-        /* Escape payload trước khi nhúng vào JSON — nếu payload chứa '"' hoặc '\'
-         * thì %.*s trực tiếp sẽ tạo JSON không hợp lệ.                          */
+                
         char escaped[ 200 ];
         char resp[ 256 ];
         int resp_len = -1;
@@ -324,9 +300,6 @@ static void event_callback( MQTTContext_t          *pCtx,
         }
         if( resp_len > 0 && resp_len < (int) sizeof( resp ) )
         {
-            /* Defer — do NOT call MQTT_Publish here; we are inside
-             * MQTT_ProcessLoop which already owns the MQTT context.
-             * Re-entrant publish corrupts the keep-alive timer.        */
             memcpy( s_echo_payload, resp, (size_t) resp_len );
             s_echo_payload_len = (size_t) resp_len;
             s_echo_pending     = true;
@@ -344,13 +317,13 @@ static void event_callback( MQTTContext_t          *pCtx,
     }
 }
 
-/* ── Main FreeRTOS task ──────────────────────────────────────────────────── */
+// Main FreeRTOS task
 
 void mqtt_client_task( void *pvParameters )
 {
     (void) pvParameters;
 
-    /* ── Bước 1: Wait for Wi-Fi IP ─────────────────────────────────────── */
+    //Wait for Wi-Fi IP
     ESP_LOGI( TAG, "MQTT task started — waiting for Wi-Fi IP..." );
     uint32_t elapsed = 0;
     bool got_ip = false;
@@ -381,7 +354,7 @@ void mqtt_client_task( void *pvParameters )
         return;
     }
 
-    /* ── Outer reconnect loop — runs forever, never calls vTaskDelete ─── */
+    // Outer reconnect loop — runs forever, never calls vTaskDelete
     static uint8_t mqtt_buffer[ MQTT_NETWORK_BUF_SIZE ];
     uint32_t reconnect_num = 0;
 
@@ -391,7 +364,7 @@ void mqtt_client_task( void *pvParameters )
         ESP_LOGI( TAG, "=== MQTT connection attempt #%lu ===",
                   (unsigned long) reconnect_num );
 
-        /* Quick Wi-Fi check before each attempt */
+        // Quick Wi-Fi check before each attempt
         {
             bool wifi_up = false;
             esp_netif_t *ni = esp_netif_get_handle_from_ifkey( "WIFI_STA_DEF" );
@@ -410,7 +383,7 @@ void mqtt_client_task( void *pvParameters )
             }
         }
 
-        /* ── Bước 2 & 3: DNS + TCP ─────────────────────────────────────── */
+        // DNS + TCP
         NetworkContext_t netCtx = { .tcpSocket = -1 };
         if( tcp_connect( &netCtx, MQTT_BROKER_HOST, MQTT_BROKER_PORT ) != 0 )
         {
@@ -420,7 +393,7 @@ void mqtt_client_task( void *pvParameters )
             continue;
         }
 
-        /* ── Bước 3: Transport Interface ───────────────────────────────── */
+        // Transport Interface
         TransportInterface_t transport = {
             .recv            = transport_recv,
             .send            = transport_send,
@@ -428,7 +401,7 @@ void mqtt_client_task( void *pvParameters )
             .writev          = NULL,
         };
 
-        /* ── Bước 4: MQTT_Init() ────────────────────────────────────────── */
+        // MQTT_Init
         MQTTFixedBuffer_t fixed_buf = {
             .pBuffer = mqtt_buffer,
             .size    = sizeof( mqtt_buffer ),
@@ -448,15 +421,11 @@ void mqtt_client_task( void *pvParameters )
             continue;
         }
 
-        /* ── Enable QoS1/QoS2 stateful tracking ────────────────────────── */
+        // Enable QoS1/QoS2 stateful tracking
 #define MQTT_PENDING_ACK_COUNT  10U
         static MQTTPubAckInfo_t outgoing_acks[ MQTT_PENDING_ACK_COUNT ];
         static MQTTPubAckInfo_t incoming_acks[ MQTT_PENDING_ACK_COUNT ];
-        /* CRITICAL: MQTT_InitStatefulQoS only stores the pointer — it does NOT
-         * zero the arrays.  On reconnect the arrays may contain stale slot
-         * entries from the previous session (packetId != 0), causing addRecord()
-         * to think the table is full and making MQTT_Publish fail silently.
-         * Always clear them before every MQTT_InitStatefulQoS call.          */
+      
         memset( outgoing_acks, 0, sizeof( outgoing_acks ) );
         memset( incoming_acks, 0, sizeof( incoming_acks ) );
         status = MQTT_InitStatefulQoS( &mqtt_ctx,
@@ -471,7 +440,7 @@ void mqtt_client_task( void *pvParameters )
         }
         ESP_LOGI( TAG, "MQTT_Init OK" );
 
-        /* ── Bước 5: MQTT_Connect() ─────────────────────────────────────── */
+        // MQTT_Connect
         MQTTConnectInfo_t connect_info = {
             .cleanSession           = true,
             .pClientIdentifier      = MQTT_CLIENT_ID,
@@ -499,7 +468,7 @@ void mqtt_client_task( void *pvParameters )
         ESP_LOGI( TAG, "MQTT connected to %s:%d  sessionPresent=%d",
                   MQTT_BROKER_HOST, MQTT_BROKER_PORT, (int) session_present );
 
-        /* ── Bước 6: MQTT_Subscribe() ──────────────────────────────────── */
+        // MQTT_Subscribe
         MQTTSubscribeInfo_t sub_info = {
             .qos               = MQTTQoS1,
             .pTopicFilter      = TOPIC_SUBSCRIBE,
@@ -513,7 +482,7 @@ void mqtt_client_task( void *pvParameters )
         MQTT_ProcessLoop( &mqtt_ctx );
         ESP_LOGI( TAG, "Subscribed to: %s", TOPIC_SUBSCRIBE );
 
-        /* ── Bước 7: Publish + ProcessLoop ──────────────────────────────── */
+        // Publish + ProcessLoop
         const char *pub_payload =
             "{\"device\":\"esp32-group2\",\"sensor\":\"temp\",\"value\":28.5}";
         MQTTPublishInfo_t pub_info = {
@@ -530,7 +499,7 @@ void mqtt_client_task( void *pvParameters )
             ESP_LOGI( TAG, "Published to %s (packetID=%u)",
                       TOPIC_PUBLISH, (unsigned) pub_packet_id );
 
-        /* Inner process loop — exits on error, then outer loop reconnects */
+        // Inner process loop — exits on error, then outer loop reconnects
         int loop_count = 0;
         s_echo_pending = false;   /* discard any stale echo from previous session */
         while( 1 )
@@ -548,16 +517,14 @@ void mqtt_client_task( void *pvParameters )
             {
                 s_echo_pending = false;
                 MQTTPublishInfo_t echo_pub = {
-                    .qos             = MQTTQoS0,   /* QoS0: fire-and-forget, no
-                                                    * outgoing_acks slot needed,
-                                                    * eliminates stale-state risk */
+                    .qos             = MQTTQoS0,   
                     .retain          = false,
                     .pTopicName      = TOPIC_PUBLISH,
                     .topicNameLength = (uint16_t) strlen( TOPIC_PUBLISH ),
                     .pPayload        = s_echo_payload,
                     .payloadLength   = s_echo_payload_len,
                 };
-                /* packetId must be 0 for QoS0 */
+                //packetId must be 0 for QoS0 
                 MQTTStatus_t st = MQTT_Publish( &mqtt_ctx, &echo_pub, 0U );
                 if( st == MQTTSuccess )
                     ESP_LOGI( TAG, "Echo published (QoS0) to %s: %.*s",
@@ -566,7 +533,7 @@ void mqtt_client_task( void *pvParameters )
                 else
                 {
                     ESP_LOGE( TAG, "Echo publish FAILED status=%d — reconnecting", (int) st );
-                    break;  /* treat echo failure as fatal — reconnect cleanly */
+                    break;  
                 }
             }
 
@@ -587,12 +554,12 @@ void mqtt_client_task( void *pvParameters )
             }
         }
 
-        /* Clean disconnect before reconnect */
+        //Clean disconnect before reconnect 
         MQTT_Disconnect( &mqtt_ctx );
         tcp_disconnect( &netCtx );
         ESP_LOGW( TAG, "MQTT session ended — reconnect in %d ms",
                   MQTT_RECONNECT_DELAY_MS );
         vTaskDelay( pdMS_TO_TICKS( MQTT_RECONNECT_DELAY_MS ) );
 
-    } /* end outer reconnect loop */
+    } 
 }
