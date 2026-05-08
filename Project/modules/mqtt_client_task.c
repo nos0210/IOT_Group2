@@ -501,7 +501,7 @@ void mqtt_client_task( void *pvParameters )
 
         // Inner process loop — exits on error, then outer loop reconnects
         int loop_count = 0;
-        s_echo_pending = false;   /* discard any stale echo from previous session */
+        s_echo_pending = false;   
         while( 1 )
         {
             vTaskDelay( pdMS_TO_TICKS( MQTT_PROCESS_LOOP_MS ) );
@@ -512,7 +512,7 @@ void mqtt_client_task( void *pvParameters )
                 break;
             }
 
-            /* Publish deferred echo (queued by event_callback) */
+            //Publish deferred echo (queued by event_callback) 
             if( s_echo_pending )
             {
                 s_echo_pending = false;
