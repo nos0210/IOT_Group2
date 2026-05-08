@@ -18,7 +18,7 @@
 
 #include "core_mqtt.h"
 
-/* ── Configuration ──────────────────────────────────────────────────────── */
+
 #define MQTT_BROKER_HOST        "broker.hivemq.com"
 #define MQTT_BROKER_PORT        1883
 
@@ -36,9 +36,7 @@
 #define DNS_RETRY_DELAY_MS      2000
 #define MQTT_CONNECT_TIMEOUT_MS 5000U
 #define MQTT_PROCESS_LOOP_MS    1000U
-#define MQTT_RECONNECT_DELAY_MS 10000U /* delay between reconnect attempts */
-
-/* Publish interval — send a test payload every N process-loop iterations */
+#define MQTT_RECONNECT_DELAY_MS 10000U 
 #define PUBLISH_INTERVAL_LOOPS  5
 
 static const char *TAG = "MQTT_CLIENT";
@@ -484,7 +482,7 @@ void mqtt_client_task( void *pvParameters )
 
         // Publish + ProcessLoop
         const char *pub_payload =
-            "{\"device\":\"esp32-group2\",\"sensor\":\"temp\",\"value\":28.5}";
+            "{\"device\":\"esp32\",\"sensor\":\"temp\",\"value\":28.5}";
         MQTTPublishInfo_t pub_info = {
             .qos             = MQTTQoS1,
             .retain          = false,
