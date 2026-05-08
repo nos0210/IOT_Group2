@@ -1,0 +1,155 @@
+Command: C:\Espressif\tools\python\v6.0\venv\Scripts\python.exe D:\esp\v6.0\esp-idf\tools/idf_monitor.py -p COM7 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project\build\ADC_DAC.elf C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.0\venv\Scripts\python.exe' 'D:\esp\v6.0\esp-idf\tools\idf.py' '-p' 'COM7'
+PI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:1584�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.0 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May  2 2026 23:16:09[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (31) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=24800h (149504) map[0m
+[0;32mI (139) esp_image: segment 1: paddr=00034828 vaddr=3ffbdb60 size=05fd4h ( 24532) load[0m
+[0;32mI (149) esp_image: segment 2: paddr=0003a804 vaddr=40080000 size=05814h ( 22548) load[0m
+[0;32mI (158) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=bc558h (771416) map[0m
+[0;32mI (434) esp_image: segment 4: paddr=000fc580 vaddr=40085814 size=172c8h ( 94920) load[0m
+[0;32mI (472) esp_image: segment 5: paddr=00113850 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (487) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (487) boot: Disabling RNG early entropy source...[0m
+[0;32mI (498) cpu_start: Multicore app[0m
+[0;32mI (506) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (506) cpu_start: Pro cpu start user code[0m
+[0;32mI (506) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (508) app_init: Application information:[0m
+[0;32mI (512) app_init: Project name:     ADC_DAC[0m
+[0;32mI (516) app_init: App version:      0141131-dirty[0m
+[0;32mI (520) app_init: Compile time:     May  6 2026 22:53:40[0m
+[0;32mI (525) app_init: ELF file SHA256:  1c07068d6...[0m
+[0;32mI (530) app_init: ESP-IDF:          v6.0[0m
+[0;32mI (533) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (537) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (541) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (545) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (551) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (556) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (561) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (567) heap_init: At 3FFC9A80 len 00016580 (89 KiB): DRAM[0m
+[0;32mI (572) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (577) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (583) heap_init: At 4009CADC len 00003524 (13 KiB): IRAM[0m
+[0;32mI (590) spi_flash: detected chip: generic[0m
+[0;32mI (592) spi_flash: flash io: dio[0m
+[0;33mW (595) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (608) coexist: coex firmware version: 093e3d2[0m
+[0;32mI (612) main_task: Started on CPU0[0m
+[0;32mI (622) main_task: Calling app_main()[0m
+[0;32mI (642) BTDM_INIT: BT controller compile version [045a658][0m
+[0;32mI (642) BTDM_INIT: Using main XTAL as clock source[0m
+[0;32mI (642) BTDM_INIT: Bluetooth MAC: d4:e9:f4:68:65:5e[0m
+[0;32mI (652) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (732) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1072) WIFI_BLE_PROV: Found saved credentials, connecting WiFi[0m
+[0;32mI (1112) wifi:wifi driver task: 3ffd7a94, prio:23, stack:6656, core=0[0m
+[0;32mI (1132) wifi:wifi firmware version: 44738b4[0m
+[0;32mI (1132) wifi:wifi certification version: v7.0[0m
+[0;32mI (1132) wifi:config NVS flash: enabled[0m
+[0;32mI (1132) wifi:config nano formatting: disabled[0m
+[0;32mI (1132) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1142) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1142) wifi:Init management short buffer num: 32[0m
+[0;32mI (1152) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1152) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1152) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1162) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1172) WIFI_BLE_PROV: BLE addr: d4:e9:f4:68:65:5e[0m
+[0;32mI (1172) wifi_init: rx ba win: 6[0m
+[0;32mI (1172) wifi_init: accept mbox: 6[0m
+[0;32mI (1172) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (1182) NimBLE: disc_mode=2[0m
+[0;32mI (1182) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (1192) NimBLE: [0m
+
+[0;32mI (1192) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1192) wifi_init: udp mbox: 6[0m
+[0;32mI (1202) wifi_init: tcp mbox: 6[0m
+[0;32mI (1202) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1202) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1212) wifi_init: tcp mss: 1440[0m
+[0;32mI (1212) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1212) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1222) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (1222) wifi:enable tsf[0m
+[0;32mI (1232) wifi:flush txq[0m
+[0;32mI (1232) wifi:stop sw txq[0m
+[0;32mI (1232) wifi:lmac stop hw txq[0m
+[0;32mI (1242) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (1242) wifi:enable tsf[0m
+[0;33mW (1242) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1252) WIFI_BLE_PROV: Status: WIFI_CONNECTING[0m
+[0;33mW (1252) wifi:Haven't to connect to a suitable AP now![0m
+[0;32mI (1252) NET_SVC: Network service initialized[0m
+[0;32mI (1262) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1272) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1282) MQTT_CLIENT: MQTT task started — waiting for Wi-Fi IP...[0m
+[0;32mI (1282) main_task: Returned from app_main()[0m
+[0;32mI (1342) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1372) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1462) wifi:connected with TuanNga, aid = 3, channel 6, BW20, bssid = 00:c8:96:aa:40:d9[0m
+[0;32mI (1462) wifi:security: WPA2-PSK, phy: bgn, rssi: -60[0m
+[0;32mI (1472) wifi:pm start, type: 1[0m
+
+[0;32mI (1472) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1502) wifi:<ba-add>idx:0 (ifx:0, 00:c8:96:aa:40:d9), tid:7, ssn:0, winSize:64[0m
+[0;32mI (1522) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2282) MQTT_CLIENT: Waiting for IP... (1000/60000 ms)[0m
+[0;32mI (2962) esp_netif_handlers: sta ip: 192.168.100.2, mask: 255.255.255.0, gw: 192.168.100.1[0m
+[0;32mI (2962) WIFI_BLE_PROV: Status: WIFI_CONNECTED[0m
+[0;32mI (2962) NET_SVC: Wi-Fi up -> network workers allowed[0m
+[0;32mI (3052) NET_SVC: Network workers started[0m
+[0;32mI (3052) NET_SVC: UDP ready on port 5005[0m
+[0;32mI (3052) NET_SVC: TCP server listening on port 5006[0m
+[0;32mI (3282) MQTT_CLIENT: Waiting for IP... (2000/60000 ms)[0m
+[0;32mI (3282) MQTT_CLIENT: Got IP: 192.168.100.2[0m
+[0;32mI (3282) MQTT_CLIENT: Stabilizing network for 2000 ms...[0m
+[0;32mI (3732) MAIN: ADC_raw:    0 | Sliding:   40 | Lowpass:   30 | Average:   40 | DAC:   1[0m
+[0;32mI (5282) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (5332) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:6, ssn:2, winSize:64[0m
+[0;32mI (5372) wifi:<ba-del>idx:1, tid:6[0m
+[0;32mI (5452) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:0, ssn:0, winSize:64[0m
+[0;32mI (5542) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (6232) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (8732) MAIN: ADC_raw:  116 | Sliding:   31 | Lowpass:   51 | Average:   31 | DAC:   3[0m
+[0;32mI (11232) MAIN: ADC_raw:    0 | Sliding:   13 | Lowpass:    6 | Average:   13 | DAC:   0[0m
+[0;32mI (13732) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (16232) MAIN: ADC_raw:    0 | Sliding:    3 | Lowpass:    1 | Average:    3 | DAC:   0[0m
+[0;32mI (18732) MAIN: ADC_raw:  242 | Sliding:   64 | Lowpass:  106 | Average:   64 | DAC:   6[0m
+[0;32mI (21232) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (23732) MAIN: ADC_raw:    0 | Sliding:  115 | Lowpass:   94 | Average:  115 | DAC:   5[0m
+[1;31mE (23802) MQTT_CLIENT: connect() to test.mosquitto.org:1883 failed: 113[0m
+[0;33mW (23802) MQTT_CLIENT: TCP connect attempt 1/5 failed — retry in 3000 ms[0m
+[0;32mI (26232) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (26802) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (26802) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (28732) MAIN: ADC_raw:  272 | Sliding:  134 | Lowpass:  157 | Average:  134 | DAC:   9[0m
+[0;32mI (31232) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (33732) MAIN: ADC_raw:    0 | Sliding:  101 | Lowpass:   83 | Average:  101 | DAC:   5[0m

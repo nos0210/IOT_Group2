@@ -1,0 +1,280 @@
+Command: C:\Espressif\tools\python\v6.0\venv\Scripts\python.exe D:\esp\v6.0\esp-idf\tools/idf_monitor.py -p COM7 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project\build\ADC_DAC.elf C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.0\venv\Scripts\python.exe' 'D:\esp\v6.0\esp-idf\tools\idf.py' '-p' 'COM7'
+PI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry �ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.0 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May  2 2026 23:16:09[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (31) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=24248h (148040) map[0m
+[0;32mI (139) esp_image: segment 1: paddr=00034270 vaddr=3ffbdb60 size=05fd4h ( 24532) load[0m
+[0;32mI (148) esp_image: segment 2: paddr=0003a24c vaddr=40080000 size=05dcch ( 24012) load[0m
+[0;32mI (159) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=bb214h (766484) map[0m
+[0;32mI (432) esp_image: segment 4: paddr=000fb23c vaddr=40085dcc size=16c94h ( 93332) load[0m
+[0;32mI (470) esp_image: segment 5: paddr=00111ed8 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (485) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (485) boot: Disabling RNG early entropy source...[0m
+[0;32mI (495) cpu_start: Multicore app[0m
+[0;32mI (504) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (504) cpu_start: Pro cpu start user code[0m
+[0;32mI (504) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (506) app_init: Application information:[0m
+[0;32mI (510) app_init: Project name:     ADC_DAC[0m
+[0;32mI (513) app_init: App version:      0141131-dirty[0m
+[0;32mI (518) app_init: Compile time:     May  7 2026 00:08:50[0m
+[0;32mI (523) app_init: ELF file SHA256:  35964ac93...[0m
+[0;32mI (527) app_init: ESP-IDF:          v6.0[0m
+[0;32mI (531) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (535) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (539) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (543) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (549) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (554) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (559) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (564) heap_init: At 3FFC9B00 len 00016500 (89 KiB): DRAM[0m
+[0;32mI (569) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (575) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (580) heap_init: At 4009CA60 len 000035A0 (13 KiB): IRAM[0m
+[0;32mI (588) spi_flash: detected chip: generic[0m
+[0;32mI (589) spi_flash: flash io: dio[0m
+[0;33mW (592) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (606) coexist: coex firmware version: 093e3d2[0m
+[0;32mI (610) main_task: Started on CPU0[0m
+[0;32mI (620) main_task: Calling app_main()[0m
+[0;32mI (640) BTDM_INIT: BT controller compile version [045a658][0m
+[0;32mI (640) BTDM_INIT: Using main XTAL as clock source[0m
+[0;32mI (640) BTDM_INIT: Bluetooth MAC: d4:e9:f4:68:65:5e[0m
+[0;32mI (650) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (730) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1060) WIFI_BLE_PROV: Found saved credentials, connecting WiFi[0m
+[0;32mI (1090) wifi:wifi driver task: 3ffd7adc, prio:23, stack:6656, core=0[0m
+[0;32mI (1110) wifi:wifi firmware version: 44738b4[0m
+[0;32mI (1110) wifi:wifi certification version: v7.0[0m
+[0;32mI (1110) wifi:config NVS flash: enabled[0m
+[0;32mI (1110) wifi:config nano formatting: disabled[0m
+[0;32mI (1110) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1120) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1120) wifi:Init management short buffer num: 32[0m
+[0;32mI (1130) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1130) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1130) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1140) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1150) wifi_init: rx ba win: 6[0m
+[0;32mI (1150) wifi_init: accept mbox: 6[0m
+[0;32mI (1160) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1160) wifi_init: udp mbox: 6[0m
+[0;32mI (1160) wifi_init: tcp mbox: 6[0m
+[0;32mI (1160) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1160) WIFI_BLE_PROV: BLE addr: d4:e9:f4:68:65:5e[0m
+[0;32mI (1170) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1170) wifi_init: tcp mss: 1440[0m
+[0;32mI (1170) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (1180) NimBLE: disc_mode=2[0m
+[0;32mI (1180) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (1190) NimBLE: [0m
+
+[0;32mI (1190) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1190) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1200) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (1200) wifi:enable tsf[0m
+[0;32mI (1210) wifi:flush txq[0m
+[0;32mI (1210) wifi:stop sw txq[0m
+[0;32mI (1210) wifi:lmac stop hw txq[0m
+[0;32mI (1220) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (1220) wifi:enable tsf[0m
+[0;33mW (1220) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1230) WIFI_BLE_PROV: Status: WIFI_CONNECTING[0m
+[0;33mW (1230) wifi:Haven't to connect to a suitable AP now![0m
+[0;32mI (1240) NET_SVC: Network service initialized[0m
+[0;32mI (1240) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1250) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1250) MQTT_CLIENT: MQTT task started — waiting for Wi-Fi IP...[0m
+[0;32mI (1260) main_task: Returned from app_main()[0m
+[0;32mI (1330) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1400) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1520) wifi:connected with TuanNga, aid = 3, channel 6, BW20, bssid = 00:c8:96:aa:40:d9[0m
+[0;32mI (1520) wifi:security: WPA2-PSK, phy: bgn, rssi: -58[0m
+[0;32mI (1520) wifi:pm start, type: 1[0m
+
+[0;32mI (1530) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1560) wifi:<ba-add>idx:0 (ifx:0, 00:c8:96:aa:40:d9), tid:7, ssn:0, winSize:64[0m
+[0;32mI (1590) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2230) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:0, ssn:0, winSize:64[0m
+[0;32mI (2260) MQTT_CLIENT: Waiting for IP... (1000/60000 ms)[0m
+[0;32mI (2710) esp_netif_handlers: sta ip: 192.168.100.2, mask: 255.255.255.0, gw: 192.168.100.1[0m
+[0;32mI (2710) WIFI_BLE_PROV: Status: WIFI_CONNECTED[0m
+[0;32mI (2710) NET_SVC: Wi-Fi up -> network workers allowed[0m
+[0;32mI (2740) NET_SVC: Network workers started[0m
+[0;32mI (2740) NET_SVC: UDP ready on port 5005[0m
+[0;32mI (2740) NET_SVC: TCP server listening on port 5006[0m
+[0;32mI (3260) MQTT_CLIENT: Waiting for IP... (2000/60000 ms)[0m
+[0;32mI (3260) MQTT_CLIENT: Got IP: 192.168.100.2[0m
+[0;32mI (5260) MQTT_CLIENT: === MQTT connection attempt #1 ===[0m
+[0;32mI (5260) MQTT_CLIENT: DNS lookup: broker.hivemq.com (attempt 1/5)...[0m
+[0;32mI (5290) MQTT_CLIENT: Resolved broker.hivemq.com -> 52.58.98.219[0m
+[0;32mI (5690) MQTT_CLIENT: TCP connected to broker.hivemq.com:1883 (sock=56)[0m
+[0;32mI (5690) MQTT_CLIENT: MQTT_Init OK[0m
+[I] coreMQTT: MQTT connection established with the broker.
+[0;32mI (6410) MQTT_CLIENT: MQTT connected to broker.hivemq.com:1883  sessionPresent=0[0m
+[0;32mI (7240) MQTT_CLIENT: SUBACK received — subscribed OK[0m
+[0;32mI (7240) MQTT_CLIENT: Subscribed to: esp32/from_mqttx[0m
+[0;32mI (7240) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=2)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (8240) MQTT_CLIENT: PUBACK received — packetID: 2[0m
+[I] coreMQTT: De-serialized incoming PUBLISH packet: DeserializerResult=MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPubAckSend.
+[0;32mI (11860) MQTT_CLIENT: === MQTT INCOMING ===[0m
+[0;32mI (11860) MQTT_CLIENT: Topic  : esp32/from_mqttx[0m
+[0;32mI (11860) MQTT_CLIENT: Payload: {[0m
+  "msg": "hello"
+}
+[0;32mI (11870) MQTT_CLIENT: QoS    : 1[0m
+[0;32mI (11880) MQTT_CLIENT: Echo published to esp32/to_mqttx (packetID=3)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (14510) MQTT_CLIENT: PUBACK received — packetID: 3[0m
+[0;32mI (36510) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=4)[0m
+[I] coreMQTT: De-serialized incoming PUBLISH packet: DeserializerResult=MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPubAckSend.
+[0;32mI (48510) MQTT_CLIENT: === MQTT INCOMING ===[0m
+[0;32mI (48510) MQTT_CLIENT: Topic  : esp32/from_mqttx[0m
+[0;32mI (48520) MQTT_CLIENT: Payload: {[0m
+  "msg": "xin chao"
+}
+[0;32mI (48520) MQTT_CLIENT: QoS    : 1[0m
+[0;32mI (48530) MQTT_CLIENT: Echo published to esp32/to_mqttx (packetID=5)[0m
+[E] coreMQTT: Handling of keep alive failed. Status=MQTTKeepAliveTimeout
+[E] coreMQTT: Call to receiveSingleIteration failed. Status=MQTTKeepAliveTimeout
+[1;31mE (59530) MQTT_CLIENT: MQTT_ProcessLoop error: 10[0m
+[I] coreMQTT: Disconnected from the broker.
+[E] coreMQTT: MQTT Connection Disconnected Successfully
+[0;32mI (59550) MQTT_CLIENT: TCP socket closed[0m
+[0;33mW (59550) MQTT_CLIENT: MQTT session ended — reconnect in 10000 ms[0m
+[0;32mI (69550) MQTT_CLIENT: === MQTT connection attempt #2 ===[0m
+[0;32mI (69550) MQTT_CLIENT: DNS lookup: broker.hivemq.com (attempt 1/5)...[0m
+[0;32mI (69600) MQTT_CLIENT: Resolved broker.hivemq.com -> 3.126.218.60[0m
+[0;32mI (70000) MQTT_CLIENT: TCP connected to broker.hivemq.com:1883 (sock=56)[0m
+[0;32mI (70000) MQTT_CLIENT: MQTT_Init OK[0m
+[E] coreMQTT: CONNACK recv failed with status = MQTTNoDataAvailable.
+[E] coreMQTT: MQTT connection failed with status = MQTTNoDataAvailable.
+[1;31mE (80000) MQTT_CLIENT: MQTT_Connect failed: 7[0m
+[0;32mI (80010) MQTT_CLIENT: TCP socket closed[0m
+[0;32mI (90010) MQTT_CLIENT: === MQTT connection attempt #3 ===[0m
+[0;32mI (90010) MQTT_CLIENT: DNS lookup: broker.hivemq.com (attempt 1/5)...[0m
+[0;32mI (90010) MQTT_CLIENT: Resolved broker.hivemq.com -> 3.126.218.60[0m
+[0;32mI (90580) MQTT_CLIENT: TCP connected to broker.hivemq.com:1883 (sock=56)[0m
+[0;32mI (90580) MQTT_CLIENT: MQTT_Init OK[0m
+[E] coreMQTT: CONNACK recv failed with status = MQTTNoDataAvailable.
+[E] coreMQTT: MQTT connection failed with status = MQTTNoDataAvailable.
+[1;31mE (100580) MQTT_CLIENT: MQTT_Connect failed: 7[0m
+[0;32mI (100580) MQTT_CLIENT: TCP socket closed[0m
+[0;32mI (110590) MQTT_CLIENT: === MQTT connection attempt #4 ===[0m
+[0;32mI (110590) MQTT_CLIENT: DNS lookup: broker.hivemq.com (attempt 1/5)...[0m
+[0;32mI (110590) MQTT_CLIENT: Resolved broker.hivemq.com -> 3.126.218.60[0m
+[0;32mI (111890) MQTT_CLIENT: TCP connected to broker.hivemq.com:1883 (sock=56)[0m
+[0;32mI (111890) MQTT_CLIENT: MQTT_Init OK[0m
+[I] coreMQTT: MQTT connection established with the broker.
+[0;32mI (113520) MQTT_CLIENT: MQTT connected to broker.hivemq.com:1883  sessionPresent=0[0m
+[0;32mI (115260) MQTT_CLIENT: SUBACK received — subscribed OK[0m
+[0;32mI (115260) MQTT_CLIENT: Subscribed to: esp32/from_mqttx[0m
+[0;32mI (115270) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=2)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (116270) MQTT_CLIENT: PUBACK received — packetID: 2[0m
+[I] coreMQTT: De-serialized incoming PUBLISH packet: DeserializerResult=MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPubAckSend.
+[0;32mI (145470) MQTT_CLIENT: === MQTT INCOMING ===[0m
+[0;32mI (145480) MQTT_CLIENT: Topic  : esp32/from_mqttx[0m
+[0;32mI (145480) MQTT_CLIENT: Payload: {[0m
+  "msg": "bonjour"
+}
+[0;32mI (145490) MQTT_CLIENT: QoS    : 1[0m
+[0;32mI (145500) MQTT_CLIENT: Echo published to esp32/to_mqttx (packetID=3)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (147930) MQTT_CLIENT: PUBACK received — packetID: 3[0m
+[0;32mI (147940) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=4)[0m
+[I] coreMQTT: De-serialized incoming PUBLISH packet: DeserializerResult=MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPubAckSend.
+[0;32mI (148940) MQTT_CLIENT: === MQTT INCOMING ===[0m
+[0;32mI (148940) MQTT_CLIENT: Topic  : esp32/from_mqttx[0m
+[0;32mI (148950) MQTT_CLIENT: Payload: {[0m
+  "msg": "bonjour"
+}
+[0;32mI (148950) MQTT_CLIENT: QoS    : 1[0m
+[0;32mI (148960) MQTT_CLIENT: Echo published to esp32/to_mqttx (packetID=5)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (150090) MQTT_CLIENT: PUBACK received — packetID: 4[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (161100) MQTT_CLIENT: PUBACK received — packetID: 5[0m
+[I] coreMQTT: De-serialized incoming PUBLISH packet: DeserializerResult=MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPubAckSend.
+[0;32mI (163910) MQTT_CLIENT: === MQTT INCOMING ===[0m
+[0;32mI (163910) MQTT_CLIENT: Topic  : esp32/from_mqttx[0m
+[0;32mI (163920) MQTT_CLIENT: Payload: {[0m
+  "msg": "bonjour"
+}
+[0;32mI (163920) MQTT_CLIENT: QoS    : 1[0m
+[0;32mI (163930) MQTT_CLIENT: Echo published to esp32/to_mqttx (packetID=6)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (170250) MQTT_CLIENT: PUBACK received — packetID: 6[0m
+[0;32mI (170260) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=7)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (171260) MQTT_CLIENT: PUBACK received — packetID: 7[0m
+[0;32mI (205260) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=8)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (206260) MQTT_CLIENT: PUBACK received — packetID: 8[0m
+[0;32mI (240260) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=9)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (241260) MQTT_CLIENT: PUBACK received — packetID: 9[0m
+[0;32mI (275260) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=10)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (276260) MQTT_CLIENT: PUBACK received — packetID: 10[0m
+[0;32mI (310260) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=11)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (311260) MQTT_CLIENT: PUBACK received — packetID: 11[0m
+[0;32mI (345260) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=12)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (346260) MQTT_CLIENT: PUBACK received — packetID: 12[0m
+[0;32mI (380260) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=13)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (381530) MQTT_CLIENT: PUBACK received — packetID: 13[0m
+[0;32mI (415530) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=14)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (416530) MQTT_CLIENT: PUBACK received — packetID: 14[0m

@@ -1,0 +1,369 @@
+Command: C:\Espressif\tools\python\v6.0\venv\Scripts\python.exe D:\esp\v6.0\esp-idf\tools/idf_monitor.py -p COM7 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project\build\ADC_DAC.elf C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.0\venv\Scripts\python.exe' 'D:\esp\v6.0\esp-idf\tools\idf.py' '-p' 'COM7'
+PI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:1584�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.0 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May  2 2026 23:16:09[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (31) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=24920h (149792) map[0m
+[0;32mI (139) esp_image: segment 1: paddr=00034948 vaddr=3ffbdb60 size=05fd4h ( 24532) load[0m
+[0;32mI (149) esp_image: segment 2: paddr=0003a924 vaddr=40080000 size=056f4h ( 22260) load[0m
+[0;32mI (158) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=bce48h (773704) map[0m
+[0;32mI (434) esp_image: segment 4: paddr=000fce70 vaddr=400856f4 size=173e8h ( 95208) load[0m
+[0;32mI (473) esp_image: segment 5: paddr=00114260 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (488) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (488) boot: Disabling RNG early entropy source...[0m
+[0;32mI (499) cpu_start: Multicore app[0m
+[0;32mI (507) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (507) cpu_start: Pro cpu start user code[0m
+[0;32mI (507) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (509) app_init: Application information:[0m
+[0;32mI (513) app_init: Project name:     ADC_DAC[0m
+[0;32mI (517) app_init: App version:      0141131-dirty[0m
+[0;32mI (521) app_init: Compile time:     May  6 2026 23:12:50[0m
+[0;32mI (526) app_init: ELF file SHA256:  34a882bc1...[0m
+[0;32mI (530) app_init: ESP-IDF:          v6.0[0m
+[0;32mI (534) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (538) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (542) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (546) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (552) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (557) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (562) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (568) heap_init: At 3FFC9A80 len 00016580 (89 KiB): DRAM[0m
+[0;32mI (573) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (578) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (584) heap_init: At 4009CADC len 00003524 (13 KiB): IRAM[0m
+[0;32mI (591) spi_flash: detected chip: generic[0m
+[0;32mI (593) spi_flash: flash io: dio[0m
+[0;33mW (595) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (609) coexist: coex firmware version: 093e3d2[0m
+[0;32mI (613) main_task: Started on CPU0[0m
+[0;32mI (623) main_task: Calling app_main()[0m
+[0;32mI (643) BTDM_INIT: BT controller compile version [045a658][0m
+[0;32mI (643) BTDM_INIT: Using main XTAL as clock source[0m
+[0;32mI (643) BTDM_INIT: Bluetooth MAC: d4:e9:f4:68:65:5e[0m
+[0;32mI (653) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (733) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1003) WIFI_BLE_PROV: Found saved credentials, connecting WiFi[0m
+[0;32mI (1033) wifi:wifi driver task: 3ffd7a74, prio:23, stack:6656, core=0[0m
+[0;32mI (1053) wifi:wifi firmware version: 44738b4[0m
+[0;32mI (1053) wifi:wifi certification version: v7.0[0m
+[0;32mI (1053) wifi:config NVS flash: enabled[0m
+[0;32mI (1053) wifi:config nano formatting: disabled[0m
+[0;32mI (1063) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1063) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1073) wifi:Init management short buffer num: 32[0m
+[0;32mI (1073) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1073) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1083) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1083) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1093) wifi_init: rx ba win: 6[0m
+[0;32mI (1093) wifi_init: accept mbox: 6[0m
+[0;32mI (1093) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1093) wifi_init: udp mbox: 6[0m
+[0;32mI (1103) WIFI_BLE_PROV: BLE addr: d4:e9:f4:68:65:5e[0m
+[0;32mI (1103) wifi_init: tcp mbox: 6[0m
+[0;32mI (1113) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1113) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (1113) NimBLE: disc_mode=2[0m
+[0;32mI (1123) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (1123) NimBLE: [0m
+
+[0;32mI (1133) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1133) wifi_init: tcp mss: 1440[0m
+[0;32mI (1133) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1143) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1153) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (1153) wifi:enable tsf[0m
+[0;32mI (1153) wifi:flush txq[0m
+[0;32mI (1153) wifi:stop sw txq[0m
+[0;32mI (1163) wifi:lmac stop hw txq[0m
+[0;32mI (1163) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (1163) wifi:enable tsf[0m
+[0;33mW (1173) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1173) WIFI_BLE_PROV: Status: WIFI_CONNECTING[0m
+[0;33mW (1173) wifi:Haven't to connect to a suitable AP now![0m
+[0;32mI (1183) NET_SVC: Network service initialized[0m
+[0;32mI (1183) MQTT_CLIENT: MQTT task started — waiting for Wi-Fi IP...[0m
+[0;32mI (1193) main_task: Returned from app_main()[0m
+[0;32mI (1283) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1283) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1353) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1373) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2193) MQTT_CLIENT: Waiting for IP... (1000/60000 ms)[0m
+[0;32mI (3193) MQTT_CLIENT: Waiting for IP... (2000/60000 ms)[0m
+[0;32mI (3633) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (4193) MQTT_CLIENT: Waiting for IP... (3000/60000 ms)[0m
+[0;32mI (5193) MQTT_CLIENT: Waiting for IP... (4000/60000 ms)[0m
+[0;32mI (6133) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (6193) MQTT_CLIENT: Waiting for IP... (5000/60000 ms)[0m
+[0;32mI (7193) MQTT_CLIENT: Waiting for IP... (6000/60000 ms)[0m
+[0;32mI (8193) MQTT_CLIENT: Waiting for IP... (7000/60000 ms)[0m
+[0;32mI (8633) MAIN: ADC_raw: 4095 | Sliding:  409 | Lowpass: 1228 | Average:  409 | DAC:  76[0m
+[0;32mI (9193) MQTT_CLIENT: Waiting for IP... (8000/60000 ms)[0m
+[0;32mI (10193) MQTT_CLIENT: Waiting for IP... (9000/60000 ms)[0m
+[0;32mI (11133) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (11193) MQTT_CLIENT: Waiting for IP... (10000/60000 ms)[0m
+[0;32mI (11373) wifi:state: run -> init (0xcc00)[0m
+[0;32mI (11393) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (11393) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (11393) WIFI_BLE_PROV: Status: WIFI_RETRYING[0m
+[0;33mW (11403) NET_SVC: Wi-Fi down -> network workers reconnect later[0m
+[0;32mI (12193) MQTT_CLIENT: Waiting for IP... (11000/60000 ms)[0m
+[0;32mI (13193) MQTT_CLIENT: Waiting for IP... (12000/60000 ms)[0m
+[0;32mI (13633) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (14193) MQTT_CLIENT: Waiting for IP... (13000/60000 ms)[0m
+[0;32mI (15193) MQTT_CLIENT: Waiting for IP... (14000/60000 ms)[0m
+[0;32mI (16133) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (16193) MQTT_CLIENT: Waiting for IP... (15000/60000 ms)[0m
+[0;32mI (16223) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy[0m
+
+[0;32mI (16233) WIFI_BLE_PROV: Status: WIFI_RETRYING[0m
+[0;33mW (16233) NET_SVC: Wi-Fi down -> network workers reconnect later[0m
+[0;32mI (16333) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (16333) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (16343) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (16373) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (16423) wifi:connected with TuanNga, aid = 3, channel 6, BW20, bssid = 00:c8:96:aa:40:d9[0m
+[0;32mI (16423) wifi:security: WPA2-PSK, phy: bgn, rssi: -60[0m
+[0;32mI (16433) wifi:pm start, type: 1[0m
+
+[0;32mI (16433) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (16443) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (16463) wifi:<ba-add>idx:0 (ifx:0, 00:c8:96:aa:40:d9), tid:7, ssn:0, winSize:64[0m
+[0;32mI (17193) MQTT_CLIENT: Waiting for IP... (16000/60000 ms)[0m
+[0;32mI (17553) esp_netif_handlers: sta ip: 192.168.100.2, mask: 255.255.255.0, gw: 192.168.100.1[0m
+[0;32mI (17553) WIFI_BLE_PROV: Status: WIFI_CONNECTED[0m
+[0;32mI (17553) NET_SVC: Wi-Fi up -> network workers allowed[0m
+[0;32mI (17683) NET_SVC: Network workers started[0m
+[0;32mI (17683) NET_SVC: UDP ready on port 5005[0m
+[0;32mI (17683) NET_SVC: TCP server listening on port 5006[0m
+[0;32mI (18193) MQTT_CLIENT: Waiting for IP... (17000/60000 ms)[0m
+[0;32mI (18193) MQTT_CLIENT: Got IP: 192.168.100.2[0m
+[0;32mI (18643) MAIN: ADC_raw:   17 | Sliding:    4 | Lowpass:    7 | Average:    4 | DAC:   0[0m
+[0;32mI (20193) MQTT_CLIENT: === MQTT connection attempt #1 ===[0m
+[0;32mI (20193) MQTT_CLIENT: DNS lookup: broker.hivemq.com (attempt 1/5)...[0m
+[0;32mI (20233) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:6, ssn:2, winSize:64[0m
+[0;32mI (20243) wifi:<ba-del>idx:1, tid:6[0m
+[0;32mI (20253) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:0, ssn:0, winSize:64[0m
+[0;32mI (20253) MQTT_CLIENT: Resolved broker.hivemq.com -> 3.123.192.152[0m
+[0;32mI (20643) MQTT_CLIENT: TCP connected to broker.hivemq.com:1883 (sock=56)[0m
+[0;32mI (20643) MQTT_CLIENT: MQTT_Init OK[0m
+[0;32mI (21143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[I] coreMQTT: MQTT connection established with the broker.
+[0;32mI (21483) MQTT_CLIENT: MQTT connected to broker.hivemq.com:1883  sessionPresent=0[0m
+[E] coreMQTT: The incoming publish record list is not initialised for QoS1/QoS2 records. Please call  MQTT_InitStatefulQoS to enable use of QoS1 and  QoS2 packets.
+[1;31mE (21503) MQTT_CLIENT: MQTT_Subscribe failed: 1[0m
+[0;32mI (23643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (26143) MAIN: ADC_raw:    0 | Sliding:    1 | Lowpass:    1 | Average:    1 | DAC:   0[0m
+[0;32mI (28643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (31143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (31503) MQTT_CLIENT: Subscribed to: esp32/from_mqttx[0m
+[E] coreMQTT: Trying to publish a QoS > MQTTQoS0 packet when outgoing publishes for QoS1/QoS2 have not been enabled. Please, call MQTT_InitStatefulQoS to initialize and enable the use of QoS1/QoS2 publishes.
+[E] coreMQTT: MQTT PUBLISH failed with status MQTTBadParameter.
+[0;32mI (33643) MAIN: ADC_raw:   16 | Sliding:   14 | Lowpass:   11 | Average:   14 | DAC:   0[0m
+[0;32mI (36143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (38643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (41143) MAIN: ADC_raw:   13 | Sliding:    2 | Lowpass:    5 | Average:    2 | DAC:   0[0m
+[0;32mI (43643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (46143) MAIN: ADC_raw:    0 | Sliding:   31 | Lowpass:   29 | Average:   31 | DAC:   1[0m
+[0;32mI (48643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (51143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (53643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (56143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (58643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (61143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (63643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (66143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[E] coreMQTT: Trying to publish a QoS > MQTTQoS0 packet when outgoing publishes for QoS1/QoS2 have not been enabled. Please, call MQTT_InitStatefulQoS to initialize and enable the use of QoS1/QoS2 publishes.
+[E] coreMQTT: MQTT PUBLISH failed with status MQTTBadParameter.
+[0;33mW (66533) MQTT_CLIENT: MQTT_Publish failed: 1[0m
+[I] coreMQTT: Disconnected from the broker.
+[E] coreMQTT: MQTT Connection Disconnected Successfully
+[0;32mI (66553) MQTT_CLIENT: TCP socket closed[0m
+[0;33mW (66553) MQTT_CLIENT: MQTT session ended — reconnect in 10000 ms[0m
+[0;32mI (68643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (71143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (73643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (76143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (76553) MQTT_CLIENT: === MQTT connection attempt #2 ===[0m
+[0;32mI (76553) MQTT_CLIENT: DNS lookup: broker.hivemq.com (attempt 1/5)...[0m
+[0;32mI (76663) MQTT_CLIENT: Resolved broker.hivemq.com -> 35.157.254.73[0m
+[0;32mI (77163) MQTT_CLIENT: TCP connected to broker.hivemq.com:1883 (sock=56)[0m
+[0;32mI (77173) MQTT_CLIENT: MQTT_Init OK[0m
+[I] coreMQTT: MQTT connection established with the broker.
+[0;32mI (77673) MQTT_CLIENT: MQTT connected to broker.hivemq.com:1883  sessionPresent=0[0m
+[E] coreMQTT: The incoming publish record list is not initialised for QoS1/QoS2 records. Please call  MQTT_InitStatefulQoS to enable use of QoS1 and  QoS2 packets.
+[1;31mE (77693) MQTT_CLIENT: MQTT_Subscribe failed: 1[0m
+[0;32mI (78643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (81143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (83643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (86143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (87703) MQTT_CLIENT: Subscribed to: esp32/from_mqttx[0m
+[E] coreMQTT: Trying to publish a QoS > MQTTQoS0 packet when outgoing publishes for QoS1/QoS2 have not been enabled. Please, call MQTT_InitStatefulQoS to initialize and enable the use of QoS1/QoS2 publishes.
+[E] coreMQTT: MQTT PUBLISH failed with status MQTTBadParameter.
+[0;32mI (88643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (91143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (93643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (96143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (98643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (101143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (103643) MAIN: ADC_raw:    0 | Sliding:    4 | Lowpass:    2 | Average:    4 | DAC:   0[0m
+[0;32mI (106143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (108643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (111143) MAIN: ADC_raw:   14 | Sliding:    2 | Lowpass:    5 | Average:    2 | DAC:   0[0m
+[0;32mI (113643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (116143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (118643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (121143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[E] coreMQTT: Trying to publish a QoS > MQTTQoS0 packet when outgoing publishes for QoS1/QoS2 have not been enabled. Please, call MQTT_InitStatefulQoS to initialize and enable the use of QoS1/QoS2 publishes.
+[E] coreMQTT: MQTT PUBLISH failed with status MQTTBadParameter.
+[0;33mW (123073) MQTT_CLIENT: MQTT_Publish failed: 1[0m
+[I] coreMQTT: Disconnected from the broker.
+[E] coreMQTT: MQTT Connection Disconnected Successfully
+[0;32mI (123093) MQTT_CLIENT: TCP socket closed[0m
+[0;33mW (123093) MQTT_CLIENT: MQTT session ended — reconnect in 10000 ms[0m
+[0;32mI (123643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (126143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (128643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (131143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (133093) MQTT_CLIENT: === MQTT connection attempt #3 ===[0m
+[0;32mI (133093) MQTT_CLIENT: DNS lookup: broker.hivemq.com (attempt 1/5)...[0m
+[0;32mI (133093) MQTT_CLIENT: Resolved broker.hivemq.com -> 35.157.254.73[0m
+[0;32mI (133483) MQTT_CLIENT: TCP connected to broker.hivemq.com:1883 (sock=56)[0m
+[0;32mI (133483) MQTT_CLIENT: MQTT_Init OK[0m
+[0;32mI (133643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[I] coreMQTT: MQTT connection established with the broker.
+[0;32mI (134103) MQTT_CLIENT: MQTT connected to broker.hivemq.com:1883  sessionPresent=0[0m
+[E] coreMQTT: The incoming publish record list is not initialised for QoS1/QoS2 records. Please call  MQTT_InitStatefulQoS to enable use of QoS1 and  QoS2 packets.
+[1;31mE (134123) MQTT_CLIENT: MQTT_Subscribe failed: 1[0m
+[0;32mI (136143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (138643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (141143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (143643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (144123) MQTT_CLIENT: Subscribed to: esp32/from_mqttx[0m
+[E] coreMQTT: Trying to publish a QoS > MQTTQoS0 packet when outgoing publishes for QoS1/QoS2 have not been enabled. Please, call MQTT_InitStatefulQoS to initialize and enable the use of QoS1/QoS2 publishes.
+[E] coreMQTT: MQTT PUBLISH failed with status MQTTBadParameter.
+[0;32mI (146143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (148643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (151143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (153643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (156143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (158643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (161143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (163643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (166143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (168643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (171143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (173643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (176143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (178643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[E] coreMQTT: Trying to publish a QoS > MQTTQoS0 packet when outgoing publishes for QoS1/QoS2 have not been enabled. Please, call MQTT_InitStatefulQoS to initialize and enable the use of QoS1/QoS2 publishes.
+[E] coreMQTT: MQTT PUBLISH failed with status MQTTBadParameter.
+[0;33mW (179153) MQTT_CLIENT: MQTT_Publish failed: 1[0m
+[I] coreMQTT: Disconnected from the broker.
+[E] coreMQTT: MQTT Connection Disconnected Successfully
+[0;32mI (179173) MQTT_CLIENT: TCP socket closed[0m
+[0;33mW (179173) MQTT_CLIENT: MQTT session ended — reconnect in 10000 ms[0m
+[0;32mI (181143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (183643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (186143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (188643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (189173) MQTT_CLIENT: === MQTT connection attempt #4 ===[0m
+[0;32mI (189173) MQTT_CLIENT: DNS lookup: broker.hivemq.com (attempt 1/5)...[0m
+[0;32mI (189293) MQTT_CLIENT: Resolved broker.hivemq.com -> 3.126.52.214[0m
+[0;32mI (189723) MQTT_CLIENT: TCP connected to broker.hivemq.com:1883 (sock=56)[0m
+[0;32mI (189723) MQTT_CLIENT: MQTT_Init OK[0m
+[0;32mI (191143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[I] coreMQTT: MQTT connection established with the broker.
+[0;32mI (191153) MQTT_CLIENT: MQTT connected to broker.hivemq.com:1883  sessionPresent=0[0m
+[E] coreMQTT: The incoming publish record list is not initialised for QoS1/QoS2 records. Please call  MQTT_InitStatefulQoS to enable use of QoS1 and  QoS2 packets.
+[1;31mE (191173) MQTT_CLIENT: MQTT_Subscribe failed: 1[0m
+[0;32mI (193643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (196143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (198643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (201143) MAIN: ADC_raw:    0 | Sliding:   13 | Lowpass:    8 | Average:   13 | DAC:   0[0m
+[0;32mI (201173) MQTT_CLIENT: Subscribed to: esp32/from_mqttx[0m
+[E] coreMQTT: Trying to publish a QoS > MQTTQoS0 packet when outgoing publishes for QoS1/QoS2 have not been enabled. Please, call MQTT_InitStatefulQoS to initialize and enable the use of QoS1/QoS2 publishes.
+[E] coreMQTT: MQTT PUBLISH failed with status MQTTBadParameter.
+[0;32mI (203643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (206143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (208643) MAIN: ADC_raw:    0 | Sliding:   18 | Lowpass:    5 | Average:   18 | DAC:   0[0m
+[0;32mI (211143) MAIN: ADC_raw:  145 | Sliding:   38 | Lowpass:   62 | Average:   38 | DAC:   3[0m
+[0;32mI (213643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (216143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (218643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (221143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (223643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (226143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (228643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (231143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (233643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (236143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[E] coreMQTT: Trying to publish a QoS > MQTTQoS0 packet when outgoing publishes for QoS1/QoS2 have not been enabled. Please, call MQTT_InitStatefulQoS to initialize and enable the use of QoS1/QoS2 publishes.
+[E] coreMQTT: MQTT PUBLISH failed with status MQTTBadParameter.
+[0;33mW (238353) MQTT_CLIENT: MQTT_Publish failed: 1[0m
+[I] coreMQTT: Disconnected from the broker.
+[E] coreMQTT: MQTT Connection Disconnected Successfully
+[0;32mI (238373) MQTT_CLIENT: TCP socket closed[0m
+[0;33mW (238373) MQTT_CLIENT: MQTT session ended — reconnect in 10000 ms[0m
+[0;32mI (238643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (241143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (243643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (246143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (248373) MQTT_CLIENT: === MQTT connection attempt #5 ===[0m
+[0;32mI (248373) MQTT_CLIENT: DNS lookup: broker.hivemq.com (attempt 1/5)...[0m
+[0;32mI (248373) MQTT_CLIENT: Resolved broker.hivemq.com -> 3.126.52.214[0m
+[0;32mI (248643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (248893) MQTT_CLIENT: TCP connected to broker.hivemq.com:1883 (sock=56)[0m
+[0;32mI (248893) MQTT_CLIENT: MQTT_Init OK[0m
+[0;32mI (251143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (253643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (256143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[I] coreMQTT: MQTT connection established with the broker.
+[0;32mI (257223) MQTT_CLIENT: MQTT connected to broker.hivemq.com:1883  sessionPresent=0[0m
+[E] coreMQTT: The incoming publish record list is not initialised for QoS1/QoS2 records. Please call  MQTT_InitStatefulQoS to enable use of QoS1 and  QoS2 packets.
+[1;31mE (257233) MQTT_CLIENT: MQTT_Subscribe failed: 1[0m
+[0;32mI (258643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (261143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (263643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (266143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (267243) MQTT_CLIENT: Subscribed to: esp32/from_mqttx[0m
+[E] coreMQTT: Trying to publish a QoS > MQTTQoS0 packet when outgoing publishes for QoS1/QoS2 have not been enabled. Please, call MQTT_InitStatefulQoS to initialize and enable the use of QoS1/QoS2 publishes.
+[E] coreMQTT: MQTT PUBLISH failed with status MQTTBadParameter.
+[0;32mI (268643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (271143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (273643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (276143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (278643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (281143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (283643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (286143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (288643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (291143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (293643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m

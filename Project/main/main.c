@@ -8,6 +8,7 @@
 #include "network_service.h"
 #include "wifi_ble_provision.h"
 #include "http_client_task.h"
+#include "mqtt_client_task.h"
 
 static const char *TAG = "MAIN";
 
@@ -79,17 +80,25 @@ void app_main(void)
     }
 
     // Tạo task để đọc ADC và xử lý
-    xTaskCreate(adc_dac_task,           // Hàm task
-                "ADC_DAC_Task",         // Tên task
-                4096,                   // Stack size
-                NULL,                   // Parameters
-                5,                      // Priority
-                NULL);                  // Task handle
+    // xTaskCreate(adc_dac_task,           // Hàm task
+    //             "ADC_DAC_Task",         // Tên task
+    //             4096,                   // Stack size
+    //             NULL,                   // Parameters
+    //             5,                      // Priority
+    //             NULL);                  // Task handle
 
     // Tạo task HTTP client: DNS + GET / HTTP/1.1 tới httpforever.com
-    xTaskCreate(http_client_task,       // Hàm task
-                "HTTP_Client_Task",     // Tên task
-                8192,                   // Stack size (8 KB — cần cho response buffer)
+    // xTaskCreate(http_client_task,       // Hàm task
+    //             "HTTP_Client_Task",     // Tên task
+    //             8192,                   // Stack size (8 KB — cần cho response buffer)
+    //             NULL,                   // Parameters
+    //             5,                      // Priority
+    //             NULL);                  // Task handle
+
+    // Tạo task MQTT client: kết nối test.mosquitto.org:1883, pub/sub với MQTTX
+    xTaskCreate(mqtt_client_task,       // Hàm task
+                "MQTT_Client_Task",     // Tên task
+                8192,                   // Stack size (8 KB)
                 NULL,                   // Parameters
                 5,                      // Priority
                 NULL);                  // Task handle

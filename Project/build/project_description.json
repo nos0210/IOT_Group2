@@ -1,7 +1,7 @@
 {
     "version":            "1.3",
     "project_name":       "ADC_DAC",
-    "project_version":    "ce780a1-dirty",
+    "project_version":    "0141131-dirty",
     "project_path":       "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project",
     "idf_path":           "D:/esp/v6.0/esp-idf",
     "build_dir":          "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build",
@@ -1730,13 +1730,13 @@
             "dir": "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/main",
             "type": "LIBRARY",
             "lib": "__idf_main",
-            "reqs": [ "esp_adc", "esp_driver_dac", "esp_driver_gpio", "esp_wifi", "esp_event", "nvs_flash", "bt", "lwip", "esp_netif" ],
+            "reqs": [ "esp_adc", "esp_driver_dac", "esp_driver_gpio", "esp_wifi", "esp_event", "nvs_flash", "bt", "lwip", "esp_netif", "esp_timer" ],
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/esp-idf/main/libmain.a",
-            "sources": [ "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/main/main.c", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/modules/ADC_DAC.c", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/modules/wifi_ble_provision.c", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/modules/network_service.c", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/modules/http_client_task.c", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/coreHTTP/source/core_http_client.c", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/coreHTTP/source/dependency/3rdparty/llhttp/src/api.c", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/coreHTTP/source/dependency/3rdparty/llhttp/src/llhttp.c", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/coreHTTP/source/dependency/3rdparty/llhttp/src/http.c" ],
-            "include_dirs": [ ".", "../include", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/main/../../coreHTTP/source/include", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/main/../../coreHTTP/source/interface", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/main/../../coreHTTP/source/dependency/3rdparty/llhttp/include" ]
+            "sources": [ "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/main/main.c", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/modules/ADC_DAC.c", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/modules/wifi_ble_provision.c", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/modules/network_service.c", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/modules/http_client_task.c", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/modules/mqtt_client_task.c", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/coreHTTP/source/core_http_client.c", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/coreHTTP/source/dependency/3rdparty/llhttp/src/api.c", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/coreHTTP/source/dependency/3rdparty/llhttp/src/llhttp.c", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/coreHTTP/source/dependency/3rdparty/llhttp/src/http.c", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/aws-iot-device-sdk-embedded-C/libraries/standard/coreMQTT/source/core_mqtt.c", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/aws-iot-device-sdk-embedded-C/libraries/standard/coreMQTT/source/core_mqtt_serializer.c", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/aws-iot-device-sdk-embedded-C/libraries/standard/coreMQTT/source/core_mqtt_state.c" ],
+            "include_dirs": [ ".", "../include", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/main/../../coreHTTP/source/include", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/main/../../coreHTTP/source/interface", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/main/../../coreHTTP/source/dependency/3rdparty/llhttp/include", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/main/../../aws-iot-device-sdk-embedded-C/libraries/standard/coreMQTT/source/include", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/main/../../aws-iot-device-sdk-embedded-C/libraries/standard/coreMQTT/source/interface" ]
         },
         "mbedtls": {
             "alias": "idf::mbedtls",
@@ -3843,11 +3843,11 @@
             "dir": "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/main",
             "source": "project_components",
             "lib": "__idf_main",
-            "reqs": [ "esp_adc", "esp_driver_dac", "esp_driver_gpio", "esp_wifi", "esp_event", "nvs_flash", "bt", "lwip", "esp_netif" ],
+            "reqs": [ "esp_adc", "esp_driver_dac", "esp_driver_gpio", "esp_wifi", "esp_event", "nvs_flash", "bt", "lwip", "esp_netif", "esp_timer" ],
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": [ ".", "../include", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/main/../../coreHTTP/source/include", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/main/../../coreHTTP/source/interface", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/main/../../coreHTTP/source/dependency/3rdparty/llhttp/include" ]
+            "include_dirs": [ ".", "../include", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/main/../../coreHTTP/source/include", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/main/../../coreHTTP/source/interface", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/main/../../coreHTTP/source/dependency/3rdparty/llhttp/include", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/main/../../aws-iot-device-sdk-embedded-C/libraries/standard/coreMQTT/source/include", "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/main/../../aws-iot-device-sdk-embedded-C/libraries/standard/coreMQTT/source/interface" ]
         }
     },
     "gdbinit_files": {

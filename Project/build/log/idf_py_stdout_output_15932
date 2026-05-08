@@ -1,0 +1,1417 @@
+Command: C:\Espressif\tools\python\v6.0\venv\Scripts\python.exe D:\esp\v6.0\esp-idf\tools/idf_monitor.py -p COM7 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project\build\ADC_DAC.elf C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.0\venv\Scripts\python.exe' 'D:\esp\v6.0\esp-idf\tools\idf.py' '-p' 'COM7'
+PI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entr�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.0 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May  2 2026 23:16:09[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (31) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=246b0h (149168) map[0m
+[0;32mI (139) esp_image: segment 1: paddr=000346d8 vaddr=3ffbdb60 size=05fd4h ( 24532) load[0m
+[0;32mI (149) esp_image: segment 2: paddr=0003a6b4 vaddr=40080000 size=05964h ( 22884) load[0m
+[0;32mI (158) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=bfd40h (785728) map[0m
+[0;32mI (439) esp_image: segment 4: paddr=000ffd68 vaddr=40085964 size=17178h ( 94584) load[0m
+[0;32mI (477) esp_image: segment 5: paddr=00116ee8 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (492) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (492) boot: Disabling RNG early entropy source...[0m
+[0;32mI (503) cpu_start: Multicore app[0m
+[0;32mI (511) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (511) cpu_start: Pro cpu start user code[0m
+[0;32mI (511) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (513) app_init: Application information:[0m
+[0;32mI (517) app_init: Project name:     ADC_DAC[0m
+[0;32mI (521) app_init: App version:      ce780a1-dirty[0m
+[0;32mI (525) app_init: Compile time:     May  2 2026 23:15:17[0m
+[0;32mI (530) app_init: ELF file SHA256:  073220e1d...[0m
+[0;32mI (535) app_init: ESP-IDF:          v6.0[0m
+[0;32mI (538) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (542) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (546) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (550) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (556) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (561) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (566) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (572) heap_init: At 3FFCB480 len 00014B80 (82 KiB): DRAM[0m
+[0;32mI (577) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (582) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (588) heap_init: At 4009CADC len 00003524 (13 KiB): IRAM[0m
+[0;32mI (595) spi_flash: detected chip: generic[0m
+[0;32mI (597) spi_flash: flash io: dio[0m
+[0;33mW (600) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (613) coexist: coex firmware version: 093e3d2[0m
+[0;32mI (617) main_task: Started on CPU0[0m
+[0;32mI (627) main_task: Calling app_main()[0m
+[0;32mI (647) BTDM_INIT: BT controller compile version [045a658][0m
+[0;32mI (647) BTDM_INIT: Using main XTAL as clock source[0m
+[0;32mI (647) BTDM_INIT: Bluetooth MAC: d4:e9:f4:68:65:5e[0m
+[0;32mI (657) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (987) WIFI_BLE_PROV: Found saved credentials, connecting WiFi[0m
+[0;32mI (1017) wifi:wifi driver task: 3ffd94ac, prio:23, stack:6656, core=0[0m
+[0;32mI (1037) wifi:wifi firmware version: 44738b4[0m
+[0;32mI (1037) wifi:wifi certification version: v7.0[0m
+[0;32mI (1037) wifi:config NVS flash: enabled[0m
+[0;32mI (1037) wifi:config nano formatting: disabled[0m
+[0;32mI (1037) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1047) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1047) wifi:Init management short buffer num: 32[0m
+[0;32mI (1057) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1057) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1057) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1067) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1077) WIFI_BLE_PROV: BLE addr: d4:e9:f4:68:65:5e[0m
+[0;32mI (1077) wifi_init: rx ba win: 6[0m
+[0;32mI (1077) wifi_init: accept mbox: 6[0m
+[0;32mI (1077) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (1087) NimBLE: disc_mode=2[0m
+[0;32mI (1087) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (1097) NimBLE: [0m
+
+[0;32mI (1097) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1097) wifi_init: udp mbox: 6[0m
+[0;32mI (1107) wifi_init: tcp mbox: 6[0m
+[0;32mI (1107) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1107) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1117) wifi_init: tcp mss: 1440[0m
+[0;32mI (1117) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1117) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1127) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (1127) wifi:enable tsf[0m
+[0;32mI (1137) wifi:flush txq[0m
+[0;32mI (1137) wifi:stop sw txq[0m
+[0;32mI (1137) wifi:lmac stop hw txq[0m
+[0;32mI (1147) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (1147) wifi:enable tsf[0m
+[0;33mW (1147) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1157) WIFI_BLE_PROV: Status: WIFI_CONNECTING[0m
+[0;33mW (1157) wifi:Haven't to connect to a suitable AP now![0m
+[0;32mI (1167) NET_SVC: Network service initialized[0m
+[0;32mI (1177) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1177) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1187) HTTP_CLIENT: HTTP client task started — waiting for Wi-Fi IP...[0m
+[0;32mI (1187) main_task: Returned from app_main()[0m
+[0;32mI (1227) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1247) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1307) wifi:connected with TuanNga, aid = 2, channel 6, BW20, bssid = 00:c8:96:aa:40:d9[0m
+[0;32mI (1307) wifi:security: WPA2-PSK, phy: bgn, rssi: -54[0m
+[0;32mI (1317) wifi:pm start, type: 1[0m
+
+[0;32mI (1317) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1327) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1357) wifi:<ba-add>idx:0 (ifx:0, 00:c8:96:aa:40:d9), tid:7, ssn:0, winSize:64[0m
+[0;32mI (2187) HTTP_CLIENT: Waiting for IP... (1000/60000 ms)[0m
+[0;32mI (2537) esp_netif_handlers: sta ip: 192.168.100.3, mask: 255.255.255.0, gw: 192.168.100.1[0m
+[0;32mI (2537) WIFI_BLE_PROV: Status: WIFI_CONNECTED[0m
+[0;32mI (2537) NET_SVC: Wi-Fi up -> network workers allowed[0m
+[0;32mI (2667) NET_SVC: Network workers started[0m
+[0;32mI (2667) NET_SVC: UDP ready on port 5005[0m
+[0;32mI (2667) NET_SVC: TCP server listening on port 5006[0m
+[0;32mI (3187) HTTP_CLIENT: Waiting for IP... (2000/60000 ms)[0m
+[0;32mI (3187) HTTP_CLIENT: Got IP: 192.168.100.3[0m
+[0;32mI (3187) HTTP_CLIENT: DNS lookup: httpforever.com (attempt 1/5) ...[0m
+[0;32mI (3197) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:6, ssn:2, winSize:64[0m
+[0;32mI (3207) wifi:<ba-del>idx:1, tid:6[0m
+[0;32mI (3217) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:0, ssn:0, winSize:64[0m
+[0;32mI (3277) HTTP_CLIENT: Resolved httpforever.com -> 146.190.62.39[0m
+[0;32mI (3277) HTTP_CLIENT: Connecting to httpforever.com:80 ...[0m
+[0;32mI (3587) HTTP_CLIENT: TCP connected to httpforever.com:80 (fd=56)[0m
+[0;32mI (3587) HTTP_CLIENT: Request headers (73 bytes):[0m
+GET / HTTP/1.1
+User-Agent: ESP32-coreHTTP/1.0
+Host: httpforever.com
+
+
+[0;32mI (3597) HTTP_CLIENT: Sending GET / HTTP/1.1 to httpforever.com ...[0m
+[0;32mI (3627) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (4097) HTTP_CLIENT: ========== HTTP Response ===========[0m
+[0;32mI (4097) HTTP_CLIENT: Status Code : 200[0m
+[0;32mI (4097) HTTP_CLIENT: Headers Len : 803 B[0m
+[0;32mI (4097) HTTP_CLIENT: Body Len    : 5124 B[0m
+[0;32mI (4107) HTTP_CLIENT: --- Response Headers ---[0m
+[0;32mI (4107) HTTP_CLIENT: Server: nginx/1.[0m
+[0;32mI (4117) HTTP_CLIENT: 18.0 (Ubuntu)[0m
+D
+[0;32mI (4117) HTTP_CLIENT: ate: Sat, 02 May[0m
+[0;32mI (4117) HTTP_CLIENT:  2026 16:37:18 G[0m
+[0;32mI (4127) HTTP_CLIENT: MT[0m
+Content-Type
+[0;32mI (4127) HTTP_CLIENT: : text/html[0m
+Con
+[0;32mI (4127) HTTP_CLIENT: tent-Length: 512[0m
+[0;32mI (4137) HTTP_CLIENT: 4[0m
+Last-Modified
+[0;32mI (4137) HTTP_CLIENT: : Wed, 22 Mar 20[0m
+[0;32mI (4137) HTTP_CLIENT: 23 14:54:48 GMT[0m
+[0;32mI (4147) HTTP_CLIENT: [0m
+Connection: kee
+[0;32mI (4147) HTTP_CLIENT: p-alive[0m
+ETag: "
+[0;32mI (4147) HTTP_CLIENT: 641b16b8-1404"[0m
+
+[0;32mI (4157) HTTP_CLIENT: Referrer-Policy:[0m
+[0;32mI (4157) HTTP_CLIENT:  strict-origin-w[0m
+[0;32mI (4157) HTTP_CLIENT: hen-cross-origin[0m
+[0;32mI (4167) HTTP_CLIENT: [0m
+X-Content-Type
+[0;32mI (4167) HTTP_CLIENT: -Options: nosnif[0m
+[0;32mI (4177) HTTP_CLIENT: f[0m
+Feature-Polic
+[0;32mI (4177) HTTP_CLIENT: y: accelerometer[0m
+[0;32mI (4177) HTTP_CLIENT:  'none'; camera [0m
+[0;32mI (4187) HTTP_CLIENT: 'none'; geolocat[0m
+[0;32mI (4187) HTTP_CLIENT: ion 'none'; gyro[0m
+[0;32mI (4187) HTTP_CLIENT: scope 'none'; ma[0m
+[0;32mI (4197) HTTP_CLIENT: gnetometer 'none[0m
+[0;32mI (4197) HTTP_CLIENT: '; microphone 'n[0m
+[0;32mI (4197) HTTP_CLIENT: one'; payment 'n[0m
+[0;32mI (4207) HTTP_CLIENT: one'; usb 'none'[0m
+[0;32mI (4207) HTTP_CLIENT: [0m
+Content-Securi
+[0;32mI (4207) HTTP_CLIENT: ty-Policy: defau[0m
+[0;32mI (4217) HTTP_CLIENT: lt-src 'self'; s[0m
+[0;32mI (4217) HTTP_CLIENT: cript-src cdnjs.[0m
+[0;32mI (4217) HTTP_CLIENT: cloudflare.com '[0m
+[0;32mI (4227) HTTP_CLIENT: self' 'report-sh[0m
+[0;32mI (4227) HTTP_CLIENT: a256'; style-src[0m
+[0;32mI (4227) HTTP_CLIENT:  cdnjs.cloudflar[0m
+[0;32mI (4237) HTTP_CLIENT: e.com 'self' fon[0m
+[0;32mI (4237) HTTP_CLIENT: ts.googleapis.co[0m
+[0;32mI (4247) HTTP_CLIENT: m 'unsafe-inline[0m
+[0;32mI (4247) HTTP_CLIENT: '; font-src font[0m
+[0;32mI (4247) HTTP_CLIENT: s.googleapis.com[0m
+[0;32mI (4257) HTTP_CLIENT:  fonts.gstatic.c[0m
+[0;32mI (4257) HTTP_CLIENT: om cdnjs.cloudfl[0m
+[0;32mI (4257) HTTP_CLIENT: are.com; frame-a[0m
+[0;32mI (4267) HTTP_CLIENT: ncestors 'none';[0m
+[0;32mI (4267) HTTP_CLIENT:  report-uri http[0m
+[0;32mI (4267) HTTP_CLIENT: s://scotthelme.r[0m
+[0;32mI (4277) HTTP_CLIENT: eport-uri.com/r/[0m
+[0;32mI (4277) HTTP_CLIENT: d/csp/enforce[0m
+A
+[0;32mI (4277) HTTP_CLIENT: ccept-Ranges: by[0m
+[0;32mI (4287) HTTP_CLIENT: tes[0m
+[0;32mI (4287) HTTP_CLIENT: --- Response Body ---[0m
+[0;32mI (4287) HTTP_CLIENT: <!DOCTYPE HTML>[0m
+[0;32mI (4297) HTTP_CLIENT: [0m
+<html>
+	<head>
+[0;32mI (4297) HTTP_CLIENT: [0m
+		<title>HTTP 
+[0;32mI (4297) HTTP_CLIENT: Forever</title>[0m
+[0;32mI (4307) HTTP_CLIENT: [0m
+		<meta http-eq
+[0;32mI (4307) HTTP_CLIENT: uiv="content-typ[0m
+[0;32mI (4307) HTTP_CLIENT: e" content="text[0m
+[0;32mI (4317) HTTP_CLIENT: /html; charset=u[0m
+[0;32mI (4317) HTTP_CLIENT: tf-8" />[0m
+		<met
+[0;32mI (4317) HTTP_CLIENT: a name="descript[0m
+[0;32mI (4327) HTTP_CLIENT: ion" content="A [0m
+[0;32mI (4327) HTTP_CLIENT: site that will a[0m
+[0;32mI (4337) HTTP_CLIENT: lways be availab[0m
+[0;32mI (4337) HTTP_CLIENT: le over HTTP!" /[0m
+[0;32mI (4337) HTTP_CLIENT: >[0m
+		<meta name=
+[0;32mI (4347) HTTP_CLIENT: "keywords" conte[0m
+[0;32mI (4347) HTTP_CLIENT: nt="HTTP WiFi Ca[0m
+[0;32mI (4347) HTTP_CLIENT: ptive Portal" />[0m
+[0;32mI (4357) HTTP_CLIENT: [0m
+		<!--[if lte 
+[0;32mI (4357) HTTP_CLIENT: IE 8]><script sr[0m
+[0;32mI (4357) HTTP_CLIENT: c="css/ie/html5s[0m
+[0;32mI (4367) HTTP_CLIENT: hiv.js"></script[0m
+[0;32mI (4367) HTTP_CLIENT: ><![endif]-->[0m
+	
+[0;32mI (4367) HTTP_CLIENT: 	<script src="ht[0m
+[0;32mI (4377) HTTP_CLIENT: tps://cdnjs.clou[0m
+[0;32mI (4377) HTTP_CLIENT: dflare.com/ajax/[0m
+[0;32mI (4377) HTTP_CLIENT: libs/jquery/3.3.[0m
+[0;32mI (4387) HTTP_CLIENT: 1/jquery.min.js"[0m
+[0;32mI (4387) HTTP_CLIENT:  integrity="sha2[0m
+[0;32mI (4387) HTTP_CLIENT: 56-FgpCb/KJQlLNf[0m
+[0;32mI (4397) HTTP_CLIENT: Ou91ta32o/NMZxlt[0m
+[0;32mI (4397) HTTP_CLIENT: wRo8QtmkMRdAu8="[0m
+[0;32mI (4397) HTTP_CLIENT:  crossorigin="an[0m
+[0;32mI (4407) HTTP_CLIENT: onymous"></scrip[0m
+[0;32mI (4407) HTTP_CLIENT: t>[0m
+		<script sr
+[0;32mI (4417) HTTP_CLIENT: c="https://cdnjs[0m
+[0;32mI (4417) HTTP_CLIENT: .cloudflare.com/[0m
+[0;32mI (4417) HTTP_CLIENT: ajax/libs/skel/3[0m
+[0;32mI (4427) HTTP_CLIENT: .0.1/skel.min.js[0m
+[0;32mI (4427) HTTP_CLIENT: " integrity="sha[0m
+[0;32mI (4427) HTTP_CLIENT: 256-3e+NvOq+D/ye[0m
+[0;32mI (4437) HTTP_CLIENT: Jy1qrWpYkEUr6SlO[0m
+[0;32mI (4437) HTTP_CLIENT: CL5mHpc2nZfX74E=[0m
+[0;32mI (4437) HTTP_CLIENT: " crossorigin="a[0m
+[0;32mI (4447) HTTP_CLIENT: nonymous"></scri[0m
+[0;32mI (4447) HTTP_CLIENT: pt>[0m
+		<script s
+[0;32mI (4447) HTTP_CLIENT: rc="https://cdnj[0m
+[0;32mI (4457) HTTP_CLIENT: s.cloudflare.com[0m
+[0;32mI (4457) HTTP_CLIENT: /ajax/libs/skel-[0m
+[0;32mI (4457) HTTP_CLIENT: layers/2.2.1/ske[0m
+[0;32mI (4467) HTTP_CLIENT: l.min.js" integr[0m
+[0;32mI (4467) HTTP_CLIENT: ity="sha256-6xgf[0m
+[0;32mI (4467) HTTP_CLIENT: /CipbscdlAaUOAAl[0m
+[0;32mI (4477) HTTP_CLIENT: WVmpfPy9V5cQvZej[0m
+[0;32mI (4477) HTTP_CLIENT: xXSEfcw=" crosso[0m
+[0;32mI (4477) HTTP_CLIENT: rigin="anonymous[0m
+[0;32mI (4487) HTTP_CLIENT: "></script>[0m
+		<
+[0;32mI (4487) HTTP_CLIENT: script src="js/i[0m
+[0;32mI (4497) HTTP_CLIENT: nit.min.js"></sc[0m
+[0;32mI (4497) HTTP_CLIENT: ript>[0m
+		<noscri
+[0;32mI (4497) HTTP_CLIENT: pt>[0m
+			<link re
+[0;32mI (4507) HTTP_CLIENT: l="stylesheet" h[0m
+[0;32mI (4507) HTTP_CLIENT: ref="https://cdn[0m
+[0;32mI (4507) HTTP_CLIENT: js.cloudflare.co[0m
+[0;32mI (4517) HTTP_CLIENT: m/ajax/libs/skel[0m
+[0;32mI (4517) HTTP_CLIENT: -layers/2.2.1/sk[0m
+[0;32mI (4517) HTTP_CLIENT: el.min.css" inte[0m
+[0;32mI (4527) HTTP_CLIENT: grity="sha256-Ho[0m
+[0;32mI (4527) HTTP_CLIENT: TbojxjAGIeiQMgAD[0m
+[0;32mI (4527) HTTP_CLIENT: 2nqi6adFwcOUwoiP[0m
+[0;32mI (4537) HTTP_CLIENT: nr7mC7qBs=" cros[0m
+[0;32mI (4537) HTTP_CLIENT: sorigin="anonymo[0m
+[0;32mI (4537) HTTP_CLIENT: us" />[0m
+			<link
+[0;32mI (4547) HTTP_CLIENT:  rel="stylesheet[0m
+[0;32mI (4547) HTTP_CLIENT: " href="css/styl[0m
+[0;32mI (4547) HTTP_CLIENT: e.min.css" />[0m
+	
+[0;32mI (4557) HTTP_CLIENT: 		<link rel="sty[0m
+[0;32mI (4557) HTTP_CLIENT: lesheet" href="c[0m
+[0;32mI (4567) HTTP_CLIENT: ss/style-wide.mi[0m
+[0;32mI (4567) HTTP_CLIENT: n.css" />[0m
+		</n
+[0;32mI (4567) HTTP_CLIENT: oscript>[0m
+		<!--
+[0;32mI (4577) HTTP_CLIENT: [if lte IE 8]><l[0m
+[0;32mI (4577) HTTP_CLIENT: ink rel="stylesh[0m
+[0;32mI (4577) HTTP_CLIENT: eet" href="css/i[0m
+[0;32mI (4587) HTTP_CLIENT: e/v8.min.css" />[0m
+[0;32mI (4587) HTTP_CLIENT: <![endif]-->[0m
+	<
+[0;32mI (4587) HTTP_CLIENT: /head>[0m
+	<body c
+[0;32mI (4597) HTTP_CLIENT: lass="landing">[0m
+[0;32mI (4597) HTTP_CLIENT: [0m
+			<section id=
+[0;32mI (4597) HTTP_CLIENT: "banner">[0m
+				<
+[0;32mI (4607) HTTP_CLIENT: h2>HTTP FOREVER<[0m
+[0;32mI (4607) HTTP_CLIENT: /h2>[0m
+				<p>A r
+[0;32mI (4607) HTTP_CLIENT: eliably insecure[0m
+[0;32mI (4617) HTTP_CLIENT:  connection</p>[0m
+[0;32mI (4617) HTTP_CLIENT: [0m
+			</section>
+
+[0;32mI (4627) HTTP_CLIENT: 			<div class="w[0m
+[0;32mI (4627) HTTP_CLIENT: rapper style1">[0m
+[0;32mI (4627) HTTP_CLIENT: [0m
+				<section cl
+[0;32mI (4637) HTTP_CLIENT: ass="container">[0m
+[0;32mI (4637) HTTP_CLIENT: [0m
+					<header c
+[0;32mI (4637) HTTP_CLIENT: lass="major">[0m
+	
+[0;32mI (4647) HTTP_CLIENT: 					<h2>Why doe[0m
+[0;32mI (4647) HTTP_CLIENT: s this site exis[0m
+[0;32mI (4647) HTTP_CLIENT: t?</h2>[0m
+						<
+[0;32mI (4657) HTTP_CLIENT: p>This domain st[0m
+[0;32mI (4657) HTTP_CLIENT: arted out as my [0m
+[0;32mI (4657) HTTP_CLIENT: personal 'captiv[0m
+[0;32mI (4667) HTTP_CLIENT: e portal buster'[0m
+[0;32mI (4667) HTTP_CLIENT:  but I wanted to[0m
+[0;32mI (4667) HTTP_CLIENT:  publicise it fo[0m
+[0;32mI (4677) HTTP_CLIENT: r anyone to use.[0m
+[0;32mI (4677) HTTP_CLIENT:  If you're on a [0m
+[0;32mI (4677) HTTP_CLIENT: train, in a hote[0m
+[0;32mI (4687) HTTP_CLIENT: l or bar, on a f[0m
+[0;32mI (4687) HTTP_CLIENT: light or anywher[0m
+[0;32mI (4687) HTTP_CLIENT: e that you have [0m
+[0;32mI (4697) HTTP_CLIENT: to login for WiF[0m
+[0;32mI (4697) HTTP_CLIENT: i, this site cou[0m
+[0;32mI (4707) HTTP_CLIENT: ld help you!</p>[0m
+[0;32mI (4707) HTTP_CLIENT: [0m
+					</header>
+[0;32mI (4707) HTTP_CLIENT: [0m
+				</section>
+[0;32mI (4717) HTTP_CLIENT: [0m
+			</div>
+			
+[0;32mI (4717) HTTP_CLIENT: <div class="wrap[0m
+[0;32mI (4717) HTTP_CLIENT: per style2">[0m
+		
+[0;32mI (4727) HTTP_CLIENT: 		<section class[0m
+[0;32mI (4727) HTTP_CLIENT: ="container">[0m
+	
+[0;32mI (4727) HTTP_CLIENT: 				<header clas[0m
+[0;32mI (4737) HTTP_CLIENT: s="major">[0m
+				
+[0;32mI (4737) HTTP_CLIENT: 		<h2>How does i[0m
+[0;32mI (4737) HTTP_CLIENT: t work?</h2>[0m
+		
+[0;32mI (4747) HTTP_CLIENT: 				<p>If you co[0m
+[0;32mI (4747) HTTP_CLIENT: nnect to a WiFi [0m
+[0;32mI (4747) HTTP_CLIENT: hotspot whilst o[0m
+[0;32mI (4757) HTTP_CLIENT: ut and about, so[0m
+[0;32mI (4757) HTTP_CLIENT: metimes you have[0m
+[0;32mI (4757) HTTP_CLIENT:  to login or acc[0m
+[0;32mI (4767) HTTP_CLIENT: ept Terms and Co[0m
+[0;32mI (4767) HTTP_CLIENT: nditions. To do [0m
+[0;32mI (4777) HTTP_CLIENT: that the 'captiv[0m
+[0;32mI (4777) HTTP_CLIENT: e portal' has to[0m
+[0;32mI (4777) HTTP_CLIENT:  intercept one o[0m
+[0;32mI (4787) HTTP_CLIENT: f your requests [0m
+[0;32mI (4787) HTTP_CLIENT: and inject the l[0m
+[0;32mI (4787) HTTP_CLIENT: ogin page for th[0m
+[0;32mI (4797) HTTP_CLIENT: e WiFi. This usu[0m
+[0;32mI (4797) HTTP_CLIENT: ally results in [0m
+[0;32mI (4797) HTTP_CLIENT: a big, red warni[0m
+[0;32mI (4807) HTTP_CLIENT: ng from your bro[0m
+[0;32mI (4807) HTTP_CLIENT: wser which you s[0m
+[0;32mI (4807) HTTP_CLIENT: hould <b>never</[0m
+[0;32mI (4817) HTTP_CLIENT: b> click through[0m
+[0;32mI (4817) HTTP_CLIENT: ! Instead, open [0m
+[0;32mI (4817) HTTP_CLIENT: a new tab in you[0m
+[0;32mI (4827) HTTP_CLIENT: r browser and co[0m
+[0;32mI (4827) HTTP_CLIENT: me here!</b></p>[0m
+[0;32mI (4827) HTTP_CLIENT: [0m
+					</header>
+[0;32mI (4837) HTTP_CLIENT: [0m
+				</section>
+[0;32mI (4837) HTTP_CLIENT: [0m
+			</div>
+			
+[0;32mI (4847) HTTP_CLIENT: <div class="wrap[0m
+[0;32mI (4847) HTTP_CLIENT: per style3">[0m
+		
+[0;32mI (4847) HTTP_CLIENT: 		<section class[0m
+[0;32mI (4857) HTTP_CLIENT: ="container">[0m
+	
+[0;32mI (4857) HTTP_CLIENT: 				<header clas[0m
+[0;32mI (4857) HTTP_CLIENT: s="major">[0m
+				
+[0;32mI (4867) HTTP_CLIENT: 		<h2>Can I use [0m
+[0;32mI (4867) HTTP_CLIENT: it?</h2>[0m
+						
+[0;32mI (4867) HTTP_CLIENT: <p>Yes! Anyone i[0m
+[0;32mI (4877) HTTP_CLIENT: s free to use or[0m
+[0;32mI (4877) HTTP_CLIENT:  link to this si[0m
+[0;32mI (4877) HTTP_CLIENT: te, just make su[0m
+[0;32mI (4887) HTTP_CLIENT: re you're always[0m
+[0;32mI (4887) HTTP_CLIENT:  on the HTTP ver[0m
+[0;32mI (4887) HTTP_CLIENT: sion: <a href="h[0m
+[0;32mI (4897) HTTP_CLIENT: ttp://httpforeve[0m
+[0;32mI (4897) HTTP_CLIENT: r.com">http://ht[0m
+[0;32mI (4897) HTTP_CLIENT: tpforever.com</a[0m
+[0;32mI (4907) HTTP_CLIENT: ></p>[0m
+					</he
+[0;32mI (4907) HTTP_CLIENT: ader>[0m
+				</sec
+[0;32mI (4917) HTTP_CLIENT: tion>[0m
+			</div>
+[0;32mI (4917) HTTP_CLIENT: [0m
+			<div class=
+[0;32mI (4917) HTTP_CLIENT: "wrapper style1"[0m
+[0;32mI (4927) HTTP_CLIENT: >[0m
+				<section 
+[0;32mI (4927) HTTP_CLIENT: class="container[0m
+[0;32mI (4927) HTTP_CLIENT:  75%">[0m
+					<he
+[0;32mI (4937) HTTP_CLIENT: ader class="majo[0m
+[0;32mI (4937) HTTP_CLIENT: r">[0m
+						<h2>W
+[0;32mI (4937) HTTP_CLIENT: ho built this?</[0m
+[0;32mI (4947) HTTP_CLIENT: h2>[0m
+						<p>Th
+[0;32mI (4947) HTTP_CLIENT: is site was buil[0m
+[0;32mI (4947) HTTP_CLIENT: t by Scott Helme[0m
+[0;32mI (4957) HTTP_CLIENT: , a security res[0m
+[0;32mI (4957) HTTP_CLIENT: earcher trying t[0m
+[0;32mI (4957) HTTP_CLIENT: o help make the [0m
+[0;32mI (4967) HTTP_CLIENT: web more secure.[0m
+[0;32mI (4967) HTTP_CLIENT: </p>[0m
+					</hea
+[0;32mI (4967) HTTP_CLIENT: der>[0m
+					<div 
+[0;32mI (4977) HTTP_CLIENT: id="contact" cla[0m
+[0;32mI (4977) HTTP_CLIENT: ss="box">[0m
+					
+[0;32mI (4987) HTTP_CLIENT: 	<div class="row[0m
+[0;32mI (4987) HTTP_CLIENT:  uniform">[0m
+				
+[0;32mI (4987) HTTP_CLIENT: 			<div class="6[0m
+[0;32mI (4997) HTTP_CLIENT: u">[0m
+								<ul
+[0;32mI (4997) HTTP_CLIENT:  class="labeled-[0m
+[0;32mI (4997) HTTP_CLIENT: icons">[0m
+							
+[0;32mI (5007) HTTP_CLIENT: 		<li>[0m
+								
+[0;32mI (5007) HTTP_CLIENT: 		<h3 class="ico[0m
+[0;32mI (5007) HTTP_CLIENT: n fa-twitter"><s[0m
+[0;32mI (5017) HTTP_CLIENT: pan class="label[0m
+[0;32mI (5017) HTTP_CLIENT: ">Twitter</span>[0m
+[0;32mI (5017) HTTP_CLIENT: </h3>[0m
+									
+[0;32mI (5027) HTTP_CLIENT: 	<a href="https:[0m
+[0;32mI (5027) HTTP_CLIENT: //twitter.com/Sc[0m
+[0;32mI (5027) HTTP_CLIENT: ott_Helme" targe[0m
+[0;32mI (5037) HTTP_CLIENT: t="_blank">twitt[0m
+[0;32mI (5037) HTTP_CLIENT: er.com/Scott_Hel[0m
+[0;32mI (5037) HTTP_CLIENT: me</a>[0m
+								
+[0;32mI (5047) HTTP_CLIENT: 	</li>[0m
+								
+[0;32mI (5047) HTTP_CLIENT: 	<li>[0m
+									
+[0;32mI (5057) HTTP_CLIENT: 	<h3 class="icon[0m
+[0;32mI (5057) HTTP_CLIENT:  fa-facebook"><s[0m
+[0;32mI (5057) HTTP_CLIENT: pan class="label[0m
+[0;32mI (5067) HTTP_CLIENT: ">Facebook</span[0m
+[0;32mI (5067) HTTP_CLIENT: ></h3>[0m
+								
+[0;32mI (5067) HTTP_CLIENT: 		<a href="https[0m
+[0;32mI (5077) HTTP_CLIENT: ://www.facebook.[0m
+[0;32mI (5077) HTTP_CLIENT: com/scott.helme"[0m
+[0;32mI (5077) HTTP_CLIENT:  target="_blank"[0m
+[0;32mI (5087) HTTP_CLIENT: >facebook.com/sc[0m
+[0;32mI (5087) HTTP_CLIENT: ott.helme</a>[0m
+	
+[0;32mI (5087) HTTP_CLIENT: 								</li>[0m
+	
+[0;32mI (5097) HTTP_CLIENT: 								<li>[0m
+		
+[0;32mI (5097) HTTP_CLIENT: 								<h3 clas[0m
+[0;32mI (5097) HTTP_CLIENT: s="icon fa-linke[0m
+[0;32mI (5107) HTTP_CLIENT: din"><span class[0m
+[0;32mI (5107) HTTP_CLIENT: ="label">LinkedI[0m
+[0;32mI (5107) HTTP_CLIENT: n</span></h3>[0m
+	
+[0;32mI (5117) HTTP_CLIENT: 									<a href[0m
+[0;32mI (5117) HTTP_CLIENT: ="https://www.li[0m
+[0;32mI (5127) HTTP_CLIENT: nkedin.com/in/sc[0m
+[0;32mI (5127) HTTP_CLIENT: otthelme/">linke[0m
+[0;32mI (5127) HTTP_CLIENT: din.com/in/scott[0m
+[0;32mI (5137) HTTP_CLIENT: helme</a>[0m
+					
+[0;32mI (5137) HTTP_CLIENT: 				</li>[0m
+					
+[0;32mI (5137) HTTP_CLIENT: 			</ul>[0m
+						
+[0;32mI (5147) HTTP_CLIENT: 	</div>[0m
+							
+[0;32mI (5147) HTTP_CLIENT: <div class="6u">[0m
+[0;32mI (5147) HTTP_CLIENT: [0m
+								<ul cl
+[0;32mI (5157) HTTP_CLIENT: ass="labeled-ico[0m
+[0;32mI (5157) HTTP_CLIENT: ns">[0m
+									<
+[0;32mI (5157) HTTP_CLIENT: li>[0m
+										<
+[0;32mI (5167) HTTP_CLIENT: h3 class="icon f[0m
+[0;32mI (5167) HTTP_CLIENT: a-globe"><span c[0m
+[0;32mI (5167) HTTP_CLIENT: lass="label">Web[0m
+[0;32mI (5177) HTTP_CLIENT: site</span></h3>[0m
+[0;32mI (5177) HTTP_CLIENT: [0m
+										<a r
+[0;32mI (5187) HTTP_CLIENT: el="author" href[0m
+[0;32mI (5187) HTTP_CLIENT: ="https://scotth[0m
+[0;32mI (5187) HTTP_CLIENT: elme.co.uk">scot[0m
+[0;32mI (5197) HTTP_CLIENT: thelme.co.uk</a>[0m
+[0;32mI (5197) HTTP_CLIENT: [0m
+									</li>
+[0;32mI (5197) HTTP_CLIENT: [0m
+									<li>
+[0;32mI (5207) HTTP_CLIENT: [0m
+										<h3 c
+[0;32mI (5207) HTTP_CLIENT: lass="icon fa-gi[0m
+[0;32mI (5207) HTTP_CLIENT: thub"><span clas[0m
+[0;32mI (5217) HTTP_CLIENT: s="label">GitHub[0m
+[0;32mI (5217) HTTP_CLIENT: </span></h3>[0m
+		
+[0;32mI (5217) HTTP_CLIENT: 								<a href=[0m
+[0;32mI (5227) HTTP_CLIENT: "https://github.[0m
+[0;32mI (5227) HTTP_CLIENT: com/ScottHelme">[0m
+[0;32mI (5227) HTTP_CLIENT: github.com/Scott[0m
+[0;32mI (5237) HTTP_CLIENT: Helme</a>[0m
+					
+[0;32mI (5237) HTTP_CLIENT: 				</li>[0m
+					
+[0;32mI (5237) HTTP_CLIENT: 				<li>[0m
+						
+[0;32mI (5247) HTTP_CLIENT: 				<h3 class="i[0m
+[0;32mI (5247) HTTP_CLIENT: con fa-youtube">[0m
+[0;32mI (5257) HTTP_CLIENT: <span class="lab[0m
+[0;32mI (5257) HTTP_CLIENT: el">YouTube</spa[0m
+[0;32mI (5257) HTTP_CLIENT: n></h3>[0m
+							
+[0;32mI (5267) HTTP_CLIENT: 			<a href="http[0m
+[0;32mI (5267) HTTP_CLIENT: s://www.youtube.[0m
+[0;32mI (5267) HTTP_CLIENT: com/user/ScottHe[0m
+[0;32mI (5277) HTTP_CLIENT: lme">youtube.com[0m
+[0;32mI (5277) HTTP_CLIENT: /user/ScottHelme[0m
+[0;32mI (5277) HTTP_CLIENT: </a>[0m
+									<
+[0;32mI (5287) HTTP_CLIENT: /li>[0m
+								</
+[0;32mI (5287) HTTP_CLIENT: ul>[0m
+							</di
+[0;32mI (5287) HTTP_CLIENT: v>[0m
+						</div>
+[0;32mI (5297) HTTP_CLIENT: [0m
+					</div>
+	
+[0;32mI (5297) HTTP_CLIENT: 			</section>[0m
+	
+[0;32mI (5297) HTTP_CLIENT: 		</div>[0m
+			<fo
+[0;32mI (5307) HTTP_CLIENT: oter id="footer"[0m
+[0;32mI (5307) HTTP_CLIENT: >[0m
+				<div clas
+[0;32mI (5317) HTTP_CLIENT: s="copyright">[0m
+
+[0;32mI (5317) HTTP_CLIENT: 					Created By [0m
+[0;32mI (5317) HTTP_CLIENT: Scott Helme - Li[0m
+[0;32mI (5327) HTTP_CLIENT: cense <a href="h[0m
+[0;32mI (5327) HTTP_CLIENT: ttps://creativec[0m
+[0;32mI (5327) HTTP_CLIENT: ommons.org/licen[0m
+[0;32mI (5337) HTTP_CLIENT: ses/by-sa/4.0/">[0m
+[0;32mI (5337) HTTP_CLIENT: CC BY-SA 4.0</a>[0m
+[0;32mI (5337) HTTP_CLIENT:  - <a href="http[0m
+[0;32mI (5347) HTTP_CLIENT: s://scotthelme.c[0m
+[0;32mI (5347) HTTP_CLIENT: o.uk/" rel="auth[0m
+[0;32mI (5347) HTTP_CLIENT: or">scotthelme.c[0m
+[0;32mI (5357) HTTP_CLIENT: o.uk</a><br/>[0m
+	
+[0;32mI (5357) HTTP_CLIENT: 				Check out my[0m
+[0;32mI (5357) HTTP_CLIENT:  other projects [0m
+[0;32mI (5367) HTTP_CLIENT: like <a href="ht[0m
+[0;32mI (5367) HTTP_CLIENT: tps://report-uri[0m
+[0;32mI (5367) HTTP_CLIENT: .com">Report URI[0m
+[0;32mI (5377) HTTP_CLIENT: </a>, <a href="h[0m
+[0;32mI (5377) HTTP_CLIENT: ttps://securityh[0m
+[0;32mI (5377) HTTP_CLIENT: eaders.com">Secu[0m
+[0;32mI (5387) HTTP_CLIENT: rity Headers</a>[0m
+[0;32mI (5387) HTTP_CLIENT:  and <a href="ht[0m
+[0;32mI (5397) HTTP_CLIENT: tps://crawler.ni[0m
+[0;32mI (5397) HTTP_CLIENT: nja">Crawler.Nin[0m
+[0;32mI (5397) HTTP_CLIENT: ja</a>.[0m
+				</d
+[0;32mI (5407) HTTP_CLIENT: iv>[0m
+			</footer
+[0;32mI (5407) HTTP_CLIENT: >[0m
+	</body>
+</h
+[0;32mI (5407) HTTP_CLIENT: tml>[0m
+[0;32mI (5417) HTTP_CLIENT: ====================================[0m
+[0;32mI (5417) HTTP_CLIENT: Socket closed. HTTP task done.[0m
+[0;32mI (6137) MAIN: ADC_raw:   16 | Sliding:   26 | Lowpass:   19 | Average:   26 | DAC:   1[0m
+[0;32mI (8637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (11137) MAIN: ADC_raw:    0 | Sliding:    5 | Lowpass:    1 | Average:    5 | DAC:   0[0m
+[0;32mI (13637) MAIN: ADC_raw:   69 | Sliding:   13 | Lowpass:   28 | Average:   13 | DAC:   1[0m
+[0;32mI (16137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (18637) MAIN: ADC_raw:    0 | Sliding:   61 | Lowpass:   54 | Average:   61 | DAC:   3[0m
+[0;32mI (21137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (23637) MAIN: ADC_raw:   80 | Sliding:   53 | Lowpass:   54 | Average:   53 | DAC:   3[0m
+[0;32mI (26137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (28637) MAIN: ADC_raw:    0 | Sliding:   11 | Lowpass:    4 | Average:   11 | DAC:   0[0m
+[0;32mI (31137) MAIN: ADC_raw:   18 | Sliding:    1 | Lowpass:    5 | Average:    1 | DAC:   0[0m
+[0;32mI (33637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (36137) MAIN: ADC_raw:    0 | Sliding:   54 | Lowpass:   49 | Average:   54 | DAC:   3[0m
+[0;32mI (38637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (41137) MAIN: ADC_raw:    0 | Sliding:   15 | Lowpass:    6 | Average:   15 | DAC:   0[0m
+[0;32mI (43637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (46137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (48637) MAIN: ADC_raw:  139 | Sliding:   58 | Lowpass:   76 | Average:   58 | DAC:   4[0m
+[0;32mI (51137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (53637) MAIN: ADC_raw:    0 | Sliding:   42 | Lowpass:   21 | Average:   42 | DAC:   1[0m
+[0;32mI (56137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (58637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (61137) MAIN: ADC_raw:    0 | Sliding:   29 | Lowpass:   33 | Average:   29 | DAC:   2[0m
+[0;32mI (63637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (66137) MAIN: ADC_raw:    0 | Sliding:   14 | Lowpass:    6 | Average:   14 | DAC:   0[0m
+[0;32mI (68637) MAIN: ADC_raw:    0 | Sliding:   58 | Lowpass:   37 | Average:   58 | DAC:   2[0m
+[0;32mI (71137) MAIN: ADC_raw:   31 | Sliding:   48 | Lowpass:   36 | Average:   48 | DAC:   2[0m
+[0;32mI (73637) MAIN: ADC_raw:    0 | Sliding:   27 | Lowpass:    8 | Average:   27 | DAC:   0[0m
+[0;32mI (76137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (78637) MAIN: ADC_raw:    0 | Sliding:    1 | Lowpass:    1 | Average:    1 | DAC:   0[0m
+[0;32mI (81137) MAIN: ADC_raw:    0 | Sliding:    7 | Lowpass:    3 | Average:    7 | DAC:   0[0m
+[0;32mI (83637) MAIN: ADC_raw:    0 | Sliding:   54 | Lowpass:   41 | Average:   54 | DAC:   2[0m
+[0;32mI (86137) MAIN: ADC_raw:   11 | Sliding:    1 | Lowpass:    3 | Average:    1 | DAC:   0[0m
+[0;32mI (88637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (91137) MAIN: ADC_raw:    0 | Sliding:   67 | Lowpass:   51 | Average:   67 | DAC:   3[0m
+[0;32mI (93637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (96137) MAIN: ADC_raw:    0 | Sliding:    6 | Lowpass:    2 | Average:    6 | DAC:   0[0m
+[0;32mI (98637) MAIN: ADC_raw:    0 | Sliding:   13 | Lowpass:   19 | Average:   13 | DAC:   1[0m
+[0;32mI (101137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (103637) MAIN: ADC_raw:  106 | Sliding:   67 | Lowpass:   71 | Average:   67 | DAC:   4[0m
+[0;32mI (106137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (108637) MAIN: ADC_raw:    0 | Sliding:    1 | Lowpass:    0 | Average:    1 | DAC:   0[0m
+[0;32mI (111137) MAIN: ADC_raw:   80 | Sliding:   19 | Lowpass:   35 | Average:   19 | DAC:   2[0m
+[0;32mI (113637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (116137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (118637) MAIN: ADC_raw:    0 | Sliding:   13 | Lowpass:    4 | Average:   13 | DAC:   0[0m
+[0;32mI (121137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (123637) MAIN: ADC_raw:  103 | Sliding:   41 | Lowpass:   54 | Average:   41 | DAC:   3[0m
+[0;32mI (126137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (128637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (131137) MAIN: ADC_raw:    0 | Sliding:   62 | Lowpass:   53 | Average:   62 | DAC:   3[0m
+[0;32mI (133637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (136137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (138637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (141137) MAIN: ADC_raw:  126 | Sliding:   64 | Lowpass:   75 | Average:   64 | DAC:   4[0m
+[0;32mI (143637) MAIN: ADC_raw:   29 | Sliding:   22 | Lowpass:   22 | Average:   22 | DAC:   1[0m
+[0;32mI (146137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (148637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (151137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (153637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (156137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (158637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (161137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (163637) MAIN: ADC_raw:    0 | Sliding:   22 | Lowpass:   19 | Average:   22 | DAC:   1[0m
+[0;32mI (166137) MAIN: ADC_raw:    0 | Sliding:   39 | Lowpass:   32 | Average:   39 | DAC:   2[0m
+[0;32mI (168637) MAIN: ADC_raw:    0 | Sliding:   51 | Lowpass:   41 | Average:   51 | DAC:   2[0m
+[0;32mI (171137) MAIN: ADC_raw:    0 | Sliding:   34 | Lowpass:   28 | Average:   34 | DAC:   1[0m
+[0;32mI (173637) MAIN: ADC_raw:    0 | Sliding:    2 | Lowpass:    0 | Average:    2 | DAC:   0[0m
+[0;32mI (176137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (178637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (181137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (183637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (186137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (188637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (191137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (193637) MAIN: ADC_raw:    3 | Sliding:    2 | Lowpass:    1 | Average:    2 | DAC:   0[0m
+[0;32mI (196137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (198637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (201137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (203637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (206137) MAIN: ADC_raw:    0 | Sliding:   34 | Lowpass:   25 | Average:   34 | DAC:   1[0m
+[0;32mI (208637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (211137) MAIN: ADC_raw:  118 | Sliding:   51 | Lowpass:   65 | Average:   51 | DAC:   4[0m
+[0;32mI (213637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (216137) MAIN: ADC_raw:    0 | Sliding:   51 | Lowpass:   45 | Average:   51 | DAC:   2[0m
+[0;32mI (218637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (221137) MAIN: ADC_raw:    0 | Sliding:    8 | Lowpass:    3 | Average:    8 | DAC:   0[0m
+[0;32mI (223637) MAIN: ADC_raw:    0 | Sliding:   20 | Lowpass:   27 | Average:   20 | DAC:   1[0m
+[0;32mI (226137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (228637) MAIN: ADC_raw:    0 | Sliding:    3 | Lowpass:    1 | Average:    3 | DAC:   0[0m
+[0;32mI (231137) MAIN: ADC_raw:    0 | Sliding:   39 | Lowpass:   44 | Average:   39 | DAC:   2[0m
+[0;32mI (233637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (236137) MAIN: ADC_raw:   18 | Sliding:   27 | Lowpass:   21 | Average:   27 | DAC:   1[0m
+[0;32mI (238637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (241137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (243637) MAIN: ADC_raw:   68 | Sliding:   17 | Lowpass:   31 | Average:   17 | DAC:   1[0m
+[0;32mI (246137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (248637) MAIN: ADC_raw:    0 | Sliding:    2 | Lowpass:    4 | Average:    2 | DAC:   0[0m
+[0;32mI (251137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (253637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (256137) MAIN: ADC_raw:   99 | Sliding:   51 | Lowpass:   61 | Average:   51 | DAC:   3[0m
+[0;32mI (258637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (261137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (263637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (266137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (268637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (271137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (273637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (276137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (278637) MAIN: ADC_raw:    6 | Sliding:    0 | Lowpass:    1 | Average:    0 | DAC:   0[0m
+[0;32mI (281137) MAIN: ADC_raw:   44 | Sliding:   30 | Lowpass:   29 | Average:   30 | DAC:   1[0m
+[0;32mI (283637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (286137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    1 | Average:    0 | DAC:   0[0m
+[0;32mI (288637) MAIN: ADC_raw:    0 | Sliding:   32 | Lowpass:   20 | Average:   32 | DAC:   1[0m
+[0;32mI (291137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (293637) MAIN: ADC_raw:    7 | Sliding:    0 | Lowpass:    2 | Average:    0 | DAC:   0[0m
+[0;32mI (296137) MAIN: ADC_raw:   32 | Sliding:   20 | Lowpass:   21 | Average:   20 | DAC:   1[0m
+[0;32mI (298637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (301137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (303637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (306137) MAIN: ADC_raw:    0 | Sliding:   17 | Lowpass:   15 | Average:   17 | DAC:   0[0m
+[0;32mI (308637) MAIN: ADC_raw:    0 | Sliding:   40 | Lowpass:   33 | Average:   40 | DAC:   2[0m
+[0;32mI (311137) MAIN: ADC_raw:    0 | Sliding:   45 | Lowpass:   35 | Average:   45 | DAC:   2[0m
+[0;32mI (313637) MAIN: ADC_raw:    0 | Sliding:   38 | Lowpass:   31 | Average:   38 | DAC:   1[0m
+[0;32mI (316137) MAIN: ADC_raw:    0 | Sliding:   45 | Lowpass:   37 | Average:   45 | DAC:   2[0m
+[0;32mI (318637) MAIN: ADC_raw:    0 | Sliding:   25 | Lowpass:   19 | Average:   25 | DAC:   1[0m
+[0;32mI (321137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (323637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (326137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (328637) MAIN: ADC_raw:   85 | Sliding:   40 | Lowpass:   48 | Average:   40 | DAC:   3[0m
+[0;32mI (331137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (333637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (336137) MAIN: ADC_raw:    0 | Sliding:   13 | Lowpass:   15 | Average:   13 | DAC:   0[0m
+[0;32mI (338637) MAIN: ADC_raw:    0 | Sliding:    1 | Lowpass:    0 | Average:    1 | DAC:   0[0m
+[0;32mI (341137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (343637) MAIN: ADC_raw:   71 | Sliding:   22 | Lowpass:   34 | Average:   22 | DAC:   2[0m
+[0;32mI (346137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (348637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (351137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (353637) MAIN: ADC_raw:    0 | Sliding:   46 | Lowpass:   35 | Average:   46 | DAC:   2[0m
+[0;32mI (356137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (358637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (361137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (363637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (366137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (368637) MAIN: ADC_raw:   53 | Sliding:   21 | Lowpass:   27 | Average:   21 | DAC:   1[0m
+[0;32mI (371137) MAIN: ADC_raw:  126 | Sliding:   61 | Lowpass:   72 | Average:   61 | DAC:   4[0m
+[0;32mI (373637) MAIN: ADC_raw:   18 | Sliding:   13 | Lowpass:   13 | Average:   13 | DAC:   0[0m
+[0;32mI (376137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (378637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (381137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (383637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (386137) MAIN: ADC_raw:    0 | Sliding:   53 | Lowpass:   44 | Average:   53 | DAC:   2[0m
+[0;32mI (388637) MAIN: ADC_raw:    0 | Sliding:   21 | Lowpass:   16 | Average:   21 | DAC:   1[0m
+[0;32mI (391137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (393637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (396137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (398637) MAIN: ADC_raw:  131 | Sliding:   65 | Lowpass:   78 | Average:   65 | DAC:   4[0m
+[0;32mI (401137) MAIN: ADC_raw:  119 | Sliding:   63 | Lowpass:   71 | Average:   63 | DAC:   4[0m
+[0;32mI (403637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (406137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (408637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (411137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (413637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (416137) MAIN: ADC_raw:    0 | Sliding:   29 | Lowpass:   30 | Average:   29 | DAC:   1[0m
+[0;32mI (418637) MAIN: ADC_raw:    0 | Sliding:   87 | Lowpass:   72 | Average:   87 | DAC:   4[0m
+[0;32mI (421137) MAIN: ADC_raw:    0 | Sliding:   16 | Lowpass:   10 | Average:   16 | DAC:   0[0m
+[0;32mI (423637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (426137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (428637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (431137) MAIN: ADC_raw:  102 | Sliding:   43 | Lowpass:   54 | Average:   43 | DAC:   3[0m
+[0;32mI (433637) MAIN: ADC_raw:  174 | Sliding:   85 | Lowpass:  102 | Average:   85 | DAC:   6[0m
+[0;32mI (436137) MAIN: ADC_raw:  128 | Sliding:   69 | Lowpass:   78 | Average:   69 | DAC:   4[0m
+[0;32mI (438637) MAIN: ADC_raw:   36 | Sliding:   21 | Lowpass:   23 | Average:   21 | DAC:   1[0m
+[0;32mI (441137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (443637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (446137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (448637) MAIN: ADC_raw:   66 | Sliding:   29 | Lowpass:   37 | Average:   29 | DAC:   2[0m
+[0;32mI (451137) MAIN: ADC_raw:  176 | Sliding:   85 | Lowpass:  102 | Average:   85 | DAC:   6[0m
+[0;32mI (453637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (456137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (458637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (461137) MAIN: ADC_raw:   95 | Sliding:   35 | Lowpass:   48 | Average:   35 | DAC:   3[0m
+[0;32mI (463637) MAIN: ADC_raw:    0 | Sliding:    1 | Lowpass:    2 | Average:    1 | DAC:   0[0m
+[0;32mI (466137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (468637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (471137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (473637) MAIN: ADC_raw:    0 | Sliding:   26 | Lowpass:   14 | Average:   26 | DAC:   0[0m
+[0;32mI (476137) MAIN: ADC_raw:    0 | Sliding:   19 | Lowpass:   25 | Average:   19 | DAC:   1[0m
+[0;32mI (478637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (481137) MAIN: ADC_raw:    0 | Sliding:   10 | Lowpass:    4 | Average:   10 | DAC:   0[0m
+[0;32mI (483637) MAIN: ADC_raw:    0 | Sliding:    1 | Lowpass:    3 | Average:    1 | DAC:   0[0m
+[0;32mI (486137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (488637) MAIN: ADC_raw:   85 | Sliding:   52 | Lowpass:   54 | Average:   52 | DAC:   3[0m
+[0;32mI (491137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (493637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (496137) MAIN: ADC_raw:  106 | Sliding:   40 | Lowpass:   55 | Average:   40 | DAC:   3[0m
+[0;32mI (498637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (501137) MAIN: ADC_raw:    0 | Sliding:   56 | Lowpass:   44 | Average:   56 | DAC:   2[0m
+[0;32mI (503637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (506137) MAIN: ADC_raw:    0 | Sliding:    5 | Lowpass:    2 | Average:    5 | DAC:   0[0m
+[0;32mI (508637) MAIN: ADC_raw:    0 | Sliding:   16 | Lowpass:   21 | Average:   16 | DAC:   1[0m
+[0;32mI (511137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (513637) MAIN: ADC_raw:    0 | Sliding:    4 | Lowpass:    2 | Average:    4 | DAC:   0[0m
+[0;32mI (516137) MAIN: ADC_raw:    0 | Sliding:    5 | Lowpass:    9 | Average:    5 | DAC:   0[0m
+[0;32mI (518637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (521137) MAIN: ADC_raw:  115 | Sliding:   59 | Lowpass:   68 | Average:   59 | DAC:   4[0m
+[0;32mI (523637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (526137) MAIN: ADC_raw:    0 | Sliding:   54 | Lowpass:   44 | Average:   54 | DAC:   2[0m
+[0;32mI (528637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (531137) MAIN: ADC_raw:  103 | Sliding:   45 | Lowpass:   57 | Average:   45 | DAC:   3[0m
+[0;32mI (533637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (536137) MAIN: ADC_raw:    0 | Sliding:   13 | Lowpass:   17 | Average:   13 | DAC:   1[0m
+[0;32mI (538637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (541137) MAIN: ADC_raw:   21 | Sliding:    3 | Lowpass:    7 | Average:    3 | DAC:   0[0m
+[0;32mI (543637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (546137) MAIN: ADC_raw:    0 | Sliding:   19 | Lowpass:   25 | Average:   19 | DAC:   1[0m
+[0;32mI (548637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (551137) MAIN: ADC_raw:  162 | Sliding:   72 | Lowpass:   90 | Average:   72 | DAC:   5[0m
+[0;32mI (553637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (556137) MAIN: ADC_raw:    0 | Sliding:   31 | Lowpass:   14 | Average:   31 | DAC:   0[0m
+[0;32mI (558637) MAIN: ADC_raw:   32 | Sliding:    4 | Lowpass:   11 | Average:    4 | DAC:   0[0m
+[0;32mI (561137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (563637) MAIN: ADC_raw:    0 | Sliding:   56 | Lowpass:   53 | Average:   56 | DAC:   3[0m
+[0;32mI (566137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (568637) MAIN: ADC_raw:  133 | Sliding:   74 | Lowpass:   82 | Average:   74 | DAC:   5[0m
+[0;32mI (571137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (573637) MAIN: ADC_raw:    0 | Sliding:   29 | Lowpass:   15 | Average:   29 | DAC:   0[0m
+[0;32mI (576137) MAIN: ADC_raw:   11 | Sliding:    1 | Lowpass:    3 | Average:    1 | DAC:   0[0m
+[0;32mI (578637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (581137) MAIN: ADC_raw:    0 | Sliding:   59 | Lowpass:   55 | Average:   59 | DAC:   3[0m
+[0;32mI (583637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (586137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (588637) MAIN: ADC_raw:    0 | Sliding:   58 | Lowpass:   52 | Average:   58 | DAC:   3[0m
+[0;32mI (591137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (593637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (596137) MAIN: ADC_raw:    0 | Sliding:    4 | Lowpass:    1 | Average:    4 | DAC:   0[0m
+[0;32mI (598637) MAIN: ADC_raw:   69 | Sliding:   59 | Lowpass:   55 | Average:   59 | DAC:   3[0m
+[0;32mI (601137) MAIN: ADC_raw:    0 | Sliding:   24 | Lowpass:   26 | Average:   24 | DAC:   1[0m
+[0;32mI (603637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (606137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (608637) MAIN: ADC_raw:    0 | Sliding:   22 | Lowpass:    7 | Average:   22 | DAC:   0[0m
+[0;32mI (611137) MAIN: ADC_raw:  113 | Sliding:   43 | Lowpass:   59 | Average:   43 | DAC:   3[0m
+[0;32mI (613637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (616137) MAIN: ADC_raw:    0 | Sliding:   49 | Lowpass:   29 | Average:   49 | DAC:   1[0m
+[0;32mI (618637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (621137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (623637) MAIN: ADC_raw:    0 | Sliding:   23 | Lowpass:   26 | Average:   23 | DAC:   1[0m
+[0;32mI (626137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (628637) MAIN: ADC_raw:  117 | Sliding:   55 | Lowpass:   66 | Average:   55 | DAC:   4[0m
+[0;32mI (631137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (633637) MAIN: ADC_raw:    0 | Sliding:   45 | Lowpass:   25 | Average:   45 | DAC:   1[0m
+[0;32mI (636137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (638637) MAIN: ADC_raw:    0 | Sliding:    1 | Lowpass:    1 | Average:    1 | DAC:   0[0m
+[0;32mI (641137) MAIN: ADC_raw:    0 | Sliding:    1 | Lowpass:    2 | Average:    1 | DAC:   0[0m
+[0;32mI (643637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (646137) MAIN: ADC_raw:   50 | Sliding:   10 | Lowpass:   20 | Average:   10 | DAC:   1[0m
+[0;32mI (648637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (651137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (653637) MAIN: ADC_raw:    0 | Sliding:   69 | Lowpass:   51 | Average:   69 | DAC:   3[0m
+[0;32mI (656137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (658637) MAIN: ADC_raw:  201 | Sliding:   86 | Lowpass:  110 | Average:   86 | DAC:   6[0m
+[0;32mI (661137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (663637) MAIN: ADC_raw:    0 | Sliding:   17 | Lowpass:   22 | Average:   17 | DAC:   1[0m
+[0;32mI (666137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (668637) MAIN: ADC_raw:  181 | Sliding:   85 | Lowpass:  103 | Average:   85 | DAC:   6[0m
+[0;32mI (671137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (673637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (676137) MAIN: ADC_raw:    0 | Sliding:   31 | Lowpass:   15 | Average:   31 | DAC:   0[0m
+[0;32mI (678637) MAIN: ADC_raw:    0 | Sliding:   90 | Lowpass:   73 | Average:   90 | DAC:   4[0m
+[0;32mI (681137) MAIN: ADC_raw:  123 | Sliding:   40 | Lowpass:   62 | Average:   40 | DAC:   3[0m
+[0;32mI (683637) MAIN: ADC_raw:    0 | Sliding:    3 | Lowpass:    6 | Average:    3 | DAC:   0[0m
+[0;32mI (686137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (688637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (691137) MAIN: ADC_raw:    0 | Sliding:    2 | Lowpass:    1 | Average:    2 | DAC:   0[0m
+[0;32mI (693637) MAIN: ADC_raw:  110 | Sliding:   48 | Lowpass:   62 | Average:   48 | DAC:   3[0m
+[0;32mI (696137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (698637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (701137) MAIN: ADC_raw:   93 | Sliding:   49 | Lowpass:   57 | Average:   49 | DAC:   3[0m
+[0;32mI (703637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (706137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (708637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (711137) MAIN: ADC_raw:    0 | Sliding:   37 | Lowpass:   19 | Average:   37 | DAC:   1[0m
+[0;32mI (713637) MAIN: ADC_raw:  110 | Sliding:   47 | Lowpass:   61 | Average:   47 | DAC:   3[0m
+[0;32mI (716137) MAIN: ADC_raw:    0 | Sliding:    1 | Lowpass:    2 | Average:    1 | DAC:   0[0m
+[0;32mI (718637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (721137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (723637) MAIN: ADC_raw:    0 | Sliding:   53 | Lowpass:   40 | Average:   53 | DAC:   2[0m
+[0;32mI (726137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (728637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (731137) MAIN: ADC_raw:    0 | Sliding:    9 | Lowpass:   14 | Average:    9 | DAC:   0[0m
+[0;32mI (733637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (736137) MAIN: ADC_raw:   48 | Sliding:    8 | Lowpass:   18 | Average:    8 | DAC:   1[0m
+[0;32mI (738637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (741137) MAIN: ADC_raw:    0 | Sliding:    4 | Lowpass:    7 | Average:    4 | DAC:   0[0m
+[0;32mI (743637) MAIN: ADC_raw:    0 | Sliding:    1 | Lowpass:    0 | Average:    1 | DAC:   0[0m
+[0;32mI (746137) MAIN: ADC_raw:   33 | Sliding:    5 | Lowpass:   12 | Average:    5 | DAC:   0[0m
+[0;32mI (748637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (751137) MAIN: ADC_raw:    0 | Sliding:   76 | Lowpass:   71 | Average:   76 | DAC:   4[0m
+[0;32mI (753637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (756137) MAIN: ADC_raw:    0 | Sliding:   14 | Lowpass:    6 | Average:   14 | DAC:   0[0m
+[0;32mI (758637) MAIN: ADC_raw:    0 | Sliding:   33 | Lowpass:   39 | Average:   33 | DAC:   2[0m
+[0;32mI (761137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (763637) MAIN: ADC_raw:  157 | Sliding:   92 | Lowpass:  100 | Average:   92 | DAC:   6[0m
+[0;32mI (766137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (768637) MAIN: ADC_raw:    0 | Sliding:   96 | Lowpass:   81 | Average:   96 | DAC:   5[0m
+[0;32mI (771137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (773637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (776137) MAIN: ADC_raw:  146 | Sliding:   66 | Lowpass:   82 | Average:   66 | DAC:   5[0m
+[0;32mI (778637) MAIN: ADC_raw:   45 | Sliding:   30 | Lowpass:   30 | Average:   30 | DAC:   1[0m
+[0;32mI (781137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (783637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (786137) MAIN: ADC_raw:    0 | Sliding:   52 | Lowpass:   47 | Average:   52 | DAC:   2[0m
+[0;32mI (788637) MAIN: ADC_raw:    0 | Sliding:   79 | Lowpass:   60 | Average:   79 | DAC:   3[0m
+[0;32mI (791137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (793637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (796137) MAIN: ADC_raw:  162 | Sliding:   69 | Lowpass:   88 | Average:   69 | DAC:   5[0m
+[0;32mI (798637) MAIN: ADC_raw:  105 | Sliding:   66 | Lowpass:   70 | Average:   66 | DAC:   4[0m
+[0;32mI (801137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (803637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (806137) MAIN: ADC_raw:    0 | Sliding:   63 | Lowpass:   55 | Average:   63 | DAC:   3[0m
+[0;32mI (808637) MAIN: ADC_raw:    0 | Sliding:   38 | Lowpass:   25 | Average:   38 | DAC:   1[0m
+[0;32mI (811137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (813637) MAIN: ADC_raw:  162 | Sliding:   68 | Lowpass:   87 | Average:   68 | DAC:   5[0m
+[0;32mI (816137) MAIN: ADC_raw:    0 | Sliding:    2 | Lowpass:    1 | Average:    2 | DAC:   0[0m
+[0;32mI (818637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (821137) MAIN: ADC_raw:    0 | Sliding:   72 | Lowpass:   61 | Average:   72 | DAC:   3[0m
+[0;32mI (823637) MAIN: ADC_raw:    0 | Sliding:   17 | Lowpass:   10 | Average:   17 | DAC:   0[0m
+[0;32mI (826137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (828637) MAIN: ADC_raw:   82 | Sliding:   28 | Lowpass:   41 | Average:   28 | DAC:   2[0m
+[0;32mI (831137) MAIN: ADC_raw:  107 | Sliding:   63 | Lowpass:   67 | Average:   63 | DAC:   4[0m
+[0;32mI (833637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (836137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (838637) MAIN: ADC_raw:    0 | Sliding:   80 | Lowpass:   69 | Average:   80 | DAC:   4[0m
+[0;32mI (841137) MAIN: ADC_raw:    0 | Sliding:   51 | Lowpass:   37 | Average:   51 | DAC:   2[0m
+[0;32mI (843637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (846137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (848637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (851137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (853637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (856137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (858637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (861137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (863637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (866137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (868637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (871137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (873637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (876137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (878637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (881137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (883637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (886137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (888637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (891137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (893637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (896137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (898637) MAIN: ADC_raw:    0 | Sliding:   64 | Lowpass:   56 | Average:   64 | DAC:   3[0m
+[0;32mI (901137) MAIN: ADC_raw:    0 | Sliding:   72 | Lowpass:   56 | Average:   72 | DAC:   3[0m
+[0;32mI (903637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (906137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (908637) MAIN: ADC_raw:  114 | Sliding:   60 | Lowpass:   69 | Average:   60 | DAC:   4[0m
+[0;32mI (911137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (913637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (916137) MAIN: ADC_raw:    0 | Sliding:   43 | Lowpass:   41 | Average:   43 | DAC:   2[0m
+[0;32mI (918637) MAIN: ADC_raw:    0 | Sliding:   64 | Lowpass:   49 | Average:   64 | DAC:   3[0m
+[0;32mI (921137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (923637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (926137) MAIN: ADC_raw:   70 | Sliding:   31 | Lowpass:   38 | Average:   31 | DAC:   2[0m
+[0;32mI (928637) MAIN: ADC_raw:  118 | Sliding:   67 | Lowpass:   74 | Average:   67 | DAC:   4[0m
+[0;32mI (931137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (933637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (936137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (938637) MAIN: ADC_raw:    0 | Sliding:   94 | Lowpass:   82 | Average:   94 | DAC:   5[0m
+[0;32mI (941137) MAIN: ADC_raw:    0 | Sliding:   71 | Lowpass:   52 | Average:   71 | DAC:   3[0m
+[0;32mI (943637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (946137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (948637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (951137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (953637) MAIN: ADC_raw:    1 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (956137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (958637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (961137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (963637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (966137) MAIN: ADC_raw:    0 | Sliding:   45 | Lowpass:   42 | Average:   45 | DAC:   2[0m
+[0;32mI (968637) MAIN: ADC_raw:    0 | Sliding:   80 | Lowpass:   62 | Average:   80 | DAC:   3[0m
+[0;32mI (971137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (973637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (976137) MAIN: ADC_raw:  199 | Sliding:  101 | Lowpass:  118 | Average:  101 | DAC:   7[0m
+[0;32mI (978637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (981137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (983637) MAIN: ADC_raw:    0 | Sliding:  105 | Lowpass:   85 | Average:  105 | DAC:   5[0m
+[0;32mI (986137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (988637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (991137) MAIN: ADC_raw:  208 | Sliding:  101 | Lowpass:  120 | Average:  101 | DAC:   7[0m
+[0;32mI (993637) MAIN: ADC_raw:    0 | Sliding:    1 | Lowpass:    0 | Average:    1 | DAC:   0[0m
+[0;32mI (996137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (998637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1001137) MAIN: ADC_raw:    0 | Sliding:   80 | Lowpass:   69 | Average:   80 | DAC:   4[0m
+[0;32mI (1003637) MAIN: ADC_raw:    0 | Sliding:   90 | Lowpass:   72 | Average:   90 | DAC:   4[0m
+[0;32mI (1006137) MAIN: ADC_raw:    0 | Sliding:    6 | Lowpass:    5 | Average:    6 | DAC:   0[0m
+[0;32mI (1008637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1011137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1013637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1016137) MAIN: ADC_raw:    3 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1018637) MAIN: ADC_raw:  192 | Sliding:   89 | Lowpass:  109 | Average:   89 | DAC:   6[0m
+[0;32mI (1021137) MAIN: ADC_raw:  183 | Sliding:   99 | Lowpass:  114 | Average:   99 | DAC:   7[0m
+[0;32mI (1023637) MAIN: ADC_raw:   49 | Sliding:   46 | Lowpass:   44 | Average:   46 | DAC:   2[0m
+[0;32mI (1026137) MAIN: ADC_raw:   13 | Sliding:    7 | Lowpass:    7 | Average:    7 | DAC:   0[0m
+[0;32mI (1028637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1031137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1033637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1036137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1038637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1041137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1043637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1046137) MAIN: ADC_raw:    0 | Sliding:   39 | Lowpass:   37 | Average:   39 | DAC:   2[0m
+[0;32mI (1048637) MAIN: ADC_raw:    0 | Sliding:   85 | Lowpass:   65 | Average:   85 | DAC:   4[0m
+[0;32mI (1051137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1053637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1056137) MAIN: ADC_raw:  118 | Sliding:   47 | Lowpass:   63 | Average:   47 | DAC:   3[0m
+[0;32mI (1058637) MAIN: ADC_raw:   33 | Sliding:   27 | Lowpass:   25 | Average:   27 | DAC:   1[0m
+[0;32mI (1061137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1063637) MAIN: ADC_raw:    0 | Sliding:    2 | Lowpass:    4 | Average:    2 | DAC:   0[0m
+[0;32mI (1066137) MAIN: ADC_raw:    0 | Sliding:   68 | Lowpass:   50 | Average:   68 | DAC:   3[0m
+[0;32mI (1068637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1071137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1073637) MAIN: ADC_raw:  181 | Sliding:  119 | Lowpass:  125 | Average:  119 | DAC:   7[0m
+[0;32mI (1076137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1078637) MAIN: ADC_raw:    0 | Sliding:    4 | Lowpass:    8 | Average:    4 | DAC:   0[0m
+[0;32mI (1081137) MAIN: ADC_raw:    0 | Sliding:  138 | Lowpass:  108 | Average:  138 | DAC:   6[0m
+[0;32mI (1083637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1086137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1088637) MAIN: ADC_raw:  294 | Sliding:  143 | Lowpass:  170 | Average:  143 | DAC:  10[0m
+[0;32mI (1091137) MAIN: ADC_raw:    0 | Sliding:    6 | Lowpass:    3 | Average:    6 | DAC:   0[0m
+[0;32mI (1093637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1096137) MAIN: ADC_raw:    0 | Sliding:   53 | Lowpass:   50 | Average:   53 | DAC:   3[0m
+[0;32mI (1098637) MAIN: ADC_raw:    0 | Sliding:  121 | Lowpass:   94 | Average:  121 | DAC:   5[0m
+[0;32mI (1101137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1103637) MAIN: ADC_raw:  214 | Sliding:   86 | Lowpass:  114 | Average:   86 | DAC:   7[0m
+[0;32mI (1106137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1108637) MAIN: ADC_raw:    0 | Sliding:  146 | Lowpass:  122 | Average:  146 | DAC:   7[0m
+[0;32mI (1111137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1113637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1116137) MAIN: ADC_raw:    0 | Sliding:  106 | Lowpass:   73 | Average:  106 | DAC:   4[0m
+[0;32mI (1118637) MAIN: ADC_raw:  270 | Sliding:  101 | Lowpass:  141 | Average:  101 | DAC:   8[0m
+[0;32mI (1121137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1123637) MAIN: ADC_raw:    0 | Sliding:    4 | Lowpass:    1 | Average:    4 | DAC:   0[0m
+[0;32mI (1126137) MAIN: ADC_raw:  285 | Sliding:  146 | Lowpass:  170 | Average:  146 | DAC:  10[0m
+[0;32mI (1128637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1131137) MAIN: ADC_raw:    0 | Sliding:   56 | Lowpass:   34 | Average:   56 | DAC:   2[0m
+[0;32mI (1133637) MAIN: ADC_raw:  144 | Sliding:   41 | Lowpass:   68 | Average:   41 | DAC:   4[0m
+[0;32mI (1136137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1138637) MAIN: ADC_raw:    0 | Sliding:  130 | Lowpass:  113 | Average:  130 | DAC:   7[0m
+[0;32mI (1141137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1143637) MAIN: ADC_raw:    0 | Sliding:   30 | Lowpass:   17 | Average:   30 | DAC:   1[0m
+[0;32mI (1146137) MAIN: ADC_raw:    0 | Sliding:  123 | Lowpass:  111 | Average:  123 | DAC:   6[0m
+[0;32mI (1148637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1151137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1153637) MAIN: ADC_raw:    0 | Sliding:  105 | Lowpass:   71 | Average:  105 | DAC:   4[0m
+[0;32mI (1156137) MAIN: ADC_raw:  304 | Sliding:  124 | Lowpass:  165 | Average:  124 | DAC:  10[0m
+[0;32mI (1158637) MAIN: ADC_raw:    0 | Sliding:    7 | Lowpass:   12 | Average:    7 | DAC:   0[0m
+[0;32mI (1161137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1163637) MAIN: ADC_raw:    0 | Sliding:   10 | Lowpass:    4 | Average:   10 | DAC:   0[0m
+[0;32mI (1166137) MAIN: ADC_raw:    0 | Sliding:  132 | Lowpass:   92 | Average:  132 | DAC:   5[0m
+[0;32mI (1168637) MAIN: ADC_raw:  333 | Sliding:  126 | Lowpass:  174 | Average:  126 | DAC:  10[0m
+[0;32mI (1171137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1173637) MAIN: ADC_raw:    0 | Sliding:    2 | Lowpass:    1 | Average:    2 | DAC:   0[0m
+[0;32mI (1176137) MAIN: ADC_raw:  258 | Sliding:  156 | Lowpass:  166 | Average:  156 | DAC:  10[0m
+[0;32mI (1178637) MAIN: ADC_raw:    0 | Sliding:   17 | Lowpass:   27 | Average:   17 | DAC:   1[0m
+[0;32mI (1181137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1183637) MAIN: ADC_raw:  272 | Sliding:  160 | Lowpass:  173 | Average:  160 | DAC:  10[0m
+[0;32mI (1186137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1188637) MAIN: ADC_raw:    0 | Sliding:   69 | Lowpass:   45 | Average:   69 | DAC:   2[0m
+[0;32mI (1191137) MAIN: ADC_raw:  169 | Sliding:   48 | Lowpass:   79 | Average:   48 | DAC:   4[0m
+[0;32mI (1193637) MAIN: ADC_raw:    0 | Sliding:    3 | Lowpass:    1 | Average:    3 | DAC:   0[0m
+[0;32mI (1196137) MAIN: ADC_raw:    0 | Sliding:  124 | Lowpass:  115 | Average:  124 | DAC:   7[0m
+[0;32mI (1198637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1201137) MAIN: ADC_raw:  270 | Sliding:  108 | Lowpass:  144 | Average:  108 | DAC:   9[0m
+[0;32mI (1203637) MAIN: ADC_raw:    0 | Sliding:   19 | Lowpass:   10 | Average:   19 | DAC:   0[0m
+[0;32mI (1206137) MAIN: ADC_raw:    0 | Sliding:    1 | Lowpass:    2 | Average:    1 | DAC:   0[0m
+[0;32mI (1208637) MAIN: ADC_raw:    0 | Sliding:  123 | Lowpass:   91 | Average:  123 | DAC:   5[0m
+[0;32mI (1211137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1213637) MAIN: ADC_raw:  292 | Sliding:  165 | Lowpass:  186 | Average:  165 | DAC:  11[0m
+[0;32mI (1216137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1218637) MAIN: ADC_raw:    0 | Sliding:  171 | Lowpass:  141 | Average:  171 | DAC:   8[0m
+[0;32mI (1221137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1223637) MAIN: ADC_raw:  262 | Sliding:  105 | Lowpass:  138 | Average:  105 | DAC:   8[0m
+[0;32mI (1226137) MAIN: ADC_raw:   11 | Sliding:   24 | Lowpass:   17 | Average:   24 | DAC:   1[0m
+[0;32mI (1228637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1231137) MAIN: ADC_raw:    0 | Sliding:  170 | Lowpass:  135 | Average:  170 | DAC:   8[0m
+[0;32mI (1233637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1236137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1238637) MAIN: ADC_raw:  343 | Sliding:  171 | Lowpass:  202 | Average:  171 | DAC:  12[0m
+[0;32mI (1241137) MAIN: ADC_raw:   59 | Sliding:   41 | Lowpass:   40 | Average:   41 | DAC:   2[0m
+[0;32mI (1243637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1246137) MAIN: ADC_raw:    0 | Sliding:   39 | Lowpass:   41 | Average:   39 | DAC:   2[0m
+[0;32mI (1248637) MAIN: ADC_raw:    0 | Sliding:  170 | Lowpass:  141 | Average:  170 | DAC:   8[0m
+[0;32mI (1251137) MAIN: ADC_raw:    0 | Sliding:   97 | Lowpass:   76 | Average:   97 | DAC:   4[0m
+[0;32mI (1253637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1256137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1258637) MAIN: ADC_raw:  326 | Sliding:  166 | Lowpass:  195 | Average:  166 | DAC:  12[0m
+[0;32mI (1261137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1263637) MAIN: ADC_raw:    0 | Sliding:   28 | Lowpass:   36 | Average:   28 | DAC:   2[0m
+[0;32mI (1266137) MAIN: ADC_raw:    0 | Sliding:   64 | Lowpass:   43 | Average:   64 | DAC:   2[0m
+[0;32mI (1268637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1271137) MAIN: ADC_raw:  158 | Sliding:  107 | Lowpass:  108 | Average:  107 | DAC:   6[0m
+[0;32mI (1273637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1276137) MAIN: ADC_raw:    0 | Sliding:  128 | Lowpass:   93 | Average:  128 | DAC:   5[0m
+[0;32mI (1278637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1281137) MAIN: ADC_raw:   20 | Sliding:   41 | Lowpass:   29 | Average:   41 | DAC:   1[0m
+[0;32mI (1283637) MAIN: ADC_raw:    0 | Sliding:   92 | Lowpass:   91 | Average:   92 | DAC:   5[0m
+[0;32mI (1286137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1288637) MAIN: ADC_raw:  251 | Sliding:  150 | Lowpass:  160 | Average:  150 | DAC:  10[0m
+[0;32mI (1291137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1293637) MAIN: ADC_raw:    0 | Sliding:   62 | Lowpass:   41 | Average:   62 | DAC:   2[0m
+[0;32mI (1296137) MAIN: ADC_raw:  119 | Sliding:   28 | Lowpass:   52 | Average:   28 | DAC:   3[0m
+[0;32mI (1298637) MAIN: ADC_raw:   36 | Sliding:   45 | Lowpass:   37 | Average:   45 | DAC:   2[0m
+[0;32mI (1301137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1303637) MAIN: ADC_raw:    0 | Sliding:  162 | Lowpass:  128 | Average:  162 | DAC:   8[0m
+[0;32mI (1306137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1308637) MAIN: ADC_raw:  111 | Sliding:   31 | Lowpass:   51 | Average:   31 | DAC:   3[0m
+[0;32mI (1311137) MAIN: ADC_raw:  240 | Sliding:  141 | Lowpass:  153 | Average:  141 | DAC:   9[0m
+[0;32mI (1313637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1316137) MAIN: ADC_raw:    0 | Sliding:   27 | Lowpass:   32 | Average:   27 | DAC:   2[0m
+[0;32mI (1318637) MAIN: ADC_raw:    0 | Sliding:  142 | Lowpass:  111 | Average:  142 | DAC:   6[0m
+[0;32mI (1321137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1323637) MAIN: ADC_raw:   37 | Sliding:    5 | Lowpass:   14 | Average:    5 | DAC:   0[0m
+[0;32mI (1326137) MAIN: ADC_raw:  289 | Sliding:  152 | Lowpass:  170 | Average:  152 | DAC:  10[0m
+[0;32mI (1328637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1331137) MAIN: ADC_raw:    0 | Sliding:   32 | Lowpass:   38 | Average:   32 | DAC:   2[0m
+[0;32mI (1333637) MAIN: ADC_raw:    0 | Sliding:   99 | Lowpass:   71 | Average:   99 | DAC:   4[0m
+[0;32mI (1336137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1338637) MAIN: ADC_raw:  338 | Sliding:  167 | Lowpass:  199 | Average:  167 | DAC:  12[0m
+[0;32mI (1341137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1343637) MAIN: ADC_raw:    0 | Sliding:   49 | Lowpass:   51 | Average:   49 | DAC:   3[0m
+[0;32mI (1346137) MAIN: ADC_raw:    0 | Sliding:   51 | Lowpass:   32 | Average:   51 | DAC:   2[0m
+[0;32mI (1348637) MAIN: ADC_raw:   50 | Sliding:    6 | Lowpass:   17 | Average:    6 | DAC:   1[0m
+[0;32mI (1351137) MAIN: ADC_raw:   64 | Sliding:   60 | Lowpass:   54 | Average:   60 | DAC:   3[0m
+[0;32mI (1353637) MAIN: ADC_raw:    0 | Sliding:    3 | Lowpass:    7 | Average:    3 | DAC:   0[0m
+[0;32mI (1356137) MAIN: ADC_raw:    0 | Sliding:   70 | Lowpass:   44 | Average:   70 | DAC:   2[0m
+[0;32mI (1358637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1361137) MAIN: ADC_raw:  174 | Sliding:  112 | Lowpass:  117 | Average:  112 | DAC:   7[0m
+[0;32mI (1363637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1366137) MAIN: ADC_raw:    0 | Sliding:  105 | Lowpass:   98 | Average:  105 | DAC:   6[0m
+[0;32mI (1368637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1371137) MAIN: ADC_raw:   21 | Sliding:    2 | Lowpass:    6 | Average:    2 | DAC:   0[0m
+[0;32mI (1373637) MAIN: ADC_raw:   34 | Sliding:   32 | Lowpass:   29 | Average:   32 | DAC:   1[0m
+[0;32mI (1376137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1378637) MAIN: ADC_raw:    0 | Sliding:   50 | Lowpass:   47 | Average:   50 | DAC:   2[0m
+[0;32mI (1381137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1383637) MAIN: ADC_raw:  123 | Sliding:   33 | Lowpass:   57 | Average:   33 | DAC:   3[0m
+[0;32mI (1386137) MAIN: ADC_raw:    0 | Sliding:    4 | Lowpass:    2 | Average:    4 | DAC:   0[0m
+[0;32mI (1388637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1391137) MAIN: ADC_raw:    0 | Sliding:    9 | Lowpass:    3 | Average:    9 | DAC:   0[0m
+[0;32mI (1393637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1396137) MAIN: ADC_raw:    0 | Sliding:   11 | Lowpass:    4 | Average:   11 | DAC:   0[0m
+[0;32mI (1398637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    1 | Average:    0 | DAC:   0[0m
+[0;32mI (1401137) MAIN: ADC_raw:    0 | Sliding:    8 | Lowpass:    2 | Average:    8 | DAC:   0[0m
+[0;32mI (1403637) MAIN: ADC_raw:   21 | Sliding:    2 | Lowpass:    6 | Average:    2 | DAC:   0[0m
+[0;32mI (1406137) MAIN: ADC_raw:   22 | Sliding:   33 | Lowpass:   24 | Average:   33 | DAC:   1[0m
+[0;32mI (1408637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1411137) MAIN: ADC_raw:    0 | Sliding:   69 | Lowpass:   48 | Average:   69 | DAC:   3[0m
+[0;32mI (1413637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1416137) MAIN: ADC_raw:  182 | Sliding:   99 | Lowpass:  111 | Average:   99 | DAC:   6[0m
+[0;32mI (1418637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1421137) MAIN: ADC_raw:    0 | Sliding:  118 | Lowpass:  104 | Average:  118 | DAC:   6[0m
+[0;32mI (1423637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1426137) MAIN: ADC_raw:   76 | Sliding:   67 | Lowpass:   73 | Average:   67 | DAC:   4[0m
+[0;32mI (1428637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1431137) MAIN: ADC_raw:    0 | Sliding:   20 | Lowpass:    6 | Average:   20 | DAC:   0[0m
+[0;32mI (1433637) MAIN: ADC_raw:   37 | Sliding:    3 | Lowpass:   11 | Average:    3 | DAC:   0[0m
+[0;32mI (1436137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1438637) MAIN: ADC_raw:    0 | Sliding:   86 | Lowpass:   78 | Average:   86 | DAC:   4[0m
+[0;32mI (1441137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1443637) MAIN: ADC_raw:  112 | Sliding:   91 | Lowpass:   86 | Average:   91 | DAC:   5[0m
+[0;32mI (1446137) MAIN: ADC_raw:    0 | Sliding:    7 | Lowpass:   13 | Average:    7 | DAC:   0[0m
+[0;32mI (1448637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1451137) MAIN: ADC_raw:  207 | Sliding:  129 | Lowpass:  139 | Average:  129 | DAC:   8[0m
+[0;32mI (1453637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1456137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1458637) MAIN: ADC_raw:   48 | Sliding:    6 | Lowpass:   16 | Average:    6 | DAC:   1[0m
+[0;32mI (1461137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1463637) MAIN: ADC_raw:    0 | Sliding:   98 | Lowpass:   97 | Average:   98 | DAC:   6[0m
+[0;32mI (1466137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1468637) MAIN: ADC_raw:    0 | Sliding:    1 | Lowpass:    1 | Average:    1 | DAC:   0[0m
+[0;32mI (1471137) MAIN: ADC_raw:    0 | Sliding:   63 | Lowpass:   22 | Average:   63 | DAC:   1[0m
+[0;32mI (1473637) MAIN: ADC_raw:  281 | Sliding:   92 | Lowpass:  139 | Average:   92 | DAC:   8[0m
+[0;32mI (1476137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1478637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1481137) MAIN: ADC_raw:    0 | Sliding:    3 | Lowpass:    2 | Average:    3 | DAC:   0[0m
+[0;32mI (1483637) MAIN: ADC_raw:    0 | Sliding:   99 | Lowpass:   89 | Average:   99 | DAC:   5[0m
+[0;32mI (1486137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1488637) MAIN: ADC_raw:    0 | Sliding:   16 | Lowpass:    7 | Average:   16 | DAC:   0[0m
+[0;32mI (1491137) MAIN: ADC_raw:    0 | Sliding:   37 | Lowpass:   43 | Average:   37 | DAC:   2[0m
+[0;32mI (1493637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1496137) MAIN: ADC_raw:  120 | Sliding:   75 | Lowpass:   80 | Average:   75 | DAC:   5[0m
+[0;32mI (1498637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1501137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1503637) MAIN: ADC_raw:  135 | Sliding:  101 | Lowpass:   98 | Average:  101 | DAC:   6[0m
+[0;32mI (1506137) MAIN: ADC_raw:    0 | Sliding:   25 | Lowpass:   37 | Average:   25 | DAC:   2[0m
+[0;32mI (1508637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1511137) MAIN: ADC_raw:   71 | Sliding:   62 | Lowpass:   51 | Average:   62 | DAC:   3[0m
+[0;32mI (1513637) MAIN: ADC_raw:    0 | Sliding:   28 | Lowpass:   37 | Average:   28 | DAC:   2[0m
+[0;32mI (1516137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1518637) MAIN: ADC_raw:  205 | Sliding:  122 | Lowpass:  132 | Average:  122 | DAC:   8[0m
+[0;32mI (1521137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1523637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1526137) MAIN: ADC_raw:  113 | Sliding:   75 | Lowpass:   78 | Average:   75 | DAC:   4[0m
+[0;32mI (1528637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1531137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1533637) MAIN: ADC_raw:   55 | Sliding:   35 | Lowpass:   37 | Average:   35 | DAC:   2[0m
+[0;32mI (1536137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1538637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1541137) MAIN: ADC_raw:    0 | Sliding:   15 | Lowpass:    7 | Average:   15 | DAC:   0[0m
+[0;32mI (1543637) MAIN: ADC_raw:    0 | Sliding:   11 | Lowpass:   16 | Average:   11 | DAC:   1[0m
+[0;32mI (1546137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1548637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1551137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1553637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1556137) MAIN: ADC_raw:    0 | Sliding:    9 | Lowpass:    2 | Average:    9 | DAC:   0[0m
+[0;32mI (1558637) MAIN: ADC_raw:    0 | Sliding:   20 | Lowpass:    9 | Average:   20 | DAC:   0[0m
+[0;32mI (1561137) MAIN: ADC_raw:    0 | Sliding:   36 | Lowpass:   46 | Average:   36 | DAC:   2[0m
+[0;32mI (1563637) MAIN: ADC_raw:   57 | Sliding:    7 | Lowpass:   20 | Average:    7 | DAC:   1[0m
+[0;32mI (1566137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1568637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1571137) MAIN: ADC_raw:   20 | Sliding:   35 | Lowpass:   25 | Average:   35 | DAC:   1[0m
+[0;32mI (1573637) MAIN: ADC_raw:    0 | Sliding:    5 | Lowpass:    9 | Average:    5 | DAC:   0[0m
+[0;32mI (1576137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1578637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1581137) MAIN: ADC_raw:    0 | Sliding:   75 | Lowpass:   53 | Average:   75 | DAC:   3[0m
+[0;32mI (1583637) MAIN: ADC_raw:  116 | Sliding:   30 | Lowpass:   54 | Average:   30 | DAC:   3[0m
+[0;32mI (1586137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1588637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1591137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1593637) MAIN: ADC_raw:    0 | Sliding:   17 | Lowpass:    5 | Average:   17 | DAC:   0[0m
+[0;32mI (1596137) MAIN: ADC_raw:    0 | Sliding:   18 | Lowpass:    7 | Average:   18 | DAC:   0[0m
+[0;32mI (1598637) MAIN: ADC_raw:    0 | Sliding:   28 | Lowpass:   23 | Average:   28 | DAC:   1[0m
+[0;32mI (1601137) MAIN: ADC_raw:  144 | Sliding:   46 | Lowpass:   71 | Average:   46 | DAC:   4[0m
+[0;32mI (1603637) MAIN: ADC_raw:    0 | Sliding:    5 | Lowpass:    9 | Average:    5 | DAC:   0[0m
+[0;32mI (1606137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1608637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1611137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1613637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1616137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1618637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1621137) MAIN: ADC_raw:    0 | Sliding:    1 | Lowpass:    1 | Average:    1 | DAC:   0[0m
+[0;32mI (1623637) MAIN: ADC_raw:    0 | Sliding:   13 | Lowpass:    5 | Average:   13 | DAC:   0[0m
+[0;32mI (1626137) MAIN: ADC_raw:    0 | Sliding:   21 | Lowpass:   12 | Average:   21 | DAC:   0[0m
+[0;32mI (1628637) MAIN: ADC_raw:  240 | Sliding:   69 | Lowpass:  113 | Average:   69 | DAC:   7[0m
+[0;32mI (1631137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1633637) MAIN: ADC_raw:    0 | Sliding:  210 | Lowpass:  162 | Average:  210 | DAC:  10[0m
+[0;32mI (1636137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1638637) MAIN: ADC_raw:  261 | Sliding:  162 | Lowpass:  170 | Average:  162 | DAC:  10[0m
+[0;32mI (1641137) MAIN: ADC_raw:    0 | Sliding:   73 | Lowpass:   84 | Average:   73 | DAC:   5[0m
+[0;32mI (1643637) MAIN: ADC_raw:    0 | Sliding:   16 | Lowpass:    5 | Average:   16 | DAC:   0[0m
+[0;32mI (1646137) MAIN: ADC_raw:  451 | Sliding:  231 | Lowpass:  268 | Average:  231 | DAC:  16[0m
+[0;32mI (1648637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1651137) MAIN: ADC_raw:    0 | Sliding:  110 | Lowpass:   66 | Average:  110 | DAC:   4[0m
+[0;32mI (1653637) MAIN: ADC_raw:  577 | Sliding:  255 | Lowpass:  321 | Average:  255 | DAC:  20[0m
+[0;32mI (1656137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1658637) MAIN: ADC_raw:    0 | Sliding:  132 | Lowpass:   86 | Average:  132 | DAC:   5[0m
+[0;32mI (1661137) MAIN: ADC_raw:  437 | Sliding:  160 | Lowpass:  224 | Average:  160 | DAC:  14[0m
+[0;32mI (1663637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1666137) MAIN: ADC_raw:    0 | Sliding:  226 | Lowpass:  177 | Average:  226 | DAC:  11[0m
+[0;32mI (1668637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1671137) MAIN: ADC_raw:  325 | Sliding:  183 | Lowpass:  196 | Average:  183 | DAC:  12[0m
+[0;32mI (1673637) MAIN: ADC_raw:    0 | Sliding:    1 | Lowpass:    3 | Average:    1 | DAC:   0[0m
+[0;32mI (1676137) MAIN: ADC_raw:    0 | Sliding:  186 | Lowpass:  144 | Average:  186 | DAC:   9[0m
+[0;32mI (1678637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1681137) MAIN: ADC_raw:  549 | Sliding:  254 | Lowpass:  311 | Average:  254 | DAC:  19[0m
+[0;32mI (1683637) MAIN: ADC_raw:   29 | Sliding:   67 | Lowpass:   47 | Average:   67 | DAC:   2[0m
+[0;32mI (1686137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1688637) MAIN: ADC_raw:    0 | Sliding:  229 | Lowpass:  188 | Average:  229 | DAC:  11[0m
+[0;32mI (1691137) MAIN: ADC_raw:    0 | Sliding:   35 | Lowpass:   12 | Average:   35 | DAC:   0[0m
+[0;32mI (1693637) MAIN: ADC_raw:   80 | Sliding:   15 | Lowpass:   33 | Average:   15 | DAC:   2[0m
+[0;32mI (1696137) MAIN: ADC_raw:  416 | Sliding:  218 | Lowpass:  249 | Average:  218 | DAC:  15[0m
+[0;32mI (1698637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1701137) MAIN: ADC_raw:    0 | Sliding:   33 | Lowpass:   39 | Average:   33 | DAC:   2[0m
+[0;32mI (1703637) MAIN: ADC_raw:    0 | Sliding:  204 | Lowpass:  162 | Average:  204 | DAC:  10[0m
+[0;32mI (1706137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1708637) MAIN: ADC_raw:  144 | Sliding:   44 | Lowpass:   69 | Average:   44 | DAC:   4[0m
+[0;32mI (1711137) MAIN: ADC_raw:  323 | Sliding:  181 | Lowpass:  201 | Average:  181 | DAC:  12[0m
+[0;32mI (1713637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1716137) MAIN: ADC_raw:    0 | Sliding:  171 | Lowpass:  154 | Average:  171 | DAC:   9[0m
+[0;32mI (1718637) MAIN: ADC_raw:    0 | Sliding:  121 | Lowpass:   86 | Average:  121 | DAC:   5[0m
+[0;32mI (1721137) MAIN: ADC_raw:    9 | Sliding:    0 | Lowpass:    2 | Average:    0 | DAC:   0[0m
+[0;32mI (1723637) MAIN: ADC_raw:  382 | Sliding:  220 | Lowpass:  242 | Average:  220 | DAC:  15[0m
+[0;32mI (1726137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1728637) MAIN: ADC_raw:    0 | Sliding:  198 | Lowpass:  176 | Average:  198 | DAC:  11[0m
+[0;32mI (1731137) MAIN: ADC_raw:    0 | Sliding:   33 | Lowpass:   10 | Average:   33 | DAC:   0[0m
+[0;32mI (1733637) MAIN: ADC_raw:  272 | Sliding:  101 | Lowpass:  141 | Average:  101 | DAC:   8[0m
+[0;32mI (1736137) MAIN: ADC_raw:  128 | Sliding:   94 | Lowpass:   92 | Average:   94 | DAC:   5[0m
+[0;32mI (1738637) MAIN: ADC_raw:    0 | Sliding:   11 | Lowpass:   19 | Average:   11 | DAC:   1[0m
+[0;32mI (1741137) MAIN: ADC_raw:    0 | Sliding:  172 | Lowpass:  138 | Average:  172 | DAC:   8[0m
+[0;32mI (1743637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1746137) MAIN: ADC_raw:  434 | Sliding:  202 | Lowpass:  247 | Average:  202 | DAC:  15[0m
+[0;32mI (1748637) MAIN: ADC_raw:  267 | Sliding:  145 | Lowpass:  163 | Average:  145 | DAC:  10[0m
+[0;32mI (1751137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1753637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1756137) MAIN: ADC_raw:    0 | Sliding:   55 | Lowpass:   54 | Average:   55 | DAC:   3[0m
+[0;32mI (1758637) MAIN: ADC_raw:    0 | Sliding:  178 | Lowpass:  151 | Average:  178 | DAC:   9[0m
+[0;32mI (1761137) MAIN: ADC_raw:    0 | Sliding:  233 | Lowpass:  192 | Average:  233 | DAC:  12[0m
+[0;32mI (1763637) MAIN: ADC_raw:    0 | Sliding:  208 | Lowpass:  167 | Average:  208 | DAC:  10[0m
+[0;32mI (1766137) MAIN: ADC_raw:    0 | Sliding:  124 | Lowpass:   99 | Average:  124 | DAC:   6[0m
+[0;32mI (1768637) MAIN: ADC_raw:    0 | Sliding:    4 | Lowpass:    1 | Average:    4 | DAC:   0[0m
+[0;32mI (1771137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1773637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1776137) MAIN: ADC_raw:  367 | Sliding:  167 | Lowpass:  206 | Average:  167 | DAC:  12[0m
+[0;32mI (1778637) MAIN: ADC_raw:  347 | Sliding:  183 | Lowpass:  210 | Average:  183 | DAC:  13[0m
+[0;32mI (1781137) MAIN: ADC_raw:    0 | Sliding:    8 | Lowpass:    3 | Average:    8 | DAC:   0[0m
+[0;32mI (1783637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1786137) MAIN: ADC_raw:    0 | Sliding:   76 | Lowpass:   71 | Average:   76 | DAC:   4[0m
+[0;32mI (1788637) MAIN: ADC_raw:    0 | Sliding:  259 | Lowpass:  224 | Average:  259 | DAC:  14[0m
+[0;32mI (1791137) MAIN: ADC_raw:    0 | Sliding:  186 | Lowpass:  147 | Average:  186 | DAC:   9[0m
+[0;32mI (1793637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1796137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1798637) MAIN: ADC_raw:  310 | Sliding:  142 | Lowpass:  175 | Average:  142 | DAC:  10[0m
+[0;32mI (1801137) MAIN: ADC_raw:  485 | Sliding:  240 | Lowpass:  282 | Average:  240 | DAC:  17[0m
+[0;32mI (1803637) MAIN: ADC_raw:  390 | Sliding:  196 | Lowpass:  229 | Average:  196 | DAC:  14[0m
+[0;32mI (1806137) MAIN: ADC_raw:  328 | Sliding:  162 | Lowpass:  189 | Average:  162 | DAC:  11[0m
+[0;32mI (1808637) MAIN: ADC_raw:  208 | Sliding:  112 | Lowpass:  126 | Average:  112 | DAC:   7[0m
+[0;32mI (1811137) MAIN: ADC_raw:  109 | Sliding:   57 | Lowpass:   65 | Average:   57 | DAC:   4[0m
+[0;32mI (1813637) MAIN: ADC_raw:   23 | Sliding:   20 | Lowpass:   20 | Average:   20 | DAC:   1[0m
+[0;32mI (1816137) MAIN: ADC_raw:   34 | Sliding:   17 | Lowpass:   20 | Average:   17 | DAC:   1[0m
+[0;32mI (1818637) MAIN: ADC_raw:  102 | Sliding:   42 | Lowpass:   53 | Average:   42 | DAC:   3[0m
+[0;32mI (1821137) MAIN: ADC_raw:  161 | Sliding:   76 | Lowpass:   92 | Average:   76 | DAC:   5[0m
+[0;32mI (1823637) MAIN: ADC_raw:  190 | Sliding:   96 | Lowpass:  111 | Average:   96 | DAC:   6[0m
+[0;32mI (1826137) MAIN: ADC_raw:  272 | Sliding:  132 | Lowpass:  157 | Average:  132 | DAC:   9[0m
+[0;32mI (1828637) MAIN: ADC_raw:  403 | Sliding:  195 | Lowpass:  233 | Average:  195 | DAC:  14[0m
+[0;32mI (1831137) MAIN: ADC_raw:  495 | Sliding:  249 | Lowpass:  290 | Average:  249 | DAC:  18[0m
+[0;32mI (1833637) MAIN: ADC_raw:  164 | Sliding:  105 | Lowpass:  109 | Average:  105 | DAC:   6[0m
+[0;32mI (1836137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1838637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1841137) MAIN: ADC_raw:    0 | Sliding:  112 | Lowpass:   99 | Average:  112 | DAC:   6[0m
+[0;32mI (1843637) MAIN: ADC_raw:    0 | Sliding:  247 | Lowpass:  209 | Average:  247 | DAC:  13[0m
+[0;32mI (1846137) MAIN: ADC_raw:    0 | Sliding:  273 | Lowpass:  222 | Average:  273 | DAC:  13[0m
+[0;32mI (1848637) MAIN: ADC_raw:    0 | Sliding:  145 | Lowpass:  114 | Average:  145 | DAC:   7[0m
+[0;32mI (1851137) MAIN: ADC_raw:    0 | Sliding:   23 | Lowpass:   16 | Average:   23 | DAC:   1[0m
+[0;32mI (1853637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1856137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1858637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1861137) MAIN: ADC_raw:    0 | Sliding:    4 | Lowpass:    7 | Average:    4 | DAC:   0[0m
+[0;32mI (1863637) MAIN: ADC_raw:    0 | Sliding:  242 | Lowpass:  212 | Average:  242 | DAC:  13[0m
+[0;32mI (1866137) MAIN: ADC_raw:    0 | Sliding:  120 | Lowpass:   76 | Average:  120 | DAC:   4[0m
+[0;32mI (1868637) MAIN: ADC_raw:  110 | Sliding:   20 | Lowpass:   44 | Average:   20 | DAC:   2[0m
+[0;32mI (1871137) MAIN: ADC_raw:  162 | Sliding:  114 | Lowpass:  113 | Average:  114 | DAC:   7[0m
+[0;32mI (1873637) MAIN: ADC_raw:    0 | Sliding:  120 | Lowpass:  125 | Average:  120 | DAC:   7[0m
+[0;32mI (1876137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1878637) MAIN: ADC_raw:  341 | Sliding:  203 | Lowpass:  218 | Average:  203 | DAC:  13[0m
+[0;32mI (1881137) MAIN: ADC_raw:    0 | Sliding:   52 | Lowpass:   67 | Average:   52 | DAC:   4[0m
+[0;32mI (1883637) MAIN: ADC_raw:    0 | Sliding:    5 | Lowpass:    2 | Average:    5 | DAC:   0[0m
+[0;32mI (1886137) MAIN: ADC_raw:  448 | Sliding:  244 | Lowpass:  274 | Average:  244 | DAC:  17[0m
+[0;32mI (1888637) MAIN: ADC_raw:    0 | Sliding:   25 | Lowpass:   39 | Average:   25 | DAC:   2[0m
+[0;32mI (1891137) MAIN: ADC_raw:    0 | Sliding:    2 | Lowpass:    2 | Average:    2 | DAC:   0[0m
+[0;32mI (1893637) MAIN: ADC_raw:  364 | Sliding:  218 | Lowpass:  233 | Average:  218 | DAC:  14[0m
+[0;32mI (1896137) MAIN: ADC_raw:    0 | Sliding:   71 | Lowpass:   85 | Average:   71 | DAC:   5[0m
+[0;32mI (1898637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1901137) MAIN: ADC_raw:  300 | Sliding:  182 | Lowpass:  193 | Average:  182 | DAC:  12[0m
+[0;32mI (1903637) MAIN: ADC_raw:    0 | Sliding:   98 | Lowpass:  105 | Average:   98 | DAC:   6[0m
+[0;32mI (1906137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1908637) MAIN: ADC_raw:  319 | Sliding:  183 | Lowpass:  200 | Average:  183 | DAC:  12[0m
+[0;32mI (1911137) MAIN: ADC_raw:    0 | Sliding:  184 | Lowpass:  171 | Average:  184 | DAC:  10[0m
+[0;32mI (1913637) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1916137) MAIN: ADC_raw:   93 | Sliding:   87 | Lowpass:   78 | Average:   87 | DAC:   4[0m
+[0;32mI (1918637) MAIN: ADC_raw:    0 | Sliding:  251 | Lowpass:  233 | Average:  251 | DAC:  14[0m
+[0;32mI (1921137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (1923637) MAIN: ADC_raw:  377 | Sliding:  230 | Lowpass:  246 | Average:  230 | DAC:  15[0m
+[0;32mI (1926137) MAIN: ADC_raw:    0 | Sliding:  126 | Lowpass:  131 | Average:  126 | DAC:   8[0m
+[0;32mI (1928637) MAIN: ADC_raw:    0 | Sliding:    6 | Lowpass:    3 | Average:    6 | DAC:   0[0m
+[0;32mI (1931137) MAIN: ADC_raw:  609 | Sliding:  317 | Lowpass:  365 | Average:  317 | DAC:  22[0m
+[0;32mI (1933637) MAIN: ADC_raw:    0 | Sliding:    5 | Lowpass:   10 | Average:    5 | DAC:   0[0m
+[0;32mI (1936137) MAIN: ADC_raw:    0 | Sliding:   85 | Lowpass:   33 | Average:   85 | DAC:   2[0m
+[0;32mI (1938637) MAIN: ADC_raw:  619 | Sliding:  285 | Lowpass:  359 | Average:  285 | DAC:  22[0m
+[0;32mI (1941137) MAIN: ADC_raw:    0 | Sliding:    8 | Lowpass:   15 | Average:    8 | DAC:   0[0m
+[0;32mI (1943637) MAIN: ADC_raw:    0 | Sliding:   45 | Lowpass:   13 | Average:   45 | DAC:   0[0m
+[0;32mI (1946137) MAIN: ADC_raw:  416 | Sliding:  247 | Lowpass:  266 | Average:  247 | DAC:  16[0m
+[0;32mI (1948637) MAIN: ADC_raw:    0 | Sliding:  187 | Lowpass:  186 | Average:  187 | DAC:  11[0m
+[0;32mI (1951137) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m

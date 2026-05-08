@@ -27,6 +27,9 @@ ADC_DAC_SOURCE_DIR:STATIC=C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project
 CCACHE_ENABLE:UNINITIALIZED=False
 
 //Path to a program.
+CCACHE_FOUND:FILEPATH=C:/Users/Admin/.espressif/tools/ccache/4.12.1/ccache-4.12.1-windows-x86_64/ccache.exe
+
+//Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=C:/Espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-addr2line.exe
 
 //Path to a program.

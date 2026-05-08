@@ -1,0 +1,218 @@
+Command: C:\Espressif\tools\python\v6.0\venv\Scripts\python.exe D:\esp\v6.0\esp-idf\tools/idf_monitor.py -p COM7 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project\build\ADC_DAC.elf C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.0\venv\Scripts\python.exe' 'D:\esp\v6.0\esp-idf\tools\idf.py' '-p' 'COM7'
+3 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.0 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May  2 2026 23:16:09[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (31) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=24a70h (150128) map[0m
+[0;32mI (140) esp_image: segment 1: paddr=00034a98 vaddr=3ffbdb60 size=05fd4h ( 24532) load[0m
+[0;32mI (149) esp_image: segment 2: paddr=0003aa74 vaddr=40080000 size=055a4h ( 21924) load[0m
+[0;32mI (158) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=bcf64h (773988) map[0m
+[0;32mI (434) esp_image: segment 4: paddr=000fcf8c vaddr=400855a4 size=17538h ( 95544) load[0m
+[0;32mI (474) esp_image: segment 5: paddr=001144cc vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (488) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (488) boot: Disabling RNG early entropy source...[0m
+[0;32mI (499) cpu_start: Multicore app[0m
+[0;32mI (507) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (507) cpu_start: Pro cpu start user code[0m
+[0;32mI (507) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (509) app_init: Application information:[0m
+[0;32mI (513) app_init: Project name:     ADC_DAC[0m
+[0;32mI (517) app_init: App version:      0141131-dirty[0m
+[0;32mI (521) app_init: Compile time:     May  6 2026 23:40:55[0m
+[0;32mI (526) app_init: ELF file SHA256:  905241740...[0m
+[0;32mI (531) app_init: ESP-IDF:          v6.0[0m
+[0;32mI (534) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (538) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (542) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (546) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (552) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (557) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (563) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (568) heap_init: At 3FFC9B70 len 00016490 (89 KiB): DRAM[0m
+[0;32mI (573) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (578) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (584) heap_init: At 4009CADC len 00003524 (13 KiB): IRAM[0m
+[0;32mI (591) spi_flash: detected chip: generic[0m
+[0;32mI (593) spi_flash: flash io: dio[0m
+[0;33mW (596) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (610) coexist: coex firmware version: 093e3d2[0m
+[0;32mI (613) main_task: Started on CPU0[0m
+[0;32mI (623) main_task: Calling app_main()[0m
+[0;32mI (643) BTDM_INIT: BT controller compile version [045a658][0m
+[0;32mI (643) BTDM_INIT: Using main XTAL as clock source[0m
+[0;32mI (643) BTDM_INIT: Bluetooth MAC: d4:e9:f4:68:65:5e[0m
+[0;32mI (653) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (983) WIFI_BLE_PROV: Found saved credentials, connecting WiFi[0m
+[0;32mI (1023) wifi:I (1023) WIFI_BLE_PROV: BLE addr: d4:e9:f4:68:65:5e[0m
+wifi driver task: 3ffd7b9c, prio:23, stack:6656, core=0
+[0;32mI (1043) wifi:wifi firmware version: 44738b4[0m
+[0;32mI (1043) wifi:wifi certification version: v7.0[0m
+[0;32mI (1043) wifi:config NVS flash: enabled[0m
+[0;32mI (1043) wifi:config nano formatting: disabled[0m
+[0;32mI (1053) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1053) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1053) wifi:Init management short buffer num: 32[0m
+[0;32mI (1063) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1063) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1073) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1073) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1083) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (1083) NimBLE: disc_mode=2[0m
+[0;32mI (1083) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (1093) NimBLE: [0m
+
+[0;32mI (1093) wifi_init: rx ba win: 6[0m
+[0;32mI (1103) wifi_init: accept mbox: 6[0m
+[0;32mI (1103) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1103) wifi_init: udp mbox: 6[0m
+[0;32mI (1103) wifi_init: tcp mbox: 6[0m
+[0;32mI (1113) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1113) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1113) wifi_init: tcp mss: 1440[0m
+[0;32mI (1123) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1123) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1133) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (1133) wifi:enable tsf[0m
+[0;32mI (1143) wifi:flush txq[0m
+[0;32mI (1143) wifi:stop sw txq[0m
+[0;32mI (1143) wifi:lmac stop hw txq[0m
+[0;32mI (1153) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (1153) wifi:enable tsf[0m
+[0;33mW (1153) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1163) WIFI_BLE_PROV: Status: WIFI_CONNECTING[0m
+[0;33mW (1163) wifi:Haven't to connect to a suitable AP now![0m
+[0;32mI (1163) NET_SVC: Network service initialized[0m
+[0;32mI (1173) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1183) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1183) MQTT_CLIENT: MQTT task started — waiting for Wi-Fi IP...[0m
+[0;32mI (1193) main_task: Returned from app_main()[0m
+[0;32mI (1263) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1323) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1403) wifi:connected with TuanNga, aid = 3, channel 6, BW20, bssid = 00:c8:96:aa:40:d9[0m
+[0;32mI (1403) wifi:security: WPA2-PSK, phy: bgn, rssi: -56[0m
+[0;32mI (1413) wifi:pm start, type: 1[0m
+
+[0;32mI (1413) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1443) wifi:<ba-add>idx:0 (ifx:0, 00:c8:96:aa:40:d9), tid:7, ssn:0, winSize:64[0m
+[0;32mI (1473) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2193) MQTT_CLIENT: Waiting for IP... (1000/60000 ms)[0m
+[0;32mI (2593) esp_netif_handlers: sta ip: 192.168.100.2, mask: 255.255.255.0, gw: 192.168.100.1[0m
+[0;32mI (2593) WIFI_BLE_PROV: Status: WIFI_CONNECTED[0m
+[0;32mI (2593) NET_SVC: Wi-Fi up -> network workers allowed[0m
+[0;32mI (2663) NET_SVC: Network workers started[0m
+[0;32mI (2663) NET_SVC: UDP ready on port 5005[0m
+[0;32mI (2663) NET_SVC: TCP server listening on port 5006[0m
+[0;32mI (3193) MQTT_CLIENT: Waiting for IP... (2000/60000 ms)[0m
+[0;32mI (3193) MQTT_CLIENT: Got IP: 192.168.100.2[0m
+[0;32mI (3633) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (5193) MQTT_CLIENT: === MQTT connection attempt #1 ===[0m
+[0;32mI (5193) MQTT_CLIENT: DNS lookup: broker.hivemq.com (attempt 1/5)...[0m
+[0;32mI (5293) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:6, ssn:2, winSize:64[0m
+[0;32mI (5313) MQTT_CLIENT: Resolved broker.hivemq.com -> 3.124.0.100[0m
+[0;32mI (5793) wifi:<ba-del>idx:1, tid:6[0m
+[0;32mI (5833) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:0, ssn:1, winSize:64[0m
+[0;32mI (5833) MQTT_CLIENT: TCP connected to broker.hivemq.com:1883 (sock=56)[0m
+[0;32mI (5833) MQTT_CLIENT: MQTT_Init OK[0m
+[0;32mI (6133) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[I] coreMQTT: MQTT connection established with the broker.
+[0;32mI (7323) MQTT_CLIENT: MQTT connected to broker.hivemq.com:1883  sessionPresent=0[0m
+[0;32mI (8633) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (10293) MQTT_CLIENT: SUBACK received — subscribed OK[0m
+[0;32mI (10293) MQTT_CLIENT: Subscribed to: esp32/from_mqttx[0m
+[0;32mI (10293) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=2)[0m
+[0;32mI (11133) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (12853) MQTT_CLIENT: PUBACK received — packetID: 2[0m
+[0;32mI (13633) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (16133) MAIN: ADC_raw:    0 | Sliding:  222 | Lowpass:  189 | Average:  222 | DAC:  11[0m
+[0;32mI (18633) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (21133) MAIN: ADC_raw:  368 | Sliding:  162 | Lowpass:  201 | Average:  162 | DAC:  12[0m
+[0;32mI (23633) MAIN: ADC_raw:   25 | Sliding:   47 | Lowpass:   37 | Average:   47 | DAC:   2[0m
+[0;32mI (26133) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (28633) MAIN: ADC_raw:    0 | Sliding:  131 | Lowpass:   97 | Average:  131 | DAC:   6[0m
+[0;32mI (31133) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (33633) MAIN: ADC_raw:  314 | Sliding:  206 | Lowpass:  234 | Average:  206 | DAC:  14[0m
+[0;32mI (36133) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (38633) MAIN: ADC_raw:    0 | Sliding:   89 | Lowpass:   89 | Average:   89 | DAC:   5[0m
+[0;32mI (41133) MAIN: ADC_raw:    0 | Sliding:   76 | Lowpass:   62 | Average:   76 | DAC:   3[0m
+[0;32mI (43633) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (46133) MAIN: ADC_raw:  144 | Sliding:  110 | Lowpass:  107 | Average:  110 | DAC:   6[0m
+[0;32mI (46853) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=3)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (48073) MQTT_CLIENT: PUBACK received — packetID: 3[0m
+[0;32mI (48633) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    1 | Average:    0 | DAC:   0[0m
+[0;32mI (51133) MAIN: ADC_raw:    0 | Sliding:   94 | Lowpass:   78 | Average:   94 | DAC:   4[0m
+[0;32mI (53633) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (56133) MAIN: ADC_raw:  113 | Sliding:   36 | Lowpass:   57 | Average:   36 | DAC:   3[0m
+[0;32mI (58633) MAIN: ADC_raw:   98 | Sliding:   71 | Lowpass:   70 | Average:   71 | DAC:   4[0m
+[0;32mI (61133) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (63633) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (66133) MAIN: ADC_raw:    0 | Sliding:  127 | Lowpass:  105 | Average:  127 | DAC:   6[0m
+[0;32mI (68633) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (71133) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (73633) MAIN: ADC_raw:  123 | Sliding:   56 | Lowpass:   70 | Average:   56 | DAC:   4[0m
+[0;32mI (76133) MAIN: ADC_raw:  103 | Sliding:   57 | Lowpass:   64 | Average:   57 | DAC:   4[0m
+[0;32mI (78633) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (81133) MAIN: ADC_raw:    0 | Sliding:    8 | Lowpass:   17 | Average:    8 | DAC:   1[0m
+[0;32mI (82083) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=4)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (83083) MQTT_CLIENT: PUBACK received — packetID: 4[0m
+[0;32mI (83633) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (86133) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (88633) MAIN: ADC_raw:    0 | Sliding:   20 | Lowpass:   17 | Average:   20 | DAC:   1[0m
+[0;32mI (91133) MAIN: ADC_raw:    0 | Sliding:   22 | Lowpass:   16 | Average:   22 | DAC:   1[0m
+[0;32mI (93633) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (96133) MAIN: ADC_raw:    0 | Sliding:    4 | Lowpass:    2 | Average:    4 | DAC:   0[0m
+[0;32mI (98633) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (101133) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (103633) MAIN: ADC_raw:   11 | Sliding:    1 | Lowpass:    3 | Average:    1 | DAC:   0[0m
+[0;32mI (106133) MAIN: ADC_raw:  183 | Sliding:  101 | Lowpass:  115 | Average:  101 | DAC:   7[0m
+[0;32mI (108633) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (111133) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (113633) MAIN: ADC_raw:    0 | Sliding:  117 | Lowpass:   96 | Average:  117 | DAC:   6[0m
+[0;32mI (116133) MAIN: ADC_raw:    0 | Sliding:   20 | Lowpass:   42 | Average:   20 | DAC:   2[0m
+[0;32mI (117083) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=5)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (118083) MQTT_CLIENT: PUBACK received — packetID: 5[0m
+[0;32mI (118633) MAIN: ADC_raw:  206 | Sliding:   92 | Lowpass:  115 | Average:   92 | DAC:   7[0m
+[0;32mI (121133) MAIN: ADC_raw:    0 | Sliding:    1 | Lowpass:    0 | Average:    1 | DAC:   0[0m
+[0;32mI (123633) MAIN: ADC_raw:    0 | Sliding:    9 | Lowpass:   10 | Average:    9 | DAC:   0[0m
+[0;32mI (126133) MAIN: ADC_raw:    0 | Sliding:   27 | Lowpass:   12 | Average:   27 | DAC:   0[0m
+[0;32mI (128633) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (131133) MAIN: ADC_raw:  234 | Sliding:  103 | Lowpass:  127 | Average:  103 | DAC:   7[0m
+[0;32mI (133633) MAIN: ADC_raw:    0 | Sliding:    1 | Lowpass:    0 | Average:    1 | DAC:   0[0m
+[0;32mI (136133) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (138633) MAIN: ADC_raw:    0 | Sliding:   63 | Lowpass:   56 | Average:   63 | DAC:   3[0m
+[0;32mI (141133) MAIN: ADC_raw:    0 | Sliding:  108 | Lowpass:   89 | Average:  108 | DAC:   5[0m
+[0;32mI (143633) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m

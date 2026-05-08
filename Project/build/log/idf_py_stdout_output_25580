@@ -1,0 +1,446 @@
+Command: C:\Espressif\tools\python\v6.0\venv\Scripts\python.exe D:\esp\v6.0\esp-idf\tools/idf_monitor.py -p COM7 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project\build\ADC_DAC.elf C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.0\venv\Scripts\python.exe' 'D:\esp\v6.0\esp-idf\tools\idf.py' '-p' 'COM7'
+3 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entr�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.0 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May  2 2026 23:16:09[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (31) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=24920h (149792) map[0m
+[0;32mI (139) esp_image: segment 1: paddr=00034948 vaddr=3ffbdb60 size=05fd4h ( 24532) load[0m
+[0;32mI (149) esp_image: segment 2: paddr=0003a924 vaddr=40080000 size=056f4h ( 22260) load[0m
+[0;32mI (158) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=bce48h (773704) map[0m
+[0;32mI (434) esp_image: segment 4: paddr=000fce70 vaddr=400856f4 size=173e8h ( 95208) load[0m
+[0;32mI (473) esp_image: segment 5: paddr=00114260 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (488) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (488) boot: Disabling RNG early entropy source...[0m
+[0;32mI (499) cpu_start: Multicore app[0m
+[0;32mI (507) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (507) cpu_start: Pro cpu start user code[0m
+[0;32mI (507) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (509) app_init: Application information:[0m
+[0;32mI (513) app_init: Project name:     ADC_DAC[0m
+[0;32mI (517) app_init: App version:      0141131-dirty[0m
+[0;32mI (521) app_init: Compile time:     May  6 2026 23:12:50[0m
+[0;32mI (526) app_init: ELF file SHA256:  413df93b7...[0m
+[0;32mI (531) app_init: ESP-IDF:          v6.0[0m
+[0;32mI (534) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (538) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (542) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (546) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (552) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (557) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (562) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (568) heap_init: At 3FFC9A80 len 00016580 (89 KiB): DRAM[0m
+[0;32mI (573) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (578) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (584) heap_init: At 4009CADC len 00003524 (13 KiB): IRAM[0m
+[0;32mI (591) spi_flash: detected chip: generic[0m
+[0;32mI (593) spi_flash: flash io: dio[0m
+[0;33mW (595) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (609) coexist: coex firmware version: 093e3d2[0m
+[0;32mI (613) main_task: Started on CPU0[0m
+[0;32mI (623) main_task: Calling app_main()[0m
+[0;32mI (643) BTDM_INIT: BT controller compile version [045a658][0m
+[0;32mI (643) BTDM_INIT: Using main XTAL as clock source[0m
+[0;32mI (643) BTDM_INIT: Bluetooth MAC: d4:e9:f4:68:65:5e[0m
+[0;32mI (653) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (993) WIFI_BLE_PROV: Found saved credentials, connecting WiFi[0m
+[0;32mI (1023) wifi:wifi driver task: 3ffd7a74, prio:23, stack:6656, core=0[0m
+[0;32mI (1043) wifi:wifi firmware version: 44738b4[0m
+[0;32mI (1043) wifi:wifi certification version: v7.0[0m
+[0;32mI (1043) wifi:config NVS flash: enabled[0m
+[0;32mI (1043) wifi:config nano formatting: disabled[0m
+[0;32mI (1053) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1053) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1063) wifi:Init management short buffer num: 32[0m
+[0;32mI (1063) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1073) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1073) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1073) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1083) wifi_init: rx ba win: 6[0m
+[0;32mI (1093) wifi_init: accept mbox: 6[0m
+[0;32mI (1093) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1093) WIFI_BLE_PROV: BLE addr: d4:e9:f4:68:65:5e[0m
+[0;32mI (1093) wifi_init: udp mbox: 6[0m
+[0;32mI (1103) wifi_init: tcp mbox: 6[0m
+[0;32mI (1103) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (1103) NimBLE: disc_mode=2[0m
+[0;32mI (1103) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (1113) NimBLE: [0m
+
+[0;32mI (1123) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1123) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1123) wifi_init: tcp mss: 1440[0m
+[0;32mI (1123) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1133) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1143) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (1143) wifi:enable tsf[0m
+[0;32mI (1153) wifi:flush txq[0m
+[0;32mI (1153) wifi:stop sw txq[0m
+[0;32mI (1153) wifi:lmac stop hw txq[0m
+[0;32mI (1153) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (1153) wifi:enable tsf[0m
+[0;33mW (1163) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1173) WIFI_BLE_PROV: Status: WIFI_CONNECTING[0m
+[0;33mW (1173) wifi:Haven't to connect to a suitable AP now![0m
+[0;32mI (1173) NET_SVC: Network service initialized[0m
+[0;32mI (1183) MQTT_CLIENT: MQTT task started — waiting for Wi-Fi IP...[0m
+[0;32mI (1183) main_task: Returned from app_main()[0m
+[0;32mI (1253) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1253) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1313) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1363) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1473) wifi:connected with TuanNga, aid = 3, channel 6, BW20, bssid = 00:c8:96:aa:40:d9[0m
+[0;32mI (1473) wifi:security: WPA2-PSK, phy: bgn, rssi: -55[0m
+[0;32mI (1483) wifi:pm start, type: 1[0m
+
+[0;32mI (1483) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1503) wifi:<ba-add>idx:0 (ifx:0, 00:c8:96:aa:40:d9), tid:7, ssn:0, winSize:64[0m
+[0;32mI (1653) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2183) MQTT_CLIENT: Waiting for IP... (1000/60000 ms)[0m
+[0;32mI (2563) esp_netif_handlers: sta ip: 192.168.100.2, mask: 255.255.255.0, gw: 192.168.100.1[0m
+[0;32mI (2563) WIFI_BLE_PROV: Status: WIFI_CONNECTED[0m
+[0;32mI (2563) NET_SVC: Wi-Fi up -> network workers allowed[0m
+[0;32mI (2673) NET_SVC: Network workers started[0m
+[0;32mI (2673) NET_SVC: UDP ready on port 5005[0m
+[0;32mI (2673) NET_SVC: TCP server listening on port 5006[0m
+[0;32mI (3183) MQTT_CLIENT: Waiting for IP... (2000/60000 ms)[0m
+[0;32mI (3183) MQTT_CLIENT: Got IP: 192.168.100.2[0m
+[0;32mI (3643) MAIN: ADC_raw:    0 | Sliding:    1 | Lowpass:    0 | Average:    1 | DAC:   0[0m
+[0;32mI (5183) MQTT_CLIENT: === MQTT connection attempt #1 ===[0m
+[0;32mI (5183) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (5253) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:6, ssn:2, winSize:64[0m
+[0;32mI (5273) wifi:<ba-del>idx:1, tid:6[0m
+[0;32mI (5273) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:0, ssn:0, winSize:64[0m
+[0;32mI (5273) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (6143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (8643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (11143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (13643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    1 | Average:    0 | DAC:   0[0m
+[1;31mE (15293) MQTT_CLIENT: connect() to test.mosquitto.org:1883 timed out after 10s[0m
+[0;33mW (15293) MQTT_CLIENT: TCP connect failed — retry in 10000 ms[0m
+[0;32mI (16143) MAIN: ADC_raw:    0 | Sliding:   23 | Lowpass:    7 | Average:   23 | DAC:   0[0m
+[0;32mI (18643) MAIN: ADC_raw:  189 | Sliding:  115 | Lowpass:  125 | Average:  115 | DAC:   7[0m
+[0;32mI (21143) MAIN: ADC_raw:    0 | Sliding:   99 | Lowpass:   97 | Average:   99 | DAC:   6[0m
+[0;32mI (23643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (25293) MQTT_CLIENT: === MQTT connection attempt #2 ===[0m
+[0;32mI (25293) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (25293) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (26143) MAIN: ADC_raw:  143 | Sliding:   95 | Lowpass:   97 | Average:   95 | DAC:   6[0m
+[0;32mI (28643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (31143) MAIN: ADC_raw:    0 | Sliding:   97 | Lowpass:   69 | Average:   97 | DAC:   4[0m
+[0;32mI (33643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[1;31mE (35313) MQTT_CLIENT: connect() to test.mosquitto.org:1883 timed out after 10s[0m
+[0;33mW (35313) MQTT_CLIENT: TCP connect failed — retry in 10000 ms[0m
+[0;32mI (36143) MAIN: ADC_raw:  267 | Sliding:  143 | Lowpass:  161 | Average:  143 | DAC:  10[0m
+[0;32mI (38643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (41143) MAIN: ADC_raw:    0 | Sliding:   80 | Lowpass:   50 | Average:   80 | DAC:   3[0m
+[0;32mI (43643) MAIN: ADC_raw:  270 | Sliding:  105 | Lowpass:  143 | Average:  105 | DAC:   8[0m
+[0;32mI (45313) MQTT_CLIENT: === MQTT connection attempt #3 ===[0m
+[0;32mI (45313) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (45313) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (46143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (48643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (51143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (53643) MAIN: ADC_raw:    0 | Sliding:    2 | Lowpass:    1 | Average:    2 | DAC:   0[0m
+[1;31mE (55333) MQTT_CLIENT: connect() to test.mosquitto.org:1883 timed out after 10s[0m
+[0;33mW (55333) MQTT_CLIENT: TCP connect failed — retry in 10000 ms[0m
+[0;32mI (56143) MAIN: ADC_raw:    0 | Sliding:   25 | Lowpass:   15 | Average:   25 | DAC:   0[0m
+[0;32mI (58643) MAIN: ADC_raw:    0 | Sliding:  155 | Lowpass:  129 | Average:  155 | DAC:   8[0m
+[0;32mI (61143) MAIN: ADC_raw:   48 | Sliding:    4 | Lowpass:   14 | Average:    4 | DAC:   0[0m
+[0;32mI (63643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (65333) MQTT_CLIENT: === MQTT connection attempt #4 ===[0m
+[0;32mI (65333) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (65333) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (66143) MAIN: ADC_raw:    0 | Sliding:  145 | Lowpass:  110 | Average:  145 | DAC:   6[0m
+[0;32mI (68643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (71143) MAIN: ADC_raw:    0 | Sliding:   18 | Lowpass:    8 | Average:   18 | DAC:   0[0m
+[0;32mI (73643) MAIN: ADC_raw:    0 | Sliding:  112 | Lowpass:  108 | Average:  112 | DAC:   6[0m
+[1;31mE (75353) MQTT_CLIENT: connect() to test.mosquitto.org:1883 timed out after 10s[0m
+[0;33mW (75353) MQTT_CLIENT: TCP connect failed — retry in 10000 ms[0m
+[0;32mI (76143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (78643) MAIN: ADC_raw:   37 | Sliding:   52 | Lowpass:   41 | Average:   52 | DAC:   2[0m
+[0;32mI (81143) MAIN: ADC_raw:    0 | Sliding:  129 | Lowpass:  121 | Average:  129 | DAC:   7[0m
+[0;32mI (83643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (85353) MQTT_CLIENT: === MQTT connection attempt #5 ===[0m
+[0;32mI (85353) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (85353) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (86143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    1 | Average:    0 | DAC:   0[0m
+[0;32mI (88643) MAIN: ADC_raw:    0 | Sliding:  167 | Lowpass:  138 | Average:  167 | DAC:   8[0m
+[0;32mI (91143) MAIN: ADC_raw:   78 | Sliding:    7 | Lowpass:   23 | Average:    7 | DAC:   1[0m
+[0;32mI (93643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[1;31mE (95373) MQTT_CLIENT: connect() to test.mosquitto.org:1883 timed out after 10s[0m
+[0;33mW (95373) MQTT_CLIENT: TCP connect failed — retry in 10000 ms[0m
+[0;32mI (96143) MAIN: ADC_raw:    0 | Sliding:  144 | Lowpass:  116 | Average:  144 | DAC:   7[0m
+[0;32mI (98643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (101143) MAIN: ADC_raw:    0 | Sliding:   17 | Lowpass:    7 | Average:   17 | DAC:   0[0m
+[0;32mI (103643) MAIN: ADC_raw:    0 | Sliding:   88 | Lowpass:   84 | Average:   88 | DAC:   5[0m
+[0;32mI (105373) MQTT_CLIENT: === MQTT connection attempt #6 ===[0m
+[0;32mI (105373) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (105373) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (106143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (108643) MAIN: ADC_raw:  246 | Sliding:  101 | Lowpass:  132 | Average:  101 | DAC:   8[0m
+[0;32mI (111143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (113643) MAIN: ADC_raw:    0 | Sliding:  126 | Lowpass:  112 | Average:  126 | DAC:   7[0m
+[1;31mE (115393) MQTT_CLIENT: connect() to test.mosquitto.org:1883 timed out after 10s[0m
+[0;33mW (115393) MQTT_CLIENT: TCP connect failed — retry in 10000 ms[0m
+[0;32mI (116143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (118643) MAIN: ADC_raw:  266 | Sliding:  137 | Lowpass:  159 | Average:  137 | DAC:   9[0m
+[0;32mI (121143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (123643) MAIN: ADC_raw:    0 | Sliding:  106 | Lowpass:   72 | Average:  106 | DAC:   4[0m
+[0;32mI (125393) MQTT_CLIENT: === MQTT connection attempt #7 ===[0m
+[0;32mI (125393) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (125393) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (126143) MAIN: ADC_raw:  110 | Sliding:   11 | Lowpass:   34 | Average:   11 | DAC:   2[0m
+[0;32mI (128643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (131143) MAIN: ADC_raw:    0 | Sliding:  110 | Lowpass:   77 | Average:  110 | DAC:   4[0m
+[0;32mI (133643) MAIN: ADC_raw:  227 | Sliding:   81 | Lowpass:  114 | Average:   81 | DAC:   7[0m
+[1;31mE (135413) MQTT_CLIENT: connect() to test.mosquitto.org:1883 timed out after 10s[0m
+[0;33mW (135413) MQTT_CLIENT: TCP connect failed — retry in 10000 ms[0m
+[0;32mI (136143) MAIN: ADC_raw:    0 | Sliding:    2 | Lowpass:    2 | Average:    2 | DAC:   0[0m
+[0;32mI (138643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (141143) MAIN: ADC_raw:  143 | Sliding:   91 | Lowpass:   78 | Average:   91 | DAC:   4[0m
+[0;32mI (143643) MAIN: ADC_raw:    0 | Sliding:   66 | Lowpass:   72 | Average:   66 | DAC:   4[0m
+[0;32mI (145413) MQTT_CLIENT: === MQTT connection attempt #8 ===[0m
+[0;32mI (145413) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (145413) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (146143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (148643) MAIN: ADC_raw:    0 | Sliding:    1 | Lowpass:    1 | Average:    1 | DAC:   0[0m
+[0;32mI (151143) MAIN: ADC_raw:    0 | Sliding:  130 | Lowpass:  100 | Average:  130 | DAC:   6[0m
+[0;32mI (153643) MAIN: ADC_raw:  129 | Sliding:   25 | Lowpass:   53 | Average:   25 | DAC:   3[0m
+[1;31mE (155433) MQTT_CLIENT: connect() to test.mosquitto.org:1883 timed out after 10s[0m
+[0;33mW (155433) MQTT_CLIENT: TCP connect failed — retry in 10000 ms[0m
+[0;32mI (156143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (158643) MAIN: ADC_raw:    0 | Sliding:   11 | Lowpass:    3 | Average:   11 | DAC:   0[0m
+[0;32mI (161143) MAIN: ADC_raw:  139 | Sliding:  111 | Lowpass:  107 | Average:  111 | DAC:   6[0m
+[0;32mI (163643) MAIN: ADC_raw:    0 | Sliding:  117 | Lowpass:  109 | Average:  117 | DAC:   6[0m
+[0;32mI (165433) MQTT_CLIENT: === MQTT connection attempt #9 ===[0m
+[0;32mI (165433) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (165433) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (166143) MAIN: ADC_raw:  199 | Sliding:   64 | Lowpass:   98 | Average:   64 | DAC:   6[0m
+[0;32mI (168643) MAIN: ADC_raw:    0 | Sliding:    9 | Lowpass:   18 | Average:    9 | DAC:   1[0m
+[0;32mI (171143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (173643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[1;31mE (175453) MQTT_CLIENT: connect() to test.mosquitto.org:1883 timed out after 10s[0m
+[0;33mW (175453) MQTT_CLIENT: TCP connect failed — retry in 10000 ms[0m
+[0;32mI (176143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (178643) MAIN: ADC_raw:    0 | Sliding:   19 | Lowpass:    9 | Average:   19 | DAC:   0[0m
+[0;32mI (181143) MAIN: ADC_raw:    0 | Sliding:  116 | Lowpass:   85 | Average:  116 | DAC:   5[0m
+[0;32mI (183643) MAIN: ADC_raw:  225 | Sliding:   77 | Lowpass:  116 | Average:   77 | DAC:   7[0m
+[0;32mI (185453) MQTT_CLIENT: === MQTT connection attempt #10 ===[0m
+[0;32mI (185453) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (185453) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (186143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (188643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (191143) MAIN: ADC_raw:  108 | Sliding:   90 | Lowpass:   83 | Average:   90 | DAC:   5[0m
+[0;32mI (193643) MAIN: ADC_raw:    0 | Sliding:   37 | Lowpass:   49 | Average:   37 | DAC:   3[0m
+[1;31mE (195473) MQTT_CLIENT: connect() to test.mosquitto.org:1883 timed out after 10s[0m
+[0;33mW (195473) MQTT_CLIENT: TCP connect failed — retry in 10000 ms[0m
+[0;32mI (196143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (198643) MAIN: ADC_raw:    0 | Sliding:   17 | Lowpass:    7 | Average:   17 | DAC:   0[0m
+[0;32mI (201143) MAIN: ADC_raw:    0 | Sliding:  106 | Lowpass:   96 | Average:  106 | DAC:   6[0m
+[0;32mI (203643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (205473) MQTT_CLIENT: === MQTT connection attempt #11 ===[0m
+[0;32mI (205473) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (205473) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (206143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (208643) MAIN: ADC_raw:    0 | Sliding:   47 | Lowpass:   21 | Average:   47 | DAC:   1[0m
+[0;32mI (211143) MAIN: ADC_raw:  231 | Sliding:   97 | Lowpass:  126 | Average:   97 | DAC:   7[0m
+[0;32mI (213643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[1;31mE (215493) MQTT_CLIENT: connect() to test.mosquitto.org:1883 timed out after 10s[0m
+[0;33mW (215493) MQTT_CLIENT: TCP connect failed — retry in 10000 ms[0m
+[0;32mI (216143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (218643) MAIN: ADC_raw:  205 | Sliding:   97 | Lowpass:  107 | Average:   97 | DAC:   6[0m
+[0;32mI (221143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (223643) MAIN: ADC_raw:    0 | Sliding:    8 | Lowpass:    2 | Average:    8 | DAC:   0[0m
+[0;32mI (225493) MQTT_CLIENT: === MQTT connection attempt #12 ===[0m
+[0;32mI (225493) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (225493) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (226143) MAIN: ADC_raw:  207 | Sliding:   83 | Lowpass:  110 | Average:   83 | DAC:   6[0m
+[0;32mI (228643) MAIN: ADC_raw:    0 | Sliding:   11 | Lowpass:   11 | Average:   11 | DAC:   0[0m
+[0;32mI (231143) MAIN: ADC_raw:    0 | Sliding:   38 | Lowpass:   19 | Average:   38 | DAC:   1[0m
+[0;32mI (233643) MAIN: ADC_raw:   64 | Sliding:    8 | Lowpass:   21 | Average:    8 | DAC:   1[0m
+[1;31mE (235513) MQTT_CLIENT: connect() to test.mosquitto.org:1883 timed out after 10s[0m
+[0;33mW (235513) MQTT_CLIENT: TCP connect failed — retry in 10000 ms[0m
+[0;32mI (236143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (238643) MAIN: ADC_raw:    0 | Sliding:  115 | Lowpass:   97 | Average:  115 | DAC:   6[0m
+[0;32mI (241143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (243643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (245513) MQTT_CLIENT: === MQTT connection attempt #13 ===[0m
+[0;32mI (245513) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (245513) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (246143) MAIN: ADC_raw:    0 | Sliding:   46 | Lowpass:   18 | Average:   46 | DAC:   1[0m
+[0;32mI (248643) MAIN: ADC_raw:  187 | Sliding:  101 | Lowpass:  114 | Average:  101 | DAC:   7[0m
+[0;32mI (251143) MAIN: ADC_raw:    0 | Sliding:   42 | Lowpass:   54 | Average:   42 | DAC:   3[0m
+[0;32mI (253643) MAIN: ADC_raw:   21 | Sliding:    2 | Lowpass:    6 | Average:    2 | DAC:   0[0m
+[1;31mE (255533) MQTT_CLIENT: connect() to test.mosquitto.org:1883 timed out after 10s[0m
+[0;33mW (255533) MQTT_CLIENT: TCP connect failed — retry in 10000 ms[0m
+[0;32mI (256143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (258643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (261143) MAIN: ADC_raw:    0 | Sliding:   17 | Lowpass:    7 | Average:   17 | DAC:   0[0m
+[0;32mI (263643) MAIN: ADC_raw:    0 | Sliding:  119 | Lowpass:   95 | Average:  119 | DAC:   5[0m
+[0;32mI (265533) MQTT_CLIENT: === MQTT connection attempt #14 ===[0m
+[0;32mI (265533) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (265533) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (266143) MAIN: ADC_raw:  218 | Sliding:   73 | Lowpass:  109 | Average:   73 | DAC:   6[0m
+[0;32mI (268643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (271143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (273643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    1 | Average:    0 | DAC:   0[0m
+[1;31mE (275553) MQTT_CLIENT: connect() to test.mosquitto.org:1883 timed out after 10s[0m
+[0;33mW (275553) MQTT_CLIENT: TCP connect failed — retry in 10000 ms[0m
+[0;32mI (276143) MAIN: ADC_raw:    0 | Sliding:   83 | Lowpass:   53 | Average:   83 | DAC:   3[0m
+[0;32mI (278643) MAIN: ADC_raw:  205 | Sliding:  108 | Lowpass:  126 | Average:  108 | DAC:   7[0m
+[0;32mI (281143) MAIN: ADC_raw:    0 | Sliding:   85 | Lowpass:   81 | Average:   85 | DAC:   5[0m
+[0;32mI (283643) MAIN: ADC_raw:  174 | Sliding:   42 | Lowpass:   79 | Average:   42 | DAC:   4[0m
+[0;32mI (285553) MQTT_CLIENT: === MQTT connection attempt #15 ===[0m
+[0;32mI (285553) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (285553) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (286143) MAIN: ADC_raw:    0 | Sliding:    3 | Lowpass:    6 | Average:    3 | DAC:   0[0m
+[0;32mI (288643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (291143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (293643) MAIN: ADC_raw:    0 | Sliding:   58 | Lowpass:   25 | Average:   58 | DAC:   1[0m
+[1;31mE (295573) MQTT_CLIENT: connect() to test.mosquitto.org:1883 timed out after 10s[0m
+[0;33mW (295573) MQTT_CLIENT: TCP connect failed — retry in 10000 ms[0m
+[0;32mI (296143) MAIN: ADC_raw:  195 | Sliding:   70 | Lowpass:   94 | Average:   70 | DAC:   5[0m
+[0;32mI (298643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (301143) MAIN: ADC_raw:    0 | Sliding:    6 | Lowpass:    2 | Average:    6 | DAC:   0[0m
+[0;32mI (303643) MAIN: ADC_raw:  156 | Sliding:  100 | Lowpass:  110 | Average:  100 | DAC:   6[0m
+[0;32mI (305573) MQTT_CLIENT: === MQTT connection attempt #16 ===[0m
+[0;32mI (305573) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (305593) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (306143) MAIN: ADC_raw:    0 | Sliding:    4 | Lowpass:   10 | Average:    4 | DAC:   0[0m
+[0;32mI (308643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (311143) MAIN: ADC_raw:  139 | Sliding:   89 | Lowpass:   98 | Average:   89 | DAC:   6[0m
+[0;32mI (313643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[1;31mE (315603) MQTT_CLIENT: connect() to test.mosquitto.org:1883 timed out after 10s[0m
+[0;33mW (315603) MQTT_CLIENT: TCP connect failed — retry in 10000 ms[0m
+[0;32mI (316143) MAIN: ADC_raw:    0 | Sliding:    1 | Lowpass:    0 | Average:    1 | DAC:   0[0m
+[0;32mI (318643) MAIN: ADC_raw:  215 | Sliding:   93 | Lowpass:  119 | Average:   93 | DAC:   7[0m
+[0;32mI (321143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (323643) MAIN: ADC_raw:    0 | Sliding:   36 | Lowpass:   26 | Average:   36 | DAC:   1[0m
+[0;32mI (325603) MQTT_CLIENT: === MQTT connection attempt #17 ===[0m
+[0;32mI (325603) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (325603) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (326143) MAIN: ADC_raw:   42 | Sliding:    4 | Lowpass:   12 | Average:    4 | DAC:   0[0m
+[0;32mI (328643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (331143) MAIN: ADC_raw:    0 | Sliding:  104 | Lowpass:   84 | Average:  104 | DAC:   5[0m
+[0;32mI (333643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[1;31mE (335623) MQTT_CLIENT: connect() to test.mosquitto.org:1883 timed out after 10s[0m
+[0;33mW (335623) MQTT_CLIENT: TCP connect failed — retry in 10000 ms[0m
+[0;32mI (336143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (338643) MAIN: ADC_raw:    0 | Sliding:   13 | Lowpass:    3 | Average:   13 | DAC:   0[0m
+[0;32mI (341143) MAIN: ADC_raw:   21 | Sliding:   68 | Lowpass:   44 | Average:   68 | DAC:   2[0m
+[0;32mI (343643) MAIN: ADC_raw:    0 | Sliding:  104 | Lowpass:   72 | Average:  104 | DAC:   4[0m
+[0;32mI (345623) MQTT_CLIENT: === MQTT connection attempt #18 ===[0m
+[0;32mI (345623) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (345623) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (346143) MAIN: ADC_raw:  207 | Sliding:  105 | Lowpass:  122 | Average:  105 | DAC:   7[0m
+[0;32mI (348643) MAIN: ADC_raw:    0 | Sliding:   69 | Lowpass:   75 | Average:   69 | DAC:   4[0m
+[0;32mI (351143) MAIN: ADC_raw:   61 | Sliding:    7 | Lowpass:   20 | Average:    7 | DAC:   1[0m
+[0;32mI (353643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[1;31mE (355643) MQTT_CLIENT: connect() to test.mosquitto.org:1883 timed out after 10s[0m
+[0;33mW (355643) MQTT_CLIENT: TCP connect failed — retry in 10000 ms[0m
+[0;32mI (356143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (358643) MAIN: ADC_raw:  188 | Sliding:  114 | Lowpass:  120 | Average:  114 | DAC:   7[0m
+[0;32mI (361143) MAIN: ADC_raw:    0 | Sliding:    4 | Lowpass:   10 | Average:    4 | DAC:   0[0m
+[0;32mI (363643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (365643) MQTT_CLIENT: === MQTT connection attempt #19 ===[0m
+[0;32mI (365643) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (365643) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (366143) MAIN: ADC_raw:  137 | Sliding:   94 | Lowpass:   98 | Average:   94 | DAC:   6[0m
+[0;32mI (368643) MAIN: ADC_raw:    0 | Sliding:   11 | Lowpass:    5 | Average:   11 | DAC:   0[0m
+[0;32mI (371143) MAIN: ADC_raw:    0 | Sliding:    6 | Lowpass:    2 | Average:    6 | DAC:   0[0m
+[0;32mI (373643) MAIN: ADC_raw:  225 | Sliding:   83 | Lowpass:  111 | Average:   83 | DAC:   6[0m
+[1;31mE (375663) MQTT_CLIENT: connect() to test.mosquitto.org:1883 timed out after 10s[0m
+[0;33mW (375663) MQTT_CLIENT: TCP connect failed — retry in 10000 ms[0m
+[0;32mI (376143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (378643) MAIN: ADC_raw:    0 | Sliding:   44 | Lowpass:   20 | Average:   44 | DAC:   1[0m
+[0;32mI (381143) MAIN: ADC_raw:  114 | Sliding:   27 | Lowpass:   51 | Average:   27 | DAC:   3[0m
+[0;32mI (383643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (385663) MQTT_CLIENT: === MQTT connection attempt #20 ===[0m
+[0;32mI (385663) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (385663) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (386143) MAIN: ADC_raw:    0 | Sliding:   11 | Lowpass:    4 | Average:   11 | DAC:   0[0m
+[0;32mI (388643) MAIN: ADC_raw:  238 | Sliding:   84 | Lowpass:  120 | Average:   84 | DAC:   7[0m
+[0;32mI (391143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (393643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    1 | Average:    0 | DAC:   0[0m
+[1;31mE (395683) MQTT_CLIENT: connect() to test.mosquitto.org:1883 timed out after 10s[0m
+[0;33mW (395683) MQTT_CLIENT: TCP connect failed — retry in 10000 ms[0m
+[0;32mI (396143) MAIN: ADC_raw:  161 | Sliding:   56 | Lowpass:   81 | Average:   56 | DAC:   5[0m
+[0;32mI (398643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (401143) MAIN: ADC_raw:    0 | Sliding:   94 | Lowpass:   82 | Average:   94 | DAC:   5[0m
+[0;32mI (403643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (405683) MQTT_CLIENT: === MQTT connection attempt #21 ===[0m
+[0;32mI (405683) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (405683) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (406143) MAIN: ADC_raw:  167 | Sliding:   94 | Lowpass:  105 | Average:   94 | DAC:   6[0m
+[0;32mI (408643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (411143) MAIN: ADC_raw:    0 | Sliding:   35 | Lowpass:   13 | Average:   35 | DAC:   0[0m
+[0;32mI (413643) MAIN: ADC_raw:  127 | Sliding:   32 | Lowpass:   58 | Average:   32 | DAC:   3[0m
+[1;31mE (415703) MQTT_CLIENT: connect() to test.mosquitto.org:1883 timed out after 10s[0m
+[0;33mW (415703) MQTT_CLIENT: TCP connect failed — retry in 10000 ms[0m
+[0;32mI (416143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (418643) MAIN: ADC_raw:    0 | Sliding:   79 | Lowpass:   47 | Average:   79 | DAC:   2[0m
+[0;32mI (421143) MAIN: ADC_raw:    9 | Sliding:    0 | Lowpass:    2 | Average:    0 | DAC:   0[0m
+[0;32mI (423643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (425703) MQTT_CLIENT: === MQTT connection attempt #22 ===[0m
+[0;32mI (425703) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (425703) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (426143) MAIN: ADC_raw:    0 | Sliding:   35 | Lowpass:   36 | Average:   35 | DAC:   2[0m
+[0;32mI (428643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (431143) MAIN: ADC_raw:   75 | Sliding:   16 | Lowpass:   32 | Average:   16 | DAC:   2[0m
+[0;32mI (433643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    1 | Average:    0 | DAC:   0[0m
+[1;31mE (435723) MQTT_CLIENT: connect() to test.mosquitto.org:1883 timed out after 10s[0m
+[0;33mW (435723) MQTT_CLIENT: TCP connect failed — retry in 10000 ms[0m
+[0;32mI (436143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (438643) MAIN: ADC_raw:    0 | Sliding:   40 | Lowpass:   26 | Average:   40 | DAC:   1[0m
+[0;32mI (441143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (443643) MAIN: ADC_raw:   85 | Sliding:   83 | Lowpass:   72 | Average:   83 | DAC:   4[0m
+[0;32mI (445723) MQTT_CLIENT: === MQTT connection attempt #23 ===[0m
+[0;32mI (445723) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (445723) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (446143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (448643) MAIN: ADC_raw:    0 | Sliding:    3 | Lowpass:    1 | Average:    3 | DAC:   0[0m
+[0;32mI (451143) MAIN: ADC_raw:   27 | Sliding:    2 | Lowpass:    8 | Average:    2 | DAC:   0[0m
+[0;32mI (453643) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[1;31mE (455743) MQTT_CLIENT: connect() to test.mosquitto.org:1883 timed out after 10s[0m
+[0;33mW (455743) MQTT_CLIENT: TCP connect failed — retry in 10000 ms[0m
+[0;32mI (456143) MAIN: ADC_raw:    0 | Sliding:   11 | Lowpass:    3 | Average:   11 | DAC:   0[0m
+[0;32mI (458643) MAIN: ADC_raw:    0 | Sliding:   20 | Lowpass:    6 | Average:   20 | DAC:   0[0m
+[0;32mI (461143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (463643) MAIN: ADC_raw:   47 | Sliding:   47 | Lowpass:   40 | Average:   47 | DAC:   2[0m
+[0;32mI (465743) MQTT_CLIENT: === MQTT connection attempt #24 ===[0m
+[0;32mI (465743) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (465743) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (466143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (468643) MAIN: ADC_raw:    0 | Sliding:   50 | Lowpass:   22 | Average:   50 | DAC:   1[0m
+[0;32mI (471143) MAIN: ADC_raw:    0 | Sliding:    7 | Lowpass:    1 | Average:    7 | DAC:   0[0m
+[0;32mI (473643) MAIN: ADC_raw:   80 | Sliding:   42 | Lowpass:   53 | Average:   42 | DAC:   3[0m
+[1;31mE (475763) MQTT_CLIENT: connect() to test.mosquitto.org:1883 timed out after 10s[0m
+[0;33mW (475763) MQTT_CLIENT: TCP connect failed — retry in 10000 ms[0m
+[0;32mI (476143) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m

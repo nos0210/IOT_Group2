@@ -1,0 +1,699 @@
+Command: C:\Espressif\tools\python\v6.0\venv\Scripts\python.exe D:\esp\v6.0\esp-idf\tools/idf_monitor.py -p COM7 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project\build\ADC_DAC.elf C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.0\venv\Scripts\python.exe' 'D:\esp\v6.0\esp-idf\tools\idf.py' '-p' 'COM7'
+PI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.0 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May  2 2026 23:16:09[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (31) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=24298h (148120) map[0m
+[0;32mI (139) esp_image: segment 1: paddr=000342c0 vaddr=3ffbdb60 size=05fd4h ( 24532) load[0m
+[0;32mI (148) esp_image: segment 2: paddr=0003a29c vaddr=40080000 size=05d7ch ( 23932) load[0m
+[0;32mI (158) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=bb2b4h (766644) map[0m
+[0;32mI (432) esp_image: segment 4: paddr=000fb2dc vaddr=40085d7c size=16ce4h ( 93412) load[0m
+[0;32mI (470) esp_image: segment 5: paddr=00111fc8 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (485) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (485) boot: Disabling RNG early entropy source...[0m
+[0;32mI (495) cpu_start: Multicore app[0m
+[0;32mI (504) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (504) cpu_start: Pro cpu start user code[0m
+[0;32mI (504) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (506) app_init: Application information:[0m
+[0;32mI (510) app_init: Project name:     ADC_DAC[0m
+[0;32mI (514) app_init: App version:      0141131-dirty[0m
+[0;32mI (518) app_init: Compile time:     May  7 2026 21:13:49[0m
+[0;32mI (523) app_init: ELF file SHA256:  3bfbc9add...[0m
+[0;32mI (527) app_init: ESP-IDF:          v6.0[0m
+[0;32mI (531) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (535) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (539) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (543) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (549) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (554) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (559) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (564) heap_init: At 3FFC9C08 len 000163F8 (88 KiB): DRAM[0m
+[0;32mI (570) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (575) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (580) heap_init: At 4009CA60 len 000035A0 (13 KiB): IRAM[0m
+[0;32mI (588) spi_flash: detected chip: generic[0m
+[0;32mI (589) spi_flash: flash io: dio[0m
+[0;33mW (592) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (606) coexist: coex firmware version: 093e3d2[0m
+[0;32mI (610) main_task: Started on CPU0[0m
+[0;32mI (620) main_task: Calling app_main()[0m
+[0;32mI (640) BTDM_INIT: BT controller compile version [045a658][0m
+[0;32mI (640) BTDM_INIT: Using main XTAL as clock source[0m
+[0;32mI (640) BTDM_INIT: Bluetooth MAC: d4:e9:f4:68:65:5e[0m
+[0;32mI (650) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (980) WIFI_BLE_PROV: Found saved credentials, connecting WiFi[0m
+[0;32mI (1010) wifi:wifi driver task: 3ffd7bfc, prio:23, stack:6656, core=0[0m
+[0;32mI (1030) wifi:wifi firmware version: 44738b4[0m
+[0;32mI (1030) wifi:wifi certification version: v7.0[0m
+[0;32mI (1030) wifi:config NVS flash: enabled[0m
+[0;32mI (1030) wifi:config nano formatting: disabled[0m
+[0;32mI (1030) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1040) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1040) wifi:Init management short buffer num: 32[0m
+[0;32mI (1050) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1050) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1060) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1060) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1070) wifi_init: rx ba win: 6[0m
+[0;32mI (1070) wifi_init: accept mbox: 6[0m
+[0;32mI (1080) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1080) wifi_init: udp mbox: 6[0m
+[0;32mI (1080) wifi_init: tcp mbox: 6[0m
+[0;32mI (1080) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1080) WIFI_BLE_PROV: BLE addr: d4:e9:f4:68:65:5e[0m
+[0;32mI (1090) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1090) wifi_init: tcp mss: 1440[0m
+[0;32mI (1090) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (1100) NimBLE: disc_mode=2[0m
+[0;32mI (1100) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (1110) NimBLE: [0m
+
+[0;32mI (1110) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1110) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1120) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (1120) wifi:enable tsf[0m
+[0;32mI (1130) wifi:flush txq[0m
+[0;32mI (1130) wifi:stop sw txq[0m
+[0;32mI (1130) wifi:lmac stop hw txq[0m
+[0;32mI (1140) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (1140) wifi:enable tsf[0m
+[0;33mW (1140) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1150) WIFI_BLE_PROV: Status: WIFI_CONNECTING[0m
+[0;33mW (1150) wifi:Haven't to connect to a suitable AP now![0m
+[0;32mI (1160) NET_SVC: Network service initialized[0m
+[0;32mI (1170) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1170) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1170) MQTT_CLIENT: MQTT task started — waiting for Wi-Fi IP...[0m
+[0;32mI (1180) main_task: Returned from app_main()[0m
+[0;32mI (1200) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1230) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1280) wifi:connected with TuanNga, aid = 2, channel 6, BW20, bssid = 00:c8:96:aa:40:d9[0m
+[0;32mI (1280) wifi:security: WPA2-PSK, phy: bgn, rssi: -60[0m
+[0;32mI (1280) wifi:pm start, type: 1[0m
+
+[0;32mI (1280) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1300) wifi:<ba-add>idx:0 (ifx:0, 00:c8:96:aa:40:d9), tid:7, ssn:0, winSize:64[0m
+[0;32mI (1370) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2180) MQTT_CLIENT: Waiting for IP... (1000/60000 ms)[0m
+[0;32mI (2390) esp_netif_handlers: sta ip: 192.168.100.4, mask: 255.255.255.0, gw: 192.168.100.1[0m
+[0;32mI (2390) WIFI_BLE_PROV: Status: WIFI_CONNECTED[0m
+[0;32mI (2390) NET_SVC: Wi-Fi up -> network workers allowed[0m
+[0;32mI (2660) NET_SVC: Network workers started[0m
+[0;32mI (2660) NET_SVC: UDP ready on port 5005[0m
+[0;32mI (2660) NET_SVC: TCP server listening on port 5006[0m
+[0;32mI (3180) MQTT_CLIENT: Waiting for IP... (2000/60000 ms)[0m
+[0;32mI (3180) MQTT_CLIENT: Got IP: 192.168.100.4[0m
+[0;32mI (5180) MQTT_CLIENT: === MQTT connection attempt #1 ===[0m
+[0;32mI (5180) MQTT_CLIENT: DNS lookup: broker.hivemq.com (attempt 1/5)...[0m
+[0;32mI (5190) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:6, ssn:2, winSize:64[0m
+[0;32mI (5210) wifi:<ba-del>idx:1, tid:6[0m
+[0;32mI (5290) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:0, ssn:0, winSize:64[0m
+[0;32mI (5300) MQTT_CLIENT: Resolved broker.hivemq.com -> 3.126.218.60[0m
+[0;32mI (6910) wifi:<ba-del>idx:1, tid:0[0m
+[0;32mI (6910) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:0, ssn:1, winSize:64[0m
+[0;32mI (6920) MQTT_CLIENT: TCP connected to broker.hivemq.com:1883 (sock=56)[0m
+[0;32mI (6920) MQTT_CLIENT: MQTT_Init OK[0m
+[I] coreMQTT: MQTT connection established with the broker.
+[0;32mI (7420) MQTT_CLIENT: MQTT connected to broker.hivemq.com:1883  sessionPresent=0[0m
+[0;32mI (7950) MQTT_CLIENT: SUBACK received — subscribed OK[0m
+[0;32mI (7950) MQTT_CLIENT: Subscribed to: esp32/from_mqttx[0m
+[0;32mI (7950) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=2)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (10950) MQTT_CLIENT: PUBACK received — packetID: 2[0m
+[I] coreMQTT: De-serialized incoming PUBLISH packet: DeserializerResult=MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPubAckSend.
+[0;32mI (15950) MQTT_CLIENT: === MQTT INCOMING ===[0m
+[0;32mI (15950) MQTT_CLIENT: Topic  : esp32/from_mqttx[0m
+[0;32mI (15960) MQTT_CLIENT: Payload: {[0m
+  "msg": "hi"
+}
+[0;32mI (15960) MQTT_CLIENT: QoS    : 1[0m
+[0;32mI (15960) MQTT_CLIENT: Echo queued — will publish after ProcessLoop[0m
+[0;32mI (15970) MQTT_CLIENT: Echo published (QoS0) to esp32/to_mqttx: {"echo":"{[0m
+  "msg": "hi"
+}","from":"esp32-group2"}
+[0;32mI (15980) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=3)[0m
+[I] coreMQTT: De-serialized incoming PUBLISH packet: DeserializerResult=MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPubAckSend.
+[0;32mI (16990) MQTT_CLIENT: === MQTT INCOMING ===[0m
+[0;32mI (16990) MQTT_CLIENT: Topic  : esp32/from_mqttx[0m
+[0;32mI (17000) MQTT_CLIENT: Payload: {[0m
+  "msg": "hi"
+}
+[0;32mI (17000) MQTT_CLIENT: QoS    : 1[0m
+[0;32mI (17010) MQTT_CLIENT: Echo queued — will publish after ProcessLoop[0m
+[0;32mI (17020) MQTT_CLIENT: Echo published (QoS0) to esp32/to_mqttx: {"echo":"{[0m
+  "msg": "hi"
+}","from":"esp32-group2"}
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (19020) MQTT_CLIENT: PUBACK received — packetID: 3[0m
+[0;32mI (25020) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=4)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (26020) MQTT_CLIENT: PUBACK received — packetID: 4[0m
+[0;32mI (34020) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=5)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (35020) MQTT_LIENT: PUBACK received — packetID: 5[0m
+[0;32mI (43020) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=6)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (44020) MQTT_CLIENT: PUBACK received — packetID: 6[0m
+[0;32mI (52020) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=7)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (53020) MQTT_CLIENT: PUBACK received — packetID: 7[0m
+[0;32mI (61020) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=8)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (62020) MQTT_CLIENT: PUBACK received — packetID: 8[0m
+[0;32mI (70020) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=9)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (71020) MQTT_CLIENT: PUBACK received — packetID: 9[0m
+[0;32mI (79020) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=10)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (80130) MQTT_CLIENT: PUBACK received — packetID: 10[0m
+[0;32mI (88130) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=11)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (89130) MQTT_CLIENT: PUBACK received — packetID: 11[0m
+[0;32mI (97130) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=12)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (98130) MQTT_CLIENT: PUBACK received — packetID: 12[0m
+[0;32mI (106130) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=13)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (107130) MQTT_CLIENT: PUBACK received — packetID: 13[0m
+[0;32mI (115130) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=14)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (116130) MQTT_CLIENT: PUBACK received — packetID: 14[0m
+[0;32mI (124130) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=15)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (125130) MQTT_CLIENT: PUBACK received — packetID: 15[0m
+[0;32mI (133130) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=16)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (134130) MQTT_CLIENT: PUBACK received — packetID: 16[0m
+[0;32mI (142130) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=17)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (143130) MQTT_CLIENT: PUBACK received — packetID: 17[0m
+[0;32mI (151130) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=18)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (152130) MQTT_CLIENT: PUBACK received — packetID: 18[0m
+[0;32mI (160130) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=19)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (161130) MQTT_CLIENT: PUBACK received — packetID: 19[0m
+[0;32mI (169130) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=20)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (170130) MQTT_CLIENT: PUBACK received — packetID: 20[0m
+[0;32mI (178130) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=21)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (179130) MQTT_CLIENT: PUBACK received — packetID: 21[0m
+[0;32mI (187130) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=22)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (188130) MQTT_CLIENT: PUBACK received — packetID: 22[0m
+[0;32mI (196130) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=23)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (197130) MQTT_CLIENT: PUBACK received — packetID: 23[0m
+[0;32mI (205130) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=24)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (206130) MQTT_CLIENT: PUBACK received — packetID: 24[0m
+[0;32mI (214130) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=25)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (215130) MQTT_CLIENT: PUBACK received — packetID: 25[0m
+[0;32mI (223130) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=26)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (224130) MQTT_CLIENT: PUBACK received — packetID: 26[0m
+[0;32mI (232130) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=27)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (233130) MQTT_CLIENT: PUBACK received — packetID: 27[0m
+[0;32mI (241130) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=28)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (242130) MQTT_CLIENT: PUBACK received — packetID: 28[0m
+[0;32mI (250130) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=29)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (251130) MQTT_CLIENT: PUBACK received — packetID: 29[0m
+[0;32mI (259140) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=30)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (260140) MQTT_CLIENT: PUBACK received — packetID: 30[0m
+[I] coreMQTT: De-serialized incoming PUBLISH packet: DeserializerResult=MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPubAckSend.
+[0;32mI (261580) MQTT_CLIENT: === MQTT INCOMING ===[0m
+[0;32mI (261580) MQTT_CLIENT: Topic  : esp32/from_mqttx[0m
+[0;32mI (261590) MQTT_CLIENT: Payload: {[0m
+  "msg": "hi"
+}
+[0;32mI (261590) MQTT_CLIENT: QoS    : 1[0m
+[0;32mI (261600) MQTT_CLIENT: Echo queued — will publish after ProcessLoop[0m
+[0;32mI (261610) MQTT_CLIENT: Echo published (QoS0) to esp32/to_mqttx: {"echo":"{[0m
+  "msg": "hi"
+}","from":"esp32-group2"}
+[0;32mI (267610) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=31)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (268610) MQTT_CLIENT: PUBACK received — packetID: 31[0m
+[0;32mI (276610) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=32)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (277610) MQTT_CLIENT: PUBACK received — packetID: 32[0m
+[0;32mI (285610) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=33)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (286610) MQTT_CLIENT: PUBACK received — packetID: 33[0m
+[0;32mI (294610) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=34)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (295610) MQTT_CLIENT: PUBACK received — packetID: 34[0m
+[0;32mI (303610) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=35)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (304610) MQTT_CLIENT: PUBACK received — packetID: 35[0m
+[0;32mI (312610) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=36)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (313610) MQTT_CLIENT: PUBACK received — packetID: 36[0m
+[I] coreMQTT: De-serialized incoming PUBLISH packet: DeserializerResult=MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPubAckSend.
+[0;32mI (314610) MQTT_CLIENT: === MQTT INCOMING ===[0m
+[0;32mI (314610) MQTT_CLIENT: Topic  : esp32/from_mqttx[0m
+[0;32mI (314620) MQTT_CLIENT: Payload: {[0m
+  "msg": "hi"
+}
+[0;32mI (314620) MQTT_CLIENT: QoS    : 1[0m
+[0;32mI (314620) MQTT_CLIENT: Echo queued — will publish after ProcessLoop[0m
+[0;32mI (314640) MQTT_CLIENT: Echo published (QoS0) to esp32/to_mqttx: {"echo":"{[0m
+  "msg": "hi"
+}","from":"esp32-group2"}
+[0;32mI (320640) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=37)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (321640) MQTT_CLIENT: PUBACK received — packetID: 37[0m
+[0;32mI (329640) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=38)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (330640) MQTT_CLIENT: PUBACK received — packetID: 38[0m
+[I] coreMQTT: De-serialized incoming PUBLISH packet: DeserializerResult=MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPubAckSend.
+[0;32mI (338280) MQTT_CLIENT: === MQTT INCOMING ===[0m
+[0;32mI (338290) MQTT_CLIENT: Topic  : esp32/from_mqttx[0m
+[0;32mI (338290) MQTT_CLIENT: Payload: {[0m
+  "msg": "xin chao"
+}
+[0;32mI (338300) MQTT_CLIENT: QoS    : 1[0m
+[0;32mI (338300) MQTT_CLIENT: Echo queued — will publish after ProcessLoop[0m
+[0;32mI (338310) MQTT_CLIENT: Echo published (QoS0) to esp32/to_mqttx: {"echo":"{[0m
+  "msg": "xin chao"
+}","from":"esp32-group2"}
+[0;32mI (338320) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=39)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (339320) MQTT_CLIENT: PUBACK received — packetID: 39[0m
+[0;32mI (347320) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=40)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (348320) MQTT_CLIENT: PUBACK received — packetID: 40[0m
+[0;32mI (356320) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=41)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (357320) MQTT_CLIENT: PUBACK received — packetID: 41[0m
+[0;32mI (365320) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=42)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (366320) MQTT_CLIENT: PUBACK received — packetID: 42[0m
+[0;32mI (374320) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=43)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (375320) MQTT_CLIENT: PUBACK received — packetID: 43[0m
+[0;32mI (383320) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=44)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (384320) MQTT_CLIENT: PUBACK received — packetID: 44[0m
+[0;32mI (392320) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=45)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (393320) MQTT_CLIENT: PUBACK received — packetID: 45[0m
+[0;32mI (401320) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=46)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (402320) MQTT_CLIENT: PUBACK received — packetID: 46[0m
+[0;32mI (410320) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=47)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (411320) MQTT_CLIENT: PUBACK received — packetID: 47[0m
+[0;32mI (419320) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=48)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (420320) MQTT_CLIENT: PUBACK received — packetID: 48[0m
+[0;32mI (428320) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=49)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (429320) MQTT_CLIENT: PUBACK received — packetID: 49[0m
+[0;32mI (437320) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=50)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (438320) MQTT_CLIENT: PUBACK received — packetID: 50[0m
+[0;32mI (446320) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=51)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (447320) MQTT_CLIENT: PUBACK received — packetID: 51[0m
+[0;32mI (455320) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=52)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (456320) MQTT_CLIENT: PUBACK received — packetID: 52[0m
+[0;32mI (464320) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=53)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (465320) MQTT_CLIENT: PUBACK received — packetID: 53[0m
+[0;32mI (473320) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=54)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (474320) MQTT_CLIENT: PUBACK received — packetID: 54[0m
+[0;32mI (482320) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=55)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (483320) MQTT_CLIENT: PUBACK received — packetID: 55[0m
+[0;32mI (491320) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=56)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (492320) MQTT_CLIENT: PUBACK received — packetID: 56[0m
+[0;32mI (500320) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=57)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (501320) MQTT_CLIENT: PUBACK received — packetID: 57[0m
+[0;32mI (509320) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=58)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (510320) MQTT_CLIENT: PUBACK received — packetID: 58[0m
+[0;32mI (518320) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=59)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (519320) MQTT_CLIENT: PUBACK received — packetID: 59[0m
+[0;32mI (527320) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=60)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (528320) MQTT_CLIENT: PUBACK received — packetID: 60[0m
+[0;32mI (536320) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=61)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (537320) MQTT_CLIENT: PUBACK received — packetID: 61[0m
+[0;32mI (545320) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=62)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (546320) MQTT_CLIENT: PUBACK received — packetID: 62[0m
+[I] coreMQTT: De-serialized incoming PUBLISH packet: DeserializerResult=MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPubAckSend.
+[0;32mI (552190) MQTT_CLIENT: === MQTT INCOMING ===[0m
+[0;32mI (552190) MQTT_CLIENT: Topic  : esp32/from_mqttx[0m
+[0;32mI (552200) MQTT_CLIENT: Payload: {[0m
+  "msg": "xin chao"
+}
+[0;32mI (552200) MQTT_CLIENT: QoS    : 1[0m
+[0;32mI (552210) MQTT_CLIENT: Echo queued — will publish after ProcessLoop[0m
+[0;32mI (552220) MQTT_CLIENT: Echo published (QoS0) to esp32/to_mqttx: {"echo":"{[0m
+  "msg": "xin chao"
+}","from":"esp32-group2"}
+[0;32mI (554220) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=63)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (555220) MQTT_CLIENT: PUBACK received — packetID: 63[0m
+[I] coreMQTT: De-serialized incoming PUBLISH packet: DeserializerResult=MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPubAckSend.
+[0;32mI (560480) MQTT_CLIENT: === MQTT INCOMING ===[0m
+[0;32mI (560490) MQTT_CLIENT: Topic  : esp32/from_mqttx[0m
+[0;32mI (560490) MQTT_CLIENT: Payload: {[0m
+  "msg": "xin chao"
+}
+[0;32mI (560500) MQTT_CLIENT: QoS    : 1[0m
+[0;32mI (560500) MQTT_CLIENT: Echo queued — will publish after ProcessLoop[0m
+[0;32mI (560510) MQTT_CLIENT: Echo published (QoS0) to esp32/to_mqttx: {"echo":"{[0m
+  "msg": "xin chao"
+}","from":"esp32-group2"}
+[0;32mI (562520) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=64)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (563520) MQTT_CLIENT: PUBACK received — packetID: 64[0m
+[0;32mI (571520) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=65)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (572520) MQTT_CLIENT: PUBACK received — packetID: 65[0m
+[I] coreMQTT: De-serialized incoming PUBLISH packet: DeserializerResult=MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPubAckSend.
+[0;32mI (576370) MQTT_CLIENT: === MQTT INCOMING ===[0m
+[0;32mI (576370) MQTT_CLIENT: Topic  : esp32/from_mqttx[0m
+[0;32mI (576380) MQTT_CLIENT: Payload: {[0m
+  "msg": "xin chao"
+}
+[0;32mI (576380) MQTT_CLIENT: QoS    : 1[0m
+[0;32mI (576390) MQTT_CLIENT: Echo queued — will publish after ProcessLoop[0m
+[0;32mI (576400) MQTT_CLIENT: Echo published (QoS0) to esp32/to_mqttx: {"echo":"{[0m
+  "msg": "xin chao"
+}","from":"esp32-group2"}
+[0;32mI (580400) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=66)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (581400) MQTT_CLIENT: PUBACK received — packetID: 66[0m
+[0;32mI (589400) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=67)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (590400) MQTT_CLIENT: PUBACK received — packetID: 67[0m
+[0;32mI (598400) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=68)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (599400) MQTT_CLIENT: PUBACK received — packetID: 68[0m
+[0;32mI (607400) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=69)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (608400) MQTT_CLIENT: PUBACK received — packetID: 69[0m
+[0;32mI (616400) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=70)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (617400) MQTT_CLIENT: PUBACK received — packetID: 70[0m
+[I] coreMQTT: De-serialized incoming PUBLISH packet: DeserializerResult=MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPubAckSend.
+[0;32mI (618400) MQTT_CLIENT: === MQTT INCOMING ===[0m
+[0;32mI (618400) MQTT_CLIENT: Topic  : esp32/from_mqttx[0m
+[0;32mI (618410) MQTT_CLIENT: Payload: {[0m
+  "msg": "xin chao"
+}
+[0;32mI (618410) MQTT_CLIENT: QoS    : 1[0m
+[0;32mI (618420) MQTT_CLIENT: Echo queued — will publish after ProcessLoop[0m
+[0;32mI (618420) MQTT_CLIENT: Echo published (QoS0) to esp32/to_mqttx: {"echo":"{[0m
+  "msg": "xin chao"
+}","from":"esp32-group2"}
+[0;32mI (624430) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=71)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (625430) MQTT_CLIENT: PUBACK received — packetID: 71[0m
+[I] coreMQTT: De-serialized incoming PUBLISH packet: DeserializerResult=MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPubAckSend.
+[0;32mI (630940) MQTT_CLIENT: === MQTT INCOMING ===[0m
+[0;32mI (630940) MQTT_CLIENT: Topic  : esp32/from_mqttx[0m
+[0;32mI (630950) MQTT_CLIENT: Payload: {[0m
+  "msg": "xin chao"
+}
+[0;32mI (630950) MQTT_CLIENT: QoS    : 1[0m
+[0;32mI (630950) MQTT_CLIENT: Echo queued — will publish after ProcessLoop[0m
+[0;32mI (630970) MQTT_CLIENT: Echo published (QoS0) to esp32/to_mqttx: {"echo":"{[0m
+  "msg": "xin chao"
+}","from":"esp32-group2"}
+[0;32mI (632970) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=72)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (633970) MQTT_CLIENT: PUBACK received — packetID: 72[0m
+[I] coreMQTT: De-serialized incoming PUBLISH packet: DeserializerResult=MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPubAckSend.
+[0;32mI (636970) MQTT_CLIENT: === MQTT INCOMING ===[0m
+[0;32mI (636970) MQTT_CLIENT: Topic  : esp32/from_mqttx[0m
+[0;32mI (636980) MQTT_CLIENT: Payload: {[0m
+  "msg": "xin chao"
+}
+[0;32mI (636980) MQTT_CLIENT: QoS    : 1[0m
+[0;32mI (636990) MQTT_CLIENT: Echo queued — will publish after ProcessLoop[0m
+[0;32mI (637000) MQTT_CLIENT: Echo published (QoS0) to esp32/to_mqttx: {"echo":"{[0m
+  "msg": "xin chao"
+}","from":"esp32-group2"}
+[I] coreMQTT: De-serialized incoming PUBLISH packet: DeserializerResult=MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPubAckSend.
+[0;32mI (638000) MQTT_CLIENT: === MQTT INCOMING ===[0m
+[0;32mI (638000) MQTT_CLIENT: Topic  : esp32/from_mqttx[0m
+[0;32mI (638010) MQTT_CLIENT: Payload: {[0m
+  "msg": "xin chao"
+}
+[0;32mI (638010) MQTT_CLIENT: QoS    : 1[0m
+[0;32mI (638020) MQTT_CLIENT: Echo queued — will publish after ProcessLoop[0m
+[0;32mI (638030) MQTT_CLIENT: Echo published (QoS0) to esp32/to_mqttx: {"echo":"{[0m
+  "msg": "xin chao"
+}","from":"esp32-group2"}
+[0;32mI (640030) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=73)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (641030) MQTT_CLIENT: PUBACK received — packetID: 73[0m
+[I] coreMQTT: De-serialized incoming PUBLISH packet: DeserializerResult=MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPubAckSend.
+[0;32mI (642100) MQTT_CLIENT: === MQTT INCOMING ===[0m
+[0;32mI (642110) MQTT_CLIENT: Topic  : esp32/from_mqttx[0m
+[0;32mI (642110) MQTT_CLIENT: Payload: [0m
+[0;32mI (642110) MQTT_CLIENT: QoS    : 1[0m
+[0;32mI (642120) MQTT_CLIENT: Echo queued — will publish after ProcessLoop[0m
+[0;32mI (642130) MQTT_CLIENT: Echo published (QoS0) to esp32/to_mqttx: {"echo":"","from":"esp32-group2"}[0m
+[0;32mI (648130) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=74)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (649130) MQTT_CLIENT: PUBACK received — packetID: 74[0m
+[I] coreMQTT: De-serialized incoming PUBLISH packet: DeserializerResult=MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPubAckSend.
+[0;32mI (654790) MQTT_CLIENT: === MQTT INCOMING ===[0m
+[0;32mI (654800) MQTT_CLIENT: Topic  : esp32/from_mqttx[0m
+[0;32mI (654800) MQTT_CLIENT: Payload: [0m
+[0;32mI (654810) MQTT_CLIENT: QoS    : 1[0m
+[0;32mI (654810) MQTT_CLIENT: Echo queued — will publish after ProcessLoop[0m
+[0;32mI (654820) MQTT_CLIENT: Echo published (QoS0) to esp32/to_mqttx: {"echo":"","from":"esp32-group2"}[0m
+[0;32mI (656820) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=75)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (657820) MQTT_CLIENT: PUBACK received — packetID: 75[0m
+[0;32mI (665820) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=76)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (666820) MQTT_CLIENT: PUBACK received — packetID: 76[0m
+[0;32mI (674820) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=77)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (675820) MQTT_CLIENT: PUBACK received — packetID: 77[0m
+[0;32mI (683820) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=78)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (684820) MQTT_CLIENT: PUBACK received — packetID: 78[0m
+[I] coreMQTT: De-serialized incoming PUBLISH packet: DeserializerResult=MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPubAckSend.
+[0;32mI (692070) MQTT_CLIENT: === MQTT INCOMING ===[0m
+[0;32mI (692070) MQTT_CLIENT: Topic  : esp32/from_mqttx[0m
+[0;32mI (692080) MQTT_CLIENT: Payload: {[0m
+  "msg": "xin chao"
+}
+[0;32mI (692080) MQTT_CLIENT: QoS    : 1[0m
+[0;32mI (692080) MQTT_CLIENT: Echo queued — will publish after ProcessLoop[0m
+[0;32mI (692090) MQTT_CLIENT: Echo published (QoS0) to esp32/to_mqttx: {"echo":"{[0m
+  "msg": "xin chao"
+}","from":"esp32-group2"}
+[0;32mI (692100) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=79)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (693110) MQTT_CLIENT: PUBACK received — packetID: 79[0m
+[0;32mI (701110) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=80)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (702110) MQTT_CLIENT: PUBACK received — packetID: 80[0m
+[0;32mI (710110) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=81)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (711110) MQTT_CLIENT: PUBACK received — packetID: 81[0m
+[I] coreMQTT: De-serialized incoming PUBLISH packet: DeserializerResult=MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPubAckSend.
+[0;32mI (716850) MQTT_CLIENT: === MQTT INCOMING ===[0m
+[0;32mI (716850) MQTT_CLIENT: Topic  : esp32/from_mqttx[0m
+[0;32mI (716860) MQTT_CLIENT: Payload: {[0m
+  "msg": "bonjour"
+}
+[0;32mI (716860) MQTT_CLIENT: QoS    : 1[0m
+[0;32mI (716870) MQTT_CLIENT: Echo queued — will publish after ProcessLoop[0m
+[0;32mI (716880) MQTT_CLIENT: Echo published (QoS0) to esp32/to_mqttx: {"echo":"{[0m
+  "msg": "bonjour"
+}","from":"esp32-group2"}
+[0;32mI (718880) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=82)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (719880) MQTT_CLIENT: PUBACK received — packetID: 82[0m
+[0;32mI (727880) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=83)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (728880) MQTT_CLIENT: PUBACK received — packetID: 83[0m
+[I] coreMQTT: De-serialized incoming PUBLISH packet: DeserializerResult=MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPubAckSend.
+[0;32mI (730880) MQTT_CLIENT: === MQTT INCOMING ===[0m
+[0;32mI (730880) MQTT_CLIENT: Topic  : esp32/from_mqttx[0m
+[0;32mI (730890) MQTT_CLIENT: Payload: {[0m
+  "msg": "bonjour"
+}
+[0;32mI (730890) MQTT_CLIENT: QoS    : 1[0m
+[0;32mI (730900) MQTT_CLIENT: Echo queued — will publish after ProcessLoop[0m
+[0;32mI (730910) MQTT_CLIENT: Echo published (QoS0) to esp32/to_mqttx: {"echo":"{[0m
+  "msg": "bonjour"
+}","from":"esp32-group2"}
+[I] coreMQTT: De-serialized incoming PUBLISH packet: DeserializerResult=MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPubAckSend.
+[0;32mI (731910) MQTT_CLIENT: === MQTT INCOMING ===[0m
+[0;32mI (731910) MQTT_CLIENT: Topic  : esp32/from_mqttx[0m
+[0;32mI (731920) MQTT_CLIENT: Payload: {[0m
+  "msg": "bonjour"
+}
+[0;32mI (731920) MQTT_CLIENT: QoS    : 1[0m
+[0;32mI (731930) MQTT_CLIENT: Echo queued — will publish after ProcessLoop[0m
+[0;32mI (731930) MQTT_CLIENT: Echo published (QoS0) to esp32/to_mqttx: {"echo":"{[0m
+  "msg": "bonjour"
+}","from":"esp32-group2"}
+[0;32mI (735940) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=84)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (736940) MQTT_CLIENT: PUBACK received — packetID: 84[0m
+[0;32mI (744940) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=85)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (745940) MQTT_CLIENT: PUBACK received — packetID: 85[0m
+[0;32mI (753940) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=86)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (754940) MQTT_CLIENT: PUBACK received — packetID: 86[0m
+[0;32mI (762940) MQTT_CLIENT: Published to esp32/to_mqttx (packetID=87)[0m
+[I] coreMQTT: Ack packet deserialized with result: MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (763940) MQTT_CLIENT: PUBACK received — packetID: 87[0m

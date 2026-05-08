@@ -1,0 +1,293 @@
+Command: C:\Espressif\tools\python\v6.0\venv\Scripts\python.exe D:\esp\v6.0\esp-idf\tools/idf_monitor.py -p COM7 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project\build\ADC_DAC.elf C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.0\venv\Scripts\python.exe' 'D:\esp\v6.0\esp-idf\tools\idf.py' '-p' 'COM7'
+PI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.0 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May  2 2026 23:16:09[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (31) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (75) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=24800h (149504) map[0m
+[0;32mI (139) esp_image: segment 1: paddr=00034828 vaddr=3ffbdb60 size=05fd4h ( 24532) load[0m
+[0;32mI (149) esp_image: segment 2: paddr=0003a804 vaddr=40080000 size=05814h ( 22548) load[0m
+[0;32mI (158) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=bc558h (771416) map[0m
+[0;32mI (434) esp_image: segment 4: paddr=000fc580 vaddr=40085814 size=172c8h ( 94920) load[0m
+[0;32mI (472) esp_image: segment 5: paddr=00113850 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (487) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (487) boot: Disabling RNG early entropy source...[0m
+[0;32mI (498) cpu_start: Multicore app[0m
+[0;32mI (506) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (506) cpu_start: Pro cpu start user code[0m
+[0;32mI (506) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (508) app_init: Application information:[0m
+[0;32mI (512) app_init: Project name:     ADC_DAC[0m
+[0;32mI (516) app_init: App version:      0141131-dirty[0m
+[0;32mI (520) app_init: Compile time:     May  6 2026 22:53:40[0m
+[0;32mI (525) app_init: ELF file SHA256:  1c07068d6...[0m
+[0;32mI (530) app_init: ESP-IDF:          v6.0[0m
+[0;32mI (533) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (537) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (541) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (545) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (551) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (556) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (561) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (567) heap_init: At 3FFC9A80 len 00016580 (89 KiB): DRAM[0m
+[0;32mI (572) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (577) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (583) heap_init: At 4009CADC len 00003524 (13 KiB): IRAM[0m
+[0;32mI (590) spi_flash: detected chip: generic[0m
+[0;32mI (592) spi_flash: flash io: dio[0m
+[0;33mW (595) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (608) coexist: coex firmware version: 093e3d2[0m
+[0;32mI (612) main_task: Started on CPU0[0m
+[0;32mI (622) main_task: Calling app_main()[0m
+[0;32mI (642) BTDM_INIT: BT controller compile version [045a658][0m
+[0;32mI (642) BTDM_INIT: Using main XTAL as clock source[0m
+[0;32mI (642) BTDM_INIT: Bluetooth MAC: d4:e9:f4:68:65:5e[0m
+[0;32mI (652) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (992) WIFI_BLE_PROV: Found saved credentials, connecting WiFi[0m
+[0;32mI (1022) wifi:wifi driver task: 3ffd7aac, prio:23, stack:6656, core=0[0m
+[0;32mI (1042) wifi:wifi firmware version: 44738b4[0m
+[0;32mI (1042) wifi:wifi certification version: v7.0[0m
+[0;32mI (1042) wifi:config NVS flash: enabled[0m
+[0;32mI (1042) wifi:config nano formatting: disabled[0m
+[0;32mI (1052) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1052) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1052) wifi:Init management short buffer num: 32[0m
+[0;32mI (1062) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1062) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1072) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1072) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1082) WIFI_BLE_PROV: BLE addr: d4:e9:f4:68:65:5e[0m
+[0;32mI (1082) wifi_init: rx ba win: 6[0m
+[0;32mI (1082) wifi_init: accept mbox: 6[0m
+[0;32mI (1092) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1092) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (1092) NimBLE: disc_mode=2[0m
+[0;32mI (1102) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (1112) NimBLE: [0m
+
+[0;32mI (1112) wifi_init: udp mbox: 6[0m
+[0;32mI (1112) wifi_init: tcp mbox: 6[0m
+[0;32mI (1112) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1122) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1122) wifi_init: tcp mss: 1440[0m
+[0;32mI (1122) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1132) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1142) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (1142) wifi:enable tsf[0m
+[0;32mI (1142) wifi:flush txq[0m
+[0;32mI (1142) wifi:stop sw txq[0m
+[0;32mI (1142) wifi:lmac stop hw txq[0m
+[0;32mI (1152) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (1152) wifi:enable tsf[0m
+[0;33mW (1152) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1162) WIFI_BLE_PROV: Status: WIFI_CONNECTING[0m
+[0;33mW (1162) wifi:Haven't to connect to a suitable AP now![0m
+[0;32mI (1172) NET_SVC: Network service initialized[0m
+[0;32mI (1182) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1182) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1192) MQTT_CLIENT: MQTT task started — waiting for Wi-Fi IP...[0m
+[0;32mI (1192) main_task: Returned from app_main()[0m
+[0;32mI (1252) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1272) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1382) wifi:connected with TuanNga, aid = 3, channel 6, BW20, bssid = 00:c8:96:aa:40:d9[0m
+[0;32mI (1382) wifi:security: WPA2-PSK, phy: bgn, rssi: -50[0m
+[0;32mI (1392) wifi:pm start, type: 1[0m
+
+[0;32mI (1392) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1402) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1522) wifi:<ba-add>idx:0 (ifx:0, 00:c8:96:aa:40:d9), tid:7, ssn:0, winSize:64[0m
+[0;32mI (2192) MQTT_CLIENT: Waiting for IP... (1000/60000 ms)[0m
+[0;32mI (2622) esp_netif_handlers: sta ip: 192.168.100.2, mask: 255.255.255.0, gw: 192.168.100.1[0m
+[0;32mI (2622) WIFI_BLE_PROV: Status: WIFI_CONNECTED[0m
+[0;32mI (2622) NET_SVC: Wi-Fi up -> network workers allowed[0m
+[0;32mI (2672) NET_SVC: Network workers started[0m
+[0;32mI (2672) NET_SVC: UDP ready on port 5005[0m
+[0;32mI (2672) NET_SVC: TCP server listening on port 5006[0m
+[0;32mI (3192) MQTT_CLIENT: Waiting for IP... (2000/60000 ms)[0m
+[0;32mI (3192) MQTT_CLIENT: Got IP: 192.168.100.2[0m
+[0;32mI (3192) MQTT_CLIENT: Stabilizing network for 2000 ms...[0m
+[0;32mI (3652) MAIN: ADC_raw:  349 | Sliding:  197 | Lowpass:  223 | Average:  197 | DAC:  13[0m
+[0;32mI (5192) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (5292) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:6, ssn:2, winSize:64[0m
+[0;32mI (5432) wifi:<ba-del>idx:1, tid:6[0m
+[0;32mI (5452) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:0, ssn:0, winSize:64[0m
+[0;32mI (5452) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (6152) MAIN: ADC_raw:    0 | Sliding:  104 | Lowpass:   81 | Average:  104 | DAC:   5[0m
+[0;32mI (8652) MAIN: ADC_raw:  123 | Sliding:  130 | Lowpass:  109 | Average:  130 | DAC:   6[0m
+[0;32mI (11152) MAIN: ADC_raw:    0 | Sliding:  177 | Lowpass:  118 | Average:  177 | DAC:   7[0m
+[0;32mI (13652) MAIN: ADC_raw:  289 | Sliding:  197 | Lowpass:  200 | Average:  197 | DAC:  12[0m
+[0;32mI (16152) MAIN: ADC_raw:    0 | Sliding:  181 | Lowpass:  141 | Average:  181 | DAC:   8[0m
+[0;32mI (18652) MAIN: ADC_raw:  277 | Sliding:  192 | Lowpass:  192 | Average:  192 | DAC:  12[0m
+[0;32mI (21152) MAIN: ADC_raw:    0 | Sliding:  156 | Lowpass:   96 | Average:  156 | DAC:   6[0m
+[0;32mI (23652) MAIN: ADC_raw:    0 | Sliding:   87 | Lowpass:   53 | Average:   87 | DAC:   3[0m
+[1;31mE (23712) MQTT_CLIENT: connect() to test.mosquitto.org:1883 failed: 113[0m
+[0;33mW (23712) MQTT_CLIENT: TCP connect attempt 1/5 failed — retry in 3000 ms[0m
+[0;32mI (25492) WIFI_BLE_PROV: Status: BLE_CONNECTED[0m
+[0;32mI (25502) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (25502) NimBLE: att_handle=20[0m
+
+[0;32mI (26152) MAIN: ADC_raw:    0 | Sliding:   39 | Lowpass:    9 | Average:   39 | DAC:   0[0m
+[0;32mI (26712) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (26712) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (27392) WIFI_BLE_PROV: Status: READY[0m
+[0;32mI (27392) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (27392) NimBLE: att_handle=20[0m
+
+[0;32mI (28652) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    1 | Average:    0 | DAC:   0[0m
+[0;32mI (30982) WIFI_BLE_PROV: Status: SSID_RECEIVED[0m
+[0;32mI (30982) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (30982) NimBLE: att_handle=20[0m
+
+[0;32mI (31072) WIFI_BLE_PROV: Status: PASS_RECEIVED[0m
+[0;32mI (31072) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (31072) NimBLE: att_handle=20[0m
+
+[0;32mI (31072) WIFI_BLE_PROV: Status: NVS_SAVED[0m
+[0;32mI (31072) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (31082) NimBLE: att_handle=20[0m
+
+[0;32mI (31082) wifi:state: run -> init (0x0)[0m
+[0;32mI (31102) wifi:pm stop, total sleep time: 22309916 us / 29711163 us[0m
+
+[0;32mI (31102) wifi:<ba-del>idx:1, tid:0[0m
+[0;32mI (31102) wifi:<ba-del>idx:0, tid:7[0m
+[0;32mI (31102) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[1;31mE (31112) MQTT_CLIENT: connect() to test.mosquitto.org:1883 failed: 113[0m
+[0;32mI (31112) WIFI_BLE_PROV: Status: WIFI_RETRYING[0m
+[0;33mW (31122) MQTT_CLIENT: TCP connect attempt 2/5 failed — retry in 3000 ms[0m
+[0;32mI (31122) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (31132) NimBLE: att_handle=20[0m
+
+[0;33mW (31132) NET_SVC: Wi-Fi down -> network workers reconnect later[0m
+[0;32mI (31162) wifi:flush txq[0m
+[0;32mI (31162) wifi:stop sw txq[0m
+[0;32mI (31162) wifi:lmac stop hw txq[0m
+[0;32mI (31162) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (31162) wifi:enable tsf[0m
+[0;33mW (31172) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;33mW (31172) NET_SVC: UDP recv error errno=128 -> recreate socket[0m
+[0;32mI (31172) WIFI_BLE_PROV: Status: WIFI_CONNECTING[0m
+[0;33mW (31172) NET_SVC: TCP select failed errno=9[0m
+[0;32mI (31192) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (31192) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (31182) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (31202) NimBLE: att_handle=20[0m
+
+[0;32mI (31182) MAIN: ADC_raw:    0 | Sliding:   14 | Lowpass:   30 | Average:   14 | DAC:   1[0m
+[0;32mI (31242) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (31282) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (31422) wifi:connected with TuanNga, aid = 3, channel 6, BW20, bssid = 00:c8:96:aa:40:d9[0m
+[0;32mI (31422) wifi:security: WPA2-PSK, phy: bgn, rssi: -54[0m
+[0;32mI (31422) wifi:pm start, type: 1[0m
+
+[0;32mI (31482) wifi:<ba-add>idx:0 (ifx:0, 00:c8:96:aa:40:d9), tid:7, ssn:0, winSize:64[0m
+[0;32mI (31512) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (31682) NET_SVC: TCP worker stopped[0m
+[0;32mI (31682) NET_SVC: UDP worker stopped[0m
+[0;32mI (31722) NET_SVC: Network workers stopped, waiting Wi-Fi recovery[0m
+[0;32mI (32622) esp_netif_handlers: sta ip: 192.168.100.2, mask: 255.255.255.0, gw: 192.168.100.1[0m
+[0;32mI (32622) WIFI_BLE_PROV: Status: WIFI_CONNECTED[0m
+[0;32mI (32622) NimBLE: GATT procedure initiated: notify; [0m
+[0;32mI (32622) NimBLE: att_handle=20[0m
+
+[0;32mI (32632) NET_SVC: Wi-Fi up -> network workers allowed[0m
+[0;32mI (32922) NET_SVC: Network workers started[0m
+[0;32mI (32922) NET_SVC: UDP ready on port 5005[0m
+[0;32mI (32922) NET_SVC: TCP server listening on port 5006[0m
+[0;32mI (33712) MAIN: ADC_raw:    0 | Sliding:   25 | Lowpass:   40 | Average:   25 | DAC:   2[0m
+[0;32mI (34122) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (34122) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (34182) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:6, ssn:2, winSize:64[0m
+[0;32mI (36212) MAIN: ADC_raw:  294 | Sliding:  101 | Lowpass:  166 | Average:  101 | DAC:  10[0m
+[0;32mI (38712) MAIN: ADC_raw:    0 | Sliding:   97 | Lowpass:  106 | Average:   97 | DAC:   6[0m
+[0;32mI (41212) MAIN: ADC_raw:  317 | Sliding:   74 | Lowpass:  141 | Average:   74 | DAC:   8[0m
+[0;32mI (43712) MAIN: ADC_raw:    0 | Sliding:   26 | Lowpass:   46 | Average:   26 | DAC:   2[0m
+[0;32mI (46212) MAIN: ADC_raw:  175 | Sliding:   26 | Lowpass:   65 | Average:   26 | DAC:   4[0m
+[0;32mI (48712) MAIN: ADC_raw:    0 | Sliding:   20 | Lowpass:   36 | Average:   20 | DAC:   2[0m
+[0;32mI (51212) MAIN: ADC_raw:  304 | Sliding:   69 | Lowpass:  135 | Average:   69 | DAC:   8[0m
+[1;31mE (52622) MQTT_CLIENT: connect() to test.mosquitto.org:1883 failed: 113[0m
+[0;33mW (52622) MQTT_CLIENT: TCP connect attempt 3/5 failed — retry in 3000 ms[0m
+[0;32mI (53712) MAIN: ADC_raw:    0 | Sliding:  115 | Lowpass:  132 | Average:  115 | DAC:   8[0m
+[0;32mI (55622) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (55622) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (56212) MAIN: ADC_raw:  418 | Sliding:  176 | Lowpass:  229 | Average:  176 | DAC:  14[0m
+[0;32mI (58712) MAIN: ADC_raw:    0 | Sliding:  204 | Lowpass:  163 | Average:  204 | DAC:  10[0m
+[0;32mI (61212) MAIN: ADC_raw:   96 | Sliding:  153 | Lowpass:  121 | Average:  153 | DAC:   7[0m
+[0;32mI (63712) MAIN: ADC_raw:    0 | Sliding:   81 | Lowpass:   39 | Average:   81 | DAC:   2[0m
+[0;32mI (66212) MAIN: ADC_raw:    0 | Sliding:   19 | Lowpass:    8 | Average:   19 | DAC:   0[0m
+[0;32mI (68712) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    1 | Average:    0 | DAC:   0[0m
+[0;32mI (71212) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (73712) MAIN: ADC_raw:   84 | Sliding:    8 | Lowpass:   25 | Average:    8 | DAC:   1[0m
+[1;31mE (74122) MQTT_CLIENT: connect() to test.mosquitto.org:1883 failed: 113[0m
+[0;33mW (74122) MQTT_CLIENT: TCP connect attempt 4/5 failed — retry in 3000 ms[0m
+[0;32mI (76212) MAIN: ADC_raw:    0 | Sliding:   39 | Lowpass:   62 | Average:   39 | DAC:   3[0m
+[0;32mI (77122) MQTT_CLIENT: DNS lookup: test.mosquitto.org (attempt 1/5)...[0m
+[0;32mI (77122) MQTT_CLIENT: Resolved test.mosquitto.org -> 54.36.178.49[0m
+[0;32mI (78712) MAIN: ADC_raw:  349 | Sliding:  141 | Lowpass:  188 | Average:  141 | DAC:  11[0m
+[0;32mI (81212) MAIN: ADC_raw:    0 | Sliding:  168 | Lowpass:  159 | Average:  168 | DAC:   9[0m
+[0;32mI (83712) MAIN: ADC_raw:  358 | Sliding:  198 | Lowpass:  222 | Average:  198 | DAC:  13[0m
+[0;32mI (86212) MAIN: ADC_raw:    0 | Sliding:  162 | Lowpass:  107 | Average:  162 | DAC:   6[0m
+[0;32mI (88712) MAIN: ADC_raw:   35 | Sliding:   81 | Lowpass:   54 | Average:   81 | DAC:   3[0m
+[0;32mI (91212) MAIN: ADC_raw:    0 | Sliding:   27 | Lowpass:    8 | Average:   27 | DAC:   0[0m
+[0;32mI (93712) MAIN: ADC_raw:    0 | Sliding:    3 | Lowpass:    3 | Average:    3 | DAC:   0[0m
+[1;31mE (95622) MQTT_CLIENT: connect() to test.mosquitto.org:1883 failed: 113[0m
+[0;33mW (95622) MQTT_CLIENT: TCP connect attempt 5/5 failed — retry in 3000 ms[0m
+[0;32mI (96212) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[1;31mE (98622) MQTT_CLIENT: TCP connect failed after 5 attempts — MQTT task abort[0m
+[0;32mI (98712) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (101212) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (103712) MAIN: ADC_raw:    0 | Sliding:    6 | Lowpass:   12 | Average:    6 | DAC:   0[0m
+[0;32mI (106212) MAIN: ADC_raw:  180 | Sliding:   25 | Lowpass:   64 | Average:   25 | DAC:   4[0m
+[0;32mI (108712) MAIN: ADC_raw:    0 | Sliding:   22 | Lowpass:   39 | Average:   22 | DAC:   2[0m
+[0;32mI (111212) MAIN: ADC_raw:  213 | Sliding:   39 | Lowpass:   87 | Average:   39 | DAC:   5[0m
+[0;32mI (113712) MAIN: ADC_raw:    0 | Sliding:   27 | Lowpass:   47 | Average:   27 | DAC:   2[0m
+[0;32mI (116212) MAIN: ADC_raw:  276 | Sliding:   57 | Lowpass:  119 | Average:   57 | DAC:   7[0m
+[0;32mI (118712) MAIN: ADC_raw:    0 | Sliding:   72 | Lowpass:   95 | Average:   72 | DAC:   5[0m
+[0;32mI (121212) MAIN: ADC_raw:  343 | Sliding:  111 | Lowpass:  179 | Average:  111 | DAC:  11[0m
+[0;32mI (123712) MAIN: ADC_raw:    0 | Sliding:   85 | Lowpass:  104 | Average:   85 | DAC:   6[0m
+[0;32mI (126212) MAIN: ADC_raw:  301 | Sliding:   74 | Lowpass:  136 | Average:   74 | DAC:   8[0m
+[0;32mI (128712) MAIN: ADC_raw:    0 | Sliding:   15 | Lowpass:   28 | Average:   15 | DAC:   1[0m
+[0;32mI (131212) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (133712) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (136212) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (138712) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (141212) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (143712) MAIN: ADC_raw:    0 | Sliding:   19 | Lowpass:   36 | Average:   19 | DAC:   2[0m
+[0;32mI (146212) MAIN: ADC_raw:  399 | Sliding:  130 | Lowpass:  199 | Average:  130 | DAC:  12[0m
+[0;32mI (148712) MAIN: ADC_raw:    0 | Sliding:  201 | Lowpass:  165 | Average:  201 | DAC:  10[0m
+[0;32mI (151212) MAIN: ADC_raw:  109 | Sliding:  112 | Lowpass:   92 | Average:  112 | DAC:   5[0m
+[0;32mI (153712) MAIN: ADC_raw:    0 | Sliding:   25 | Lowpass:    5 | Average:   25 | DAC:   0[0m
+[0;32mI (156212) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (158712) MAIN: ADC_raw:   65 | Sliding:    6 | Lowpass:   19 | Average:    6 | DAC:   1[0m
+[0;32mI (161212) MAIN: ADC_raw:    0 | Sliding:   67 | Lowpass:   93 | Average:   67 | DAC:   5[0m
+[0;32mI (163712) MAIN: ADC_raw:  427 | Sliding:  193 | Lowpass:  244 | Average:  193 | DAC:  15[0m
+[0;32mI (166212) MAIN: ADC_raw:    0 | Sliding:  171 | Lowpass:  122 | Average:  171 | DAC:   7[0m
+[0;32mI (168712) MAIN: ADC_raw:    0 | Sliding:   34 | Lowpass:   15 | Average:   34 | DAC:   0[0m
+[0;32mI (171212) MAIN: ADC_raw:    0 | Sliding:    0 | Lowpass:    0 | Average:    0 | DAC:   0[0m
+[0;32mI (173712) MAIN: ADC_raw:    0 | Sliding:   64 | Lowpass:   91 | Average:   64 | DAC:   5[0m

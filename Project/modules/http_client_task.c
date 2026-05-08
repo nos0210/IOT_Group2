@@ -1,15 +1,3 @@
-/*
- * Plain HTTP GET demo using coreHTTP on ESP32.
- *
- * Flow:
- *   1. Wait for Wi-Fi / IP (event group BIT_WIFI_UP set by network_service).
- *   2. DNS resolve "httpforever.com".
- *   3. Open a raw TCP socket to port 80.
- *   4. Build & send  GET / HTTP/1.1  via coreHTTP.
- *   5. Log status code, headers length, body length, and the first
- *      HTTP_LOG_BODY_CHUNK_SIZE bytes of the body.
- *   6. Close socket.
- */
 
 #include "http_client_task.h"
 
@@ -26,10 +14,10 @@
 #include "lwip/netdb.h"
 #include "lwip/sockets.h"
 
-/* coreHTTP */
+// coreHTTP
 #include "core_http_client.h"
 
-/* ── Configuration ──────────────────────────────────────────────────────── */
+// Configuration 
 #define HTTP_SERVER_HOST        "httpforever.com"
 #define HTTP_SERVER_PORT        80
 #define HTTP_REQUEST_PATH       "/"
@@ -37,37 +25,32 @@
 #define HTTP_REQUEST_BUF_SIZE   512U
 #define HTTP_RESPONSE_BUF_SIZE  8192U
 
-/* Maximum bytes of body to print per ESP_LOG call (avoids truncation). */
+// Maximum bytes of body to print per ESP_LOG call (avoids truncation).
 #define HTTP_LOG_BODY_CHUNK     128U
 
-/* TCP receive/send timeout (seconds). */
+// TCP receive/send timeout (seconds).
 #define TCP_TIMEOUT_SEC         10
 
-/* Retry interval while waiting for Wi-Fi / valid IP. */
+// Retry interval while waiting for Wi-Fi / valid IP.
 #define WIFI_WAIT_MS            1000
 
-/* Maximum time to wait for a valid IP before giving up (ms). */
+// Maximum time to wait for a valid IP before giving up (ms).
 #define WIFI_WAIT_TIMEOUT_MS    60000
 
-/* Number of DNS retry attempts before failing. */
+// Number of DNS retry attempts before failing.
 #define DNS_RETRY_COUNT         5
 #define DNS_RETRY_DELAY_MS      2000
 
-/* Tag for ESP_LOG. */
+// Tag for ESP_LOG.
 static const char *TAG = "HTTP_CLIENT";
 
-/* ── NetworkContext ─────────────────────────────────────────────────────── */
-
-/*
- * coreHTTP requires  struct NetworkContext  to be defined by the application.
- * Here we only need the file descriptor of the connected TCP socket.
- */
+// NetworkContext (required by coreHTTP transport interface)
 struct NetworkContext
 {
     int tcpSocket;
 };
 
-/* ── Transport callbacks ────────────────────────────────────────────────── */
+// Transport callbacks
 
 static int32_t transport_recv( NetworkContext_t * pCtx,
                                void             * pBuffer,
@@ -77,14 +60,14 @@ static int32_t transport_recv( NetworkContext_t * pCtx,
                                          bytesToRecv, 0 );
     if( received == 0 )
     {
-        /* Peer closed the connection. Signal error to coreHTTP. */
+        // Peer closed the connection. Signal error to coreHTTP.
         return -1;
     }
     if( received < 0 )
     {
         if( errno == EAGAIN || errno == EWOULDBLOCK )
         {
-            /* Timeout — return 0 so coreHTTP retries (uses getTime). */
+            // Timeout — return 0 so coreHTTP retries (uses getTime).
             return 0;
         }
         ESP_LOGE( TAG, "recv() error: %d", errno );
@@ -106,13 +89,13 @@ static int32_t transport_send( NetworkContext_t * pCtx,
     return sent;
 }
 
-/* ── TCP helpers ────────────────────────────────────────────────────────── */
+// TCP helpers
 
 static int tcp_connect( NetworkContext_t * pCtx,
                         const char       * host,
                         uint16_t           port )
 {
-    /* ── DNS lookup ───────────────────────────────────────────────────── */
+    // DNS lookup
     struct addrinfo hints;
     memset( &hints, 0, sizeof( hints ) );
     hints.ai_family   = AF_INET;
@@ -131,7 +114,7 @@ static int tcp_connect( NetworkContext_t * pCtx,
         err = getaddrinfo( host, port_str, &hints, &res );
         if( err == 0 && res != NULL )
         {
-            break;  /* success */
+            break; // Success
         }
         ESP_LOGW( TAG, "getaddrinfo failed: %d — retry in %d ms",
                   err, DNS_RETRY_DELAY_MS );
@@ -145,13 +128,13 @@ static int tcp_connect( NetworkContext_t * pCtx,
         return -1;
     }
 
-    /* Log the resolved IP address. */
+    // Log the resolved IP address
     char ip_str[ 16 ];
     struct sockaddr_in * addr4 = ( struct sockaddr_in * ) res->ai_addr;
     inet_ntop( AF_INET, &addr4->sin_addr, ip_str, sizeof( ip_str ) );
     ESP_LOGI( TAG, "Resolved %s -> %s", host, ip_str );
 
-    /* ── Create socket ────────────────────────────────────────────────── */
+    // Create socket
     int sock = socket( res->ai_family, res->ai_socktype, 0 );
     if( sock < 0 )
     {
@@ -160,12 +143,12 @@ static int tcp_connect( NetworkContext_t * pCtx,
         return -1;
     }
 
-    /* Set receive / send timeout so transport_recv can return 0 on timeout. */
+    // Set receive / send timeout so transport_recv can return 0 on timeout.
     struct timeval tv = { .tv_sec = TCP_TIMEOUT_SEC, .tv_usec = 0 };
     setsockopt( sock, SOL_SOCKET, SO_RCVTIMEO, &tv, sizeof( tv ) );
     setsockopt( sock, SOL_SOCKET, SO_SNDTIMEO, &tv, sizeof( tv ) );
 
-    /* ── Connect ──────────────────────────────────────────────────────── */
+    // Connect
     ESP_LOGI( TAG, "Connecting to %s:%d ...", host, port );
     if( connect( sock, res->ai_addr, res->ai_addrlen ) != 0 )
     {
@@ -181,9 +164,9 @@ static int tcp_connect( NetworkContext_t * pCtx,
     return 0;
 }
 
-/* ── Task entry point ───────────────────────────────────────────────────── */
+// Task entry point
 
-/* ── Wait until esp_netif has a non-zero IPv4 address ──────────────────── */
+// Wait until esp_netif has a non-zero IPv4 address
 
 static bool wait_for_ip( uint32_t timeout_ms )
 {
@@ -191,7 +174,6 @@ static bool wait_for_ip( uint32_t timeout_ms )
 
     while( elapsed < timeout_ms )
     {
-        /* Re-query each iteration: netif may not exist yet when task starts */
         esp_netif_t *netif = esp_netif_get_handle_from_ifkey( "WIFI_STA_DEF" );
         if( netif != NULL )
         {
@@ -212,7 +194,7 @@ static bool wait_for_ip( uint32_t timeout_ms )
     return false;
 }
 
-/* ── Task entry point ───────────────────────────────────────────────────── */
+//Task entry point 
 
 void http_client_task( void * pvParameters )
 {
@@ -227,11 +209,11 @@ void http_client_task( void * pvParameters )
         return;
     }
 
-    /* ── Static buffers (kept off the tiny default stack) ─────────────── */
+    //Static buffers
     static uint8_t requestBuffer [ HTTP_REQUEST_BUF_SIZE  ];
     static uint8_t responseBuffer[ HTTP_RESPONSE_BUF_SIZE ];
 
-    /* ── Transport interface ──────────────────────────────────────────── */
+    //Transport interface 
     NetworkContext_t    networkCtx = { .tcpSocket = -1 };
     TransportInterface_t transport  =
     {
@@ -241,7 +223,7 @@ void http_client_task( void * pvParameters )
         .writev          = NULL,
     };
 
-    /* ── TCP connect ──────────────────────────────────────────────────── */
+    //TCP connect 
     if( tcp_connect( &networkCtx, HTTP_SERVER_HOST, HTTP_SERVER_PORT ) != 0 )
     {
         ESP_LOGE( TAG, "TCP connect failed — task exiting" );
@@ -249,7 +231,7 @@ void http_client_task( void * pvParameters )
         return;
     }
 
-    /* ── coreHTTP: build request headers ─────────────────────────────── */
+    //coreHTTP: build request headers
     HTTPRequestInfo_t requestInfo =
     {
         .pMethod   = HTTP_METHOD_GET,
@@ -284,7 +266,7 @@ void http_client_task( void * pvParameters )
               ( int ) requestHeaders.headersLen,
               ( char * ) requestHeaders.pBuffer );
 
-    /* ── coreHTTP: send request & receive response ────────────────────── */
+    //coreHTTP: send request & receive response
     HTTPResponse_t response =
     {
         .pBuffer              = responseBuffer,
@@ -303,7 +285,7 @@ void http_client_task( void * pvParameters )
                               &response,
                               0U );   /* sendFlags                       */
 
-    /* ── Log result ───────────────────────────────────────────────────── */
+    //Log result
     if( status == HTTPSuccess )
     {
         ESP_LOGI( TAG, "========== HTTP Response ===========" );
@@ -311,11 +293,11 @@ void http_client_task( void * pvParameters )
         ESP_LOGI( TAG, "Headers Len : %zu B", response.headersLen );
         ESP_LOGI( TAG, "Body Len    : %zu B", response.bodyLen    );
 
-        /* --- Print response headers --- */
+        // Print response headers
         ESP_LOGI( TAG, "--- Response Headers ---" );
         ESP_LOG_BUFFER_CHAR( TAG, response.pHeaders, response.headersLen );
 
-        /* --- Print response body in chunks --- */
+        // Print response body in chunks
         ESP_LOGI( TAG, "--- Response Body ---" );
         size_t offset = 0U;
         while( offset < response.bodyLen )
@@ -336,7 +318,7 @@ void http_client_task( void * pvParameters )
                   HTTPClient_strerror( status ), ( int ) status );
     }
 
-    /* ── Clean up ─────────────────────────────────────────────────────── */
+    // Clean up
     close( networkCtx.tcpSocket );
     ESP_LOGI( TAG, "Socket closed. HTTP task done." );
 
