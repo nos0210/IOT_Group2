@@ -1,0 +1,840 @@
+Command: C:\Espressif\tools\python\v6.0\venv\Scripts\python.exe D:\esp\v6.0\esp-idf\tools/idf_monitor.py -p COM7 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project\build\ADC_DAC.elf C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.0\venv\Scripts\python.exe' 'D:\esp\v6.0\esp-idf\tools\idf.py' '-p' 'COM7'
+PI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.0 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May 15 2026 21:39:59[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (31) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (62) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (69) boot:  2 phy_init         RF data          01 01 00010000 00001000[0m
+[0;32mI (75) boot:  3 ota_0            OTA app          00 10 00020000 001e0000[0m
+[0;32mI (82) boot:  4 ota_1            OTA app          00 11 00200000 001e0000[0m
+[0;32mI (88) boot: End of partition table[0m
+[0;32mI (92) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=2a950h (174416) map[0m
+[0;32mI (161) esp_image: segment 1: paddr=0004a978 vaddr=3ffbdb60 size=056a0h ( 22176) load[0m
+[0;32mI (170) esp_image: segment 2: paddr=00050020 vaddr=400d0020 size=d1b94h (859028) map[0m
+[0;32mI (476) esp_image: segment 3: paddr=00121bbc vaddr=3ffc3200 size=00934h (  2356) load[0m
+[0;32mI (477) esp_image: segment 4: paddr=001224f8 vaddr=40080000 size=1ca60h (117344) load[0m
+[0;32mI (528) esp_image: segment 5: paddr=0013ef60 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (543) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (543) boot: Disabling RNG early entropy source...[0m
+[0;32mI (553) cpu_start: Multicore app[0m
+[0;32mI (562) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (562) cpu_start: Pro cpu start user code[0m
+[0;32mI (562) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (564) app_init: Application information:[0m
+[0;32mI (567) app_init: Project name:     ADC_DAC[0m
+[0;32mI (571) app_init: App version:      2e29e95-dirty[0m
+[0;32mI (576) app_init: Compile time:     May 15 2026 22:07:45[0m
+[0;32mI (581) app_init: ELF file SHA256:  0c101aa6a...[0m
+[0;32mI (585) app_init: ESP-IDF:          v6.0[0m
+[0;32mI (589) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (593) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (597) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (601) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (607) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (612) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (617) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (622) heap_init: At 3FFCA778 len 00015888 (86 KiB): DRAM[0m
+[0;32mI (627) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (633) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (638) heap_init: At 4009CA60 len 000035A0 (13 KiB): IRAM[0m
+[0;32mI (645) spi_flash: detected chip: generic[0m
+[0;32mI (647) spi_flash: flash io: dio[0m
+[0;32mI (652) coexist: coex firmware version: 093e3d2[0m
+[0;32mI (656) main_task: Started on CPU0[0m
+[0;32mI (666) main_task: Calling app_main()[0m
+[0;32mI (686) BTDM_INIT: BT controller compile version [045a658][0m
+[0;32mI (686) BTDM_INIT: Using main XTAL as clock source[0m
+[0;32mI (686) BTDM_INIT: Bluetooth MAC: d4:e9:f4:68:65:5e[0m
+[0;32mI (696) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (776) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1126) WIFI_BLE_PROV: Found saved credentials, connecting WiFi[0m
+[0;32mI (1156) wifi:wifi driver task: 3ffd86ec, prio:23, stack:6656, core=0[0m
+[0;32mI (1166) wifi:wifi firmware version: 44738b4[0m
+[0;32mI (1176) wifi:wifi certification version: v7.0[0m
+[0;32mI (1176) wifi:config NVS flash: enabled[0m
+[0;32mI (1176) wifi:config nano formatting: disabled[0m
+[0;32mI (1176) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1186) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1186) wifi:Init management short buffer num: 32[0m
+[0;32mI (1186) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1196) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1196) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1206) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1206) wifi_init: rx ba win: 6[0m
+[0;32mI (1216) wifi_init: accept mbox: 6[0m
+[0;32mI (1216) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1216) wifi_init: udp mbox: 6[0m
+[0;32mI (1226) wifi_init: tcp mbox: 6[0m
+[0;32mI (1226) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1226) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1226) WIFI_BLE_PROV: BLE addr: d4:e9:f4:68:65:5e[0m
+[0;32mI (1236) wifi_init: tcp mss: 1440[0m
+[0;32mI (1236) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1236) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (1246) NimBLE: disc_mode=2[0m
+[0;32mI (1246) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (1256) NimBLE: [0m
+
+[0;32mI (1256) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1266) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (1266) wifi:enable tsf[0m
+[0;32mI (1276) wifi:flush txq[0m
+[0;32mI (1276) wifi:stop sw txq[0m
+[0;32mI (1276) wifi:lmac stop hw txq[0m
+[0;32mI (1286) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (1286) wifi:enable tsf[0m
+[0;33mW (1286) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1296) WIFI_BLE_PROV: Status: WIFI_CONNECTING[0m
+[0;33mW (1296) wifi:Haven't to connect to a suitable AP now![0m
+[0;32mI (1296) NET_SVC: Network service initialized[0m
+[0;32mI (1306) AWS_OTA: AWS MQTT OTA task bắt đầu[0m
+[0;32mI (1306) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1316) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1326) main_task: Returned from app_main()[0m
+[0;32mI (1346) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1376) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1436) wifi:connected with TuanNga, aid = 2, channel 11, BW20, bssid = 00:c8:96:aa:40:d9[0m
+[0;32mI (1436) wifi:security: WPA2-PSK, phy: bgn, rssi: -57[0m
+[0;32mI (1436) wifi:pm start, type: 1[0m
+
+[0;32mI (1436) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1456) wifi:<ba-add>idx:0 (ifx:0, 00:c8:96:aa:40:d9), tid:7, ssn:0, winSize:64[0m
+[0;32mI (1496) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2316) AWS_OTA: Chờ IP... (1000/60000 ms)[0m
+[0;32mI (2516) esp_netif_handlers: sta ip: 192.168.100.5, mask: 255.255.255.0, gw: 192.168.100.1[0m
+[0;32mI (2516) WIFI_BLE_PROV: Status: WIFI_CONNECTED[0m
+[0;32mI (2516) NET_SVC: Wi-Fi up -> network workers allowed[0m
+[0;32mI (2796) NET_SVC: Network workers started[0m
+[0;32mI (2796) NET_SVC: UDP ready on port 5005[0m
+[0;32mI (2796) NET_SVC: TCP server listening on port 5006[0m
+[0;32mI (3316) AWS_OTA: Chờ IP... (2000/60000 ms)[0m
+[0;32mI (3316) AWS_OTA: Đã có IP: 192.168.100.5[0m
+[0;32mI (5316) AWS_OTA: === AWS IoT kết nối lần #1 ===[0m
+[0;32mI (5336) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:6, ssn:2, winSize:64[0m
+[0;32mI (5406) wifi:<ba-del>idx:1, tid:6[0m
+[0;32mI (5416) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:0, ssn:0, winSize:64[0m
+[0;32mI (7986) AWS_OTA: TLS kết nối thành công tới adiub9wc49ljw-ats.iot.ap-southeast-1.amazonaws.com:8883[0m
+[I] coreMQTT: MQTT connection established with the broker.
+[0;32mI (8296) AWS_OTA: MQTT connected  sessionPresent=0[0m
+[0;32mI (8576) AWS_OTA: Đã subscribe: devices/esp32-001/ota/command[0m
+[I] coreMQTT: De-serialized incoming PUBLISH packet: DeserializerResult=MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (11576) AWS_OTA: MQTT RX  topic=devices/esp32-001/ota/command[0m
+[0;32mI (11586) AWS_OTA: OTA command nhận được: version=test-1.0  url(60)=https://example.com/test.bin...[0m
+[0;32mI (12596) AWS_OTA: OTA status published: downloading (progress=0%)[0m
+[I] coreMQTT: Disconnected from the broker.
+[E] coreMQTT: MQTT Connection Disconnected Successfully
+[0;32mI (12606) AWS_OTA: TLS đã ngắt kết nối[0m
+[0;32mI (12606) AWS_OTA: Bắt đầu HTTPS OTA — version: test-1.0[0m
+[1;31mE (15716) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x2700[0m
+[1;31mE (15716) esp-tls: Failed to open new connection[0m
+[1;31mE (15716) transport_base: Failed to open a new connection[0m
+[1;31mE (15716) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (15726) esp_https_ota: Failed to open HTTP connection: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (15726) esp_https_ota: Failed to establish HTTP connection[0m
+[1;31mE (15736) AWS_OTA: OTA thất bại: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (21176) AWS_OTA: TLS kết nối thành công tới adiub9wc49ljw-ats.iot.ap-southeast-1.amazonaws.com:8883[0m
+[I] coreMQTT: MQTT connection established with the broker.
+[0;32mI (21476) AWS_OTA: MQTT connected  sessionPresent=0[0m
+[0;32mI (22486) AWS_OTA: OTA status published: failed (progress=0%)[0m
+[I] coreMQTT: Disconnected from the broker.
+[E] coreMQTT: MQTT Connection Disconnected Successfully
+[0;32mI (22496) AWS_OTA: TLS đã ngắt kết nối[0m
+[0;33mW (22496) AWS_OTA: Thử kết nối lại sau 15000 ms...[0m
+[0;32mI (37496) AWS_OTA: === AWS IoT kết nối lần #2 ===[0m
+[0;32mI (39736) AWS_OTA: TLS kết nối thành công tới adiub9wc49ljw-ats.iot.ap-southeast-1.amazonaws.com:8883[0m
+[I] coreMQTT: MQTT connection established with the broker.
+[0;32mI (40216) AWS_OTA: MQTT connected  sessionPresent=0[0m
+[0;32mI (40416) AWS_OTA: Đã subscribe: devices/esp32-001/ota/command[0m
+[I] coreMQTT: De-serialized incoming PUBLISH packet: DeserializerResult=MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (96846) AWS_OTA: MQTT RX  topic=devices/esp32-001/ota/command[0m
+[0;32mI (96846) AWS_OTA: OTA command nhận được: version=test-1.0  url(60)=https://example.com/test.bin...[0m
+[0;32mI (97866) AWS_OTA: OTA status published: downloading (progress=0%)[0m
+[I] coreMQTT: Disconnected from the broker.
+[E] coreMQTT: MQTT Connection Disconnected Successfully
+[0;32mI (97876) AWS_OTA: TLS đã ngắt kết nối[0m
+[0;32mI (97876) AWS_OTA: Bắt đầu HTTPS OTA — version: test-1.0[0m
+[1;31mE (100836) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x2700[0m
+[1;31mE (100836) esp-tls: Failed to open new connection[0m
+[1;31mE (100836) transport_base: Failed to open a new connection[0m
+[1;31mE (100836) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (100846) esp_https_ota: Failed to open HTTP connection: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (100846) esp_https_ota: Failed to establish HTTP connection[0m
+[1;31mE (100856) AWS_OTA: OTA thất bại: ESP_ERR_HTTP_CONNECT[0m
+[0;32mI (106066) AWS_OTA: TLS kết nối thành công tới adiub9wc49ljw-ats.iot.ap-southeast-1.amazonaws.com:8883[0m
+[I] coreMQTT: MQTT connection established with the broker.
+[0;32mI (106476) AWS_OTA: MQTT connected  sessionPresent=0[0m
+[0;32mI (107486) AWS_OTA: OTA status published: failed (progress=0%)[0m
+[I] coreMQTT: Disconnected from the broker.
+[E] coreMQTT: MQTT Connection Disconnected Successfully
+[0;32mI (107496) AWS_OTA: TLS đã ngắt kết nối[0m
+[0;33mW (107496) AWS_OTA: Thử kết nối lại sau 15000 ms...[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.0 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May 15 2026 21:39:59[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (31) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (62) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (69) boot:  2 phy_init         RF data          01 01 00010000 00001000[0m
+[0;32mI (75) boot:  3 ota_0            OTA app          00 10 00020000 001e0000[0m
+[0;32mI (82) boot:  4 ota_1            OTA app          00 11 00200000 001e0000[0m
+[0;32mI (88) boot: End of partition table[0m
+[0;32mI (92) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=2a950h (174416) map[0m
+[0;32mI (161) esp_image: segment 1: paddr=0004a978 vaddr=3ffbdb60 size=056a0h ( 22176) load[0m
+[0;32mI (170) esp_image: segment 2: paddr=00050020 vaddr=400d0020 size=d1b94h (859028) map[0m
+[0;32mI (476) esp_image: segment 3: paddr=00121bbc vaddr=3ffc3200 size=00934h (  2356) load[0m
+[0;32mI (477) esp_image: segment 4: paddr=001224f8 vaddr=40080000 size=1ca60h (117344) load[0m
+[0;32mI (528) esp_image: segment 5: paddr=0013ef60 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (543) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (543) boot: Disabling RNG early entropy source...[0m
+[0;32mI (553) cpu_start: Multicore app[0m
+[0;32mI (562) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (562) cpu_start: Pro cpu start user code[0m
+[0;32mI (562) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (564) app_init: Application information:[0m
+[0;32mI (567) app_init: Project name:     ADC_DAC[0m
+[0;32mI (571) app_init: App version:      2e29e95-dirty[0m
+[0;32mI (576) app_init: Compile time:     May 15 2026 22:07:45[0m
+[0;32mI (581) app_init: ELF file SHA256:  0c101aa6a...[0m
+[0;32mI (585) app_init: ESP-IDF:          v6.0[0m
+[0;32mI (589) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (593) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (597) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (601) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (607) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (612) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (617) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (622) heap_init: At 3FFCA778 len 00015888 (86 KiB): DRAM[0m
+[0;32mI (627) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (633) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (638) heap_init: At 4009CA60 len 000035A0 (13 KiB): IRAM[0m
+[0;32mI (645) spi_flash: detected chip: generic[0m
+[0;32mI (647) spi_flash: flash io: dio[0m
+[0;32mI (652) coexist: coex firmware version: 093e3d2[0m
+[0;32mI (656) main_task: Started on CPU0[0m
+[0;32mI (666) main_task: Calling app_main()[0m
+[0;32mI (686) BTDM_INIT: BT controller compile version [045a658][0m
+[0;32mI (686) BTDM_INIT: Using main XTAL as clock source[0m
+[0;32mI (686) BTDM_INIT: Bluetooth MAC: d4:e9:f4:68:65:5e[0m
+[0;32mI (696) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (776) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1056) WIFI_BLE_PROV: Found saved credentials, connecting WiFi[0m
+[0;32mI (1076) wifi:wifi driver task: 3ffd8704, prio:23, stack:6656, core=0[0m
+[0;32mI (1096) wifi:wifi firmware version: 44738b4[0m
+[0;32mI (1096) wifi:wifi certification version: v7.0[0m
+[0;32mI (1096) wifi:config NVS flash: enabled[0m
+[0;32mI (1096) wifi:config nano formatting: disabled[0m
+[0;32mI (1106) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1106) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1106) wifi:Init management short buffer num: 32[0m
+[0;32mI (1116) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1116) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1126) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1126) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1136) wifi_init: rx ba win: 6[0m
+[0;32mI (1136) wifi_init: accept mbox: 6[0m
+[0;32mI (1146) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1146) wifi_init: udp mbox: 6[0m
+[0;32mI (1146) wifi_init: tcp mbox: 6[0m
+[0;32mI (1146) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1146) WIFI_BLE_PROV: BLE addr: d4:e9:f4:68:65:5e[0m
+[0;32mI (1156) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1156) wifi_init: tcp mss: 1440[0m
+[0;32mI (1156) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (1166) NimBLE: disc_mode=2[0m
+[0;32mI (1166) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (1176) NimBLE: [0m
+
+[0;32mI (1176) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1186) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1196) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (1196) wifi:enable tsf[0m
+[0;32mI (1196) wifi:flush txq[0m
+[0;32mI (1196) wifi:stop sw txq[0m
+[0;32mI (1196) wifi:lmac stop hw txq[0m
+[0;32mI (1206) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (1206) wifi:enable tsf[0m
+[0;33mW (1206) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1216) WIFI_BLE_PROV: Status: WIFI_CONNECTING[0m
+[0;33mW (1216) wifi:Haven't to connect to a suitable AP now![0m
+[0;32mI (1226) NET_SVC: Network service initialized[0m
+[0;32mI (1226) AWS_OTA: AWS MQTT OTA task bắt đầu[0m
+[0;32mI (1236) main_task: Returned from app_main()[0m
+[0;32mI (1236) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1246) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1276) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1296) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1346) wifi:connected with TuanNga, aid = 2, channel 11, BW20, bssid = 00:c8:96:aa:40:d9[0m
+[0;32mI (1356) wifi:security: WPA2-PSK, phy: bgn, rssi: -55[0m
+[0;32mI (1356) wifi:pm start, type: 1[0m
+
+[0;32mI (1356) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1386) wifi:<ba-add>idx:0 (ifx:0, 00:c8:96:aa:40:d9), tid:7, ssn:0, winSize:64[0m
+[0;32mI (1436) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2236) AWS_OTA: Chờ IP... (1000/60000 ms)[0m
+[0;32mI (2456) esp_netif_handlers: sta ip: 192.168.100.5, mask: 255.255.255.0, gw: 192.168.100.1[0m
+[0;32mI (2456) WIFI_BLE_PROV: Status: WIFI_CONNECTED[0m
+[0;32mI (2456) NET_SVC: Wi-Fi up -> network workers allowed[0m
+[0;32mI (2726) NET_SVC: Network workers started[0m
+[0;32mI (2726) NET_SVC: UDP ready on port 5005[0m
+[0;32mI (2726) NET_SVC: TCP server listening on port 5006[0m
+[0;32mI (3236) AWS_OTA: Chờ IP... (2000/60000 ms)[0m
+[0;32mI (3236) AWS_OTA: Đã có IP: 192.168.100.5[0m
+[0;32mI (5236) AWS_OTA: === AWS IoT kết nối lần #1 ===[0m
+[0;32mI (5236) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:6, ssn:2, winSize:64[0m
+[0;32mI (5246) wifi:<ba-del>idx:1, tid:6[0m
+[0;32mI (5246) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:0, ssn:0, winSize:64[0m
+[0;32mI (7406) AWS_OTA: TLS kết nối thành công tới adiub9wc49ljw-ats.iot.ap-southeast-1.amazonaws.com:8883[0m
+[I] coreMQTT: MQTT connection established with the broker.
+[0;32mI (7796) AWS_OTA: MQTT connected  sessionPresent=0[0m
+[0;32mI (8196) AWS_OTA: Đã subscribe: devices/esp32-001/ota/command[0m
+[I] coreMQTT: De-serialized incoming PUBLISH packet: DeserializerResult=MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPublishDone.
+[0;32mI (17196) AWS_OTA: MQTT RX  topic=devices/esp32-001/ota/command[0m
+[0;32mI (17206) AWS_OTA: OTA command nhận được: version=test-1.0  url(60)=https://example.com/test.bin...[0m
+[0;32mI (18216) AWS_OTA: OTA status published: downloading (progress=0%)[0m
+[I] coreMQTT: Disconnected from the broker.
+[E] coreMQTT: MQTT Connection Disconnected Successfully
+[0;32mI (18226) AWS_OTA: TLS đã ngắt kết nối[0m
+[0;32mI (18226) AWS_OTA: Bắt đầu HTTPS OTA — version: test-1.0[0m
+[1;31mE (21196) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x2700[0m
+[1;31mE (21196) esp-tls: Failed to open new connection[0m
+[1;31mE (21206) transport_base: Failed to open a new connection[0m
+[1;31mE (21206) HTTP_CLIENT: Connection failed, sock < 0[0m
+[1;31mE (21206) esp_https_ota: Failed to open HTTP connection: ESP_ERR_HTTP_CONNECT[0m
+[1;31mE (21216) esp_https_ota: Failed to establish HTTP connection[0m
+[1;31mE (21226) AWS_OTA: OTA thất bại: ESP_ERR_HTTP_CONNECT[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.0 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May 15 2026 21:39:59[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (31) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (62) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (69) boot:  2 phy_init         RF data          01 01 00010000 00001000[0m
+[0;32mI (75) boot:  3 ota_0            OTA app          00 10 00020000 001e0000[0m
+[0;32mI (82) boot:  4 ota_1            OTA app          00 11 00200000 001e0000[0m
+[0;32mI (88) boot: End of partition table[0m
+[0;32mI (92) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=2a950h (174416) map[0m
+[0;32mI (161) esp_image: segment 1: paddr=0004a978 vaddr=3ffbdb60 size=056a0h ( 22176) load[0m
+[0;32mI (170) esp_image: segment 2: paddr=00050020 vaddr=400d0020 size=d1b94h (859028) map[0m
+[0;32mI (476) esp_image: segment 3: paddr=00121bbc vaddr=3ffc3200 size=00934h (  2356) load[0m
+[0;32mI (477) esp_image: segment 4: paddr=001224f8 vaddr=40080000 size=1ca60h (117344) load[0m
+[0;32mI (528) esp_image: segment 5: paddr=0013ef60 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (543) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (543) boot: Disabling RNG early entropy source...[0m
+[0;32mI (553) cpu_start: Multicore app[0m
+[0;32mI (562) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (562) cpu_start: Pro cpu start user code[0m
+[0;32mI (562) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (564) app_init: Application information:[0m
+[0;32mI (567) app_init: Project name:     ADC_DAC[0m
+[0;32mI (571) app_init: App version:      2e29e95-dirty[0m
+[0;32mI (576) app_init: Compile time:     May 15 2026 22:07:45[0m
+[0;32mI (581) app_init: ELF file SHA256:  0c101aa6a...[0m
+[0;32mI (585) app_init: ESP-IDF:          v6.0[0m
+[0;32mI (589) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (593) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (597) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (601) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (607) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (612) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (617) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (622) heap_init: At 3FFCA778 len 00015888 (86 KiB): DRAM[0m
+[0;32mI (627) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (633) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (638) heap_init: At 4009CA60 len 000035A0 (13 KiB): IRAM[0m
+[0;32mI (645) spi_flash: detected chip: generic[0m
+[0;32mI (647) spi_flash: flash io: dio[0m
+[0;32mI (652) coexist: coex firmware version: 093e3d2[0m
+[0;32mI (656) main_task: Started on CPU0[0m
+[0;32mI (666) main_task: Calling app_main()[0m
+[0;32mI (686) BTDM_INIT: BT controller compile version [045a658][0m
+[0;32mI (686) BTDM_INIT: Using main XTAL as clock source[0m
+[0;32mI (686) BTDM_INIT: Bluetooth MAC: d4:e9:f4:68:65:5e[0m
+[0;32mI (696) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (776) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1126) WIFI_BLE_PROV: Found saved credentials, connecting WiFi[0m
+[0;32mI (1156) wifi:wifi driver task: 3ffd86ec, prio:23, stack:6656, core=0[0m
+[0;32mI (1176) wifi:wifi firmware version: 44738b4[0m
+[0;32mI (1176) wifi:wifi certification version: v7.0[0m
+[0;32mI (1176) wifi:config NVS flash: enabled[0m
+[0;32mI (1176) wifi:config nano formatting: disabled[0m
+[0;32mI (1186) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1186) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1196) wifi:Init management short buffer num: 32[0m
+[0;32mI (1196) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1196) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1206) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1206) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1216) wifi_init: rx ba win: 6[0m
+[0;32mI (1216) wifi_init: accept mbox: 6[0m
+[0;32mI (1216) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1226) WIFI_BLE_PROV: BLE addr: d4:e9:f4:68:65:5e[0m
+[0;32mI (1226) wifi_init: udp mbox: 6[0m
+[0;32mI (1226) wifi_init: tcp mbox: 6[0m
+[0;32mI (1236) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (1236) NimBLE: disc_mode=2[0m
+[0;32mI (1236) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (1246) NimBLE: [0m
+
+[0;32mI (1246) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1256) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1256) wifi_init: tcp mss: 1440[0m
+[0;32mI (1256) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1266) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1276) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (1276) wifi:enable tsf[0m
+[0;32mI (1276) wifi:flush txq[0m
+[0;32mI (1276) wifi:stop sw txq[0m
+[0;32mI (1276) wifi:lmac stop hw txq[0m
+[0;32mI (1286) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (1286) wifi:enable tsf[0m
+[0;33mW (1296) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1296) WIFI_BLE_PROV: Status: WIFI_CONNECTING[0m
+[0;33mW (1296) wifi:Haven't to connect to a suitable AP now![0m
+[0;32mI (1306) NET_SVC: Network service initialized[0m
+[0;32mI (1306) AWS_OTA: AWS MQTT OTA task bắt đầu[0m
+[0;32mI (1316) main_task: Returned from app_main()[0m
+[0;32mI (1386) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1386) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1436) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1466) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1546) wifi:connected with TuanNga, aid = 2, channel 11, BW20, bssid = 00:c8:96:aa:40:d9[0m
+[0;32mI (1546) wifi:security: WPA2-PSK, phy: bgn, rssi: -57[0m
+[0;32mI (1556) wifi:pm start, type: 1[0m
+
+[0;32mI (1556) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1576) wifi:<ba-add>idx:0 (ifx:0, 00:c8:96:aa:40:d9), tid:7, ssn:0, winSize:64[0m
+[0;32mI (1586) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2316) AWS_OTA: Chờ IP... (1000/60000 ms)[0m
+[0;32mI (2696) esp_netif_handlers: sta ip: 192.168.100.5, mask: 255.255.255.0, gw: 192.168.100.1[0m
+[0;32mI (2696) WIFI_BLE_PROV: Status: WIFI_CONNECTED[0m
+[0;32mI (2696) NET_SVC: Wi-Fi up -> network workers allowed[0m
+[0;32mI (2806) NET_SVC: Network workers started[0m
+[0;32mI (2806) NET_SVC: UDP ready on port 5005[0m
+[0;32mI (2806) NET_SVC: TCP server listening on port 5006[0m
+[0;32mI (3316) AWS_OTA: Chờ IP... (2000/60000 ms)[0m
+[0;32mI (3316) AWS_OTA: Đã có IP: 192.168.100.5[0m
+[0;32mI (5316) AWS_OTA: === AWS IoT kết nối lần #1 ===[0m
+[0;32mI (5376) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:6, ssn:2, winSize:64[0m
+[0;32mI (5386) wifi:<ba-del>idx:1, tid:6[0m
+[0;32mI (5386) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:0, ssn:0, winSize:64[0m
+[0;32mI (7746) AWS_OTA: TLS kết nối thành công tới adiub9wc49ljw-ats.iot.ap-southeast-1.amazonaws.com:8883[0m
+[I] coreMQTT: MQTT connection established with the broker.
+[0;32mI (7946) AWS_OTA: MQTT connected  sessionPresent=0[0m
+[0;32mI (8356) AWS_OTA: Đã subscribe: devices/esp32-001/ota/command[0m
+[I] coreMQTT: De-serialized incoming PUBLISH packet: DeserializerResult=MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPubAckSend.
+[0;32mI (15726) AWS_OTA: MQTT RX  topic=devices/esp32-001/ota/command[0m
+[0;32mI (15736) AWS_OTA: OTA command nhận được: version=1.2.0  url(60)=https://esp32-firmware-2025.s3.amazonaws.com/firmware/1.2.0/...[0m
+[0;32mI (16756) AWS_OTA: OTA status published: downloading (progress=0%)[0m
+[I] coreMQTT: Disconnected from the broker.
+[E] coreMQTT: MQTT Connection Disconnected Successfully
+[0;32mI (16766) AWS_OTA: TLS đã ngắt kết nối[0m
+[0;32mI (16766) AWS_OTA: Bắt đầu HTTPS OTA — version: 1.2.0[0m
+[0;32mI (80466) esp_https_ota: Starting OTA...[0m
+[0;32mI (80466) esp_https_ota: Writing to <ota_1> partition at offset 0x200000[0m
+[0;32mI (133166) esp_image: segment 0: paddr=00200020 vaddr=3f400020 size=2a950h (174416) map[0m
+[0;32mI (133226) esp_image: segment 1: paddr=0022a978 vaddr=3ffbdb60 size=056a0h ( 22176) [0m
+[0;32mI (133236) esp_image: segment 2: paddr=00230020 vaddr=400d0020 size=d1b94h (859028) map[0m
+[0;32mI (133526) esp_image: segment 3: paddr=00301bbc vaddr=3ffc3200 size=00934h (  2356) [0m
+[0;32mI (133526) esp_image: segment 4: paddr=003024f8 vaddr=40080000 size=1ca60h (117344) [0m
+[0;32mI (133576) esp_image: segment 5: paddr=0031ef60 vaddr=50000000 size=00028h (    40) [0m
+[0;32mI (133586) esp_image: segment 0: paddr=00200020 vaddr=3f400020 size=2a950h (174416) map[0m
+[0;32mI (133646) esp_image: segment 1: paddr=0022a978 vaddr=3ffbdb60 size=056a0h ( 22176) [0m
+[0;32mI (133656) esp_image: segment 2: paddr=00230020 vaddr=400d0020 size=d1b94h (859028) map[0m
+[0;32mI (133956) esp_image: segment 3: paddr=00301bbc vaddr=3ffc3200 size=00934h (  2356) [0m
+[0;32mI (133956) esp_image: segment 4: paddr=003024f8 vaddr=40080000 size=1ca60h (117344) [0m
+[0;32mI (133996) esp_image: segment 5: paddr=0031ef60 vaddr=50000000 size=00028h (    40) [0m
+[0;32mI (134076) AWS_OTA: OTA download & flash thành công[0m
+[0;32mI (139236) AWS_OTA: TLS kết nối thành công tới adiub9wc49ljw-ats.iot.ap-southeast-1.amazonaws.com:8883[0m
+[I] coreMQTT: MQTT connection established with the broker.
+[0;32mI (139626) AWS_OTA: MQTT connected  sessionPresent=0[0m
+[0;32mI (140636) AWS_OTA: OTA status published: success (progress=100%)[0m
+[I] coreMQTT: Disconnected from the broker.
+[E] coreMQTT: MQTT Connection Disconnected Successfully
+[0;32mI (140646) AWS_OTA: TLS đã ngắt kết nối[0m
+[0;32mI (140656) AWS_OTA: OTA hoàn thành — khởi động lại sau 2s...[0m
+[0;32mI (142656) wifi:state: run -> init (0x0)[0m
+[0;32mI (142666) wifi:pm stop, total sleep time: 93950887 us / 141108492 us[0m
+
+[0;32mI (142666) wifi:<ba-del>idx:1, tid:0[0m
+[0;32mI (142666) wifi:<ba-del>idx:0, tid:7[0m
+[0;32mI (142666) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (142676) WIFI_BLE_PROV: Status: WIFI_RETRYING[0m
+[0;33mW (142676) NET_SVC: Wi-Fi down -> network workers reconnect later[0m
+[0;32mI (142726) wifi:flush txq[0m
+[0;32mI (142726) wifi:stop sw txq[0m
+[0;32mI (142726) wifi:lmac stop hw txq[0m
+[0;33mW (142726) phy_comm: Clear the flag of Bluetooth before it's set[0m
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.0 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May 15 2026 21:39:59[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (31) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (62) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (69) boot:  2 phy_init         RF data          01 01 00010000 00001000[0m
+[0;32mI (75) boot:  3 ota_0            OTA app          00 10 00020000 001e0000[0m
+[0;32mI (82) boot:  4 ota_1            OTA app          00 11 00200000 001e0000[0m
+[0;32mI (88) boot: End of partition table[0m
+[0;32mI (92) esp_image: segment 0: paddr=00200020 vaddr=3f400020 size=2a950h (174416) map[0m
+[0;32mI (161) esp_image: segment 1: paddr=0022a978 vaddr=3ffbdb60 size=056a0h ( 22176) load[0m
+[0;32mI (170) esp_image: segment 2: paddr=00230020 vaddr=400d0020 size=d1b94h (859028) map[0m
+[0;32mI (476) esp_image: segment 3: paddr=00301bbc vaddr=3ffc3200 size=00934h (  2356) load[0m
+[0;32mI (477) esp_image: segment 4: paddr=003024f8 vaddr=40080000 size=1ca60h (117344) load[0m
+[0;32mI (528) esp_image: segment 5: paddr=0031ef60 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (543) boot: Loaded app from partition at offset 0x200000[0m
+[0;32mI (543) boot: Disabling RNG early entropy source...[0m
+[0;32mI (553) cpu_start: Multicore app[0m
+[0;32mI (561) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (562) cpu_start: Pro cpu start user code[0m
+[0;32mI (562) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (564) app_init: Application information:[0m
+[0;32mI (567) app_init: Project name:     ADC_DAC[0m
+[0;32mI (571) app_init: App version:      2e29e95-dirty[0m
+[0;32mI (576) app_init: Compile time:     May 15 2026 22:07:45[0m
+[0;32mI (581) app_init: ELF file SHA256:  0c101aa6a...[0m
+[0;32mI (585) app_init: ESP-IDF:          v6.0[0m
+[0;32mI (589) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (593) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (597) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (601) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (607) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (612) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (617) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (622) heap_init: At 3FFCA778 len 00015888 (86 KiB): DRAM[0m
+[0;32mI (627) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (633) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (638) heap_init: At 4009CA60 len 000035A0 (13 KiB): IRAM[0m
+[0;32mI (645) spi_flash: detected chip: generic[0m
+[0;32mI (647) spi_flash: flash io: dio[0m
+[0;32mI (652) coexist: coex firmware version: 093e3d2[0m
+[0;32mI (656) main_task: Started on CPU0[0m
+[0;32mI (666) main_task: Calling app_main()[0m
+[0;32mI (686) BTDM_INIT: BT controller compile version [045a658][0m
+[0;32mI (686) BTDM_INIT: Using main XTAL as clock source[0m
+[0;32mI (686) BTDM_INIT: Bluetooth MAC: d4:e9:f4:68:65:5e[0m
+[0;32mI (696) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (776) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1056) WIFI_BLE_PROV: Found saved credentials, connecting WiFi[0m
+[0;32mI (1086) wifi:wifi driver task: 3ffd8704, prio:23, stack:6656, core=0[0m
+[0;32mI (1106) wifi:wifi firmware version: 44738b4[0m
+[0;32mI (1106) wifi:wifi certification version: v7.0[0m
+[0;32mI (1106) wifi:config NVS flash: enabled[0m
+[0;32mI (1106) wifi:config nano formatting: disabled[0m
+[0;32mI (1106) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1116) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1116) wifi:Init management short buffer num: 32[0m
+[0;32mI (1126) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1126) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1136) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1136) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1146) wifi_init: rx ba win: 6[0m
+[0;32mI (1146) wifi_init: accept mbox: 6[0m
+[0;32mI (1156) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1156) wifi_init: udp mbox: 6[0m
+[0;32mI (1156) wifi_init: tcp mbox: 6[0m
+[0;32mI (1156) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1156) WIFI_BLE_PROV: BLE addr: d4:e9:f4:68:65:5e[0m
+[0;32mI (1166) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1166) wifi_init: tcp mss: 1440[0m
+[0;32mI (1166) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (1176) NimBLE: disc_mode=2[0m
+[0;32mI (1176) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (1186) NimBLE: [0m
+
+[0;32mI (1186) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1186) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1196) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (1196) wifi:enable tsf[0m
+[0;32mI (1206) wifi:flush txq[0m
+[0;32mI (1206) wifi:stop sw txq[0m
+[0;32mI (1206) wifi:lmac stop hw txq[0m
+[0;32mI (1216) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (1216) wifi:enable tsf[0m
+[0;33mW (1216) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1226) WIFI_BLE_PROV: Status: WIFI_CONNECTING[0m
+[0;33mW (1226) wifi:Haven't to connect to a suitable AP now![0m
+[0;32mI (1236) NET_SVC: Network service initialized[0m
+[0;32mI (1236) AWS_OTA: AWS MQTT OTA task bắt đầu[0m
+[0;32mI (1246) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1246) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1256) main_task: Returned from app_main()[0m
+[0;32mI (1286) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1316) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1356) wifi:connected with TuanNga, aid = 2, channel 11, BW20, bssid = 00:c8:96:aa:40:d9[0m
+[0;32mI (1356) wifi:security: WPA2-PSK, phy: bgn, rssi: -56[0m
+[0;32mI (1366) wifi:pm start, type: 1[0m
+
+[0;32mI (1366) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1386) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1386) wifi:<ba-add>idx:0 (ifx:0, 00:c8:96:aa:40:d9), tid:7, ssn:0, winSize:64[0m
+[0;32mI (2246) AWS_OTA: Chờ IP... (1000/60000 ms)[0m
+[0;32mI (2426) esp_netif_handlers: sta ip: 192.168.100.5, mask: 255.255.255.0, gw: 192.168.100.1[0m
+[0;32mI (2426) WIFI_BLE_PROV: Status: WIFI_CONNECTED[0m
+[0;32mI (2426) NET_SVC: Wi-Fi up -> network workers allowed[0m
+[0;32mI (2436) NET_SVC: Network workers started[0m
+[0;32mI (2436) NET_SVC: UDP ready on port 5005[0m
+[0;32mI (2436) NET_SVC: TCP server listening on port 5006[0m
+[0;32mI (3246) AWS_OTA: Chờ IP... (2000/60000 ms)[0m
+[0;32mI (3246) AWS_OTA: Đã có IP: 192.168.100.5[0m
+[0;32mI (5246) AWS_OTA: === AWS IoT kết nối lần #1 ===[0m
+[0;32mI (5296) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:6, ssn:2, winSize:64[0m
+[0;32mI (5296) wifi:<ba-del>idx:1, tid:6[0m
+[0;32mI (5306) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:0, ssn:0, winSize:64[0m
+[0;32mI (7546) AWS_OTA: TLS kết nối thành công tới adiub9wc49ljw-ats.iot.ap-southeast-1.amazonaws.com:8883[0m
+[I] coreMQTT: MQTT connection established with the broker.
+[0;32mI (8046) AWS_OTA: MQTT connected  sessionPresent=0[0m
+[0;32mI (8256) AWS_OTA: Đã subscribe: devices/esp32-001/ota/command[0m
+[I] coreMQTT: De-serialized incoming PUBLISH packet: DeserializerResult=MQTTSuccess.
+[I] coreMQTT: State record updated. New state=MQTTPubAckSend.
+[0;32mI (44816) AWS_OTA: MQTT RX  topic=devices/esp32-001/ota/command[0m
+[0;32mI (44826) AWS_OTA: OTA command nhận được: version=1.2.0  url(60)=https://esp32-firmware-2025.s3.amazonaws.com/firmware/1.2.0/...[0m
+[0;32mI (45846) AWS_OTA: OTA status published: downloading (progress=0%)[0m
+[I] coreMQTT: Disconnected from the broker.
+[E] coreMQTT: MQTT Connection Disconnected Successfully
+[0;32mI (45856) AWS_OTA: TLS đã ngắt kết nối[0m
+[0;32mI (45856) AWS_OTA: Bắt đầu HTTPS OTA — version: 1.2.0[0m
+[0;32mI (109846) esp_https_ota: Starting OTA...[0m
+[0;32mI (109846) esp_https_ota: Writing to <ota_0> partition at offset 0x20000[0m
+[0;32mI (159786) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=2a950h (174416) map[0m
+[0;32mI (159846) esp_image: segment 1: paddr=0004a978 vaddr=3ffbdb60 size=056a0h ( 22176) [0m
+[0;32mI (159856) esp_image: segment 2: paddr=00050020 vaddr=400d0020 size=d1b94h (859028) map[0m
+[0;32mI (160146) esp_image: segment 3: paddr=00121bbc vaddr=3ffc3200 size=00934h (  2356) [0m
+[0;32mI (160146) esp_image: segment 4: paddr=001224f8 vaddr=40080000 size=1ca60h (117344) [0m
+[0;32mI (160186) esp_image: segment 5: paddr=0013ef60 vaddr=50000000 size=00028h (    40) [0m
+[0;32mI (160196) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=2a950h (174416) map[0m
+[0;32mI (160256) esp_image: segment 1: paddr=0004a978 vaddr=3ffbdb60 size=056a0h ( 22176) [0m
+[0;32mI (160266) esp_image: segment 2: paddr=00050020 vaddr=400d0020 size=d1b94h (859028) map[0m
+[0;32mI (160546) esp_image: segment 3: paddr=00121bbc vaddr=3ffc3200 size=00934h (  2356) [0m
+[0;32mI (160556) esp_image: segment 4: paddr=001224f8 vaddr=40080000 size=1ca60h (117344) [0m
+[0;32mI (160596) esp_image: segment 5: paddr=0013ef60 vaddr=50000000 size=00028h (    40) [0m
+[0;32mI (160666) AWS_OTA: OTA download & flash thành công[0m
+[0;32mI (165756) AWS_OTA: TLS kết nối thành công tới adiub9wc49ljw-ats.iot.ap-southeast-1.amazonaws.com:8883[0m
+[I] coreMQTT: MQTT connection established with the broker.
+[0;32mI (166046) AWS_OTA: MQTT connected  sessionPresent=0[0m
+[0;32mI (167056) AWS_OTA: OTA status published: success (progress=100%)[0m
+[I] coreMQTT: Disconnected from the broker.
+[E] coreMQTT: MQTT Connection Disconnected Successfully
+[0;32mI (167066) AWS_OTA: TLS đã ngắt kết nối[0m
+[0;32mI (167066) AWS_OTA: OTA hoàn thành — khởi động lại sau 2s...[0m
+[0;32mI (169066) wifi:state: run -> init (0x0)[0m
+[0;32mI (169076) wifi:pm stop, total sleep time: 118665209 us / 167709276 us[0m
+
+[0;32mI (169076) wifi:<ba-del>idx:1, tid:0[0m
+[0;32mI (169076) wifi:<ba-del>idx:0, tid:7[0m
+[0;32mI (169076) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (169086) WIFI_BLE_PROV: Status: WIFI_RETRYING[0m
+[0;33mW (169086) NET_SVC: Wi-Fi down -> network workers reconnect later[0m
+[0;32mI (169146) wifi:flush txq[0m
+[0;32mI (169146) wifi:stop sw txq[0m
+[0;32mI (169146) wifi:lmac stop hw txq[0m
+[0;33mW (169146) phy_comm: Clear the flag of Bluetooth before it's set[0m
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.0 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May 15 2026 21:39:59[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (31) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (35) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (62) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (69) boot:  2 phy_init         RF data          01 01 00010000 00001000[0m
+[0;32mI (75) boot:  3 ota_0            OTA app          00 10 00020000 001e0000[0m
+[0;32mI (82) boot:  4 ota_1            OTA app          00 11 00200000 001e0000[0m
+[0;32mI (88) boot: End of partition table[0m
+[0;32mI (92) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=2a950h (174416) map[0m
+[0;32mI (161) esp_image: segment 1: paddr=0004a978 vaddr=3ffbdb60 size=056a0h ( 22176) load[0m
+[0;32mI (170) esp_image: segment 2: paddr=00050020 vaddr=400d0020 size=d1b94h (859028) map[0m
+[0;32mI (476) esp_image: segment 3: paddr=00121bbc vaddr=3ffc3200 size=00934h (  2356) load[0m
+[0;32mI (477) esp_image: segment 4: paddr=001224f8 vaddr=40080000 size=1ca60h (117344) load[0m
+[0;32mI (528) esp_image: segment 5: paddr=0013ef60 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (543) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (543) boot: Disabling RNG early entropy source...[0m
+[0;32mI (553) cpu_start: Multicore app[0m
+[0;32mI (561) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (562) cpu_start: Pro cpu start user code[0m
+[0;32mI (562) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (563) app_init: Application information:[0m
+[0;32mI (567) app_init: Project name:     ADC_DAC[0m
+[0;32mI (571) app_init: App version:      2e29e95-dirty[0m
+[0;32mI (576) app_init: Compile time:     May 15 2026 22:07:45[0m
+[0;32mI (581) app_init: ELF file SHA256:  0c101aa6a...[0m
+[0;32mI (585) app_init: ESP-IDF:          v6.0[0m
+[0;32mI (589) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (592) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (596) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (601) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (607) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (612) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (617) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (622) heap_init: At 3FFCA778 len 00015888 (86 KiB): DRAM[0m
+[0;32mI (627) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (633) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (638) heap_init: At 4009CA60 len 000035A0 (13 KiB): IRAM[0m
+[0;32mI (645) spi_flash: detected chip: generic[0m
+[0;32mI (647) spi_flash: flash io: dio[0m
+[0;32mI (652) coexist: coex firmware version: 093e3d2[0m
+[0;32mI (655) main_task: Started on CPU0[0m
+[0;32mI (665) main_task: Calling app_main()[0m
+[0;32mI (685) BTDM_INIT: BT controller compile version [045a658][0m
+[0;32mI (685) BTDM_INIT: Using main XTAL as clock source[0m
+[0;32mI (685) BTDM_INIT: Bluetooth MAC: d4:e9:f4:68:65:5e[0m
+[0;32mI (695) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (775) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1125) WIFI_BLE_PROV: Found saved credentials, connecting WiFi[0m
+[0;32mI (1145) wifi:wifi driver task: 3ffd86ec, prio:23, stack:6656, core=0[0m
+[0;32mI (1155) wifi:wifi firmware version: 44738b4[0m
+[0;32mI (1155) wifi:wifi certification version: v7.0[0m
+[0;32mI (1165) wifi:config NVS flash: enabled[0m
+[0;32mI (1165) wifi:config nano formatting: disabled[0m
+[0;32mI (1165) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1165) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1175) wifi:Init management short buffer num: 32[0m
+[0;32mI (1175) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1185) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1185) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1195) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1205) wifi_init: rx ba win: 6[0m
+[0;32mI (1205) wifi_init: accept mbox: 6[0m
+[0;32mI (1205) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1205) wifi_init: udp mbox: 6[0m
+[0;32mI (1205) wifi_init: tcp mbox: 6[0m
+[0;32mI (1205) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1215) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1215) wifi_init: tcp mss: 1440[0m
+[0;32mI (1215) WIFI_BLE_PROV: BLE addr: d4:e9:f4:68:65:5e[0m
+[0;32mI (1225) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1225) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1235) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (1235) NimBLE: disc_mode=2[0m
+[0;32mI (1235) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0[0m
+[0;32mI (1245) NimBLE: [0m
+
+[0;32mI (1255) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (1255) wifi:enable tsf[0m
+[0;32mI (1265) wifi:flush txq[0m
+[0;32mI (1265) wifi:stop sw txq[0m
+[0;32mI (1265) wifi:lmac stop hw txq[0m
+[0;32mI (1275) wifi:mode : sta (d4:e9:f4:68:65:5c)[0m
+[0;32mI (1275) wifi:enable tsf[0m
+[0;33mW (1275) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1285) WIFI_BLE_PROV: Status: WIFI_CONNECTING[0m
+[0;33mW (1285) wifi:Haven't to connect to a suitable AP now![0m
+[0;32mI (1295) NET_SVC: Network service initialized[0m
+[0;32mI (1295) AWS_OTA: AWS MQTT OTA task bắt đầu[0m
+[0;32mI (1295) main_task: Returned from app_main()[0m
+[0;32mI (1315) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1315) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1375) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1415) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1485) wifi:connected with TuanNga, aid = 2, channel 11, BW20, bssid = 00:c8:96:aa:40:d9[0m
+[0;32mI (1485) wifi:security: WPA2-PSK, phy: bgn, rssi: -56[0m
+[0;32mI (1485) wifi:pm start, type: 1[0m
+
+[0;32mI (1495) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1495) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1515) wifi:<ba-add>idx:0 (ifx:0, 00:c8:96:aa:40:d9), tid:7, ssn:0, winSize:64[0m
+[0;32mI (2295) AWS_OTA: Chờ IP... (1000/60000 ms)[0m
+[0;32mI (2605) esp_netif_handlers: sta ip: 192.168.100.5, mask: 255.255.255.0, gw: 192.168.100.1[0m
+[0;32mI (2605) WIFI_BLE_PROV: Status: WIFI_CONNECTED[0m
+[0;32mI (2605) NET_SVC: Wi-Fi up -> network workers allowed[0m
+[0;32mI (2795) NET_SVC: Network workers started[0m
+[0;32mI (2795) NET_SVC: UDP ready on port 5005[0m
+[0;32mI (2795) NET_SVC: TCP server listening on port 5006[0m
+[0;32mI (3295) AWS_OTA: Chờ IP... (2000/60000 ms)[0m
+[0;32mI (3295) AWS_OTA: Đã có IP: 192.168.100.5[0m
+[0;32mI (5295) AWS_OTA: === AWS IoT kết nối lần #1 ===[0m
+[0;32mI (5295) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:6, ssn:2, winSize:64[0m
+[0;32mI (5305) wifi:<ba-del>idx:1, tid:6[0m
+[0;32mI (5305) wifi:<ba-add>idx:1 (ifx:0, 00:c8:96:aa:40:d9), tid:0, ssn:0, winSize:64[0m
+[0;32mI (7235) AWS_OTA: TLS kết nối thành công tới adiub9wc49ljw-ats.iot.ap-southeast-1.amazonaws.com:8883[0m
+[I] coreMQTT: MQTT connection established with the broker.
+[0;32mI (7445) AWS_OTA: MQTT connected  sessionPresent=0[0m
+[0;32mI (7645) AWS_OTA: Đã subscribe: devices/esp32-001/ota/command[0m

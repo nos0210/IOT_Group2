@@ -1,0 +1,22 @@
+Command: ninja all
+[1/1152] Generating project_elf_src_esp32.c
+[2/1152] Preprocessing linker script D:/esp/v6.0/esp-idf/components/esp_system/ld/esp32/memory.ld.in -> C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/esp-idf/esp_system/ld/memory.ld
+[3/1152] Preprocessing linker script D:/esp/v6.0/esp-idf/components/esp_system/ld/esp32/sections.ld.in -> C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/esp-idf/esp_system/ld/sections.ld.in
+[4/1152] Generating ../../partition_table/partition-table.bin
+FAILED: partition_table/partition-table.bin C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/partition_table/partition-table.bin 
+C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project\build\esp-idf\partition_table && C:\Users\Admin\.espressif\python_env\idf6.0_py3.11_env\Scripts\python.exe D:/esp/v6.0/esp-idf/components/partition_table/gen_esp32part.py -q --offset 0x8000 --primary-bootloader-offset 0x1000 --flash-size 2MB -- C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/partitions_ota.csv C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/partition_table/partition-table.bin && C:\Users\Admin\.espressif\tools\cmake\4.0.3\bin\cmake.exe -E echo "Partition table binary generated. Contents:" && C:\Users\Admin\.espressif\tools\cmake\4.0.3\bin\cmake.exe -E echo ******************************************************************************* && C:\Users\Admin\.espressif\python_env\idf6.0_py3.11_env\Scripts\python.exe D:/esp/v6.0/esp-idf/components/partition_table/gen_esp32part.py -q --offset 0x8000 --primary-bootloader-offset 0x1000 --flash-size 2MB -- C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/partition_table/partition-table.bin && C:\Users\Admin\.espressif\tools\cmake\4.0.3\bin\cmake.exe -E echo *******************************************************************************"
+Partitions tables occupies 3.9MB of flash (4063232 bytes) which does not fit in configured flash size 2MB. Change the flash size in menuconfig under the 'Serial Flasher Config' menu.
+[5/1152] Generating ../../ota_data_initial.bin
+[6/1152] Building C object esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/lib/http_utils.c.obj
+[7/1152] Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/util/ctrl_sock.c.obj
+[8/1152] Building C object esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/lib/http_header.c.obj
+[9/1152] Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_parse.c.obj
+[10/1152] Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_uri.c.obj
+[11/1152] Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_sess.c.obj
+[12/1152] Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_txrx.c.obj
+[13/1152] Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_main.c.obj
+[14/1152] Building C object esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/src/esp_https_ota.c.obj
+[15/1152] Building C object esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/lib/http_auth.c.obj
+[16/1152] Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_ws.c.obj
+[17/1152] Building C object esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/esp_http_client.c.obj
+ninja: build stopped: subcommand failed.

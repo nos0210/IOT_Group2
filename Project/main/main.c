@@ -9,6 +9,7 @@
 #include "wifi_ble_provision.h"
 #include "http_client_task.h"
 #include "mqtt_client_task.h"
+#include "aws_mqtt_ota_task.h"
 
 static const char *TAG = "MAIN";
 
@@ -96,9 +97,18 @@ void app_main(void)
     //             NULL);                  // Task handle
 
     // Tạo task MQTT client: kết nối test.mosquitto.org:1883, pub/sub với MQTTX
-    xTaskCreate(mqtt_client_task,       // Hàm task
-                "MQTT_Client_Task",     // Tên task
-                8192,                   // Stack size (8 KB)
+    // xTaskCreate(mqtt_client_task,       // Hàm task
+    //             "MQTT_Client_Task",     // Tên task
+    //             8192,                   // Stack size (8 KB)
+    //             NULL,                   // Parameters
+    //             5,                      // Priority
+    //             NULL);                  // Task handle
+
+    // Tạo task AWS IoT Core MQTT + OTA
+    // ⚠️  Điền AWS_IOT_ENDPOINT và AWS_DEVICE_ID trong include/aws_iot_config.h trước khi bật
+    xTaskCreate(aws_mqtt_ota_task,      // Hàm task
+                "AWS_OTA_Task",         // Tên task
+                16384,                  // Stack size (16 KB — esp_https_ota cần stack lớn)
                 NULL,                   // Parameters
                 5,                      // Priority
                 NULL);                  // Task handle

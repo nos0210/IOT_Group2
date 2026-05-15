@@ -37,6 +37,7 @@ idf_component_register(
         "../modules/network_service.c"
         "../modules/http_client_task.c"
         "../modules/mqtt_client_task.c"
+        "../modules/aws_mqtt_ota_task.c"
         ${COREHTTP_SRCS}
         ${COREMQTT_SRCS}
     INCLUDE_DIRS
@@ -44,9 +45,14 @@ idf_component_register(
         "../include"
         ${COREHTTP_INCLUDES}
         ${COREMQTT_INCLUDES}
+    EMBED_TXTFILES
+        "${CMAKE_CURRENT_SOURCE_DIR}/../certs/AmazonRootCA1.pem"
+        "${CMAKE_CURRENT_SOURCE_DIR}/../certs/device.crt"
+        "${CMAKE_CURRENT_SOURCE_DIR}/../certs/device.key"
     REQUIRES
         esp_adc esp_driver_dac esp_driver_gpio
         esp_wifi esp_event nvs_flash bt lwip esp_netif esp_timer
+        esp-tls esp_https_ota app_update
 )
 
 # Suppress -Werror=unused-value for coreMQTT third-party sources
