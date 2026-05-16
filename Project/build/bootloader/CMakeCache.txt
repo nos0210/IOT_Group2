@@ -269,6 +269,9 @@ PYTHON_DEPS_CHECKED:UNINITIALIZED=1
 //No help, variable specified on the command line.
 SDKCONFIG:UNINITIALIZED=C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/sdkconfig
 
+//No help, variable specified on the command line.
+SECURE_BOOT_SIGNING_KEY:UNINITIALIZED=C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/secure_boot_signing_key.pem
+
 //Value Computed by CMake
 bootloader_BINARY_DIR:STATIC=C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/bootloader
 

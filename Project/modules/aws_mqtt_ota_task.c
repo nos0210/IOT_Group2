@@ -29,7 +29,10 @@
 #include "esp_timer.h"
 #include "esp_tls.h"
 #include "esp_https_ota.h"
+#include "esp_ota_ops.h"
+#include "esp_partition.h"
 #include "esp_system.h"
+#include "esp_rom_md5.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
@@ -104,14 +107,15 @@ extern const uint8_t device_key_end[]    asm("_binary_device_key_end");
 #define WIFI_WAIT_TIMEOUT_MS     60000U
 #define PENDING_ACK_COUNT        5U
 #define OTA_URL_MAX_LEN          1024U
+#define OTA_MD5_LEN              33U    /* 32 hex chars + null terminator */
+#define OTA_MD5_READ_CHUNK       512U   /* bytes per flash read khi xác minh MD5 */
 
 static const char *TAG = "AWS_OTA";
 
 /* ── Trạng thái OTA chia sẻ giữa callback và task ───────────────────────────── */
 static volatile bool s_ota_pending = false;
 static char          s_ota_url[OTA_URL_MAX_LEN];
-static char          s_ota_version[48];
-
+static char          s_ota_version[48];static char          s_ota_md5[OTA_MD5_LEN]; /* MD5 dự kiến từ MQTT command */
 /* ── MQTT context (dùng trong publish helper) ───────────────────────────────── */
 static MQTTContext_t s_mqtt_ctx;
 
@@ -286,43 +290,152 @@ static void event_callback(MQTTContext_t          *pCtx,
         strncpy(ver_buf, "unknown", sizeof(ver_buf) - 1);
     }
 
+    /* Parse MD5 (advisory — Secure Boot signature là bảo đảm chính) */
+    char md5_buf[OTA_MD5_LEN] = {0};
+    if (!json_get_string_field(payload, pay_len, "md5", md5_buf, sizeof(md5_buf))) {
+        md5_buf[0] = '\0'; /* MD5 không có trong payload — bỏ qua kiểm tra */
+    }
+
     strncpy(s_ota_url, url_buf, OTA_URL_MAX_LEN - 1);
     s_ota_url[OTA_URL_MAX_LEN - 1] = '\0';
 
     strncpy(s_ota_version, ver_buf, sizeof(s_ota_version) - 1);
     s_ota_version[sizeof(s_ota_version) - 1] = '\0';
 
+    strncpy(s_ota_md5, md5_buf, OTA_MD5_LEN - 1);
+    s_ota_md5[OTA_MD5_LEN - 1] = '\0';
+
     s_ota_pending = true;
 
-    ESP_LOGI(TAG, "OTA command nhận được: version=%s  url(60)=%.60s...",
-             s_ota_version, s_ota_url);
+    ESP_LOGI(TAG, "OTA command nhận được: version=%s  md5=%s  url(60)=%.60s...",
+             s_ota_version, s_ota_md5[0] ? s_ota_md5 : "(không có)", s_ota_url);
 }
 
 /* ══════════════════════════════════════════════════════════════════════════════
- * Thực hiện download + flash qua HTTPS OTA
+ * Xác minh MD5 của partition OTA sau khi download
+ * ══════════════════════════════════════════════════════════════════════════════ */
+
+static bool verify_partition_md5(const esp_partition_t *part,
+                                  size_t                 img_size,
+                                  const char            *expected_md5)
+{
+    if (!expected_md5 || expected_md5[0] == '\0') {
+        ESP_LOGW(TAG, "MD5 not provided in OTA command - skipping MD5 check");
+        return true; /* Secure Boot signature still verified by esp_https_ota */
+    }
+
+    md5_context_t ctx;
+    esp_rom_md5_init(&ctx);
+
+    static uint8_t chunk_buf[OTA_MD5_READ_CHUNK]; /* static: avoid stack overflow */
+    size_t offset    = 0;
+    size_t remaining = img_size;
+
+    while (remaining > 0) {
+        size_t to_read = (remaining < OTA_MD5_READ_CHUNK) ? remaining : OTA_MD5_READ_CHUNK;
+        if (esp_partition_read(part, offset, chunk_buf, to_read) != ESP_OK) {
+            ESP_LOGE(TAG, "esp_partition_read failed at offset %zu", offset);
+            return false;
+        }
+        esp_rom_md5_update(&ctx, chunk_buf, to_read);
+        offset    += to_read;
+        remaining -= to_read;
+    }
+
+    uint8_t digest[16];
+    esp_rom_md5_final(digest, &ctx);
+
+    char computed[OTA_MD5_LEN];
+    for (int i = 0; i < 16; i++) {
+        snprintf(computed + i * 2, 3, "%02x", (unsigned)digest[i]);
+    }
+    computed[32] = '\0';
+
+    bool match = (strcmp(computed, expected_md5) == 0);
+    if (match) {
+        ESP_LOGI(TAG, "MD5 OK: %s", computed);
+    } else {
+        ESP_LOGE(TAG, "MD5 MISMATCH! expected=%s actual=%s", expected_md5, computed);
+    }
+    return match;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+ * Thực hiện download + flash qua HTTPS OTA (advanced API)
+ * Bảo mật:
+ *   1. Xác minh MD5 của dữ liệu đã flash trước khi commit partition
+ *   2. esp_https_ota_finish() kiểm tra Secure Boot signature tự động
+ *      (khi CONFIG_SECURE_BOOT=y)
+ *   3. Nếu bất kỳ bước nào thất bại, gọi abort() — thiết bị giữ firmware cũ
  * ══════════════════════════════════════════════════════════════════════════════ */
 
 static esp_err_t do_https_ota(void)
 {
-    ESP_LOGI(TAG, "Bắt đầu HTTPS OTA — version: %s", s_ota_version);
+    ESP_LOGI(TAG, "Bắt đầu HTTPS OTA (Secure Boot) — version: %s", s_ota_version);
+
+    /* Lưu lại partition sẽ được ghi trước khi bắt đầu download */
+    const esp_partition_t *update_partition = esp_ota_get_next_update_partition(NULL);
+    if (!update_partition) {
+        ESP_LOGE(TAG, "Không tìm thấy OTA partition");
+        return ESP_FAIL;
+    }
+    ESP_LOGI(TAG, "OTA partition: %s  offset=0x%08" PRIx32 "  size=0x%08" PRIx32,
+             update_partition->label,
+             update_partition->address,
+             update_partition->size);
 
     esp_http_client_config_t http_cfg = {
-        .url              = s_ota_url,
-        .cert_pem         = (const char *)aws_root_ca_start,
-        .timeout_ms       = 60000,
+        .url               = s_ota_url,
+        .cert_pem          = (const char *)aws_root_ca_start,
+        .timeout_ms        = 60000,
         .keep_alive_enable = false,
-        /* follow_redirects removed in IDF v6 — redirects are auto-followed by default */
     };
 
     esp_https_ota_config_t ota_cfg = {
         .http_config = &http_cfg,
     };
 
-    esp_err_t err = esp_https_ota(&ota_cfg);
+    esp_https_ota_handle_t ota_handle = NULL;
+    esp_err_t err = esp_https_ota_begin(&ota_cfg, &ota_handle);
+    if (err != ESP_OK || !ota_handle) {
+        ESP_LOGE(TAG, "esp_https_ota_begin thất bại: %s", esp_err_to_name(err));
+        return err;
+    }
+
+    /* ── Download loop ──────────────────────────────────────────── */
+    while (1) {
+        err = esp_https_ota_perform(ota_handle);
+        if (err == ESP_ERR_HTTPS_OTA_IN_PROGRESS) {
+            int bytes_read = esp_https_ota_get_image_len_read(ota_handle);
+            ESP_LOGD(TAG, "OTA download: %d bytes", bytes_read);
+            continue;
+        }
+        break;
+    }
+
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "OTA download thất bại: %s", esp_err_to_name(err));
+        esp_https_ota_abort(ota_handle);
+        return err;
+    }
+
+    size_t img_size = (size_t)esp_https_ota_get_image_len_read(ota_handle);
+    ESP_LOGI(TAG, "Download hoàn thành: %zu bytes", img_size);
+
+    /* ── Xác minh MD5 trước khi commit ───────────────────────────── */
+    if (!verify_partition_md5(update_partition, img_size, s_ota_md5)) {
+        ESP_LOGE(TAG, "MD5 không hợp lệ — huỷ OTA, giữ firmware cũ");
+        esp_https_ota_abort(ota_handle);
+        return ESP_ERR_INVALID_CRC;
+    }
+
+    /* ── Commit partition (esp_https_ota_finish kiểm tra Secure Boot sig) ── */
+    err = esp_https_ota_finish(ota_handle);
     if (err == ESP_OK) {
-        ESP_LOGI(TAG, "OTA download & flash thành công");
+        ESP_LOGI(TAG, "OTA commit thành công — Secure Boot signature hợp lệ");
     } else {
-        ESP_LOGE(TAG, "OTA thất bại: %s", esp_err_to_name(err));
+        /* Bao gồm ESP_ERR_OTA_VALIDATE_FAILED nếu Secure Boot signature sai */
+        ESP_LOGE(TAG, "OTA finish thất bại: %s", esp_err_to_name(err));
     }
     return err;
 }

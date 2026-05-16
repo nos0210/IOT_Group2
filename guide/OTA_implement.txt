@@ -1,0 +1,347 @@
+🏗️ Kiến trúc tổng thể
+┌─────────────────────────────────────────┐
+│              AWS Cloud                  │
+│                                         │
+│  S3 Bucket          IoT Core            │
+│  [firmware.bin] ←── Presigned URL  ←──  │
+│                      MQTT Broker        │
+│                      ├── topic: cmd     │
+│                      └── topic: status  │
+└──────────────────┬──────────────────────┘
+                   │ TLS + X.509
+              ┌────▼────┐
+              │  ESP32  │
+              │ MQTT    │
+              │ HTTP    │
+              │ OTA     │
+              └─────────┘
+Luồng hoạt động:
+
+Upload firmware.bin lên S3
+Backend publish lệnh OTA (kèm Presigned URL) lên IoT Core
+ESP32 nhận lệnh → download firmware từ S3 qua HTTPS
+ESP32 publish trạng thái OTA về IoT Core
+
+
+PHẦN 1 — Cấu hình AWS
+Bước 1: Tạo S3 Bucket
+bash# Tạo bucket (đổi tên bucket cho unique)
+aws s3 mb s3://my-esp32-firmware --region ap-southeast-1
+
+# Block public access (dùng Presigned URL thay vì public)
+aws s3api put-public-access-block \
+  --bucket my-esp32-firmware \
+  --public-access-block-configuration \
+    "BlockPublicAcls=true,IgnorePublicAcls=true,\
+     BlockPublicPolicy=true,RestrictPublicBuckets=true"
+Bước 2: Tạo IoT Thing & Certificate
+bash# 1. Tạo Thing
+aws iot create-thing --thing-name "esp32-001"
+
+# 2. Tạo certificate (lưu 3 file xuống thư mục certs/)
+aws iot create-keys-and-certificate \
+  --set-as-active \
+  --certificate-pem-outfile certs/device.crt \
+  --public-key-outfile    certs/device.pub \
+  --private-key-outfile   certs/device.key
+
+# Lưu lại certificateArn từ output, ví dụ:
+# arn:aws:iot:ap-southeast-1:123456789:cert/abc123...
+
+# 3. Tải Root CA
+curl -o certs/AmazonRootCA1.pem \
+  https://www.amazontrust.com/repository/AmazonRootCA1.pem
+Bước 3: Tạo IoT Policy
+bash# Tạo file policy.json
+cat > iot-policy.json << 'EOF'
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "iot:Connect",
+      "Resource": "arn:aws:iot:ap-southeast-1:*:client/esp32-*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": ["iot:Subscribe", "iot:Receive"],
+      "Resource": "arn:aws:iot:ap-southeast-1:*:topicfilter/devices/esp32-*/ota/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iot:Publish",
+      "Resource": "arn:aws:iot:ap-southeast-1:*:topic/devices/esp32-*/ota/status"
+    }
+  ]
+}
+EOF
+
+# Tạo và gắn policy
+aws iot create-policy \
+  --policy-name "ESP32-OTA-Policy" \
+  --policy-document file://iot-policy.json
+
+aws iot attach-policy \
+  --policy-name "ESP32-OTA-Policy" \
+  --target <certificateArn>   # ARN từ bước 2
+
+aws iot attach-thing-principal \
+  --thing-name esp32-001 \
+  --principal <certificateArn>
+Bước 4: Lấy IoT Endpoint
+bashaws iot describe-endpoint --endpoint-type iot:Data-ATS
+# Output: "endpointAddress": "xxxxxx-ats.iot.ap-southeast-1.amazonaws.com"
+
+PHẦN 2 — Code ESP32
+Cấu trúc project
+project/
+├── src/
+│   ├── main.cpp
+│   ├── aws_iot.h / aws_iot.cpp      # MQTT với AWS IoT Core
+│   └── ota_manager.h / ota_manager.cpp
+├── certs/
+│   ├── AmazonRootCA1.pem
+│   ├── device.crt
+│   └── device.key
+└── partitions.csv
+partitions.csv
+csv# Name,  Type, SubType,  Offset,   Size
+nvs,     data, nvs,      0x9000,   0x5000,
+otadata, data, ota,      0xe000,   0x2000,
+app0,    app,  ota_0,    0x10000,  0x1E0000,
+app1,    app,  ota_1,    0x1F0000, 0x1E0000,
+spiffs,  data, spiffs,   0x3D0000, 0x30000,
+platformio.ini
+ini[env:esp32dev]
+platform  = espressif32
+board     = esp32dev
+framework = arduino
+board_build.partitions = partitions.csv
+lib_deps  =
+    knolleary/PubSubClient @ ^2.8
+    bblanchon/ArduinoJson  @ ^6.21
+aws_config.h — Điền thông tin của bạn
+cpp#pragma once
+
+#define DEVICE_ID       "esp32-001"
+#define AWS_IOT_ENDPOINT "xxxxxx-ats.iot.ap-southeast-1.amazonaws.com"
+#define AWS_IOT_PORT     8883
+
+// MQTT Topics
+#define TOPIC_OTA_CMD    "devices/esp32-001/ota/command"
+#define TOPIC_OTA_STATUS "devices/esp32-001/ota/status"
+
+// Certificate (nhúng nội dung file .pem vào đây)
+const char AWS_ROOT_CA[] = R"EOF(
+-----BEGIN CERTIFICATE-----
+... nội dung AmazonRootCA1.pem ...
+-----END CERTIFICATE-----
+)EOF";
+
+const char DEVICE_CERT[] = R"EOF(
+-----BEGIN CERTIFICATE-----
+... nội dung device.crt ...
+-----END CERTIFICATE-----
+)EOF";
+
+const char DEVICE_KEY[] = R"EOF(
+-----BEGIN RSA PRIVATE KEY-----
+... nội dung device.key ...
+-----END RSA PRIVATE KEY-----
+)EOF";
+ota_manager.cpp
+cpp#include "ota_manager.h"
+#include <HTTPClient.h>
+#include <Update.h>
+#include <ArduinoJson.h>
+#include <WiFiClientSecure.h>
+
+// Khai báo extern từ aws_iot.cpp
+extern void mqttPublish(const char* topic, const String& payload);
+
+void OTAManager::begin(const char* deviceId) {
+    _deviceId = deviceId;
+}
+
+// Gọi khi nhận được MQTT message từ topic ota/command
+void OTAManager::handleCommand(const String& payload) {
+    StaticJsonDocument<512> doc;
+    if (deserializeJson(doc, payload) != DeserializationError::Ok) {
+        Serial.println("[OTA] JSON parse error");
+        return;
+    }
+
+    String version = doc["version"] | "";
+    String url     = doc["url"]     | "";  // Presigned S3 URL
+    String md5     = doc["md5"]     | "";
+
+    if (url.isEmpty()) {
+        _publishStatus("failed", 0, "", "Missing URL");
+        return;
+    }
+
+    _downloadAndFlash(url, md5, version);
+}
+
+bool OTAManager::_downloadAndFlash(const String& url,
+                                    const String& md5,
+                                    const String& version) {
+    _publishStatus("downloading", 0, version.c_str());
+
+    // Dùng WiFiClientSecure cho HTTPS (S3 Presigned URL là HTTPS)
+    WiFiClientSecure client;
+    client.setInsecure();  // Hoặc set root CA nếu muốn strict
+
+    HTTPClient http;
+    http.begin(client, url);
+    http.setTimeout(60000);
+    http.setFollowRedirects(HTTPC_STRICT_FOLLOW_REDIRECTS);
+
+    int code = http.GET();
+    if (code != HTTP_CODE_OK) {
+        _publishStatus("failed", 0, version.c_str(),
+                       ("HTTP " + String(code)).c_str());
+        http.end();
+        return false;
+    }
+
+    int  totalSize = http.getSize();
+    bool ok = Update.begin(totalSize > 0 ? totalSize : UPDATE_SIZE_UNKNOWN);
+    if (!ok) {
+        _publishStatus("failed", 0, version.c_str(), "No partition space");
+        http.end();
+        return false;
+    }
+
+    if (!md5.isEmpty()) Update.setMD5(md5.c_str());
+
+    WiFiClient* stream   = http.getStreamPtr();
+    uint8_t     buf[2048];
+    int         written  = 0;
+    int         lastPct  = -1;
+
+    while (http.connected() && (totalSize == -1 || written < totalSize)) {
+        size_t avail = stream->available();
+        if (!avail) { delay(1); continue; }
+
+        size_t toRead = min(avail, sizeof(buf));
+        int    n      = stream->readBytes(buf, toRead);
+
+        if (Update.write(buf, n) != (size_t)n) {
+            _publishStatus("failed", 0, version.c_str(), "Flash write error");
+            http.end();
+            return false;
+        }
+
+        written += n;
+        int pct = totalSize > 0 ? (written * 100 / totalSize) : 0;
+        if (pct / 5 != lastPct / 5) {   // Publish mỗi 5%
+            lastPct = pct;
+            _publishStatus("downloading", pct, version.c_str());
+        }
+    }
+
+    http.end();
+
+    if (!Update.end(true)) {
+        _publishStatus("failed", 0, version.c_str(), "Update finalize error");
+        return false;
+    }
+
+    _publishStatus("success", 100, version.c_str());
+    Serial.println("[OTA] Done! Restarting...");
+    delay(1000);
+    ESP.restart();
+    return true;
+}
+
+void OTAManager::_publishStatus(const char* status, int progress,
+                                 const char* version, const char* error) {
+    StaticJsonDocument<256> doc;
+    doc["device_id"] = _deviceId;
+    doc["status"]    = status;
+    doc["progress"]  = progress;
+    doc["version"]   = version ? version : "";
+    doc["error"]     = error   ? error   : "";
+
+    String out;
+    serializeJson(doc, out);
+    mqttPublish(TOPIC_OTA_STATUS, out);
+    Serial.printf("[OTA] %s %d%% %s\n", status, progress, error ? error : "");
+}
+
+PHẦN 3 — Script triển khai firmware (Backend)
+python# deploy_ota.py
+import boto3, hashlib, json, sys
+from datetime import datetime
+
+BUCKET      = "my-esp32-firmware"
+DEVICE_ID   = "esp32-001"
+VERSION     = sys.argv[1] if len(sys.argv) > 1 else "1.0.0"
+FIRMWARE    = sys.argv[2] if len(sys.argv) > 2 else "firmware.bin"
+REGION      = "ap-southeast-1"
+
+# 1. Tính MD5
+with open(FIRMWARE, "rb") as f:
+    md5 = hashlib.md5(f.read()).hexdigest()
+
+# 2. Upload lên S3
+s3 = boto3.client("s3", region_name=REGION)
+s3_key = f"firmware/{VERSION}/firmware.bin"
+s3.upload_file(FIRMWARE, BUCKET, s3_key)
+print(f"✅ Uploaded {FIRMWARE} → s3://{BUCKET}/{s3_key}")
+
+# 3. Tạo Presigned URL (hiệu lực 1 giờ)
+url = s3.generate_presigned_url(
+    "get_object",
+    Params={"Bucket": BUCKET, "Key": s3_key},
+    ExpiresIn=3600
+)
+print(f"✅ Presigned URL (1h): {url[:60]}...")
+
+# 4. Publish lệnh OTA qua AWS IoT Core
+iot = boto3.client("iot-data", region_name=REGION)
+payload = json.dumps({
+    "version": VERSION,
+    "url":     url,
+    "md5":     md5,
+    "issued":  datetime.utcnow().isoformat()
+})
+
+iot.publish(
+    topic=f"devices/{DEVICE_ID}/ota/command",
+    qos=1,
+    payload=payload
+)
+print(f"✅ OTA command published → devices/{DEVICE_ID}/ota/command")
+print(f"   Version: {VERSION} | MD5: {md5}")
+Cách dùng:
+bashpip install boto3
+
+# Build firmware trong PlatformIO → .pio/build/esp32dev/firmware.bin
+python deploy_ota.py 1.2.0 .pio/build/esp32dev/firmware.bin
+
+PHẦN 4 — Theo dõi trạng thái
+bash# Xem log OTA realtime trên AWS IoT Console
+# hoặc dùng CLI:
+aws iot-data subscribe \
+  --topic "devices/esp32-001/ota/status" \
+  --region ap-southeast-1
+
+✅ Checklist triển khai theo thứ tự
+AWS Setup:
+  □ Tạo S3 bucket, tắt public access
+  □ Tạo IoT Thing + Certificate (lưu 3 file .pem)
+  □ Tạo & gắn IoT Policy
+  □ Lấy IoT Endpoint
+
+ESP32:
+  □ Cập nhật partitions.csv
+  □ Nhúng certificate vào aws_config.h
+  □ Điền ENDPOINT, DEVICE_ID
+  □ Flash lần đầu qua USB (sau đó OTA hoàn toàn)
+
+Deploy:
+  □ pip install boto3 + cấu hình AWS CLI
+  □ Chạy deploy_ota.py với firmware mới
+  □ Theo dõi status topic

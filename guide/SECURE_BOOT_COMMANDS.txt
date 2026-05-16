@@ -1,0 +1,58 @@
+====================================================
+  SECURE BOOT V1 — ESP32 — LỆNH THỰC HIỆN
+====================================================
+Board: ESP32 | COM7 | ESP-IDF v6.0
+Download Mode: Giữ BOOT → nhấn RESET → thả cả hai
+
+----------------------------------------------------
+BƯỚC 0 — Kích hoạt môi trường
+----------------------------------------------------
+& "C:\Espressif\tools\Microsoft.v6.0.PowerShell_profile.ps1"
+cd "C:\Users\Admin\Desktop\esp\IOT_PROJECT_GROUP2\Project"
+
+----------------------------------------------------
+BƯỚC 1 — Build firmware
+----------------------------------------------------
+idf.py build
+
+----------------------------------------------------
+BƯỚC 2 — Burn Secure Boot key vào eFuse (1 LẦN DUY NHẤT)
+----------------------------------------------------
+[Vào Download Mode]
+python -m espefuse -p COM7 burn-key BLOCK2 build\bootloader\secure-bootloader-key-256.bin
+→ Nhập YES để xác nhận
+
+Kiểm tra sau khi burn:
+[Vào Download Mode]
+python -m espefuse -p COM7 summary
+→ BLOCK2 phải có dữ liệu khác 0
+
+----------------------------------------------------
+BƯỚC 3 — Flash toàn bộ (bootloader + app)
+----------------------------------------------------
+[Vào Download Mode]
+python -m esptool --chip esp32 -p COM7 -b 460800 --before no-reset --after no-reset write-flash --flash-mode dio --flash-freq 40m --flash-size 4MB 0x1000 build\bootloader\bootloader.bin 0xd000 build\partition_table\partition-table.bin 0x13000 build\ota_data_initial.bin 0x20000 build\ADC_DAC.bin
+
+----------------------------------------------------
+BƯỚC 4 — Theo dõi log (mở trước, rồi nhấn RESET)
+----------------------------------------------------
+idf.py -p COM7 monitor
+
+Log kỳ vọng:
+  secure_boot_v1: bootloader secure boot is already enabled.
+  MAIN: === SECURE BOOT: ACTIVE (eFuse burned) ===
+
+----------------------------------------------------
+CẬP NHẬT FIRMWARE SAU NÀY (không cần burn eFuse lại)
+----------------------------------------------------
+idf.py build
+[Vào Download Mode]
+python -m esptool --chip esp32 -p COM7 -b 460800 --before no-reset --after no-reset write-flash 0x20000 build\ADC_DAC.bin
+
+----------------------------------------------------
+LƯU Ý QUAN TRỌNG
+----------------------------------------------------
+- idf.py flash KHÔNG flash bootloader khi Secure Boot bật → dùng esptool
+- Flash Encryption phải TẮT (gây lỗi "Invalid key state" trên board này)
+- Mất file secure_boot_signing_key.pem = không thể ký firmware mới
+====================================================

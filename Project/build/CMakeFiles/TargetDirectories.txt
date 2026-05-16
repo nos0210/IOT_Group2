@@ -3,6 +3,8 @@ C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/CMakeFiles/config-re
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/CMakeFiles/confserver.dir
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/CMakeFiles/save-defconfig.dir
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/CMakeFiles/flash.dir
+C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/CMakeFiles/gen_secure_boot_keys.dir
+C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/CMakeFiles/gen_secure_boot_signing_key.dir
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/CMakeFiles/bootloader.dir
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/CMakeFiles/_project_elf_src.dir
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/CMakeFiles/ADC_DAC.elf.dir
@@ -15,6 +17,7 @@ C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/CMakeFiles/__ldgen_o
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/CMakeFiles/gen_ADC_DAC_binary.dir
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/CMakeFiles/gen_project_binary.dir
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/CMakeFiles/app.dir
+C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/CMakeFiles/gen_signed_ADC_DAC_binary.dir
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/CMakeFiles/app-flash.dir
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/CMakeFiles/encrypted-app-flash.dir
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/CMakeFiles/encrypted-flash.dir
@@ -105,6 +108,7 @@ C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/esp-idf/esptool_py/C
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/esp-idf/partition_table/CMakeFiles/partition_table_bin.dir
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/esp-idf/partition_table/CMakeFiles/partition-table.dir
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/esp-idf/partition_table/CMakeFiles/partition_table.dir
+C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/esp-idf/partition_table/CMakeFiles/gen_unsigned_partition_bin.dir
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/esp-idf/partition_table/CMakeFiles/partition-table-flash.dir
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/esp-idf/partition_table/CMakeFiles/encrypted-partition-table-flash.dir
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/esp-idf/partition_table/CMakeFiles/partition_table-flash.dir

@@ -1,0 +1,16 @@
+# ── SECURE BOOT — KHÔNG BAO GIỜ commit các file này ──────────
+# Mất key = không ký được firmware OTA mới → thiết bị bị brick
+secure_boot_signing_key.pem
+*.pem
+
+# ── Flash Encryption keys ─────────────────────────────────────
+flash_encryption_key.bin
+*.bin.key
+
+# ── ESP-IDF Build output ──────────────────────────────────────
+Project/build/
+build/
+
+# ── Certificates (đã có trong certs/ — không push private key) ─
+certs/*.key
+certs/*.pem

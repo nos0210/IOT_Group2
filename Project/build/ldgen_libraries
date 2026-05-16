@@ -50,6 +50,7 @@ C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/esp-idf/mbedtls/libm
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/esp-idf/esp_hal_wdt/libesp_hal_wdt.a
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/esp-idf/esp_hal_ana_conv/libesp_hal_ana_conv.a
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/esp-idf/esp_hal_i2s/libesp_hal_i2s.a
+C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/esp-idf/app_update/libapp_update.a
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/esp-idf/esp_ringbuf/libesp_ringbuf.a
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/esp-idf/esp_psram/libesp_psram.a
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/esp-idf/vfs/libvfs.a
@@ -87,7 +88,6 @@ C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/esp-idf/esp_hal_mspi
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/esp-idf/esp_hal_security/libesp_hal_security.a
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/esp-idf/esp_app_format/libesp_app_format.a
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/esp-idf/esp_bootloader_format/libesp_bootloader_format.a
-C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/esp-idf/app_update/libapp_update.a
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/esp-idf/esp_partition/libesp_partition.a
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/esp-idf/efuse/libefuse.a
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/esp-idf/esp_driver_gpio/libesp_driver_gpio.a

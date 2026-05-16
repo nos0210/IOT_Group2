@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include "esp_err.h"
 #include "esp_log.h"
+#include "esp_secure_boot.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "adc_dac.h"
@@ -70,6 +71,17 @@ void adc_dac_task(void *pvParameters)
 }
 void app_main(void)
 {
+    /* ── Báo cáo trạng thái Secure Boot ngay khi app khởi động ── */
+#if CONFIG_SECURE_BOOT
+    if (esp_secure_boot_enabled()) {
+        ESP_LOGI(TAG, "=== SECURE BOOT: ACTIVE (eFuse burned) ===");
+    } else {
+        ESP_LOGW(TAG, "=== SECURE BOOT: CONFIG enabled but eFuse NOT burned yet ===");
+    }
+#else
+    ESP_LOGW(TAG, "=== SECURE BOOT: DISABLED in build config ===");
+#endif
+
     esp_err_t prov_err = wifi_ble_provisioning_init();
     if (prov_err != ESP_OK) {
         ESP_LOGE(TAG, "Provisioning init failed: %s", esp_err_to_name(prov_err));

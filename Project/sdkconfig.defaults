@@ -11,3 +11,25 @@ CONFIG_PARTITION_TABLE_CUSTOM=y
 CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions_ota.csv"
 CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
 CONFIG_ESPTOOLPY_FLASHSIZE="4MB"
+
+# ── Bootloader offset (cần tăng khi Secure Boot V1 Reflashable) ──────────────
+# Bootloader với Secure Boot lớn hơn (~44KB) so với mặc định 0x8000 (32KB).
+# 0xd000 = 52KB đủ chỗ cho bootloader + key digest.
+# ota_0 bắt đầu từ 0x20000 nên partitions_ota.csv không cần sửa.
+CONFIG_PARTITION_TABLE_OFFSET=0xd000
+
+# ── Secure Boot V1 (ESP32) ────────────────────────────────────
+# CẢNH BÁO: Sau khi burn eFuse lần đầu, KHÔNG THỂ hoàn tác.
+# Thử nghiệm kỹ trên thiết bị dev trước khi deploy production.
+CONFIG_SECURE_BOOT=y
+CONFIG_SECURE_BOOT_V1_ENABLED=y
+# Reflashable: cho phép cập nhật bootloader về sau (key digest lưu trong eFuse)
+CONFIG_SECURE_BOOTLOADER_REFLASHABLE=y
+# Tự động ký firmware khi idf.py build
+CONFIG_SECURE_BOOT_BUILD_SIGNED_BINARIES=y
+CONFIG_SECURE_BOOT_SIGNING_KEY="secure_boot_signing_key.pem"
+# Không cho phép boot firmware không được ký
+CONFIG_SECURE_BOOT_INSECURE=n
+
+# ── Flash Encryption — TẮT (gây lỗi "Invalid key state" trên ESP32 original) ───
+# CONFIG_SECURE_FLASH_ENC_ENABLED is not set

@@ -13,6 +13,8 @@ C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/bootloader/CMakeFile
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/bootloader/CMakeFiles/gen_bootloader_binary.dir
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/bootloader/CMakeFiles/gen_project_binary.dir
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/bootloader/CMakeFiles/app.dir
+C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/bootloader/CMakeFiles/gen_secure_bootloader_key.dir
+C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/bootloader/CMakeFiles/gen_bootloader_digest_bin.dir
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/bootloader/CMakeFiles/bootloader_check_size.dir
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/bootloader/CMakeFiles/edit_cache.dir
 C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build/bootloader/CMakeFiles/rebuild_cache.dir
