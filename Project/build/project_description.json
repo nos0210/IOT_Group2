@@ -1,7 +1,7 @@
 {
     "version":            "1.3",
     "project_name":       "ADC_DAC",
-    "project_version":    "e861d7f-dirty",
+    "project_version":    "fdfba18-dirty",
     "project_path":       "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project",
     "idf_path":           "D:/esp/v6.0/esp-idf",
     "build_dir":          "C:/Users/Admin/Desktop/esp/IOT_PROJECT_GROUP2/Project/build",

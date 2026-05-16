@@ -10,6 +10,11 @@ Payload:
 }
 ```
 ```
+Lệnh để tạo key:
+    ```
+    idf.py secure-generate-signing-key secure_boot_signing_key.pem
+    ```   
+```
 Security config:
 AWS IoT Core -> Security -> Policy
 Json config:
